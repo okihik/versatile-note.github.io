@@ -25,6 +25,62 @@
     "href": "index.html",
     "title": "Himagineer",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a Quarto Blog\n\n\n\n\n\n\nQuarto Blog\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html",
+    "href": "posts/create a Quarto blog/index.html",
+    "title": "Create a Quarto Blog",
+    "section": "",
+    "text": "This is a tutorial on how to create a new quarto blog using the R studio interface.\nThis tutorial is based on this website and this blog.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
+    "href": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
+    "title": "Create a Quarto Blog",
+    "section": "1. Project Creation in RStudio",
+    "text": "1. Project Creation in RStudio\n\nCreate a new Quarto blog project in RStudio.\nName the directory with the desired URL (e.g., yourusername.github.io for a personal blog).\nEnsure “Create a git repository” and “Use renv with this project” are checked."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#github-repository-setup",
+    "href": "posts/create a Quarto blog/index.html#github-repository-setup",
+    "title": "Create a Quarto Blog",
+    "section": "2. GitHub Repository Setup",
+    "text": "2. GitHub Repository Setup\n\nCreate a new public repository on GitHub with the same name as the RStudio project directory."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#pushing-local-project-to-github",
+    "href": "posts/create a Quarto blog/index.html#pushing-local-project-to-github",
+    "title": "Create a Quarto Blog",
+    "section": "3. Pushing Local Project to GitHub",
+    "text": "3. Pushing Local Project to GitHub\n\nUse terminal to link the local project folder to the new GitHub repository.\nCommit and push the initial project files to the main branch on GitHub."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#creating-gh-pages-branch",
+    "href": "posts/create a Quarto blog/index.html#creating-gh-pages-branch",
+    "title": "Create a Quarto Blog",
+    "section": "4. Creating gh-pages Branch",
+    "text": "4. Creating gh-pages Branch\n\nOn GitHub, create a new branch named gh-pages."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
+    "href": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
+    "title": "Create a Quarto Blog",
+    "section": "5. Setting up GitHub Actions Workflow",
+    "text": "5. Setting up GitHub Actions Workflow\n\nIn your RStudio project, create the folder structure: .github/workflows/.\nInside workflows, create a new text file named publish.yml.\nCopy the R EnV example code chunk from the Quarto documentation for publishing to GitHub Pages and paste it into publish.yml.\nSave, commit, and push these changes to the main branch on GitHub."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#configuring-github-pages",
+    "href": "posts/create a Quarto blog/index.html#configuring-github-pages",
+    "title": "Create a Quarto Blog",
+    "section": "6. Configuring GitHub Pages",
+    "text": "6. Configuring GitHub Pages\n\nOn GitHub, go to your repository’s Settings, then Pages.\nUnder “Branch”, select gh-pages and click Save."
+  },
+  {
+    "objectID": "posts/create a Quarto blog/index.html#monitoring-workflow-and-visiting-site",
+    "href": "posts/create a Quarto blog/index.html#monitoring-workflow-and-visiting-site",
+    "title": "Create a Quarto Blog",
+    "section": "7. Monitoring Workflow and Visiting Site",
+    "text": "7. Monitoring Workflow and Visiting Site\n\nGo to the Actions tab on GitHub to monitor the running workflows.\nOnce all workflows have successfully completed, return to Settings and then Pages.\nClick “Visit site” to view your live Quarto website.\n\nAfter this setup, any future changes committed to the repository will automatically update the blog without local rendering."
   }
 ]
