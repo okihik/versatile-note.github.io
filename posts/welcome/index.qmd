@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+author: "Akihiko Mori"
 date: "2025-07-05"
 categories: [news]
 ---
