@@ -25,21 +25,21 @@
     "href": "posts/create a Quarto blog/index.html",
     "title": "Create a Quarto Blog",
     "section": "",
-    "text": "This is a tutorial on how to create a new Quarto blog using the R studio interface.\nThis tutorial is based on this website, and inspired by this blog and this video.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
+    "text": "This is a tutorial on how to create a new Quarto blog using the RStudio interface.\nThis tutorial is based on this website, and inspired by this blog and this video.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
     "href": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
     "title": "Create a Quarto Blog",
     "section": "1. Project Creation in RStudio",
-    "text": "1. Project Creation in RStudio\n\nCreate a new Quarto blog project in RStudio.\nName the directory with the desired URL (e.g., yourusername.github.io for a personal blog).\nEnsure “Create a git repository” and “Use renv with this project” are checked."
+    "text": "1. Project Creation in RStudio\n\nCreate a new Quarto blog project in RStudio.\nName the directory with the desired URL (e.g., “yourusername.github.io” for a personal blog).\nEnsure “Create a git repository” and “Use renv with this project” are checked."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#github-repository-setup",
     "href": "posts/create a Quarto blog/index.html#github-repository-setup",
     "title": "Create a Quarto Blog",
     "section": "2. GitHub Repository Setup",
-    "text": "2. GitHub Repository Setup\n\nCreate a new public repository on GitHub with the same name as the RStudio project directory."
+    "text": "2. GitHub Repository Setup\n\nCreate a new public repository on GitHub with the same name, “yourusername.github.io”, as the RStudio project directory."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#pushing-local-project-to-github",
@@ -53,14 +53,14 @@
     "href": "posts/create a Quarto blog/index.html#creating-gh-pages-branch",
     "title": "Create a Quarto Blog",
     "section": "4. Creating gh-pages Branch",
-    "text": "4. Creating gh-pages Branch\n\nOn GitHub, create a new branch named gh-pages."
+    "text": "4. Creating gh-pages Branch\n\nOn GitHub, create a new branch named “gh-pages”."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
     "href": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
     "title": "Create a Quarto Blog",
     "section": "5. Setting up GitHub Actions Workflow",
-    "text": "5. Setting up GitHub Actions Workflow\n\nIn your RStudio project, create the folder structure: .github/workflows/.\nInside workflows, create a new text file named publish.yml.\nCopy the R EnV example code chunk from the Quarto documentation for publishing to GitHub Pages and paste it into publish.yml.\nSave, commit, and push these changes to the main branch on GitHub."
+    "text": "5. Setting up GitHub Actions Workflow\n\nIn your RStudio project, create the folder structure: “.github/workflows/”.\nInside workflows, create a new text file named publish.yml.\nCopy the R EnV example code chunk from the Quarto documentation for publishing to GitHub Pages and paste it into publish.yml.\nSave, commit, and push these changes to the main branch on GitHub."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#configuring-github-pages",
