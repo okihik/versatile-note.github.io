@@ -32,7 +32,7 @@
     "href": "posts/create a Quarto blog/index.html",
     "title": "Create a Quarto Blog",
     "section": "",
-    "text": "This is a tutorial on how to create a new quarto blog using the R studio interface.\nThis tutorial is based on this website and this blog.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
+    "text": "This is a tutorial on how to create a new Quarto blog using the R studio interface.\nThis tutorial is based on this website, and inspired by this blog and this video.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
