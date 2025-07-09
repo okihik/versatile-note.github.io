@@ -5,9 +5,9 @@ date: "2025-07-05"
 categories: [Quarto Blog]
 ---
 
-This is a tutorial on how to create a new quarto blog using the R studio interface.
+This is a tutorial on how to create a new Quarto blog using the R studio interface.
 
-This tutorial is based on [this website](https://quarto.org/docs/publishing/) and [this blog](https://lab-notes.hakyimlab.org/post/2023-09-15-howto-blog/#create-a-new-post).
+This tutorial is based on [this website](https://quarto.org/docs/publishing/), and inspired by [this blog](https://lab-notes.hakyimlab.org/post/2023-09-15-howto-blog/#create-a-new-post) and [this video](https://www.youtube.com/watch?v=arzBRW5XIkg).
 
 The procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:
 

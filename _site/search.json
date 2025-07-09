@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Himagineer",
+    "title": "Hello, world! Welcome to my Blog!",
     "section": "",
-    "text": "About this blog"
+    "text": "I’m a recent graduate with a Master’s degree in Natural Resources and Environmental Studies from the University of Northern BC, where I worked under the supervision of Dr. Balbinder Deo. My research focused on estimating food loss and waste in restaurant operations through an in-depth case study—a topic that bridges my academic interests with real-world sustainability challenges.\nCurrently, I’m seeking opportunities to apply my research skills and passion for environmental studies in a professional setting. My academic journey has equipped me with expertise in quantitative analysis and a deep understanding of resource management, while my hands-on experience has given me practical insights into the food service industry.\n\n\nEconomics & Analysis\nConsumer Theory in Microeconomics\nManagerial Economics\nCosts and Inventory Analysis\nGenerational Accounting Model\nRegression Analysis in Statistics\nExperimental Design\nState-Space (Bayesian) Model\nEmerging Technologies\nText Analysis in Computational Social Science\nReal-World Application\nCooking!!\nI’ve spent over ten years working in Chinese and Japanese restaurants, gaining invaluable experience in food preparation, kitchen operations, and understanding the practical challenges of food waste reduction.\nThis unique combination of academic rigor and industry experience shapes my perspective on sustainability, economics, and the intersection of theory and practice. Through this blog, I’ll share insights from my research, thoughts on current topics in environmental studies and economics, and perhaps a few culinary adventures along the way.\nThanks for stopping by, and I hope you find something here that sparks your interest!"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -82,5 +82,12 @@
     "title": "Create a Quarto Blog",
     "section": "7. Monitoring Workflow and Visiting Site",
     "text": "7. Monitoring Workflow and Visiting Site\n\nGo to the Actions tab on GitHub to monitor the running workflows.\nOnce all workflows have successfully completed, return to Settings and then Pages.\nClick “Visit site” to view your live Quarto website.\n\nAfter this setup, any future changes committed to the repository will automatically update the blog without local rendering."
+  },
+  {
+    "objectID": "about.html#what-drives-my-curiosity",
+    "href": "about.html#what-drives-my-curiosity",
+    "title": "Hello, world! Welcome to my Blog!",
+    "section": "",
+    "text": "Economics & Analysis\nConsumer Theory in Microeconomics\nManagerial Economics\nCosts and Inventory Analysis\nGenerational Accounting Model\nRegression Analysis in Statistics\nExperimental Design\nState-Space (Bayesian) Model\nEmerging Technologies\nText Analysis in Computational Social Science\nReal-World Application\nCooking!!\nI’ve spent over ten years working in Chinese and Japanese restaurants, gaining invaluable experience in food preparation, kitchen operations, and understanding the practical challenges of food waste reduction.\nThis unique combination of academic rigor and industry experience shapes my perspective on sustainability, economics, and the intersection of theory and practice. Through this blog, I’ll share insights from my research, thoughts on current topics in environmental studies and economics, and perhaps a few culinary adventures along the way.\nThanks for stopping by, and I hope you find something here that sparks your interest!"
   }
 ]
