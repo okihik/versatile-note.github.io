@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Akihiko Mori">
-<meta name="dcterms.date" content="2025-07-05">
+<meta name="dcterms.date" content="2025-07-09">
 
-<title>Himagineer - Create a Quarto Blog</title>
+<title>Himagineer - Crafting Academic Reports: A LaTeX and Overleaf Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,9 +115,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Create a Quarto Blog</h1>
+      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
+            <p class="subtitle lead">part 1</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Quarto Blog</div>
+                <div class="quarto-category">Reporting</div>
               </div>
                   </div>
   </div>
@@ -135,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 5, 2025</p>
+        <p class="date">July 9, 2025</p>
       </div>
     </div>
     
@@ -154,60 +155,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is a tutorial on how to create a new Quarto blog using the RStudio interface.</p>
-<p>This tutorial is based on <a href="https://quarto.org/docs/publishing/">this website</a>, and inspired by <a href="https://lab-notes.hakyimlab.org/post/2023-09-15-howto-blog/#create-a-new-post">this blog</a> and <a href="https://www.youtube.com/watch?v=arzBRW5XIkg">this video</a>.</p>
-<p>The procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:</p>
-<section id="project-creation-in-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="project-creation-in-rstudio">1. Project Creation in RStudio</h2>
-<ul>
-<li><p>Create a new Quarto blog project in RStudio.</p></li>
-<li><p>Name the directory with the desired URL (e.g., “yourusername.github.io” for a personal blog).</p></li>
-<li><p>Ensure “Create a git repository” and “Use renv with this project” are checked.</p></li>
-</ul>
+<section id="the-challenge-of-academic-reporting" class="level1">
+<h1>The Challenge of Academic Reporting</h1>
+<p>The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.</p>
 </section>
-<section id="github-repository-setup" class="level2">
-<h2 class="anchored" data-anchor-id="github-repository-setup">2. GitHub Repository Setup</h2>
-<ul>
-<li>Create a new public repository on GitHub with the same name, “yourusername.github.io”, as the RStudio project directory.</li>
-</ul>
+<section id="introducing-latex-the-gold-standard-for-professional-documents" class="level1">
+<h1>Introducing LaTeX: The Gold Standard for Professional Documents</h1>
+<p>What if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.</p>
 </section>
-<section id="pushing-local-project-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="pushing-local-project-to-github">3. Pushing Local Project to GitHub</h2>
-<ul>
-<li><p>Use terminal to link the local project folder to the new GitHub repository.</p></li>
-<li><p>Commit and push the initial project files to the main branch on GitHub.</p></li>
-</ul>
+<section id="overleaf-making-latex-accessible" class="level1">
+<h1>Overleaf: Making LaTeX Accessible</h1>
+<p>But we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.</p>
 </section>
-<section id="creating-gh-pages-branch" class="level2">
-<h2 class="anchored" data-anchor-id="creating-gh-pages-branch">4. Creating gh-pages Branch</h2>
-<ul>
-<li>On GitHub, create a new branch named “gh-pages”.</li>
-</ul>
-</section>
-<section id="setting-up-github-actions-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-github-actions-workflow">5. Setting up GitHub Actions Workflow</h2>
-<ul>
-<li><p>In your RStudio project, create the folder structure: “.github/workflows/”.</p></li>
-<li><p>Inside workflows, create a new text file named publish.yml.</p></li>
-<li><p>Copy the R EnV example code chunk from <a href="https://quarto.org/docs/publishing/gi...">the Quarto documentation for publishing to GitHub Pages</a> and paste it into publish.yml.</p></li>
-<li><p>Save, commit, and push these changes to the main branch on GitHub.</p></li>
-</ul>
-</section>
-<section id="configuring-github-pages" class="level2">
-<h2 class="anchored" data-anchor-id="configuring-github-pages">6. Configuring GitHub Pages</h2>
-<ul>
-<li><p>On GitHub, go to your repository’s Settings, then Pages.</p></li>
-<li><p>Under “Branch”, select gh-pages and click Save.</p></li>
-</ul>
-</section>
-<section id="monitoring-workflow-and-visiting-site" class="level2">
-<h2 class="anchored" data-anchor-id="monitoring-workflow-and-visiting-site">7. Monitoring Workflow and Visiting Site</h2>
-<ul>
-<li><p>Go to the Actions tab on GitHub to monitor the running workflows.</p></li>
-<li><p>Once all workflows have successfully completed, return to Settings and then Pages.</p></li>
-<li><p>Click “Visit site” to view your live Quarto website.</p></li>
-</ul>
-<p>After this setup, any future changes committed to the repository will automatically update the blog without local rendering.</p>
+<section id="what-youll-learn-in-this-guide" class="level1">
+<h1>What You’ll Learn in This Guide</h1>
+<p>In this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create.</p>
 
 
 </section>

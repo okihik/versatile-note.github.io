@@ -25,28 +25,28 @@
     "href": "index.html",
     "title": "Himagineer",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a Quarto Blog\n\n\n\n\n\n\nQuarto Blog\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\nNo matching items"
+    "text": "Crafting Academic Reports: A LaTeX and Overleaf Guide\n\n\npart 1\n\n\n\nReporting\n\n\n\n\n\n\n\n\n\nJul 9, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a Quarto Blog\n\n\n\n\n\n\nQuarto Blog\n\n\n\n\n\n\n\n\n\nJul 5, 2025\n\n\nAkihiko Mori\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/create a Quarto blog/index.html",
     "href": "posts/create a Quarto blog/index.html",
     "title": "Create a Quarto Blog",
     "section": "",
-    "text": "This is a tutorial on how to create a new Quarto blog using the R studio interface.\nThis tutorial is based on this website, and inspired by this blog and this video.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
+    "text": "This is a tutorial on how to create a new Quarto blog using the RStudio interface.\nThis tutorial is based on this website, and inspired by this blog and this video.\nThe procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:"
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
     "href": "posts/create a Quarto blog/index.html#project-creation-in-rstudio",
     "title": "Create a Quarto Blog",
     "section": "1. Project Creation in RStudio",
-    "text": "1. Project Creation in RStudio\n\nCreate a new Quarto blog project in RStudio.\nName the directory with the desired URL (e.g., yourusername.github.io for a personal blog).\nEnsure “Create a git repository” and “Use renv with this project” are checked."
+    "text": "1. Project Creation in RStudio\n\nCreate a new Quarto blog project in RStudio.\nName the directory with the desired URL (e.g., “yourusername.github.io” for a personal blog).\nEnsure “Create a git repository” and “Use renv with this project” are checked."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#github-repository-setup",
     "href": "posts/create a Quarto blog/index.html#github-repository-setup",
     "title": "Create a Quarto Blog",
     "section": "2. GitHub Repository Setup",
-    "text": "2. GitHub Repository Setup\n\nCreate a new public repository on GitHub with the same name as the RStudio project directory."
+    "text": "2. GitHub Repository Setup\n\nCreate a new public repository on GitHub with the same name, “yourusername.github.io”, as the RStudio project directory."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#pushing-local-project-to-github",
@@ -60,14 +60,14 @@
     "href": "posts/create a Quarto blog/index.html#creating-gh-pages-branch",
     "title": "Create a Quarto Blog",
     "section": "4. Creating gh-pages Branch",
-    "text": "4. Creating gh-pages Branch\n\nOn GitHub, create a new branch named gh-pages."
+    "text": "4. Creating gh-pages Branch\n\nOn GitHub, create a new branch named “gh-pages”."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
     "href": "posts/create a Quarto blog/index.html#setting-up-github-actions-workflow",
     "title": "Create a Quarto Blog",
     "section": "5. Setting up GitHub Actions Workflow",
-    "text": "5. Setting up GitHub Actions Workflow\n\nIn your RStudio project, create the folder structure: .github/workflows/.\nInside workflows, create a new text file named publish.yml.\nCopy the R EnV example code chunk from the Quarto documentation for publishing to GitHub Pages and paste it into publish.yml.\nSave, commit, and push these changes to the main branch on GitHub."
+    "text": "5. Setting up GitHub Actions Workflow\n\nIn your RStudio project, create the folder structure: “.github/workflows/”.\nInside workflows, create a new text file named publish.yml.\nCopy the R EnV example code chunk from the Quarto documentation for publishing to GitHub Pages and paste it into publish.yml.\nSave, commit, and push these changes to the main branch on GitHub."
   },
   {
     "objectID": "posts/create a Quarto blog/index.html#configuring-github-pages",
@@ -89,5 +89,19 @@
     "title": "Hello, world! Welcome to my Blog!",
     "section": "",
     "text": "Economics & Analysis\nConsumer Theory in Microeconomics\nManagerial Economics\nCosts and Inventory Analysis\nGenerational Accounting Model\nRegression Analysis in Statistics\nExperimental Design\nState-Space (Bayesian) Model\nEmerging Technologies\nText Analysis in Computational Social Science\nReal-World Application\nCooking!!\nI’ve spent over ten years working in Chinese and Japanese restaurants, gaining invaluable experience in food preparation, kitchen operations, and understanding the practical challenges of food waste reduction.\nThis unique combination of academic rigor and industry experience shapes my perspective on sustainability, economics, and the intersection of theory and practice. Through this blog, I’ll share insights from my research, thoughts on current topics in environmental studies and economics, and perhaps a few culinary adventures along the way.\nThanks for stopping by, and I hope you find something here that sparks your interest!"
+  },
+  {
+    "objectID": "posts/academic reporting in tex/Academic Report.html",
+    "href": "posts/academic reporting in tex/Academic Report.html",
+    "title": "Crafting Academic Reports: A LaTeX and Overleaf Guide",
+    "section": "",
+    "text": "The Challenge of Academic Reporting\nThe academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.\n\n\nIntroducing LaTeX: The Gold Standard for Professional Documents\nWhat if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.\n\n\nOverleaf: Making LaTeX Accessible\nBut we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.\n\n\nWhat You’ll Learn in This Guide\nIn this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create."
+  },
+  {
+    "objectID": "posts/academic reporting in tex/Academic Report1.html",
+    "href": "posts/academic reporting in tex/Academic Report1.html",
+    "title": "Crafting Academic Reports: A LaTeX and Overleaf Guide",
+    "section": "",
+    "text": "The Challenge of Academic Reporting\nThe academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.\n\n\nIntroducing LaTeX: The Gold Standard for Professional Documents\nWhat if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.\n\n\nOverleaf: Making LaTeX Accessible\nBut we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.\n\n\nWhat You’ll Learn in This Guide\nIn this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create."
   }
 ]

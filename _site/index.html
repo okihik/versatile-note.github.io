@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -175,7 +175,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Quarto Blog">Quarto Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Quarto Blog">Quarto Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reporting">Reporting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -188,7 +188,40 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news" data-listing-date-sort="1751698800000" data-listing-file-modified-sort="1752028407411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
+<div class="quarto-post image-right" data-index="0" data-categories="Reporting" data-listing-date-sort="1752044400000" data-listing-file-modified-sort="1752124515499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="321">
+<div class="thumbnail">
+<p><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external"></a></p><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">part 1</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Reporting'); return false;">
+Reporting
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
+<div class="listing-date">
+Jul 9, 2025
+</div>
+<div class="listing-author">
+Akihiko Mori
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="news" data-listing-date-sort="1751698800000" data-listing-file-modified-sort="1752028407411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
 <div class="thumbnail">
 <p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
 <p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
@@ -221,7 +254,7 @@ Akihiko Mori
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Quarto Blog" data-listing-date-sort="1751698800000" data-listing-file-modified-sort="1752082627704" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="309">
+<div class="quarto-post image-right" data-index="2" data-categories="Quarto Blog" data-listing-date-sort="1751698800000" data-listing-file-modified-sort="1752093897924" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="309">
 <div class="thumbnail">
 <p><a href="./posts/create a Quarto blog/index.html" class="no-external"></a></p><a href="./posts/create a Quarto blog/index.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -240,7 +273,7 @@ Quarto Blog
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/create a Quarto blog/index.html" class="no-external">This is a tutorial on how to create a new Quarto blog using the R studio interface.</a>
+<a href="./posts/create a Quarto blog/index.html" class="no-external">This is a tutorial on how to create a new Quarto blog using the RStudio interface.</a>
 </div>
 </div>
 <div class="metadata">
