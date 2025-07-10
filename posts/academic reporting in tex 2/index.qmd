@@ -1,0 +1,1149 @@
+---
+title: "Crafting Academic Reports: A LaTeX and Overleaf Guide"
+subtitle: "part 2"
+author: "Akihiko Mori"
+date: "2025-07-10"
+categories: [Reporting]
+---
+
+# Procedure for Creating Your Academic Report in Overleaf 
+
+Here's a detailed, step-by-step procedure to recreate your academic report using Overleaf:
+
+# Step 1: Create a New Project in Overleaf
+
+Go to Overleaf.com and log in or sign up.
+
+On your dashboard, click "New Project".
+
+Select "Blank Project".
+
+Give your project a meaningful name, e.g., "Academic Report Example."
+
+# Step 2: Set Up the Document Class and Packages (The Preamble)
+
+In the main .tex file (usually main.tex), you'll see a basic structure. Delete everything in main.tex.
+
+Copy and paste the following lines from your example code into the very beginning of your main.tex file. These lines define the document type and load essential packages:
+
+Code snippet
+
+``` latex
+\documentclass{article}[12pt]
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{bm,amsmath}
+\usepackage{amsthm}
+\usepackage{amsmath, amsfonts}
+\usepackage[english]{babel}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{apacite}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{bibentry}
+\usetikzlibrary[patterns]
+```
+
+Explanation:
+
+-   `\documentclass{article}\[12pt\]`: Sets the document as an article with a 12pt font size.
+
+-   `\usepackage[margin=1in]{geometry}`: Sets the page margins to 1 inch.
+
+-   `\usepackage[utf8]{inputenc}`: Essential for handling various characters.
+
+-   `\usepackage{bm,amsmath}`,`\usepackage{amsthm}`,`\usepackage{amsmath, amsfonts}`: These are crucial for advanced mathematical typesetting, including bold symbols and theorem environments.
+
+-   `\usepackage[english]{babel}`: Sets the language to English for hyphenation and other linguistic rules.
+
+-   `\usepackage{comment}`: Allows you to comment out large blocks of text.
+
+-   `\usepackage{tikz}` and `\usetikzlibrary[patterns]`: These are for creating high-quality vector graphics and diagrams directly within your LaTeX document, like the supply and demand curves in your example.
+
+-   `\usepackage{indentfirst}`: Ensures the first paragraph of a section is indented.
+
+-   `\usepackage{apacite}`, `\usepackage{natbib}`, `\usepackage{bibentry}`: These packages are for managing citations and bibliographies, specifically for APA style (apacite) and general flexible citation management (natbib).
+
+-   `\usepackage{setspace}`: For controlling line spacing.
+
+-   `\usepackage{float}`: Provides more control over figure and table placement.
+
+# Step 3: Define Custom Commands and Environments (Still in the Preamble)
+
+Immediately after the
+
+`\usepackage`
+
+commands, add your custom definitions. These make your code more concise and consistent.
+
+Code snippet
+
+``` latex        
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\definecolor{solnblue}{rgb}{0,0,1}
+\newenvironment{soln}{\color{solnblue}}{}
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\tran}{^{\mathstrut\scriptscriptstyle\top}}
+```
+
+Explanation:
+
+`\DeclareUnicodeCharacter{2212}{-}`: Handles a specific unicode character for a minus sign.
+
+`\DeclareMathOperator{\E}{\mathbb{E}}`: Defines a custom operator for mathematical expectation.
+
+`\definecolor{solnblue}{rgb}{0,0,1}` and `\newenvironment{soln}{\color{solnblue}}{}`: This creates a custom environment called soln that will display its content in blue, which is excellent for highlighting solutions or specific sections.
+
+`\\newcommand` and `\\renewcommand`: These define shorthand commands for common mathematical notations like a wide bar, vector, matrix, and transpose.
+
+# Step 4: Add Title Information
+
+Before `\begin{document}`, include your title, authors, and date:
+
+Code snippet
+
+``` latex        
+\title{FRE 460: Assignment 5}
+\author{Angie Pan, $13236147$\\
+Akihiko Mori, $50120161$}
+\date{April 9, 2021}
+```
+
+Explanation:
+
+`\title`, `\author`, and
+
+`\date` define these standard report elements. The `\\` in `\author` creates a line break.
+
+# Step 5: Start the Document Body
+
+Every LaTeX document's main content goes between
+
+`\begin{document}` and `\end{document}`. Add these lines:
+
+Code snippet
+``` latex
+\begin{document}
+\maketitle
+\vspace{1em}
+
+% Part A content will go here
+
+\end{document}
+```
+
+Explanation:
+
+`\maketitle`: Generates the title page based on the `\title`, `\author`, and `\date` commands.
+
+`\vspace{1em}`: Adds a small vertical space.
+
+# Step 6: Add Sections and Subsections
+
+You can structure your report using `\section*` (for unnumbered sections) and `\subsection*` (for unnumbered subsections). Insert these within your `\begin{document}` and `\end{document}`:
+
+Code snippet
+``` latex
+\section*{Part A: Fair Trade}
+% ... content for Part A ...
+\subsection*{A-1. Supply and Demand Curves: No Fair-Trade}
+% ... content for A-1 ...
+\subsection*{A-2. Equilibrium: No Fair-Trade}
+% ... content for A-2 ...
+```
+
+Explanation: The `*` after `\section` or `\subsection` prevents them from being numbered, which is common in assignment reports.
+
+# Step 7: Incorporate Text and Equations
+
+Type your regular text as you would in any document.
+
+For equations, use environments like align* for multi-line, aligned equations. Notice how `&` is used for alignment and `\\` for new lines within the equation.
+
+Code snippet
+
+``` latex
+\noindent\textit{If rounding is necessary, round only the final answer; don’t round at intermediate steps.}\\
+The industry-level marginal cost curve for producing an agricultural product is as follows:
+$MPC_n = 2Q$, where $Q$ is tonnes of the product produced.
+Global consumers get use benefits from consuming the product, with $MPB_n=8000-3Q$.
+
+% Example of equation from A-2:
+\bgroup \color{solnblue} % This is your custom blue solution environment
+\noindent For $Q_n$,
+\begin{align*}
+    MPB_n(Q_n) &= MPC_n(Q_n)\\
+    8000-3Q_n  &= 2Q_n\\
+    Q_n &= \frac{8000}{5}\\
+    &= 1600.
+\end{align*}
+For $P_n$,
+\begin{align*}
+    P_n &= MPC_n(Q_n)\\
+      &= 2Q_n\\
+     &= 2\cdot 1600\\
+    &= 3200.
+\end{align*}
+Therefore, the equilibrium if there is no Fair-Trade label in the agriculture product is $(Q_n, P_n) = (1,600,\$3,200)$.
+\egroup 
+```
+
+Explanation: `\noindent` prevents indentation. Math mode is entered with `$` for inline math (MPC_n=2Q) or environments like align* for displayed equations.
+
+# Step 8: Create Figures with TikZ
+
+For your detailed graphs, use the tikzpicture environment within a figure environment. This allows you to draw shapes, lines, and add text precisely.
+
+Code snippet
+
+``` latex
+\bgroup \color{solnblue}
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.4]
+                \draw[thick,<->] (0,13) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                % ... rest of your TikZ code ...
+            \end{tikzpicture}
+            \caption{Demand and Supply for An Agricultural Product}
+            \label{fig:A-1}
+        \end{center}
+    \end{figure}
+\egroup 
+```
+
+Explanation:
+
+`\begin{figure}[H]`: Defines a floating figure. [H] attempts to place it "here" (exactly where it's defined in the code).
+
+`\begin{center}`: Centers the content within the figure.
+
+`\begin{tikzpicture}[scale=0.4]`: Starts the drawing environment. scale=0.4 adjusts the size of the drawing.
+
+`\draw`, `\node`: Fundamental TikZ commands for drawing lines/arrows and placing text/labels.
+
+`\caption{...}`: Adds a caption to your figure.
+
+`\label{fig:A-1}`: Allows you to cross-reference the figure later using `\ref{fig:A-1}`.
+
+# Step 9: Add Tables (if applicable)
+
+Your code includes a tabular environment for a table. This is how you'd structure it:
+
+Code snippet
+
+``` latex
+\bgroup \color{solnblue}
+\begin{table}[H]
+        \begin{center}
+            \begin{tabular}{llll}
+               & Before & After & $\Delta$\\ \hline \\
+            CS & b+c+f  & a+b   & a-(c+f) \\
+            PS & g+h    & c+d+g & c+d-h   \\ \hline \\
+            TS &        &       & a+d-(h+f) 
+        \end{tabular}
+        \end{center}
+    \end{table}
+% ... rest of your table explanation text ...
+\egroup
+```
+
+Explanation:
+
+`\begin{table}[H]`: Defines a floating table.
+
+`\begin{tabular}{llll}`: Creates the table structure. l means left-aligned column, r for right, c for center. llll means four left-aligned columns.
+
+`\\`: New row in a table.
+
+`&`: Column separator.
+
+`\hline`: Horizontal line in the table.
+
+# Step 10: Compile Your Document
+
+In Overleaf, click the "Recompile" button (or it might recompile automatically if "Auto Compile" is on).
+
+The right panel will display the generated PDF. Check for errors in the "Logs and output files" section if the compilation fails.
+
+# Step 11: Continue Adding Content
+
+Repeat steps 6-9 for each section of your report, referencing your .tex code as a guide.
+
+Make sure to close all environments (e.g., every `\bgroup` `\color{solnblue}` needs a `\egroup`).
+
+Use `%` for single-line comments in your .tex file to explain your code, as you've done in your example (`%Question Part A`).
+
+
+``` latex
+\documentclass{article}[12pt]
+
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{bm,amsmath}
+\usepackage{amsthm}
+\usepackage{amsmath, amsfonts}
+\usepackage[english]{babel}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{apacite}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{bibentry}
+\usetikzlibrary[patterns]
+
+
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+\definecolor{solnblue}{rgb}{0,0,1}
+\newenvironment{soln}{\color{solnblue}}{}
+
+\newcommand\widebar[1]{\mathop{\overline{#1}}}
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\tran}{^{\mathstrut\scriptscriptstyle\top}} 
+%\setlength
+%\parindent{0pt}
+
+\title{FRE 460: Assignment 5}
+\author{Angie Pan, $13236147$\\
+Akihiko Mori, $50120161$}
+\date{April 9, 2021}
+
+\begin{document}
+\maketitle
+\vspace{1em}
+
+%Part A
+%\clearpage
+\section*{Part A: Fair Trade}
+%Question Part A
+\noindent\textit{If rounding is necessary, round only the final answer; don’t round at intermediate steps.}\\
+The industry-level marginal cost curve for producing an agricultural product is as follows: 
+$MPC_n = 2Q$, where $Q$ is tonnes of the product produced.
+Global consumers get use benefits from consuming the product, with $MPB_n=8000-3Q$.
+
+%Question Q1
+\subsection*{A-1. Supply and Demand Curves: No Fair-Trade}
+\noindent (10 points) In the space below, depict the supply and demand curves for the product.
+%Question end
+%Start Answer
+\begin{soln}
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.4]
+                \draw[thick,<->] (0,13) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                \node [below] at (5,0) {$Q_n=1600$};
+                \node [left] at (0,5) {$P_n=3200$};
+                \node [left] at (0,10) {$8000$};
+                \node [below] at (10,0) {$\frac{8000}{3}$};
+                \draw(0,0)--(9,9) node[right]{$MPC_n=S$};
+                \draw(0,10)--(10,0);
+                \node[above] at (11,1) {$MPB_n=D$};
+                \draw[dashed](0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Demand and Supply for An Agricultural Product}
+            \label{fig:A-1}
+        \end{center}
+    \end{figure}
+\end{soln}
+%Answer End
+%Q2
+\clearpage
+\subsection*{A-2. Equilibrium: No Fair-Trade}
+\noindent (5 points) Calculate the equilibrium price and quantity; show your work. Denote these values as $P_n$ and $Q_n$. Indicate these values in your graph above. 
+
+%Answer Start
+\begin{soln}
+\noindent For $Q_n$,
+\begin{align*}
+    MPB_n(Q_n) &= MPC_n(Q_n)\\
+    8000-3Q_n  &= 2Q_n\\
+    Q_n &= \frac{8000}{5}\\
+    &= 1600.
+\end{align*}
+For $P_n$,
+\begin{align*}
+    P_n &= MPC_n(Q_n)\\
+      &= 2Q_n\\
+     &= 2\cdot 1600\\
+    &= 3200.
+\end{align*}
+Therefore, the equilibrium if there is no Fair-Trade label in the agriculture product is $(Q_n, P_n) = (1,600,\$3,200)$.
+\end{soln}
+%Answer End
+%Q3
+%\clearpage
+\subsection*{A-3. Graph: Fair Trade}
+\noindent (10 points) Suppose a third-party Fair-Trade label becomes available, for which all producers are eligible at a transaction cost of $\$150$/tonne. Assume that every consumer values the Fair Trade label and receives $\$550$/tonne of “warm glow” from consuming a Fair Trade certified product (in addition to their use benefits from consumption).
+In the space below, reproduce your figure---including $P_n$ and $Q_n$---from the previous page, and overlay the demand and supply curves associated with the Fair-Trade product on this new graph.
+%Start Answer
+\begin{soln}
+\noindent Let $w$ and $t$ be the value of warm glow and the cost of transaction cost for producers, respectively. Then,
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.45]
+                \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                
+                \node [left] at (0,13) {$8550$};
+                \node [left] at (0,10) {$8000$};
+                \node [left] at (0,7.5)  {$P_{ft}$};
+                \node [left] at (0,5) {$P_n$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (4.8,0) {$Q_n$};
+                \node [below] at (6,0) {$Q_{ft}$};
+                \node [below] at (10,0) {$\frac{8000}{3}$};
+                \node [below] at (13,0) {$2850$};
+                
+                \node at (2.5,9)   {$a$};
+                \node at (0.8,8.2) {$b$};
+                \node at (1.5,6.2) {$c$};
+                \node at (4,6.8)   {$d$};
+                \node at (5.1,6)   {$e$};
+                \node at (4,5.4)   {$f$};
+                \node at (1,4)     {$g$};
+                \node at (2,3)     {$h$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(13,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (11,4) {$MPB_n+w$};
+                \draw [dashed] (5.5,7.5)--(5.5,0);
+                \draw [dashed] (5,5)--(5,0);
+                \draw [] (0,7.5)--(5.5,7.5);
+                \draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Demand and Supply for An Agricultural Product with Fair Trade label}
+            \label{fig:A-3}
+        \end{center}
+    \end{figure}
+    \noindent If no Fair-Trade label exists, the equilibrium is $(Q_n, P_n) = (1600,3200)$, but if Fair-Trade certification is introduced, new equilibrium point is $(Q_{ft}, P_{ft}) = (1680,3510)$.
+\end{soln}
+% %Answer End
+\vspace{1em}
+%Q4
+\subsection*{A-4. Equilibrium: Fair Trade}
+\noindent (10 points) Calculate the equilibrium price $P_{ft}$ and quantity $Q_{ft}$ for the fair-trade product; show your work. Indicate these values in your graph above.
+
+%Start Answer
+\begin{soln}
+\noindent Given $w$ is $\$550$ per tonne, and $t$ is $\$150$ per tonne. Let a matrix $\mathbf{A}$, vectors $\mathbf{b}$, and $\mathbf{c}$ be 
+$\begin{pmatrix}
+    3 & 1\\ 2 & -1
+\end{pmatrix}$, 
+$\begin{pmatrix}
+    Q_{ft}\\ P_{ft}
+\end{pmatrix}$, and
+$\begin{pmatrix}
+    8550\\ -150
+\end{pmatrix}$, respectively.
+Then, $\mathbf{Ab}=\mathbf{c}$ is the system of demand and supply equations in the market with Fair Trade label. Solving for $\mathbf{b}$ brings us the equilibrium point. Since $\mathbf{b}=\mathbf{A}^{-1}\mathbf{c}$
+and $\mathbf{A}^{-1} = \frac{1}{5}
+\begin{pmatrix}
+    1 & 1\\2 &-3
+\end{pmatrix}$,
+then
+
+\begin{align*}
+    \mathbf{b} = \begin{pmatrix}
+    Q_{ft}\\ P_{ft}
+\end{pmatrix} &=
+\frac{1}{5}
+\begin{pmatrix}
+     1 & 1\\2 &-3
+\end{pmatrix}
+\begin{pmatrix}
+    8550\\ -150
+\end{pmatrix}\\
+    &= \frac{1}{5}\begin{pmatrix}
+        8400 \\ 17550
+    \end{pmatrix}
+    = \begin{pmatrix}
+        1680 \\ 3510
+    \end{pmatrix}
+\end{align*}
+% \begin{align*}
+%     MPB_n(Q_{ft})+w &= MPC_n(Q_{ft})+t\\
+%     8550-3Q_{ft}  &= 2Q_{ft}+150\\
+%     Q_{ft} &= \frac{8400}{5}\\
+%     &= 1680.
+% \end{align*}
+% For $P_{ft}$,
+% \begin{align*}
+%     P_{ft} &= MPC_n(Q_{ft}) + t\\
+%       &= 2Q_{ft} + 150\\
+%      &= 2\cdot 1600 + 150\\
+%     &= 3510.
+% \end{align*}
+The equilibrium of Fair-Trade label introduced is $(Q_{ft}, P_{ft}) = (1,680,\$3,510)$.
+\end{soln}
+%End Answer
+
+%Q5
+%\clearpage
+\subsection*{A-5. $\Delta$CS, $\Delta$PS, Warm Glow, and Transaction Costs in Graph}
+\noindent (5 points) On your graph from question 3, label the areas corresponding to the change in CS, the change in PS, the total increase in transaction costs, and the total increase in warm glow. Report these graphical sums (i.e., the areas represented by labels, not the numerical values) here:
+
+\vspace{1em}
+\begin{soln}
+\begin{tabular}{l l}
+    $\Delta CS$ &= $(a+b) - (b+c+f) = a - (c+f) > 0$\\
+    $\Delta PS$ &= $(c+d+g)-(g+h) = c+d - h >0$
+\end{tabular}
+\end{soln}
+\vspace{1em}
+
+\noindent Also indicate the areas corresponding to the total amount of warm glow and transaction costs associated with fair trade labeling:
+
+\vspace{1em}
+\begin{soln}
+\begin{tabular}{l l}
+    Warm Glow         &= $a+ d$\\
+    Transaction Costs &= $h+f$ 
+\end{tabular}
+\end{soln}
+\vspace{1em}
+
+%Start Answer
+\begin{soln}
+\begin{table}[H]
+        \begin{center}
+            \begin{tabular}{llll}
+               & Before & After & $\Delta$\\ \hline \\
+            CS & b+c+f  & a+b   & a-(c+f) \\
+            PS & g+h    & c+d+g & c+d-h   \\ \hline \\
+            TS &        &       & a+d-(h+f) 
+        \end{tabular}
+        \end{center}
+    \end{table}
+\noindent The change in total welfare is decomposed into two parts: warm glow and transaction costs. The area of $a+d$ is the gain from net warm glow capture, and the area of $h+f$ is net loss of transaction costs.
+\end{soln}
+%End Answer
+
+\clearpage
+\subsection*{A-6. $\Delta$CS, $\Delta$PS, and $\Delta$W with Math}
+\noindent (10 points) Calculate the following mathematically (show your work):
+
+\vspace{1em}
+\begin{soln}
+\begin{tabular}{l l}
+    $\Delta CS$ &= +\$393,600\\
+    $\Delta PS$ &= +\$262,400\\
+    $\Delta W $ &= +\$656,000
+\end{tabular}
+\end{soln}
+\vspace{1em}
+
+%Answer Start
+\begin{soln}
+\noindent For $\Delta CS$, the surplus of consumer before the introduction of Fair-Trade label is defined as the area of $b+c+f$, which is
+$$\frac{(8000-3200)\cdot1600}{2} = \$3,840,000.$$
+And the consumer surplus after the introduction of Fair-Trade label is the are of $a+b$, which is
+$$\frac{(8550-3510)\cdot1680}{2} = \$4,233,600.$$
+Therefore, the change of $\Delta CS$ is found to be:
+\begin{align*}
+    \Delta CS &= a+b - (b+c+f)\\
+    &= a-(c+f)\\
+    &= 4,233,600 - 3,840,000\\
+    &= +\$393,600.
+\end{align*}
+\noindent For $\Delta PS$, the surplus of producer before the introduction of Fair-Trade label is the area of $g+h$, which is
+$$\frac{(3200-0)1600}{2} = \$2,560,000.$$
+And the producer surplus after the introduction of Fair-Trade label is the are of $c+d+g$, which is
+$$\frac{(3510-150)1680}{2} = \$2,822,400.$$
+Therefore, the change of $\Delta PS$ is
+\begin{align*}
+    \Delta PS &= c+d+g-(g+h)\\
+    &= c+d-h\\
+    &= 2,822,400 - 2,560,000\\
+    &= +\$262,400.
+\end{align*}
+\noindent Overall, the change of the total welfare of the introduction of Fair-Trade label is
+\begin{align*}
+    \Delta W &= \Delta CS + \Delta PS\\
+    &= a-(c+f)+(c+d-h)\\
+    &= a+d-(f+h)\\
+    &= 393,600 + 262,400\\
+    &= +\$656,000.
+\end{align*}
+\end{soln}
+%Answer End
+
+%Q7
+\clearpage
+\subsection*{A-7. Insufficient Warm-Glow Premium Received}
+\noindent (5 points) In your own words, explain in economic terms why/whether $P_{ft}$ is not $\$550$/tonne higher than the $P_n$. 
+Bonus: how does the increase in production cost for Fair-Trade products contribute to the change the price?
+
+%Answer Start
+\begin{soln}
+\begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.4]
+                \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                
+                \node [left] at (0,13) {$8550$};
+                \node [left] at (0,10) {$8000$};
+                \node [left] at (0,7.7)  {$P_{ft}$};
+                \node [left] at (0,6.7)  {$P'$};
+                \node [left] at (0,5.7)  {$P_{ft}-t$};
+                \node [left] at (0,4.6) {$P_n$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (4.8,0) {$Q_n$};
+                \node [below] at (6,0) {$Q_{ft}$};
+                \node [below] at (10,0) {$\frac{8000}{3}$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(13,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (11,4) {$MPB_n+w$};
+                \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                \draw [dashed] (0,5)--(5,5)--(5,0);
+                \draw [dashed] (0,5.5)--(5.5,5.5);
+                \draw [dashed] (0,6.5)--(6.5,6.5);
+                %\draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Fair Trade and Price Premium}
+            \label{fig:A-7}
+        \end{center}
+    \end{figure}
+
+\doublespacing
+Although the price $P_{ft}$ becomes higher, the rise is not by the full amount of the warm glow. This amount received is lower than the amount paid because of two effects: consumption and production sides.
+
+From the consumption's point of view, consumers buy more products with seeking a lower price. From the equilibrium point $(Q_n, P_n)$, after Fair-Trade label implemented, consumer's willingness-to-pay increases by warm glow, $w=\$550$, shifting their demand up $P_n+w$. Since consumers seek lower price by increasing their consumption, price moves along the demand curve downward. Due to the upward sloping marginal private production, at the new equilibrium point, new price $P'$ is higher than the old price $P_n$, but $P'<P_n+w$.
+
+From the production standpoint, as long as the supply is upward-sloping curve, warm glow allows new equilibrium, $P'$, to be higher price and quantity. As the quantity supplied increases, more opportunity cost is incurred with the price hiking. Now, an additional production cost, such as certification or transaction costs, brings the product price to rise to $P'+t$. Then, consumers reduce their consumption and farmers decrease their quantity supplied as well. At the end point, the price converges to $P_{ft}$, where $P_{ft}>P'>P_n$.
+
+Figrure \ref{fig:A-7} indicates that $P_n+w \geq P_{ft}$ or $P_n+w-(t+P_n) \geq P_{ft} -(t+P_n)$, so $w-t \geq P_{ft} -(t+P_n)$. If warm glow is sufficiently higher than transaction costs, $w>t$, then it is likely to have positive price premium. However, if $w<t$, then the price premium must be negative. In this case which $w=\$550>t=\$150$, farmer could gain positive price premium, $P_{ft}-t-P_n = \$160$ at most, which is obviously less than $w=\$550$.
+
+\end{soln}
+%Answer End
+
+%Q8
+\clearpage
+\subsection*{A-8. Fair-Trade Label Analysis with Perfect Elastic Demand}
+\noindent (20 points) Suppose that, instead of a downward-sloping MPB curve, the MPB curve for consuming the good is flat at $\$A$/tonne. Assuming still that the transaction cost is $\$150$/tonne and consumers’ warm glow is $\$550$/tonne, show mathematically and graphically that the label raises producer welfare but has no effect on consumer surplus. Assume that the MPC remains the same as $MPC = 2Q$. (I.e., compare CS, PS with and without the Fair-Trade label when the MPB curve is flat in both scenarios.)
+
+%Answer Start
+\begin{soln}
+\begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.5]
+                \draw[thick,<->] (0,12) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                
+                %\node [left] at (0,13) {$8550$};
+                %\node [left] at (0,10) {$8000$};
+                %\node [left] at (0,7.5)  {$P_{ft}$};
+                %\node [left] at (0,5.7)  {$P_{ft}-t$};
+                %\node [left] at (0,4.6) {$P_n$};
+                \node [left] at (0,8) {$A+w=P_{ft}$};
+                \node [left] at (0,5) {$A=P_n$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (5,0) {$Q_n$};
+                \node [below] at (6.2,0) {$Q_{ft}$};
+                %\node [below] at (10,0) {$\frac{8000}{3}$};
+                \node at (2.5,6.5) {$a$};
+                \node at (0.9,4.1) {$b$};
+                \node at (2,3) {$c$};
+                \node at (5.4,6.5){$d$};
+                \node at (5.5,4.5){$E$};
+                \node at (6,8.5){$E'$};
+                
+                \draw (0,0)--(9,9)  node[right] {$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,8)--(9,8) node [right] {$MPB_n+w$};
+                \draw (0,5)--(9,5) node [right] {$MPB_n$};
+                %\node [above] at (10,1) {$MPB_n$};
+                %\node [above] at (11,4) {$MPB_n+w$};
+                \draw [dashed] (6,8)--(6,0);
+                \draw [dashed] (5,5)--(5,0);
+                %\draw [dashed] (0,5.5)--(5,5.5);
+            \end{tikzpicture}
+            \caption{Perfect Elastic Demand and Supply for An Agricultural Product with Fair Trade}
+            \label{fig:A-8}
+        \end{center}
+    \end{figure}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{llll}
+               & Before & After & $\Delta$\\ \hline \\
+            CS & 0 & 0 & 0 \\
+            PS & b+c & a+b & a-c \\ \hline \\
+            TS &  &  & a-c 
+        \end{tabular}
+        \end{center}
+    \end{table}
+
+\noindent  Suppose MPB is flat, so the demand function of the agriculture product is $A=P=MPB$ and also $MPC$ is a linear function of quantity, Q, $MPC = B+sQ$, where $B=0$ if no Fair-Trade label, $B=\$150$ otherwise. Also Let $w$ and $t$ be "warm glow" and "transaction costs", respectively.\\
+Then, there an equilibrium $E$ exists such that $E = (Q_n, A)$ if no Fair-Trade label, and $E'$ at $(Q_{ft}, A+w)$ otherwise. Then, before introducing Fair-Trade label, for $CS_{before}$,
+\begin{align*}
+    CS_{before} &= \int\displaylimits_{Q\leq Q_n} MPB\left(Q\right) \mathrm{d}Q - P_n\cdot Q_n\\
+    &= \int_0^{Q_n} A\mathrm{d}Q - A\cdot Q_n\\
+    &= A\cdot Q_n - A\cdot Q_n\\
+    &= 0.
+\end{align*}
+\noindent For $PS_{before}$,
+\begin{align*}
+    PS_{before} &= P_n\cdot Q_n - \int\displaylimits_{Q\leq Q_n} MPC\left(Q\right) \mathrm{d}Q\\
+    &= P_n\cdot Q_n - \int_0^{Q_n} sQ\mathrm{d}Q\\
+    &= A\cdot Q_n - \left[\frac{s}{2}Q_n^2\right]\\
+    &= b+c.
+\end{align*}
+\noindent Now by "warm glow", $w$, $MPB_n$ is shifted to $MPB_n+ w$ and by "transation costs", $t$, $MPC_n$ is also shifted to $MPC_n+t$. Then, after introducing Fair-Trade label, for $CS_{after}$,
+\begin{align*}
+    CS_{after} &= \int\displaylimits_{Q\leq Q_{ft}} MPB'\left(Q\right) \mathrm{d}Q - P_{ft}\cdot Q_{ft}\\
+    &= \int_0^{Q_{ft}} A+w\mathrm{d}Q - (A+w)\cdot Q_{ft}\\
+    &= (A+w)\cdot Q_{ft} - (a+w)\cdot Q_{ft}\\
+    &= 0.
+\end{align*}
+\noindent For $PS_{after}$,
+\begin{align*}
+    PS_{after} &= P_{ft}\cdot Q_{ft} - \int\displaylimits_{Q\leq Q_{ft}} MPC\left(Q\right) \mathrm{d}Q\\
+    &= P_{ft}\cdot Q_{ft} - \int_0^{Q_{ft}} B+sQ\mathrm{d}Q\\
+    &= (A+w)\cdot Q_{ft} - \left[BQ_{ft}+\frac{s}{2}Q_{ft}^2\right]\\
+    &= a+b.
+\end{align*}
+Therefore, the changes of $CS$ and $PS$ are:
+\begin{align*}
+    \Delta CS &= CS_{after} -CS_{before}\\
+    &= 0 - 0\\
+    &= \$0.
+\end{align*}
+\begin{align*}
+    \Delta PS &= PS_{after} -PS_{before}\\
+    &= \frac{(A+w-t)\cdot Q_{ft}}{2} - \frac{A\cdot Q_n}{2}\\
+    &= \frac{(A+w-t)^2}{4} - \frac{A^2}{4}\\
+    &= \frac{(2A+w-t)(A+w-t-A)}{4}\\
+    &= \$\frac{(2A+w-t)(w-t)}{4}
+\end{align*}
+Overall, given $w=550$ and $t=150$, the change in the total surplus of Fair-Trade labelling is
+\begin{align*}
+    \Delta TS &= 0 + 200A+40000 = +\$200A+40000.
+\end{align*}
+\end{soln}
+%Answer End
+
+%Q9
+\clearpage
+\subsection*{A-9. Growing Warm Glow}
+\noindent (15 points) Now suppose that instead of being the same for each unit consumed, the “warm glow” consumers receive is $550 + \frac{Q}{4}$. Continue to assume that consumers’ use value is $8000-3Q$, the Fair-Trade transaction cost is $\$150$/tonne, and $MPC = 2Q$. Use a graph and math to calculate the change in CS and PS when the Fair-Trade label is implemented. Also, in your own words, interpret the warm glow function---e.g. is marginal warm glow increasing or decreasing with consumption?---and explain whether you think this is realistic. Eg., for a product such as bananas, do you think the warm glow received from the final unit consumed would be larger or smaller than the warm glow received from the first unit consumed?
+%Answer Start
+\begin{soln}
+\begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.5]
+                \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(17,0) node[right]{$Q(tonne)$};
+                \node [below left] at (0,0) {$0$};
+                
+                \node [left] at (0,13) {$8550$};
+                \node [left] at (0,10) {$8000$};
+                \node [left] at (0,8.1)  {$P_{ft}$};
+                \node [left] at (0,4.6) {$P_n$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (4.8,0) {$Q_n$};
+                \node [below] at (6.5,0) {$Q_{ft}$};
+                \node [below] at (10,0) {$\frac{8000}{3}$};
+                \node [below] at (16,0) {$\frac{34200}{11}$};
+                
+                \node at (2.5,9.5) {$a$};
+                \node at (0.6,8.7)   {$b$};
+                \node at (1.5,6.2) {$c$};
+                \node at (4,7){$d$};
+                \node at (5.1,6.2){$e$};
+                \node at (4,5.4) {$f$};
+                \node at (1,4) {$g$};
+                \node at (2,3) {$h$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(16,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (15,3) {$MPB_n+w(Q)$};
+                \draw [dashed] (6.1,8.1)--(6.1,0);
+                \draw [dashed] (5,5)--(5,0);
+                \draw [] (0,8.1)--(6.1,8.1);
+                \draw [] (0,5)--(5,5);
+                %\draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Demand and Supply for An Agricultural Product with Fair Trade Increasing Warm Glow}
+            \label{fig:A-9}
+        \end{center}
+    \end{figure}
+    
+\noindent Before Fair-Trade label implemented, the demand and supply functions are
+$$
+\begin{cases}
+    MPB &= 8000-3Q\\
+    MPC &= 2Q.
+\end{cases}
+$$
+So, the equilibrium is where $MPB(Q_n)=MPC(Q_n)$
+\begin{align*}
+    8000-3Q_n &= 2Q_n\\
+    Q_n &= 1600\\
+    P_n &= 3200
+\end{align*}
+Once the Fair-Trade label is introduced, if warm glow is defined as $550+\frac{Q}{4}$ and FT transaction cost as $\$150$, there an new equilibrium exists where $MPB(Q_{ft})+w(Q_{ft}) = MPC(Q_{ft})+t$:
+\begin{align*}
+    MPB(Q_{ft})+w(Q_{ft}) &= MPC(Q_{ft})+t\\
+    8000-3Q_{ft}+550+\frac{Q_{ft}}{4} &= 2Q_{ft}+150\\
+    Q_{ft} &= \frac{33600}{19} \approx 1,768.42\\
+    P_{ft} &= \frac{70050}{19} \approx \$3,686.84
+\end{align*}
+Then, calculate the change in consumer surplus:
+\begin{align*}
+    \Delta CS &= (a+ b) - (b+c+f)\\
+    &= \frac{1}{2}\left(8550-\frac{70050}{19}\right)\frac{33600}{19} - \frac{1}{2}\left(8000-3200\right)1600\\
+    &=\frac{166080000}{361} \approx \$460,055.40.
+\end{align*}
+For the change of producer surplus is:
+\begin{align*}
+    \Delta PS &= (c+d+g)-(g+h)\\
+    &= \frac{1}{2}\left(\frac{70050}{19}-150\right)\frac{33600}{19} - \frac{1}{2}\left(3200-0\right)1600\\
+    &= \frac{204800000}{361} \approx \$567,313.02.
+\end{align*}
+
+\doublespacing
+Increasing the warm glow function as the quantity goes up means that the interval $I \in \{Q | (0,\frac{34200}{11})\}$, the warm glow function $f$ is $f(a) \geq f(b), \forall a>b \in I$, or $f'(Q)>0, \forall Q \in I$. In this case, the more quantity demanded, the more warm glow is added; or, as an additional unit of the agriculture product consumed, the dollar value of warm glow increases by $f'(Q) = \$\frac{1}{4}$. Overall, the slope of the demand becomes relatively flat compared to a constant warm glow.
+
+
+\doublespacing
+This is an unrealistic assumption. However, we believe that it depends on a market product.
+%The higher price elasticity of demand implies that consumers are more willing and able to seek out substitutes for the agriculture product after a price change.\\
+One of the aims at supporting Fair Trade's products is for small-scaled farmers and creators.  For a small quantity of a product, 
+%The warm glow received from the final unit consumed would be smaller than the warm glow received from the first unity consumed. 
+consumers are willing to pay a large amount of warm glow, while for a high volume of a product, it is likely to be a small amount of warm glow. It is unlikely that consumers will be willing to pay a lot of warm glow for large quantities of produced goods. Also, with increasing the value of the brand, like the Fair Trade label, by reducing the willingness to search for substitutes, the willingness to pay becomes insensitive as quantity demanded rises. Therefore, decreasing the warm glow function with respect to quantity is realistic assumption for small-quantity in the market.
+
+\doublespacing
+Another aim of Fair Trade is to support farmers and workers to get paid a better price or wage and support the associated communities. The most common products, such as coffee and cacao, are produced in large scale with typically exported from the developing counties to the developed countries. For a large-scaled quantity of a product, especially plantations, consumer are likely willing to pay a relative large amount of warm glow by endorsing and consumer more in order to support workers, who work in severe conditions.
+Hence, in this case, increasing the warm glow function with respect to quantity is valid assumption for large-quantity in the market.
+
+\doublespacing
+Overall, we believe that a different product has a different warm glow function; however, we might assume that overall warm glow is a decreasing function with concave up, instead of a constant rate increasing function. For a product of small-scaled production, warm glow function is decreasing, but for large-scaled quantity goods, warm glow function is increasing.
+
+\begin{figure}[H]
+\begin{minipage}[c]{0.5\linewidth}
+\begin{tikzpicture}[scale=0.4]
+% Axis
+\draw [thick](0,0) -- (10,0);
+\draw [thick](0,0) -- (0,8);
+\node [above] at (-0.2,8) {$Warm Glow (\$/tonne)$};
+\node [right] at (10,-0.2) {$Q(tonne)$};
+\draw [thick] (0,2)--(9,7) node[right]{$w(Q)$};
+\end{tikzpicture}
+\caption{Increasing Warm Glow Function}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\begin{tikzpicture}[scale=0.4]
+% Axis
+\draw [thick](0,0) -- (10,0);
+\draw [thick](0,0) -- (0,8);
+\node [above] at (-0.2,8) {$Warm Glow (\$/tonne)$};
+\node [right] at (10,-0.2) {$Q(tonne)$};
+%Curve
+\draw [thick] (1,8) to [out=280,in=175] (9,1);
+\node [right] at (9,1) {$w(Q)$};
+\end{tikzpicture}
+\caption{Decreasing Warm Glow with Concave up}
+\end{minipage}
+\end{figure}
+
+\end{soln}
+%Answer End
+
+%\clearpage
+\subsection*{A-10. Price Elasticity and Markets}
+\noindent (10 points) Comparing your results from questions 8 and 9, explain in your own words why the allocation of benefits across consumers and producers differs in the two scenarios. Also conjecture which scenario (that in question 8 or question 9) would be more accurate in the case of a Fair Trade product such as coffee; explain your answer.
+%Answer Start
+\begin{soln}
+\begin{figure}[H]
+    \begin{minipage}[c]{0.5\linewidth}
+        \begin{tikzpicture}[scale=0.35]
+            \draw[thick,<->] (0,13) node[above]{$\$/tonne$}--(0,0)--(13,0) node[right]{$Q$};
+                \node [below left] at (0,0) {$0$};
+                
+                %\node [left] at (0,13) {$8550$};
+                %\node [left] at (0,10) {$8000$};
+                %\node [left] at (0,7.5)  {$P_{ft}$};
+                %\node [left] at (0,5.7)  {$P_{ft}-t$};
+                %\node [left] at (0,4.6) {$P_n$};
+                \node [left] at (0,8) {$P_{ft}=A+w$};
+                \node [left] at (0,5) {$P_n=A$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (5,0) {$Q_n$};
+                \node [below] at (6.2,0) {$Q_{ft}$};
+                %\node [below] at (10,0) {$\frac{8000}{3}$};
+                \node at (2.5,6.5) {$a$};
+                \node at (0.9,4.1) {$b$};
+                \node at (2,3) {$c$};
+                \node at (5.4,6.5){$d$};
+                \node at (5.5,4.5){$E$};
+                \node at (6,8.5){$E'$};
+                
+                \draw (0,0)--(9,9)  node[right] {$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,8)--(9,8) node [right] {$MPB_n+w$};
+                \draw (0,5)--(9,5) node [right] {$MPB_n$};
+                %\node [above] at (10,1) {$MPB_n$};
+                %\node [above] at (11,4) {$MPB_n+w$};
+                \draw [dashed] (6,8)--(6,0);
+                \draw [dashed] (5,5)--(5,0);
+                %\draw [dashed] (0,5.5)--(5,5.5);
+        \end{tikzpicture}
+    \caption{Perfect Elastic Demand with FT}
+    \label{fig:A-10}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.5\linewidth}
+        \begin{tikzpicture}[scale=0.35]
+            \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(17,0) node[right]{$Q$};
+                \node [below left] at (0,0) {$0$};
+                
+                \node [left] at (0,13) {$8550$};
+                \node [left] at (0,10) {$8000$};
+                \node [left] at (0,8.1)  {$P_{ft}$};
+                \node [left] at (0,4.6) {$P_n$};
+                \node [left] at (0,2) {$150$};
+                \node [below] at (4.8,0) {$Q_n$};
+                \node [below] at (6.5,0) {$Q_{ft}$};
+                \node [below] at (10,0) {$\frac{8000}{3}$};
+                
+                \node at (2.5,9.5) {$a$};
+                \node at (0.6,8.7)   {$b$};
+                \node at (1.5,6.2) {$c$};
+                \node at (4,7){$d$};
+                \node at (5.1,6.2){$e$};
+                \node at (4,5.4) {$f$};
+                \node at (1,4) {$g$};
+                \node at (2,3) {$h$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(16,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (15,3) {$MPB_n+w(Q)$};
+                \draw [dashed] (6.1,8.1)--(6.1,0);
+                \draw [dashed] (5,5)--(5,0);
+                \draw [] (0,8.1)--(6.1,8.1);
+                \draw [] (0,5)--(5,5);
+                %\draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+        \end{tikzpicture}
+    \caption{FT with Increasing Warm Glow}
+    \label{fig:A-10-1}
+    \end{minipage}
+\end{figure}
+% compare elasticity
+\doublespacing
+\noindent A main difference between questions 8 and 9 is the price elasticity of demand for the good. In question 8, the price elasticity of demand is infinite, its in question 9 is relatively inelastic, while $MPC$ is same for both questions.
+Due to the price elasticity, the allocation of benefits is different in the two scenarios.
+% price and quantity
+The introduction of the Fair-Trade label increases the equilibrium prices due to the existence of warm glow and transaction costs; but the equilibrium quantity depends on the amount of warm glow compared to the amount of transaction costs. 
+
+\doublespacing
+% welfare change CS PS warm glow and transaction costs
+As found in question 8, the equilibrium price is determined by the $A$ and $w$, and the change in consumer surplus is zero, while the change in producer surplus is the area of $a-c$. So, the total change in welfare under the perfect elastic demand is $a-c$. Therefore, the net benefit of warm glow capture is the area of $a$, and the loss of transaction costs is $c$.
+On the other hand in question 9, the equilibrium price depends on the demand and supply functions as well as the values of $w$ and $t$. And the change in consumer surplus is the area of $a-(c+f)$, while the change in producer surplus is $c+d-h$. So, the total change in welfare under the perfect elastic demand is $a+d-(f+h)$. The net welfare gain of warm glow capture is the area of $a+d$, and the welfare loss due to transaction costs is $f+h$.
+
+\doublespacing
+% incidence 
+Farmers are more likely to bear the transaction costs of Fair Trade if demand is more elastic. Under the perfect price elastic for demand, all of the transaction costs are borne by the farmers, and the premium paid to the farmers are $A+w-t$. However if the elasticity is relatively less, consumers can bear the increased transaction costs. The amount of warm glow greater than the costs, $w>t$, creates a positive premium.
+
+% % compare increasing warm glow
+Question 9 is more accurate in the the case of a Fair Trade product, such as coffee. The price elasticity of demand with Fair Trade production, especially for coffee, could be inelastic compared to an infinite elasticity, with less possibility of consumers' substitution to the other products. Hence, an increase in production costs erodes the consumer's warm glow, but the farmers bear less of the burden.
+
+\end{soln}
+%Answer End
+
+%\clearpage
+\vspace{5em}
+\subsection*{A-11. Significance of Introducing Warm Glow and Truth Disclosure.}
+\noindent (10 points) In your own words, discuss why/whether it makes sense to include “warm glow” in measures of economic benefits from a market. 
+Also discuss whether economic value is destroyed when consumers are informed that, for products such as coffee, very little of the Fair Trade price premium actually passes through to farmers and farm workers. 
+
+%Answer Start
+\begin{soln}
+\doublespacing
+% reason of measuring warm glow
+Perfect competitive market allows consumers to have complete or "perfect" information about the product being sold and the prices charged by each production any time. So under this conditions, the inclusion of economic benefit of warm glow does not make sense. 
+However, when consumers believe information, even if based on a false information, that workers on the farm are in a weak position, such as not receiving a fair wage or working under severe conditions, they will continue to purchase the product at a fair price, relative large price, in order to improve the lives of producers and workers in developing communities in a vulnerable position and to achieve self-reliance. And paying with warm glow makes consumers happy, so this increased willingness-to-pay should be measured in the economic benefits.
+%The warm glow represents the selfish joy that comes from "doing good" by "doing your part" to help others. 
+Also, empirical evidence show that Fair Trade producers gain higher prices than conventional farmers for their products. At the same time, surveys show that the premium paid by consumers is less than the premium received to farmers.
+Integration of the warm glow into an economic model provides an explanation for the rise in Fair Trade prices and premiums.
+
+% Eroding Demand
+\begin{figure}[H]
+    \begin{minipage}[c]{0.5\linewidth}
+            \begin{tikzpicture}[scale=0.3]
+                \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q$};
+                \node [below left] at (0,0) {$0$};
+                
+                % \node [left] at (0,13) {$8550$};
+                % \node [left] at (0,10) {$8000$};
+                \node [left] at (0,7.7)  {$P_{ft}$};
+                %\node [left] at (0,6.7)  {$P'$};
+                \node [left] at (0,5.7)  {$P_{ft}-t$};
+                \node [left] at (0,4.6) {$P_n$};
+                % \node [left] at (0,2) {$150$};
+                \node [below] at (4.5,0) {$Q_n$};
+                \node [below] at (6.5,0) {$Q_{ft}$};
+                % \node [below] at (10,0) {$\frac{8000}{3}$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,2)--(9,11) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(13,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (12,4) {$MPB_n+w$};
+                \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                \draw [dashed] (0,5)--(5,5)--(5,0);
+                \draw [dashed] (0,5.5)--(5.5,5.5);
+                %\draw [dashed] (0,6.5)--(6.5,6.5);
+                %\draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Warm Glow $\geq$ Transaction costs}
+            \label{fig:A-11-1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.5\linewidth}
+            \begin{tikzpicture}[scale=0.3]
+                \draw[thick,<->] (0,14) node[above]{$\$/tonne$}--(0,0)--(15,0) node[right]{$Q$};
+                \node [below left] at (0,0) {$0$};
+                
+                % \node [left] at (0,13) {$8550$};
+                % \node [left] at (0,10) {$8000$};
+                \node [left] at (0,8.7)  {$P_{ft}$};
+                % \node [left] at (0,6.7)  {$P'$};
+                \node [left] at (0,4)  {$P_{ft}-t$};
+                \node [left] at (0,5.5) {$P_n$};
+                %\node [left] at (0,2) {$150$};
+                \node [below] at (4,0) {$Q_{ft}$};
+                \node [below] at (5.8,0) {$Q_n$};
+                % \node [below] at (10,0) {$\frac{8000}{3}$};
+                
+                \draw (0,0)--(9,9) node[right]{$MPC_n$};
+                \draw (0,4)--(9,13) node[right] {$MPC_n+t$};
+                \draw (0,10)--(10,0);
+                \draw (0,13)--(13,0);
+                \node [above] at (10,1) {$MPB_n$};
+                \node [above] at (12,4) {$MPB_n+w$};
+                \draw [dashed] (0,5)--(5,5)--(5,0);
+                \draw [dashed] (0,8.5)--(4.5,8.5)--(4.5,0);
+                \draw [dashed] (0,4.3)--(4.5,4.3);
+                % \draw [dashed] (0,6.5)--(6.5,6.5);
+                %\draw [] (0,5)--(5,5);
+                % \draw [dashed] (0,7.5)--(5.5,7.5)--(5.5,0);
+                % \draw [dashed] (0,5)--(5,5)--(5,0);
+            \end{tikzpicture}
+            \caption{Warm Glow $\leq$ Transaction Costs}
+            \label{fig:A-11-2}
+    \end{minipage}
+\end{figure}
+
+\doublespacing
+%w is exogenous
+Warm glow is defined exogenously, with an default value of $w$, which is assumed to be greater than the transaction costs, $t$, due to Fair Trade certification.
+% w>t -> positive premium
+Consumers believe that the all amount of warm glow $w$ goes directly to farmers. However, in question 7, as long as $w>t$, positive price premium, $P_{ft}-t-P_n$ in Figure \ref{fig:A-11-1}, goes to farmers, where $w$ will be subtracted with $t$. 
+% w<t -> negative premium
+When consumers are informed that price premium farmers actually gets is less than the warm glow, or that money is not used for an improvement of schools or hospitals, then it shrinks demand with new warm glow $w' \approx P_{ft}-t-P_n$, or even zero.
+Price premium become negative if new warm glow, $w'$ is less than the transaction costs per unit $t$. This demand shrink erodes the Fair Trade price premium, and very little or even negative the premium, $P_{ft}-t-P_n$ in Figure \ref{fig:A-11-2}, is paid to farm workers. Eventually, the economic value of the Fair Trade certification is negative.
+
+\end{soln}
+%Answer End
+
+\clearpage
+\section*{Part B: Stats, Mental Accounting, and Food Stamps}
+\noindent Using Google Scholar (https://scholar.google.ca/) or similar academic search engine, find a peer-reviewed article that gives statistical evidence of whether recipients of food stamps treat those benefits as fungible with other income and/or whether the recipients engage in mental accounting. You are welcome to review more than one scholarly article when executing this part of the assignment, but you only need to provide the following information for a single article. 
+%Q1
+\subsection*{B-a. Introduction of Study}
+\noindent (10 points) Bibliographic information (use MLA or APA style)
+%\clearpage
+%Answer Start
+\begin{soln}
+\bibliographystyle{apacite}
+\bibliography{fre460a5.bib}
+\nocite{*}
+\end{soln}
+%Answer End
+
+%Q2
+\subsection*{B-b. Data Description}
+\noindent (20 points, approximately 200 words) Description of the data used by the authors, e.g. geographic location, years covered, how the data was generated/collected\footnote{E.g. scanner data, classroom experiment, field experiment, household survey}, and key variables of interest. 
+
+%Answer Start
+\begin{soln}
+\doublespacing
+\citet{hastings2018snap} study how the Supplemental Nutrition Assistance Program (SNAP) influences spending by households. The SNAP program provides eligible households with a monthly electronic benefit that can only be spent on grocery stores. In the paper, the authors track detailed transaction records including method of payment that allows authors to infer to SNAP participation from February 2006 to December 2012 for regular customers at large grocery stores in Rhode Island. The food consumption trend of nearly half a million regular customers of a large US grocery stores is analyzed and studied. The authors are interested in the change of food consumption in response to the access to the SNAP benefit, increase in SNAP benefits and when the benefits run out. Then the authors compare the consumption difference when people receive cash benefits versus SNAP benefit to determine whether people treat different sources of income differently (Cash benefit vs. SNAP benefit). Additionally, the authors also analyze the percentage of SNAP benefit spend on food versus the percentage of SNAP benefit spend on other items to determine the SNAP benefit’s fungibility-shifting the purchase of food to purchase of other items with SNAP benefit. 
+
+\end{soln}
+%Answer End
+%Q3
+\clearpage
+\subsection*{B-c. Findings}
+\noindent (30 points, approximately 300 words) Describe the authors’ central findings, particularly as they relate to the perceived fungibility of benefits received in the form of food stamps and other income.
+
+%Answer Start
+\begin{soln}
+\doublespacing
+The authors develop three approaches to analyze the causal effect between SNAP and household spending. The three approaches include food consumption trends when households cross the eligibility threshold for SNAP, when the benefit ends, and when the SNAP benefit is increased. In all three cases, the marginal propensity to consume SNAP-eligible food (MPCF) out of SNAP benefit is $0.5$ to $0.6$. In the other words, approximately $50$ to $60$ cents out of one additional dollar of SNAP benefits gets spent on food. Compared to people when they get cash benefits or cash income, they spend less than $10$ cents out of every dollar on food. The main finding of the study indicates that the MPCF out of SNAP is greater than the MPCF out of other income sources. In addition, the greater MPCF for SNAP compared to cash is attributed to people’s separate mental account when they treat SNAP. The structured qualitative interviews reveal that some households report that they have planned to spend SNAP differently from cash, and quantitative evidence suggests that household reduce shopping effort for SNAP-eligible product more than for SNAP-ineligible product. The finding of the study has an important implication on economic activity. As people spend quickly after the recipient of SNAP benefit, it has a positive effect on total economic activity. Most importantly, the greater MPCF for SNAP confirms the benefit of SNAP on spending in food in food retail stores, thus improving food consumption among low income households.
+
+\end{soln}
+%Answer End
+
+%Q4
+\clearpage
+\subsection*{B-d. Discussion for BC Food Insecurity}
+\noindent (30 points, approximately 300 words) Discuss whether you think British Columbia should commence a food stamp program to address food insecurity. Be sure to allocate at least half your answer to discussing the evidence reported in the research study discussed in parts (b) and (c) of this question, but you are also welcome to discuss relevant issues that are commonly ignored by economists---stigma, for example. As always, answers supported with empirical evidence, rather than simply opinion, are the most persuasive. Be sure to cite any additional sources used to support your answers and give full bibliographic information for each\footnote{Bibliographic information for these additional sources does not count toward the word count (300 words) recommended for this question.}.
+
+%Answer Start
+\begin{soln}
+\doublespacing
+I think British Columbia should commence a food stamp program to address the issue of food insecurity. Referring to the main conclusion on the study mentioned in part b, data from large grocery stores in Rhode Island is retrieved and studied in order to draw a relationship between the receipt of SNAP benefits and household consumption trend. Three approaches are developed to draw causal inference, and the study finds that the MPCF out of SNAP benefit is $0.5$ to $0.6$ which is significantly larger than the MPCF for other income sources (e.g. cash). The SNAP program reflects its goal in increasing food purchases among low income households. Additionally, there is another study suggests a positive correlation between SNAP and improved nutritional outcomes and negative correlation between SNAP and health care costs. Adults in households with food insecurity are more likely to use health care. The result of the study shows that $71\%$ very low food-secure households use health care, compared to only $13\%$ marginal food-secure households use health care \citep{hastings2018snap}. Food insecurity imposes a heavy economic burden on society, including reduced productivity and increased health care costs. SNAP is a security net to protect people who are vulnerable to food insecurity. Average of $\$1.40$ per person per meal in 2017 form a security net for the health and well-being of people with low income, which eventually lifting millions out of poverty and hunger \citep{hastings2018snap}. The cost of implementing food stamp program is small relative to the cost of not implementing the program. Not only the existed food stamp program accomplished its goal in improving food security, but the program is also feasible from the financial feasibility and economic efficiency perspectives. 
+
+\end{soln}
+%Answer End
+
+%Reference list
+\clearpage
+\begin{soln}
+\singlespacing
+%\bibliographystyle{apacite}
+\bibliography{fre460a5.bib}
+\nocite{*}
+\end{soln}
+\end{document}
+```
