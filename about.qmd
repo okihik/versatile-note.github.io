@@ -12,7 +12,9 @@ about:
       href: https://github.com
 ---
 
-# Hello, world! Welcome to my Blog!
+# About me
+
+## Hello, world!
 
 I'm a recent graduate with a Master's degree in Natural Resources and Environmental Studies from the University of Northern BC, where I worked under the supervision of Dr. Balbinder Deo. My research focused on estimating food loss and waste in restaurant operations through an in-depth case study—a topic that bridges my academic interests with real-world sustainability challenges.
 
