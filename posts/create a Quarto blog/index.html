@@ -158,35 +158,35 @@ ul.task-list li input[type="checkbox"] {
 <p>This is a tutorial on how to create a new Quarto blog using the RStudio interface.</p>
 <p>This tutorial is based on <a href="https://quarto.org/docs/publishing/">this website</a>, and inspired by <a href="https://lab-notes.hakyimlab.org/post/2023-09-15-howto-blog/#create-a-new-post">this blog</a> and <a href="https://www.youtube.com/watch?v=arzBRW5XIkg">this video</a>.</p>
 <p>The procedure for publishing a Quarto blog using GitHub Pages and GitHub Actions is as follows:</p>
-<section id="project-creation-in-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="project-creation-in-rstudio">1. Project Creation in RStudio</h2>
+<section id="create-project-in-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="create-project-in-rstudio">1. Create Project in RStudio</h2>
 <ul>
 <li><p>Create a new Quarto blog project in RStudio.</p></li>
 <li><p>Name the directory with the desired URL (e.g., “yourusername.github.io” for a personal blog).</p></li>
 <li><p>Ensure “Create a git repository” and “Use renv with this project” are checked.</p></li>
 </ul>
 </section>
-<section id="github-repository-setup" class="level2">
-<h2 class="anchored" data-anchor-id="github-repository-setup">2. GitHub Repository Setup</h2>
+<section id="set-up-github-repository" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-github-repository">2. Set up GitHub Repository</h2>
 <ul>
 <li>Create a new public repository on GitHub with the same name, “yourusername.github.io”, as the RStudio project directory.</li>
 </ul>
 </section>
-<section id="pushing-local-project-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="pushing-local-project-to-github">3. Pushing Local Project to GitHub</h2>
+<section id="push-local-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-local-to-github">3. Push Local to GitHub</h2>
 <ul>
 <li><p>Use terminal to link the local project folder to the new GitHub repository.</p></li>
 <li><p>Commit and push the initial project files to the main branch on GitHub.</p></li>
 </ul>
 </section>
-<section id="creating-gh-pages-branch" class="level2">
-<h2 class="anchored" data-anchor-id="creating-gh-pages-branch">4. Creating gh-pages Branch</h2>
+<section id="create-gh-pages-branch" class="level2">
+<h2 class="anchored" data-anchor-id="create-gh-pages-branch">4. Create gh-pages Branch</h2>
 <ul>
 <li>On GitHub, create a new branch named “gh-pages”.</li>
 </ul>
 </section>
-<section id="setting-up-github-actions-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-github-actions-workflow">5. Setting up GitHub Actions Workflow</h2>
+<section id="set-up-github-actions-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-github-actions-workflow">5. Set up GitHub Actions Workflow</h2>
 <ul>
 <li><p>In your RStudio project, create the folder structure: “.github/workflows/”.</p></li>
 <li><p>Inside workflows, create a new text file named publish.yml.</p></li>
@@ -194,15 +194,15 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Save, commit, and push these changes to the main branch on GitHub.</p></li>
 </ul>
 </section>
-<section id="configuring-github-pages" class="level2">
-<h2 class="anchored" data-anchor-id="configuring-github-pages">6. Configuring GitHub Pages</h2>
+<section id="configure-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="configure-github-pages">6. Configure GitHub Pages</h2>
 <ul>
 <li><p>On GitHub, go to your repository’s Settings, then Pages.</p></li>
 <li><p>Under “Branch”, select gh-pages and click Save.</p></li>
 </ul>
 </section>
-<section id="monitoring-workflow-and-visiting-site" class="level2">
-<h2 class="anchored" data-anchor-id="monitoring-workflow-and-visiting-site">7. Monitoring Workflow and Visiting Site</h2>
+<section id="monitore-workflow-and-visit-site" class="level2">
+<h2 class="anchored" data-anchor-id="monitore-workflow-and-visit-site">7. Monitore Workflow and Visit Site</h2>
 <ul>
 <li><p>Go to the Actions tab on GitHub to monitor the running workflows.</p></li>
 <li><p>Once all workflows have successfully completed, return to Settings and then Pages.</p></li>
