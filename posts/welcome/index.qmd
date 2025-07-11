@@ -1,6 +1,5 @@
 ---
 title: "Welcome To My Blog"
-author: "Akihiko Mori"
 date: "2025-07-05"
 categories: [news]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Crafting Academic Reports: A LaTeX and Overleaf Guide"
 subtitle: "part 1"
-author: "Akihiko Mori"
 date: "2025-07-09"
 categories: [Reporting]
 ---
