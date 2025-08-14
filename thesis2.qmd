@@ -1,0 +1,147 @@
+---
+title: "Reproducible Research Reporting"
+subtitle: "Part 3: The Warrant - Weaving the Analysis with Quarto"
+date: "2025-08-24"
+categories: [Latex]
+---
+
+# **Part 3: The Warrant - Weaving the Analysis with Quarto**
+
+Welcome back. In [Part 1](), we established our project's structure, and in [Part 2](), we scripted the gathering of our raw evidence.
+
+Now, we will construct the **Warrant**—the intellectual and computational engine of our research. This is where we transform our raw evidence into analytical results. Our entire process will be orchestrated from a single, central document: `mainAnalysis.qmd`, located in the `2_warrantAndAnalysis` folder. This document will tell the complete story of our analysis, from initial exploration to final model output, making it the perfect summary to share with supervisors and collaborators.
+
+## **The Analysis Flow: A Narrative Driven by Scripts**
+
+Our workflow is designed for clarity and modularity. The `mainAnalysis.qmd` file acts as the conductor, calling on specialized R scripts to perform specific tasks.
+
+1.  **Load Evidence:** Read the raw data from the `1_evidence` directory.
+
+2.  **Source Explanatory Analysis:** Call the `00_explanatory.R` script to generate and load initial data objects.
+
+3.  **Source Research Models:** Call the `.R` scripts from the `models/` directory to run the core analyses and create model objects.
+
+4.  **Save Results:** Use the objects created by the scripts to generate and save the final tables and figures into the `results/` directory.
+
+Let's walk through how this is implemented in our `mainAnalysis.qmd` file.
+
+### **Step 1: Setup and Loading Evidence**
+
+We begin with a setup chunk to load packages and a data chunk to load our raw data.
+
+\`\`\`{{r setup, include=false}}\
+\# Load all necessary packages\
+library(tidyverse)\
+library(broom)\
+library(knitr)\
+library(rio)\
+\# Set global options\
+knitr::opts_chunk\$set(echo = FALSE, warning = FALSE, message = FALSE)\
+\`\`\`\
+\### Data Loading\
+\`\`\`{{r loadData}}\
+\# The path goes up one directory ('..') then into the evidence folder.\
+inventoryData \<- import("../1_evidence/rawData/manualInventory.csv")\
+\`\`\`
+
+### **Step 2: Sourcing the Explanatory Analysis**
+
+We execute our exploratory script. Its job is to perform initial calculations and create exploratory objects, which are then available for us to use in the main document.
+
+\### Explanatory Analysis To begin, we explore the basic characteristics of our data by running the script in \`explns/00_explanatory.R\`.\
+\`\`\`{{r runExplanatoryAnalysis}}\
+\# This script creates objects like 'summary_stats'\
+source("explns/00_explanatory.R")\
+\`\`\`
+
+Now we can display the \`summary_stats\` object that was just created.
+
+\`\`\`{{r showExplanatoryStats, echo=true}}\
+\# Use kable for a clean summary table right here in our analysis\
+document kable(summary_stats, caption = "Initial Data Summary")\
+\`\`\`
+
+### **Step 3: Sourcing the Research Models**
+
+Next, we execute our core statistical models. The key is that the R scripts in the `models/` folder should only create the model objects; they should *not* save any output themselves.
+
+**Example: `models/01_linearRegression.R`**
+
+\# models/01_linearRegression.R\
+\# This script's ONLY job is to run the model and produce the 'modelFit' object.\
+\# It assumes 'inventoryData' is already loaded in the environment.\
+modelFit \<- lm(stockLevel \~ storageTemp + category, data = inventoryData)
+
+We call this from `mainAnalysis.qmd` to create the `modelFit` object in our environment.
+
+\### Running the Main Regression Model
+
+Now, we run the linear model specified in our external script. This will create a model object called \`modelFit\` in our R environment, which we can then use to generate results.\
+\`\`\`{{r runLinearModel}}\
+source("models/01_linearRegression.R")\
+\`\`\`
+
+### **Step 4: Saving Tables and Figures**
+
+With the `modelFit` object created, we can now generate our final outputs from within `mainAnalysis.qmd`. The key here is that we don't just display them—we **save them as files** to the `results/` directory. This decouples our analysis from our final presentation, allowing us to simply `\input` or `\includegraphics` in our LaTeX documents later.
+
+#### **Saving a Table as a `.tex` file**
+
+We'll use the `broom` package to clean our model output and `knitr::kable()` with the `latex` format to create a publication-ready table.
+
+\`\`\`{{r saveTable}}\
+\# Tidy the model output into a clean data frame\
+modelSummary \<- tidy(modelFit)\
+\
+\# Use kable to format as a LaTeX table and save_kable to write it to a file\
+\# The booktabs = TRUE option creates a more professional-looking table\
+kable(modelSummary, format = "latex", booktabs = TRUE,\
+caption = "Regression of Stock Levels on Storage Temperature and Category.",\
+col.names = c("Term", "Estimate", "Std. Error", "Statistic", "P-value"), digits = 3) %\>%\
+save_kable(file = "results/tables/regressionTable.tex")\
+\`\`\`
+
+This code creates a file named `regressionTable.tex` in the `results/tables/` folder. It's a self-contained piece of LaTeX code, ready to be included in our paper.
+
+#### **Saving a Figure as a `.pdf` or `.png` file**
+
+Similarly, we use `ggplot2` to create our plot and the `ggsave()` function to save it as a high-quality image file.
+
+\`\`\`{{r saveFigure}}\
+\# Create the plot object\
+stockPlot \<- ggplot(inventoryData, aes(x = category, y = stockLevel, fill = category)) +\
+geom_boxplot() +\
+labs(title = "Stock Levels by Product Category", x = "Category", y = "Stock Level") +\
+theme_minimal()\
+\# Save the plot to the figures directory\
+\# Saving as .pdf is great for LaTeX; .png is better for websites.\
+ggsave( "results/figures/stockByCategory.pdf", plot = stockPlot, width = 7, height = 5 )\
+\`\`\`
+
+This creates a file named `stockByCategory.pdf` in our `results/figures/` folder.
+
+By the end of this process, running the single `mainAnalysis.qmd` file has verifiably transformed your raw evidence into a complete set of polished, presentation-ready results, all neatly organized in their respective folders.
+
+### **A Note on Tooling: You Have Choices!**
+
+It is important to highlight that the tools shown above (`knitr::kable` and `ggplot2::ggsave`) are just one way to accomplish our goal. The R ecosystem is rich with packages designed for creating high-quality tables and figures. The key is not the specific package, but the workflow: **use code to generate and save your results as files.**
+
+Here are some excellent alternatives you might explore:
+
+-   **For Tables:**
+
+    -   **`xtable`**: One of the oldest and most powerful packages for creating LaTeX and HTML tables. It offers a huge amount of control over the final output.
+
+    -   **`texreg`**: Fantastic for creating regression tables from multiple models, side-by-side, in a format common in academic journals.
+
+    -   **`modelsummary`**: A modern and extremely flexible package that can output results to a huge variety of formats (LaTeX, HTML, Word, Markdown) and is very easy to use.
+
+-   **For Figures:**
+
+    -   **Base R Graphics:** R's built-in `plot()` function is powerful and fast. To save a base R plot, you would wrap the code like this: `pdf("myplot.pdf"); plot(x,y); dev.off()`.
+
+    -   **`googleVis`**: Creates interactive HTML-based charts and maps using the Google Charts API. These are excellent for web-based presentations (`website.qmd`) but cannot be embedded in static PDF documents.
+
+Feel free to experiment and find the packages that you prefer. As long as you can save their output to a file in your `results` directory, they will fit perfectly into this reproducible workflow.
+
+In **Part 4: The Claim - Presenting Your Research**, we'll see how to write the `paper.tex` and `slides.tex` files that effortlessly pull in these saved tables and figures to construct a polished, professional, and fully reproducible final document.

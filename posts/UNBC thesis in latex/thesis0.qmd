@@ -1,0 +1,114 @@
+---
+title: "Reproducible Research Reporting"
+subtitle: "Part 1: Concept and File Management"
+date: "2025-08-15"
+categories: [Latex]
+---
+
+# **Part 1: The Workflow of Reproducible Research Reporting: Concept and File Management**
+
+As a fresh master’s graduate, I’ve found that one of the most important skills isn't just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.\
+This workflow, inspired by the principles of reproducible research, helped me efficiently manage my data, analysis, and writing. This series will guide you through setting up and using a similar workflow for your own research projects.
+
+In this first post, we'll cover the foundational concepts of a reproducible research workflow and how to effectively manage your project files.
+
+## **What is a Reproducible Research Workflow?**
+
+A reproducible research workflow is a system for organizing your entire research project—from data gathering to final presentation—in a way that allows you, or others, to easily and exactly reproduce your results. The key idea is to automate and link every step of the process, ensuring that your final paper is a direct, verifiable product of your data and analysis.
+
+## **Core Principles: Text Files and Human Readability**
+
+Before we dive into organizing our folders, let's establish two guiding principles that are the bedrock of this entire workflow, as emphasized in Christopher Gandrud's "Reproducible Research with R and RStudio".
+
+### **1. Everything is a (Text) File**
+
+The ideal is to store every component of your research in plain text formats.
+
+-   **Data:** Use text-based formats like comma-separated values (`.csv`).
+
+-   **Analysis & Documents:** This is where R scripts (`.R`), Quarto/R Markdown (`.qmd`/`.Rmd`), LaTeX (`.tex`), and BibTeX (`.bib`) files shine. They are all plain text.
+
+Why is this so important? Text files are **universal and future-proof**. They can be opened by virtually any software on any computer. Proprietary file formats can become obsolete, locking you out of your own work. Text files are also easily tracked by version control systems like Git.
+
+### **2. All Files Should Be Human-Readable**
+
+Just because a computer can read your file doesn't mean a person can understand it. The goal is to make your files clear to two very important people: **your future self and your collaborators.**
+
+-   **Commenting Your Code:** Liberally add comments to your R scripts. Explain the *why* behind your code, not just the *what*.
+
+-   **Clear Naming Conventions:** Give your files and variables descriptive names. A consistent style, like the **camelCase** we use here (e.g., `mainAnalysis.qmd`), makes files easy to read and reference.
+
+-   **Literate Programming:** This is the key. Tools like Quarto allow you to weave your code, its output, and your explanatory text together in a single document.
+
+## **Structuring Research: The Toulmin Model**
+
+A research paper is, at its core, a formal argument. To structure our project files for maximum clarity and reproducibility, we can borrow from philosopher Stephen Toulmin's model of argumentation. The model provides a powerful framework for understanding the components of a persuasive argument. The three core components are:
+
+1.  **The Claim:** This is the assertion you are making, the conclusion you want your audience to accept. In academic terms, this is your core finding.
+
+2.  **The Evidence (or Data/Grounds):** These are the facts, data, and established knowledge that provide the foundation for your claim. In our context, the evidence is twofold: the **raw data** we analyze and the **scholarly literature** upon which our work is built.
+
+3.  **The Warrant:** This is the crucial, logical connection that links the evidence to the claim. The warrant explains *how* the evidence supports the claim. It's the reasoning, the methodology, the analysis.
+
+A reproducible workflow, therefore, should be structured to make the relationships between your Claim, Evidence, and Warrant transparent and verifiable. We can organize our project files to directly mirror this logical structure.
+
+```         
+yourProjectName/
+|
+|-- 1_evidence/
+|   |-- rawData/
+|   |   |-- rawDataSource1.csv
+|   |   `-- rawDataSource2.csv
+|   `-- literature.bib
+|
+|-- 2_warrantAndAnalysis/
+|   |-- explns/
+|   |   `-- 00_explanatory.R
+|   |-- models/
+|   |   |-- 01_linearRegression.R
+|   |   `-- 02_bayesianModel.R
+|   |-- results/
+|   |   |-- tables/
+|   |   |   `-- regressionTable.tex
+|   |   `-- figures/
+|   |       `-- scatterPlot.png
+|   |-- referenceNotes.md
+|   `-- mainAnalysis.qmd
+|
+|-- 3_claimAndPresentation/
+|   |-- paper.tex
+|   |-- slides.tex
+|   `-- website.qmd
+|
+`-- README.md
+```
+
+Here’s how the file structure maps to the Toulmin model:
+
+-   **`1_evidence/`**: This directory holds the unassailable grounds for your argument.
+
+    -   `rawData/`: Your empirical evidence.
+
+    -   `literature.bib`: Your scholarly evidence.
+
+-   **`2_warrantAndAnalysis/`**: This directory is your warrant. It contains the entire logical and computational process that connects your evidence to your claim.
+
+    -   `mainAnalysis.qmd`: The master narrative of your analysis. It sources the models, generates all outputs, and is the engine of the project.
+
+    -   `models/`: The specific, modular R scripts that execute the statistical tests.
+
+    -   **`results/`**: The direct outputs of your analysis—tables and figures—logically live here, alongside the scripts that created them.
+
+    -   `referenceNotes.txt`: Your explicit reasoning about the literature.
+
+-   **`3_claimAndPresentation/`**: This directory contains the various final formats for your **Claim**. These are communication documents, not analysis documents. They are lightweight and focused on presentation.
+
+    -   **`paper.tex`**: Your formal academic paper in LaTeX.
+
+    -   **`slides.tex`**: Your conference presentation, likely using LaTeX Beamer.
+
+    -   **`website.qmd`**: A Quarto file for a blog post or project website.
+
+    -   All three of these files will pull their content (citations from `literature.bib`, tables and figures from `results/`) from the other directories.
+
+By organizing your project this way, anyone can clearly trace the path from your foundational evidence, through your analytical warrant, to your final claim. This is the essence of a truly reproducible and defensible research project.

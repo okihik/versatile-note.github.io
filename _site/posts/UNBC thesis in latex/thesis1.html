@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2025-08-15">
 
-<title>Himagineer - Crafting Academic Reports: A LaTeX and Overleaf Guide</title>
+<title>Himagineer - Reproducible Research Reporting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,10 +114,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
-            <p class="subtitle lead">part 1</p>
+      <h1 class="title">Reproducible Research Reporting</h1>
+            <p class="subtitle lead">Part 1: Concept and File Management</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Reporting</div>
+                <div class="quarto-category">Latex</div>
               </div>
                   </div>
   </div>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 9, 2025</p>
+        <p class="date">August 15, 2025</p>
       </div>
     </div>
     
@@ -148,23 +148,98 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="the-challenge-of-academic-reporting" class="level1">
-<h1>The Challenge of Academic Reporting</h1>
-<p>The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.</p>
+<section id="part-1-the-workflow-of-reproducible-research-reporting-concept-and-file-management" class="level1">
+<h1><strong>Part 1: The Workflow of Reproducible Research Reporting: Concept and File Management</strong></h1>
+<p>As a fresh master’s graduate, I’ve found that one of the most important skills isn’t just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.<br>
+This workflow, inspired by the principles of reproducible research, helped me efficiently manage my data, analysis, and writing. This series will guide you through setting up and using a similar workflow for your own research projects.</p>
+<p>In this first post, we’ll cover the foundational concepts of a reproducible research workflow and how to effectively manage your project files.</p>
+<section id="what-is-a-reproducible-research-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-reproducible-research-workflow"><strong>What is a Reproducible Research Workflow?</strong></h2>
+<p>A reproducible research workflow is a system for organizing your entire research project—from data gathering to final presentation—in a way that allows you, or others, to easily and exactly reproduce your results. The key idea is to automate and link every step of the process, ensuring that your final paper is a direct, verifiable product of your data and analysis.</p>
 </section>
-<section id="introducing-latex-the-gold-standard-for-professional-documents" class="level1">
-<h1>Introducing LaTeX: The Gold Standard for Professional Documents</h1>
-<p>What if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.</p>
+<section id="core-principles-text-files-and-human-readability" class="level2">
+<h2 class="anchored" data-anchor-id="core-principles-text-files-and-human-readability"><strong>Core Principles: Text Files and Human Readability</strong></h2>
+<p>Before we dive into organizing our folders, let’s establish two guiding principles that are the bedrock of this entire workflow, as emphasized in Christopher Gandrud’s “Reproducible Research with R and RStudio”.</p>
+<section id="everything-is-a-text-file" class="level3">
+<h3 class="anchored" data-anchor-id="everything-is-a-text-file"><strong>1. Everything is a (Text) File</strong></h3>
+<p>The ideal is to store every component of your research in plain text formats.</p>
+<ul>
+<li><p><strong>Data:</strong> Use text-based formats like comma-separated values (<code>.csv</code>).</p></li>
+<li><p><strong>Analysis &amp; Documents:</strong> This is where R scripts (<code>.R</code>), Quarto/R Markdown (<code>.qmd</code>/<code>.Rmd</code>), LaTeX (<code>.tex</code>), and BibTeX (<code>.bib</code>) files shine. They are all plain text.</p></li>
+</ul>
+<p>Why is this so important? Text files are <strong>universal and future-proof</strong>. They can be opened by virtually any software on any computer. Proprietary file formats can become obsolete, locking you out of your own work. Text files are also easily tracked by version control systems like Git.</p>
 </section>
-<section id="overleaf-making-latex-accessible" class="level1">
-<h1>Overleaf: Making LaTeX Accessible</h1>
-<p>But we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.</p>
+<section id="all-files-should-be-human-readable" class="level3">
+<h3 class="anchored" data-anchor-id="all-files-should-be-human-readable"><strong>2. All Files Should Be Human-Readable</strong></h3>
+<p>Just because a computer can read your file doesn’t mean a person can understand it. The goal is to make your files clear to two very important people: <strong>your future self and your collaborators.</strong></p>
+<ul>
+<li><p><strong>Commenting Your Code:</strong> Liberally add comments to your R scripts. Explain the <em>why</em> behind your code, not just the <em>what</em>.</p></li>
+<li><p><strong>Clear Naming Conventions:</strong> Give your files and variables descriptive names. A consistent style, like the <strong>camelCase</strong> we use here (e.g., <code>mainAnalysis.qmd</code>), makes files easy to read and reference.</p></li>
+<li><p><strong>Literate Programming:</strong> This is the key. Tools like Quarto allow you to weave your code, its output, and your explanatory text together in a single document.</p></li>
+</ul>
 </section>
-<section id="what-youll-learn-in-this-guide" class="level1">
-<h1>What You’ll Learn in This Guide</h1>
-<p>In this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create.</p>
+</section>
+<section id="structuring-research-the-toulmin-model" class="level2">
+<h2 class="anchored" data-anchor-id="structuring-research-the-toulmin-model"><strong>Structuring Research: The Toulmin Model</strong></h2>
+<p>A research paper is, at its core, a formal argument. To structure our project files for maximum clarity and reproducibility, we can borrow from philosopher Stephen Toulmin’s model of argumentation. The model provides a powerful framework for understanding the components of a persuasive argument. The three core components are:</p>
+<ol type="1">
+<li><p><strong>The Claim:</strong> This is the assertion you are making, the conclusion you want your audience to accept. In academic terms, this is your core finding.</p></li>
+<li><p><strong>The Evidence (or Data/Grounds):</strong> These are the facts, data, and established knowledge that provide the foundation for your claim. In our context, the evidence is twofold: the <strong>raw data</strong> we analyze and the <strong>scholarly literature</strong> upon which our work is built.</p></li>
+<li><p><strong>The Warrant:</strong> This is the crucial, logical connection that links the evidence to the claim. The warrant explains <em>how</em> the evidence supports the claim. It’s the reasoning, the methodology, the analysis.</p></li>
+</ol>
+<p>A reproducible workflow, therefore, should be structured to make the relationships between your Claim, Evidence, and Warrant transparent and verifiable. We can organize our project files to directly mirror this logical structure.</p>
+<pre><code>yourProjectName/
+|
+|-- 1_evidence/
+|   |-- rawData/
+|   |   |-- rawDataSource1.csv
+|   |   `-- rawDataSource2.csv
+|   `-- literature.bib
+|
+|-- 2_warrantAndAnalysis/
+|   |-- models/
+|   |   |-- 01_linearRegression.R
+|   |   `-- 02_bayesianModel.R
+|   |-- results/
+|   |   |-- tables/
+|   |   |   `-- regressionTable.tex
+|   |   `-- figures/
+|   |       `-- scatterPlot.png
+|   |-- referenceNotes.md
+|   `-- mainAnalysis.qmd
+|
+|-- 3_claimAndPresentation/
+|   |-- paper.tex
+|   |-- slides.tex
+|   `-- website.qmd
+|
+`-- README.md</code></pre>
+<p>Here’s how the file structure maps to the Toulmin model:</p>
+<ul>
+<li><p><strong><code>1_evidence/</code></strong>: This directory holds the unassailable grounds for your argument.</p>
+<ul>
+<li><p><code>rawData/</code>: Your empirical evidence.</p></li>
+<li><p><code>literature.bib</code>: Your scholarly evidence.</p></li>
+</ul></li>
+<li><p><strong><code>2_warrantAndAnalysis/</code></strong>: This directory is your warrant. It contains the entire logical and computational process that connects your evidence to your claim.</p>
+<ul>
+<li><p><code>mainAnalysis.qmd</code>: The master narrative of your analysis. It sources the models, generates all outputs, and is the engine of the project.</p></li>
+<li><p><code>models/</code>: The specific, modular R scripts that execute the statistical tests.</p></li>
+<li><p><strong><code>results/</code></strong>: The direct outputs of your analysis—tables and figures—logically live here, alongside the scripts that created them.</p></li>
+<li><p><code>referenceNotes.txt</code>: Your explicit reasoning about the literature.</p></li>
+</ul></li>
+<li><p><strong><code>3_claimAndPresentation/</code></strong>: This directory contains the various final formats for your <strong>Claim</strong>. These are communication documents, not analysis documents. They are lightweight and focused on presentation.</p>
+<ul>
+<li><p><strong><code>paper.tex</code></strong>: Your formal academic paper in LaTeX.</p></li>
+<li><p><strong><code>slides.tex</code></strong>: Your conference presentation, likely using LaTeX Beamer.</p></li>
+<li><p><strong><code>website.qmd</code></strong>: A Quarto file for a blog post or project website.</p></li>
+<li><p>All three of these files will pull their content (citations from <code>literature.bib</code>, tables and figures from <code>results/</code>) from the other directories.</p></li>
+</ul></li>
+</ul>
+<p>By organizing your project this way, anyone can clearly trace the path from your foundational evidence, through your analytical warrant, to your final claim. This is the essence of a truly reproducible and defensible research project.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

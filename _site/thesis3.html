@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-08-25">
+
+<title>Himagineer - Reproducible Research Reporting</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Himagineer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reproducible Research Reporting</h1>
+<p class="subtitle lead">Part 4: The Claim - Presenting Your Research</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Latex</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 25, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-4-the-claim---presenting-your-research" class="level1">
+<h1><strong>Part 4: The Claim - Presenting Your Research</strong></h1>
+<p>Welcome to the final post in our series on building a reproducible research workflow. So far, we have:</p>
+<ol type="1">
+<li><p>Established a project structure based on the <strong>Toulmin model</strong> (<a href="https://manus.im/app/link-to-first-post">Part 1</a>).</p></li>
+<li><p>Gathered our <strong>Evidence</strong> (raw data and references) into the <code>1_evidence</code> directory (<a href="https://manus.im/app/link-to-second-post">Part 2</a>).</p></li>
+<li><p>Built our <strong>Warrant</strong> by scripting the analysis and saving the outputs to the <code>2_warrantAndAnalysis/results</code> directory (<a href="https://manus.im/app/link-to-third-post">Part 3</a>).</p></li>
+</ol>
+<p>Now, we will construct the <strong>Claim</strong>—the polished, final documents where we present our findings. This happens in the <code>3_claimAndPresentation</code> directory. The beauty of our workflow is that this final step is now incredibly simple and robust. Our presentation files don’t contain any analysis; they are lightweight documents that simply <em>include</em> the results we’ve already generated.</p>
+<section id="a-note-on-authoring-tools-choosing-the-right-tool-for-the-job" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-authoring-tools-choosing-the-right-tool-for-the-job"><strong>A Note on Authoring Tools: Choosing the Right Tool for the Job</strong></h2>
+<p>Before we build our final documents, it’s important to discuss the roles of the different authoring tools we’ve encountered.</p>
+<ul>
+<li><p><strong>LaTeX (<code>.tex</code>):</strong> This is the gold standard for well-organized, professional, and beautifully typeset documents. Its power lies in its structure and control, making it ideal for a final, polished paper or a formal slide deck. We use it here for our <code>paper.tex</code> and <code>slides.tex</code> files.</p></li>
+<li><p><strong>Quarto/R Markdown (<code>.qmd</code>/<code>.Rmd</code>):</strong> These tools are best for <em>tentative, formatted analysis documents</em>. Our <code>mainAnalysis.qmd</code> is a perfect example. It’s a working document where we weave code and narrative to tell the story of our analysis for ourselves and our close collaborators. It’s a dynamic notebook, not a final paper.</p></li>
+<li><p><strong>R Sweave (<code>.Rnw</code>):</strong> This is the original tool for integrating R code directly into LaTeX documents. While powerful, Sweave compiles the R code <em>and</em> the LaTeX document at the same time. On my machine, this process can be slow, especially for large documents. For a short, two-to-three-page document, it can be efficient. However, for a full paper, I prefer our current workflow: separating the R analysis (<code>.qmd</code>) from the final LaTeX writing (<code>.tex</code>) for better speed and modularity.</p></li>
+</ul>
+</section>
+<section id="latex-basics-the-structure-of-a-document" class="level2">
+<h2 class="anchored" data-anchor-id="latex-basics-the-structure-of-a-document"><strong>LaTeX Basics: The Structure of a Document</strong></h2>
+<p>Before we import our results, let’s understand how a LaTeX document is structured. Unlike a word processor, LaTeX is a markup language; you write plain text commands that tell the compiler how to format the document.</p>
+<p>A LaTeX document has two main parts:</p>
+<ol type="1">
+<li><p><strong>The Preamble:</strong> This is everything from the very first line until the <code>\begin{document}</code> command. Here, you define the document type (<code>\documentclass</code>), load packages (<code>\usepackage</code>), and set global document properties like the title and author.</p></li>
+<li><p><strong>The Body:</strong> This is everything between <code>\begin{document}</code> and <code>\end{document}</code>. It contains the actual content of your paper.</p></li>
+</ol>
+<section id="common-latex-commands-for-the-body" class="level3">
+<h3 class="anchored" data-anchor-id="common-latex-commands-for-the-body"><strong>Common LaTeX Commands for the Body</strong></h3>
+<p>Here are some of the most common commands you’ll use when writing your paper:</p>
+<ul>
+<li><p><strong>Headings:</strong> Use <code>\section{Section Name}</code>, <code>\subsection{Subsection Name}</code>, and <code>\subsubsection{Sub-subsection Name}</code> to structure your paper. LaTeX handles the numbering and formatting automatically.</p></li>
+<li><p><strong>Paragraphs and Spacing:</strong> A blank line in your <code>.tex</code> file creates a new paragraph. LaTeX manages the indentation itself. To force a line break without a new paragraph, use <code>\\</code>.</p></li>
+<li><p><strong>Horizontal Lines:</strong> To create a full-width horizontal line, for example to separate major sections, use the <code>\hrulefill</code> command.</p></li>
+<li><p><strong>Text Formatting:</strong></p>
+<ul>
+<li><p>Italics: <code>\emph{italicized text}</code></p></li>
+<li><p>Bold: <code>\textbf{bold text}</code></p></li>
+</ul></li>
+<li><p><strong>Math Equations:</strong> This is where LaTeX shines.</p>
+<ul>
+<li><p>Inline math: <code>\( E = mc^2 \)</code> will place the equation within a sentence.</p></li>
+<li><p>Displayed math: <code>\[ E = mc^2 \]</code> will give the equation its own centered line.</p></li>
+</ul></li>
+<li><p><strong>Lists:</strong></p>
+<ul>
+<li><p>Bulleted list: Use the <code>itemize</code> environment: <code>\begin{itemize} \item First item. \end{itemize}</code>.</p></li>
+<li><p>Numbered list: Use the <code>enumerate</code> environment: <code>\begin{enumerate} \item First item. \end{enumerate}</code>.</p></li>
+</ul></li>
+<li><p><strong>Footnotes and Cross-References:</strong></p>
+<ul>
+<li><p>Create a footnote with <code>\footnote{This is the footnote text.}</code>.</p></li>
+<li><p>To reference a figure, table, or section, first label it with <code>\label{uniqueLabel}</code>. Then, refer to it anywhere in the text with <code>\ref{uniqueLabel}</code>. LaTeX will automatically insert the correct number.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="including-your-bibliography" class="level3">
+<h3 class="anchored" data-anchor-id="including-your-bibliography"><strong>Including Your Bibliography</strong></h3>
+<p>Managing citations is a core strength of LaTeX. The process involves three parts:</p>
+<ol type="1">
+<li><p><strong>The <code>.bib</code> file:</strong> Your <code>literature.bib</code> file in the <code>1_evidence</code> folder, which contains all your reference data.</p></li>
+<li><p><strong>The <code>\bibliography</code> command:</strong> At the end of your document (before <code>\end{document}</code>), you tell LaTeX which <code>.bib</code> file to use: <code>\bibliography{../1_evidence/literature.bib}</code>.</p></li>
+<li><p><strong>The <code>\bibliographystyle</code> command:</strong> Placed before the <code>\bibliography</code> command, this sets the citation style (e.g., <code>\bibliographystyle{apa}</code>).</p></li>
+</ol>
+<p>To actually cite a source in your text, you use a <code>cite</code> command. When using an author-year style with the <code>natbib</code> package (which we included in our preamble with <code>\usepackage[authoryear]{natbib}</code>), you have several powerful options:</p>
+<ul>
+<li><p><strong><code>\citep{key}</code> (Parenthetical Citation):</strong> This is the most common command. It wraps the entire author-year reference in parentheses.</p>
+<ul>
+<li><p><strong>Example:</strong> <code>...as shown in previous work \citep{Gandrud2020}.</code></p></li>
+<li><p><strong>Output:</strong> …as shown in previous work (Gandrud, 2020).</p></li>
+</ul></li>
+<li><p><strong><code>\cite{key}</code> or <code>\citet{key}</code> (Textual Citation):</strong> This command is used when the author’s name is part of the sentence. It keeps the author name in the main text and only puts the year in parentheses. <code>\citet</code> is the more robust command from <code>natbib</code>.</p>
+<ul>
+<li><p><strong>Example:</strong> <code>According to \citet{Gandrud2020}, this workflow is...</code></p></li>
+<li><p><strong>Output:</strong> According to Gandrud (2020), this workflow is…</p></li>
+</ul></li>
+<li><p><strong>Citing Multiple Sources:</strong> You can include multiple keys in a single command, separated by commas.</p>
+<ul>
+<li><p><strong>Example:</strong> <code>...as shown in previous work \citep{Gandrud2020, Donoho2010}.</code></p></li>
+<li><p><strong>Output:</strong> …as shown in previous work (Gandrud, 2020; Donoho, 2010).</p></li>
+</ul></li>
+<li><p><strong>Adding Page Numbers:</strong> To add a page number or other note inside the citation, use square brackets.</p>
+<ul>
+<li><p><strong>Example:</strong> <code>...this specific point is made in \citet[p. 45]{Gandrud2020}.</code></p></li>
+<li><p><strong>Output:</strong> …this specific point is made in Gandrud (2020, p.&nbsp;45).</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="compiling-your-document-two-powerful-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="compiling-your-document-two-powerful-approaches"><strong>Compiling Your Document: Two Powerful Approaches</strong></h2>
+<section id="approach-1-the-integrated-rstudio-workflow-with-tinytex" class="level3">
+<h3 class="anchored" data-anchor-id="approach-1-the-integrated-rstudio-workflow-with-tinytex"><strong>Approach 1: The Integrated RStudio Workflow with <code>tinytex</code></strong></h3>
+<p>For those who prefer to stay within the RStudio environment, compiling a <code>.tex</code> file into a PDF requires a LaTeX distribution. Traditionally, this meant installing large, separate programs like MiKTeX (Windows) or MacTeX (macOS). However, there is a much simpler, R-native solution: the <strong><code>tinytex</code></strong> package.</p>
+<p><strong>What is <code>tinytex</code>?</strong> Created by Yihui Xie (the same author of <code>knitr</code>), <code>tinytex</code> is an R package that installs a lightweight, self-contained, and portable LaTeX distribution.</p>
+<p><strong>Why use it?</strong></p>
+<ol type="1">
+<li><p><strong>Simplicity:</strong> You can install it directly from the R console: <code>install.packages("tinytex"); tinytex::install_tinytex()</code>.</p></li>
+<li><p><strong>Automatic Package Installation:</strong> This is its killer feature. If your LaTeX document requires a package (e.g., <code>\usepackage{booktabs}</code>) that isn’t in the base <code>tinytex</code> installation, <code>tinytex</code> will automatically find and install it for you during compilation. This saves an enormous amount of time troubleshooting obscure LaTeX errors.</p></li>
+<li><p><strong>Self-Contained:</strong> It lives within your R library paths and doesn’t interfere with any other LaTeX installations you might have.</p></li>
+</ol>
+<p>With <code>tinytex</code> installed, you can write your <code>paper.tex</code> file in RStudio and simply click the <strong>“Compile PDF”</strong> button to generate your final document. It’s a seamless, integrated experience.</p>
+</section>
+<section id="approach-2-the-collaborative-workflow-with-github-overleaf" class="level3">
+<h3 class="anchored" data-anchor-id="approach-2-the-collaborative-workflow-with-github-overleaf"><strong>Approach 2: The Collaborative Workflow with GitHub + Overleaf</strong></h3>
+<p>As discussed in the previous post, we will use GitHub to store our project and Overleaf as our collaborative LaTeX editor. By linking your Overleaf project to your GitHub repository, you ensure your writing environment always has access to your latest results.</p>
+<p>While we can write LaTeX on our local machine, a more powerful modern approach is to use <strong>Overleaf</strong>, a collaborative, cloud-based LaTeX editor. It allows multiple co-authors to work on a document simultaneously and focuses purely on writing.</p>
+<p>But how do we get our results from our local machine into our Overleaf project? The bridge is <strong>GitHub</strong>.</p>
+<p>By keeping our entire project in a GitHub repository, we create a “single source of truth” in the cloud. Overleaf can then link directly to this repository, allowing us to pull in our results seamlessly.</p>
+</section>
+<section id="step-1-push-your-results-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-push-your-results-to-github"><strong>Step 1: Push Your Results to GitHub</strong></h3>
+<p>After you run your <code>mainAnalysis.qmd</code> file locally, the <code>results/</code> directory is updated with the latest tables and figures. The next step is to commit and push these changes to your GitHub repository.</p>
+<p>Using the command line (or a Git client), you would run:</p>
+<p>Bash</p>
+<pre><code># Stage the new results
+git add 2_warrantAndAnalysis/results/
+
+# Commit the changes with a descriptive message
+git commit -m "Update regression table and stock level figure"
+
+# Push the changes to your main branch on GitHub
+git push origin main</code></pre>
+<p>Your latest results are now securely stored and versioned on GitHub.</p>
+</section>
+<section id="step-2-link-github-to-overleaf-and-use-your-results" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-link-github-to-overleaf-and-use-your-results"><strong>Step 2: Link GitHub to Overleaf and Use Your Results</strong></h3>
+<p>Overleaf has a fantastic feature to link a project directly to a GitHub repository.</p>
+<ol type="1">
+<li><p>In Overleaf, create a new project.</p></li>
+<li><p>In the project menu, select “Import from GitHub”.</p></li>
+<li><p>Authorize Overleaf to access your GitHub account and select your research project repository.</p></li>
+</ol>
+<p>Overleaf will now clone your entire project. You can work on your <code>paper.tex</code> file directly in Overleaf’s editor. To include your results, you simply need to provide the correct file path from the root of the project.</p>
+</section>
+<section id="import-your-results-into-overleaf" class="level3">
+<h3 class="anchored" data-anchor-id="import-your-results-into-overleaf"><strong>Import Your Results into Overleaf</strong></h3>
+<p>Once your Overleaf project is synced with GitHub, you can pull in the results.</p>
+<section id="importing-a-table" class="level4">
+<h4 class="anchored" data-anchor-id="importing-a-table"><strong>Importing a Table</strong></h4>
+<p>To include a table, we use the <code>\input{}</code> command. This command acts as if you are “pasting” the entire content of the specified file right into that spot. Since we saved our table as a complete, self-contained <code>.tex</code> file, this is incredibly clean.</p>
+<pre><code>\section{Results}
+Our primary regression analysis, detailed in Table \ref{tab:reg}, reveals...
+
+% Create a table float environment for the caption and label
+\begin{table}[h!]
+    \centering
+    % Input the table we saved in Part 3.
+    % The path is relative to the root of our project folder.
+    \input{2_warrantAndAnalysis/results/tables/regressionTable.tex}
+    \label{tab:reg}
+\end{table}</code></pre>
+<p>The <code>table</code> environment provides a caption and a referenceable label. The <code>\input</code> command does the heavy lifting of bringing in the table itself.</p>
+</section>
+<section id="importing-a-figure" class="level4">
+<h4 class="anchored" data-anchor-id="importing-a-figure"><strong>Importing a Figure</strong></h4>
+<p>To include a figure, we use the <code>\includegraphics{}</code> command inside a <code>figure</code> environment. The <code>figure</code> environment is crucial as it provides the caption and label, just like for a table.</p>
+<p>latex</p>
+<pre><code>As shown in Figure \ref{fig:stockPlot}, we find a significant difference between categories.
+
+% Create a figure float environment
+\begin{figure}[h!]
+    \centering
+    % Include the figure we saved in Part 3.
+    % We use the .pdf for high-quality printing.
+    \includegraphics[width=0.8\textwidth]{2_warrantAndAnalysis/results/figures/stockByCategory.pdf}
+    \caption{Stock Levels by Product Category.}
+    \label{fig:stockPlot}
+\end{figure}</code></pre>
+<p>The <code>[width=0.8\textwidth]</code> option scales the image to be 80% of the page’s text width, ensuring it fits nicely.</p>
+<p>Here is a simplified <code>paper.tex</code> file as it would look inside your Overleaf project:</p>
+<pre><code>\documentclass{article}
+
+% --- PREAMBLE ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[authoryear]{natbib}
+
+\title{Analysis of Inventory Stock Levels}
+\author{A. Researcher}
+\date{\today}
+
+% --- DOCUMENT START ---
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This paper investigates the factors affecting inventory stock levels...
+As shown in Figure \ref{fig:stockPlot}, we find a significant difference between categories.
+
+\begin{figure}[h!]
+    \centering
+    % Include the figure from the synced GitHub folder
+    \includegraphics[width=0.8\textwidth]{2_warrantAndAnalysis/results/figures/stockByCategory.pdf}
+    \caption{Stock Levels by Product Category.}
+    \label{fig:stockPlot}
+\end{figure}
+
+\section{Results}
+Our primary regression analysis, detailed in Table \ref{tab:reg}, reveals...
+
+\begin{table}[h!]
+    \centering
+    % Input the table from the synced GitHub folder
+    \input{2_warrantAndAnalysis/results/tables/regressionTable.tex}
+    \label{tab:reg}
+\end{table}
+
+% --- BIBLIOGRAPHY ---
+\bibliographystyle{apa}
+% Point to the BibTeX file in the synced GitHub folder
+\bibliography{1_evidence/literature.bib}
+
+\end{document}</code></pre>
+<p>When you need to update your results, the workflow is simple:</p>
+<ol type="1">
+<li><p>Run <code>mainAnalysis.qmd</code> on your local machine.</p></li>
+<li><p>Push the updated <code>results/</code> folder to GitHub.</p></li>
+<li><p>In Overleaf, click the “Git” menu and “Pull” the latest changes from GitHub.</p></li>
+<li><p>Recompile your <code>paper.tex</code>.</p></li>
+</ol>
+<p>Your paper is now updated with the latest results, with zero manual copy-pasting.</p>
+</section>
+</section>
+</section>
+<section id="building-the-slides-slides.tex" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-slides-slides.tex"><strong>Building the Slides (<code>slides.tex</code>)</strong></h2>
+<p>Creating a conference presentation with LaTeX Beamer follows the exact same logic. The document structure is different (using <code>\begin{frame}</code> environments), but the principle of including results is identical.</p>
+<pre><code>\documentclass{beamer}
+
+% --- PREAMBLE ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Inventory Stock Level Analysis}
+\author{A. Researcher}
+
+% --- DOCUMENT START ---
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Regression Results}
+    % Input the same table file
+    \input{../2_warrantAndAnalysis/results/tables/regressionTable.tex}
+\end{frame}
+
+\end{document}</code></pre>
+<p>You can use the very same result files across multiple presentation formats without any extra work.</p>
+</section>
+<section id="building-the-website-website.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-website-website.qmd"><strong>Building the Website (<code>website.qmd</code>)</strong></h2>
+<p>For a blog post or project website, we can use Quarto. The syntax is different, but the concept is the same: refer to the files in the <code>results</code> directory.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A Blog Post on My Inventory Research" \</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "A. Researcher" format: html </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="sc">\#</span># Key Findings Our research explored the factors affecting inventory stock levels. The main regression results are summarized below. <span class="sc">\`\`\`</span>{r, results='asis'} <span class="sc">\#</span> Read and display the raw LaTeX from the results file <span class="sc">\#</span> Quarto is smart enough to render it correctly to HTML knitr::asis_output(readLines("../2_warrantAndAnalysis/results/tables/regressionTable.tex")) <span class="sc">\`\`\`</span> We also found a key difference between product categories, as illustrated in this plot: <span class="sc">\!</span>[Stock Levels by Category<span class="sc">\]</span>(../2_warrantAndAnalysis/results/figures/stockByCategory.png) \</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that for a website, it’s often better to save and use the <code>.png</code> version of the figure, as it’s more web-friendly.</p>
+</section>
+<section id="conclusion-a-coherent-whole" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-a-coherent-whole"><strong>Conclusion: A Coherent Whole</strong></h2>
+<p>This four-part series has taken us through a complete, reproducible research workflow. By separating our project into <strong>Evidence</strong>, <strong>Warrant</strong>, and <strong>Claim</strong>, and by using modern tools like R, Quarto, GitHub, and Overleaf, we have created a system that is not only transparent and reproducible but also highly efficient and collaborative.</p>
+<p>This workflow requires discipline, but the payoff in clarity, accuracy, and peace of mind is immeasurable. Happy researching</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

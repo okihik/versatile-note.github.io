@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2025-08-24">
 
-<title>Himagineer - Crafting Academic Reports: A LaTeX and Overleaf Guide</title>
+<title>Himagineer - Reproducible Research Reporting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,17 +69,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Himagineer</span>
     </a>
   </div>
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
@@ -111,60 +111,162 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
-            <p class="subtitle lead">part 1</p>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Reporting</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">July 9, 2025</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reproducible Research Reporting</h1>
+<p class="subtitle lead">Part 3: The Warrant - Weaving the Analysis with Quarto</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Latex</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 24, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<section id="the-challenge-of-academic-reporting" class="level1">
-<h1>The Challenge of Academic Reporting</h1>
-<p>The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.</p>
+</header>
+
+
+<section id="part-3-the-warrant---weaving-the-analysis-with-quarto" class="level1">
+<h1><strong>Part 3: The Warrant - Weaving the Analysis with Quarto</strong></h1>
+<p>Welcome back. In <a href="">Part 1</a>, we established our project’s structure, and in <a href="">Part 2</a>, we scripted the gathering of our raw evidence.</p>
+<p>Now, we will construct the <strong>Warrant</strong>—the intellectual and computational engine of our research. This is where we transform our raw evidence into analytical results. Our entire process will be orchestrated from a single, central document: <code>mainAnalysis.qmd</code>, located in the <code>2_warrantAndAnalysis</code> folder. This document will tell the complete story of our analysis, from initial exploration to final model output, making it the perfect summary to share with supervisors and collaborators.</p>
+<section id="the-analysis-flow-a-narrative-driven-by-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis-flow-a-narrative-driven-by-scripts"><strong>The Analysis Flow: A Narrative Driven by Scripts</strong></h2>
+<p>Our workflow is designed for clarity and modularity. The <code>mainAnalysis.qmd</code> file acts as the conductor, calling on specialized R scripts to perform specific tasks.</p>
+<ol type="1">
+<li><p><strong>Load Evidence:</strong> Read the raw data from the <code>1_evidence</code> directory.</p></li>
+<li><p><strong>Source Explanatory Analysis:</strong> Call the <code>00_explanatory.R</code> script to generate and load initial data objects.</p></li>
+<li><p><strong>Source Research Models:</strong> Call the <code>.R</code> scripts from the <code>models/</code> directory to run the core analyses and create model objects.</p></li>
+<li><p><strong>Save Results:</strong> Use the objects created by the scripts to generate and save the final tables and figures into the <code>results/</code> directory.</p></li>
+</ol>
+<p>Let’s walk through how this is implemented in our <code>mainAnalysis.qmd</code> file.</p>
+<section id="step-1-setup-and-loading-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-setup-and-loading-evidence"><strong>Step 1: Setup and Loading Evidence</strong></h3>
+<p>We begin with a setup chunk to load packages and a data chunk to load our raw data.</p>
+<p>```{{r setup, include=false}}<br>
+# Load all necessary packages<br>
+library(tidyverse)<br>
+library(broom)<br>
+library(knitr)<br>
+library(rio)<br>
+# Set global options<br>
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)<br>
+```<br>
+### Data Loading<br>
+```{{r loadData}}<br>
+# The path goes up one directory (‘..’) then into the evidence folder.<br>
+inventoryData &lt;- import(“../1_evidence/rawData/manualInventory.csv”)<br>
+```</p>
 </section>
-<section id="introducing-latex-the-gold-standard-for-professional-documents" class="level1">
-<h1>Introducing LaTeX: The Gold Standard for Professional Documents</h1>
-<p>What if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.</p>
+<section id="step-2-sourcing-the-explanatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-sourcing-the-explanatory-analysis"><strong>Step 2: Sourcing the Explanatory Analysis</strong></h3>
+<p>We execute our exploratory script. Its job is to perform initial calculations and create exploratory objects, which are then available for us to use in the main document.</p>
+<p>### Explanatory Analysis To begin, we explore the basic characteristics of our data by running the script in `explns/00_explanatory.R`.<br>
+```{{r runExplanatoryAnalysis}}<br>
+# This script creates objects like ‘summary_stats’<br>
+source(“explns/00_explanatory.R”)<br>
+```</p>
+<p>Now we can display the `summary_stats` object that was just created.</p>
+<p>```{{r showExplanatoryStats, echo=true}}<br>
+# Use kable for a clean summary table right here in our analysis<br>
+document kable(summary_stats, caption = “Initial Data Summary”)<br>
+```</p>
 </section>
-<section id="overleaf-making-latex-accessible" class="level1">
-<h1>Overleaf: Making LaTeX Accessible</h1>
-<p>But we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.</p>
+<section id="step-3-sourcing-the-research-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-sourcing-the-research-models"><strong>Step 3: Sourcing the Research Models</strong></h3>
+<p>Next, we execute our core statistical models. The key is that the R scripts in the <code>models/</code> folder should only create the model objects; they should <em>not</em> save any output themselves.</p>
+<p><strong>Example: <code>models/01_linearRegression.R</code></strong></p>
+<p># models/01_linearRegression.R<br>
+# This script’s ONLY job is to run the model and produce the ‘modelFit’ object.<br>
+# It assumes ‘inventoryData’ is already loaded in the environment.<br>
+modelFit &lt;- lm(stockLevel ~ storageTemp + category, data = inventoryData)</p>
+<p>We call this from <code>mainAnalysis.qmd</code> to create the <code>modelFit</code> object in our environment.</p>
+<p>### Running the Main Regression Model</p>
+<p>Now, we run the linear model specified in our external script. This will create a model object called `modelFit` in our R environment, which we can then use to generate results.<br>
+```{{r runLinearModel}}<br>
+source(“models/01_linearRegression.R”)<br>
+```</p>
 </section>
-<section id="what-youll-learn-in-this-guide" class="level1">
-<h1>What You’ll Learn in This Guide</h1>
-<p>In this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create.</p>
+<section id="step-4-saving-tables-and-figures" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-saving-tables-and-figures"><strong>Step 4: Saving Tables and Figures</strong></h3>
+<p>With the <code>modelFit</code> object created, we can now generate our final outputs from within <code>mainAnalysis.qmd</code>. The key here is that we don’t just display them—we <strong>save them as files</strong> to the <code>results/</code> directory. This decouples our analysis from our final presentation, allowing us to simply <code>\input</code> or <code>\includegraphics</code> in our LaTeX documents later.</p>
+<section id="saving-a-table-as-a-.tex-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-table-as-a-.tex-file"><strong>Saving a Table as a <code>.tex</code> file</strong></h4>
+<p>We’ll use the <code>broom</code> package to clean our model output and <code>knitr::kable()</code> with the <code>latex</code> format to create a publication-ready table.</p>
+<p>```{{r saveTable}}<br>
+# Tidy the model output into a clean data frame<br>
+modelSummary &lt;- tidy(modelFit)<br>
+<br>
+# Use kable to format as a LaTeX table and save_kable to write it to a file<br>
+# The booktabs = TRUE option creates a more professional-looking table<br>
+kable(modelSummary, format = “latex”, booktabs = TRUE,<br>
+caption = “Regression of Stock Levels on Storage Temperature and Category.”,<br>
+col.names = c(“Term”, “Estimate”, “Std. Error”, “Statistic”, “P-value”), digits = 3) %&gt;%<br>
+save_kable(file = “results/tables/regressionTable.tex”)<br>
+```</p>
+<p>This code creates a file named <code>regressionTable.tex</code> in the <code>results/tables/</code> folder. It’s a self-contained piece of LaTeX code, ready to be included in our paper.</p>
+</section>
+<section id="saving-a-figure-as-a-.pdf-or-.png-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-figure-as-a-.pdf-or-.png-file"><strong>Saving a Figure as a <code>.pdf</code> or <code>.png</code> file</strong></h4>
+<p>Similarly, we use <code>ggplot2</code> to create our plot and the <code>ggsave()</code> function to save it as a high-quality image file.</p>
+<p>```{{r saveFigure}}<br>
+# Create the plot object<br>
+stockPlot &lt;- ggplot(inventoryData, aes(x = category, y = stockLevel, fill = category)) +<br>
+geom_boxplot() +<br>
+labs(title = “Stock Levels by Product Category”, x = “Category”, y = “Stock Level”) +<br>
+theme_minimal()<br>
+# Save the plot to the figures directory<br>
+# Saving as .pdf is great for LaTeX; .png is better for websites.<br>
+ggsave( “results/figures/stockByCategory.pdf”, plot = stockPlot, width = 7, height = 5 )<br>
+```</p>
+<p>This creates a file named <code>stockByCategory.pdf</code> in our <code>results/figures/</code> folder.</p>
+<p>By the end of this process, running the single <code>mainAnalysis.qmd</code> file has verifiably transformed your raw evidence into a complete set of polished, presentation-ready results, all neatly organized in their respective folders.</p>
+</section>
+</section>
+<section id="a-note-on-tooling-you-have-choices" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-tooling-you-have-choices"><strong>A Note on Tooling: You Have Choices!</strong></h3>
+<p>It is important to highlight that the tools shown above (<code>knitr::kable</code> and <code>ggplot2::ggsave</code>) are just one way to accomplish our goal. The R ecosystem is rich with packages designed for creating high-quality tables and figures. The key is not the specific package, but the workflow: <strong>use code to generate and save your results as files.</strong></p>
+<p>Here are some excellent alternatives you might explore:</p>
+<ul>
+<li><p><strong>For Tables:</strong></p>
+<ul>
+<li><p><strong><code>xtable</code></strong>: One of the oldest and most powerful packages for creating LaTeX and HTML tables. It offers a huge amount of control over the final output.</p></li>
+<li><p><strong><code>texreg</code></strong>: Fantastic for creating regression tables from multiple models, side-by-side, in a format common in academic journals.</p></li>
+<li><p><strong><code>modelsummary</code></strong>: A modern and extremely flexible package that can output results to a huge variety of formats (LaTeX, HTML, Word, Markdown) and is very easy to use.</p></li>
+</ul></li>
+<li><p><strong>For Figures:</strong></p>
+<ul>
+<li><p><strong>Base R Graphics:</strong> R’s built-in <code>plot()</code> function is powerful and fast. To save a base R plot, you would wrap the code like this: <code>pdf("myplot.pdf"); plot(x,y); dev.off()</code>.</p></li>
+<li><p><strong><code>googleVis</code></strong>: Creates interactive HTML-based charts and maps using the Google Charts API. These are excellent for web-based presentations (<code>website.qmd</code>) but cannot be embedded in static PDF documents.</p></li>
+</ul></li>
+</ul>
+<p>Feel free to experiment and find the packages that you prefer. As long as you can save their output to a file in your <code>results</code> directory, they will fit perfectly into this reproducible workflow.</p>
+<p>In <strong>Part 4: The Claim - Presenting Your Research</strong>, we’ll see how to write the <code>paper.tex</code> and <code>slides.tex</code> files that effortlessly pull in these saved tables and figures to construct a polished, professional, and fully reproducible final document.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

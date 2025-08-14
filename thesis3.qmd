@@ -1,0 +1,328 @@
+---
+title: "Reproducible Research Reporting"
+subtitle: "Part 4: The Claim - Presenting Your Research"
+date: "2025-08-25"
+categories: [Latex]
+---
+
+# **Part 4: The Claim - Presenting Your Research**
+
+Welcome to the final post in our series on building a reproducible research workflow. So far, we have:
+
+1.  Established a project structure based on the **Toulmin model** ([Part 1](https://manus.im/app/link-to-first-post)).
+
+2.  Gathered our **Evidence** (raw data and references) into the `1_evidence` directory ([Part 2](https://manus.im/app/link-to-second-post)).
+
+3.  Built our **Warrant** by scripting the analysis and saving the outputs to the `2_warrantAndAnalysis/results` directory ([Part 3](https://manus.im/app/link-to-third-post)).
+
+Now, we will construct the **Claim**—the polished, final documents where we present our findings. This happens in the `3_claimAndPresentation` directory. The beauty of our workflow is that this final step is now incredibly simple and robust. Our presentation files don't contain any analysis; they are lightweight documents that simply *include* the results we've already generated.
+
+## **A Note on Authoring Tools: Choosing the Right Tool for the Job**
+
+Before we build our final documents, it's important to discuss the roles of the different authoring tools we've encountered.
+
+-   **LaTeX (`.tex`):** This is the gold standard for well-organized, professional, and beautifully typeset documents. Its power lies in its structure and control, making it ideal for a final, polished paper or a formal slide deck. We use it here for our `paper.tex` and `slides.tex` files.
+
+-   **Quarto/R Markdown (`.qmd`/`.Rmd`):** These tools are best for *tentative, formatted analysis documents*. Our `mainAnalysis.qmd` is a perfect example. It's a working document where we weave code and narrative to tell the story of our analysis for ourselves and our close collaborators. It's a dynamic notebook, not a final paper.
+
+-   **R Sweave (`.Rnw`):** This is the original tool for integrating R code directly into LaTeX documents. While powerful, Sweave compiles the R code *and* the LaTeX document at the same time. On my machine, this process can be slow, especially for large documents. For a short, two-to-three-page document, it can be efficient. However, for a full paper, I prefer our current workflow: separating the R analysis (`.qmd`) from the final LaTeX writing (`.tex`) for better speed and modularity.
+
+## **LaTeX Basics: The Structure of a Document**
+
+Before we import our results, let's understand how a LaTeX document is structured. Unlike a word processor, LaTeX is a markup language; you write plain text commands that tell the compiler how to format the document.
+
+A LaTeX document has two main parts:
+
+1.  **The Preamble:** This is everything from the very first line until the `\begin{document}` command. Here, you define the document type (`\documentclass`), load packages (`\usepackage`), and set global document properties like the title and author.
+
+2.  **The Body:** This is everything between `\begin{document}` and `\end{document}`. It contains the actual content of your paper.
+
+### **Common LaTeX Commands for the Body**
+
+Here are some of the most common commands you'll use when writing your paper:
+
+-   **Headings:** Use `\section{Section Name}`, `\subsection{Subsection Name}`, and `\subsubsection{Sub-subsection Name}` to structure your paper. LaTeX handles the numbering and formatting automatically.
+
+-   **Paragraphs and Spacing:** A blank line in your `.tex` file creates a new paragraph. LaTeX manages the indentation itself. To force a line break without a new paragraph, use `\\`.
+
+-   **Horizontal Lines:** To create a full-width horizontal line, for example to separate major sections, use the `\hrulefill` command.
+
+-   **Text Formatting:**
+
+    -   Italics: `\emph{italicized text}`
+
+    -   Bold: `\textbf{bold text}`
+
+-   **Math Equations:** This is where LaTeX shines.
+
+    -   Inline math: `\( E = mc^2 \)` will place the equation within a sentence.
+
+    -   Displayed math: `\[ E = mc^2 \]` will give the equation its own centered line.
+
+-   **Lists:**
+
+    -   Bulleted list: Use the `itemize` environment: `\begin{itemize} \item First item. \end{itemize}`.
+
+    -   Numbered list: Use the `enumerate` environment: `\begin{enumerate} \item First item. \end{enumerate}`.
+
+-   **Footnotes and Cross-References:**
+
+    -   Create a footnote with `\footnote{This is the footnote text.}`.
+
+    -   To reference a figure, table, or section, first label it with `\label{uniqueLabel}`. Then, refer to it anywhere in the text with `\ref{uniqueLabel}`. LaTeX will automatically insert the correct number.
+
+### **Including Your Bibliography**
+
+Managing citations is a core strength of LaTeX. The process involves three parts:
+
+1.  **The `.bib` file:** Your `literature.bib` file in the `1_evidence` folder, which contains all your reference data.
+
+2.  **The `\bibliography` command:** At the end of your document (before `\end{document}`), you tell LaTeX which `.bib` file to use: `\bibliography{../1_evidence/literature.bib}`.
+
+3.  **The `\bibliographystyle` command:** Placed before the `\bibliography` command, this sets the citation style (e.g., `\bibliographystyle{apa}`).
+
+To actually cite a source in your text, you use a `cite` command. When using an author-year style with the `natbib` package (which we included in our preamble with `\usepackage[authoryear]{natbib}`), you have several powerful options:
+
+-   **`\citep{key}` (Parenthetical Citation):** This is the most common command. It wraps the entire author-year reference in parentheses.
+
+    -   **Example:** `...as shown in previous work \citep{Gandrud2020}.`
+
+    -   **Output:** ...as shown in previous work (Gandrud, 2020).
+
+-   **`\cite{key}` or `\citet{key}` (Textual Citation):** This command is used when the author's name is part of the sentence. It keeps the author name in the main text and only puts the year in parentheses. `\citet` is the more robust command from `natbib`.
+
+    -   **Example:** `According to \citet{Gandrud2020}, this workflow is...`
+
+    -   **Output:** According to Gandrud (2020), this workflow is...
+
+-   **Citing Multiple Sources:** You can include multiple keys in a single command, separated by commas.
+
+    -   **Example:** `...as shown in previous work \citep{Gandrud2020, Donoho2010}.`
+
+    -   **Output:** ...as shown in previous work (Gandrud, 2020; Donoho, 2010).
+
+-   **Adding Page Numbers:** To add a page number or other note inside the citation, use square brackets.
+
+    -   **Example:** `...this specific point is made in \citet[p. 45]{Gandrud2020}.`
+
+    -   **Output:** ...this specific point is made in Gandrud (2020, p. 45).
+
+## **Compiling Your Document: Two Powerful Approaches**
+
+### **Approach 1: The Integrated RStudio Workflow with `tinytex`**
+
+For those who prefer to stay within the RStudio environment, compiling a `.tex` file into a PDF requires a LaTeX distribution. Traditionally, this meant installing large, separate programs like MiKTeX (Windows) or MacTeX (macOS). However, there is a much simpler, R-native solution: the **`tinytex`** package.
+
+**What is `tinytex`?**
+Created by Yihui Xie (the same author of `knitr`), `tinytex` is an R package that installs a lightweight, self-contained, and portable LaTeX distribution.
+
+**Why use it?**
+
+1.  **Simplicity:** You can install it directly from the R console: `install.packages("tinytex"); tinytex::install_tinytex()`.
+
+2.  **Automatic Package Installation:** This is its killer feature. If your LaTeX document requires a package (e.g., `\usepackage{booktabs}`) that isn't in the base `tinytex` installation, `tinytex` will automatically find and install it for you during compilation. This saves an enormous amount of time troubleshooting obscure LaTeX errors.
+
+3.  **Self-Contained:** It lives within your R library paths and doesn't interfere with any other LaTeX installations you might have.
+
+With `tinytex` installed, you can write your `paper.tex` file in RStudio and simply click the **"Compile PDF"** button to generate your final document. It's a seamless, integrated experience.
+
+### **Approach 2: The Collaborative Workflow with GitHub + Overleaf**
+
+As discussed in the previous post, we will use GitHub to store our project and Overleaf as our collaborative LaTeX editor. By linking your Overleaf project to your GitHub repository, you ensure your writing environment always has access to your latest results.
+
+While we can write LaTeX on our local machine, a more powerful modern approach is to use **Overleaf**, a collaborative, cloud-based LaTeX editor. It allows multiple co-authors to work on a document simultaneously and focuses purely on writing.
+
+But how do we get our results from our local machine into our Overleaf project? The bridge is **GitHub**.
+
+By keeping our entire project in a GitHub repository, we create a "single source of truth" in the cloud. Overleaf can then link directly to this repository, allowing us to pull in our results seamlessly.
+
+### **Step 1: Push Your Results to GitHub**
+
+After you run your `mainAnalysis.qmd` file locally, the `results/` directory is updated with the latest tables and figures. The next step is to commit and push these changes to your GitHub repository.
+
+Using the command line (or a Git client), you would run:
+
+Bash
+
+```         
+# Stage the new results
+git add 2_warrantAndAnalysis/results/
+
+# Commit the changes with a descriptive message
+git commit -m "Update regression table and stock level figure"
+
+# Push the changes to your main branch on GitHub
+git push origin main
+```
+
+Your latest results are now securely stored and versioned on GitHub.
+
+### **Step 2: Link GitHub to Overleaf and Use Your Results**
+
+Overleaf has a fantastic feature to link a project directly to a GitHub repository.
+
+1.  In Overleaf, create a new project.
+
+2.  In the project menu, select "Import from GitHub".
+
+3.  Authorize Overleaf to access your GitHub account and select your research project repository.
+
+Overleaf will now clone your entire project. You can work on your `paper.tex` file directly in Overleaf's editor. To include your results, you simply need to provide the correct file path from the root of the project.
+
+### **Import Your Results into Overleaf**
+
+Once your Overleaf project is synced with GitHub, you can pull in the results.
+
+#### **Importing a Table**
+
+To include a table, we use the `\input{}` command. This command acts as if you are "pasting" the entire content of the specified file right into that spot. Since we saved our table as a complete, self-contained `.tex` file, this is incredibly clean.
+
+```         
+\section{Results}
+Our primary regression analysis, detailed in Table \ref{tab:reg}, reveals...
+
+% Create a table float environment for the caption and label
+\begin{table}[h!]
+    \centering
+    % Input the table we saved in Part 3.
+    % The path is relative to the root of our project folder.
+    \input{2_warrantAndAnalysis/results/tables/regressionTable.tex}
+    \label{tab:reg}
+\end{table}
+```
+
+The `table` environment provides a caption and a referenceable label. The `\input` command does the heavy lifting of bringing in the table itself.
+
+#### **Importing a Figure**
+
+To include a figure, we use the `\includegraphics{}` command inside a `figure` environment. The `figure` environment is crucial as it provides the caption and label, just like for a table.
+
+latex
+
+```         
+As shown in Figure \ref{fig:stockPlot}, we find a significant difference between categories.
+
+% Create a figure float environment
+\begin{figure}[h!]
+    \centering
+    % Include the figure we saved in Part 3.
+    % We use the .pdf for high-quality printing.
+    \includegraphics[width=0.8\textwidth]{2_warrantAndAnalysis/results/figures/stockByCategory.pdf}
+    \caption{Stock Levels by Product Category.}
+    \label{fig:stockPlot}
+\end{figure}
+```
+
+The `[width=0.8\textwidth]` option scales the image to be 80% of the page's text width, ensuring it fits nicely.
+
+Here is a simplified `paper.tex` file as it would look inside your Overleaf project:
+
+```         
+\documentclass{article}
+
+% --- PREAMBLE ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[authoryear]{natbib}
+
+\title{Analysis of Inventory Stock Levels}
+\author{A. Researcher}
+\date{\today}
+
+% --- DOCUMENT START ---
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This paper investigates the factors affecting inventory stock levels...
+As shown in Figure \ref{fig:stockPlot}, we find a significant difference between categories.
+
+\begin{figure}[h!]
+    \centering
+    % Include the figure from the synced GitHub folder
+    \includegraphics[width=0.8\textwidth]{2_warrantAndAnalysis/results/figures/stockByCategory.pdf}
+    \caption{Stock Levels by Product Category.}
+    \label{fig:stockPlot}
+\end{figure}
+
+\section{Results}
+Our primary regression analysis, detailed in Table \ref{tab:reg}, reveals...
+
+\begin{table}[h!]
+    \centering
+    % Input the table from the synced GitHub folder
+    \input{2_warrantAndAnalysis/results/tables/regressionTable.tex}
+    \label{tab:reg}
+\end{table}
+
+% --- BIBLIOGRAPHY ---
+\bibliographystyle{apa}
+% Point to the BibTeX file in the synced GitHub folder
+\bibliography{1_evidence/literature.bib}
+
+\end{document}
+```
+
+When you need to update your results, the workflow is simple:
+
+1.  Run `mainAnalysis.qmd` on your local machine.
+
+2.  Push the updated `results/` folder to GitHub.
+
+3.  In Overleaf, click the "Git" menu and "Pull" the latest changes from GitHub.
+
+4.  Recompile your `paper.tex`.
+
+Your paper is now updated with the latest results, with zero manual copy-pasting.
+
+## **Building the Slides (`slides.tex`)**
+
+Creating a conference presentation with LaTeX Beamer follows the exact same logic. The document structure is different (using `\begin{frame}` environments), but the principle of including results is identical.
+
+```         
+\documentclass{beamer}
+
+% --- PREAMBLE ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Inventory Stock Level Analysis}
+\author{A. Researcher}
+
+% --- DOCUMENT START ---
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Regression Results}
+    % Input the same table file
+    \input{../2_warrantAndAnalysis/results/tables/regressionTable.tex}
+\end{frame}
+
+\end{document}
+```
+
+You can use the very same result files across multiple presentation formats without any extra work.
+
+## **Building the Website (`website.qmd`)**
+
+For a blog post or project website, we can use Quarto. The syntax is different, but the concept is the same: refer to the files in the `results` directory.
+
+``` markdown
+---
+title: "A Blog Post on My Inventory Research" \
+author: "A. Researcher" format: html 
+---
+
+\## Key Findings Our research explored the factors affecting inventory stock levels. The main regression results are summarized below. \`\`\`{r, results='asis'} \# Read and display the raw LaTeX from the results file \# Quarto is smart enough to render it correctly to HTML knitr::asis_output(readLines("../2_warrantAndAnalysis/results/tables/regressionTable.tex")) \`\`\` We also found a key difference between product categories, as illustrated in this plot: \![Stock Levels by Category\](../2_warrantAndAnalysis/results/figures/stockByCategory.png) \
+```
+
+Note that for a website, it's often better to save and use the `.png` version of the figure, as it's more web-friendly.
+
+## **Conclusion: A Coherent Whole**
+
+This four-part series has taken us through a complete, reproducible research workflow. By separating our project into **Evidence**, **Warrant**, and **Claim**, and by using modern tools like R, Quarto, GitHub, and Overleaf, we have created a system that is not only transparent and reproducible but also highly efficient and collaborative.
+
+This workflow requires discipline, but the payoff in clarity, accuracy, and peace of mind is immeasurable. Happy researching
