@@ -7,7 +7,7 @@ categories: [Latex]
 
 # **Part 1: The Workflow of Reproducible Research Reporting: Concept and File Management**
 
-As a fresh master’s graduate, I’ve found that one of the most important skills isn't just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.\
+As a fresh master’s graduate, I have found that one of the most important skills isn't just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.\
 This workflow, inspired by the principles of reproducible research, helped me efficiently manage my data, analysis, and writing. This series will guide you through setting up and using a similar workflow for your own research projects.
 
 In this first post, we'll cover the foundational concepts of a reproducible research workflow and how to effectively manage your project files.

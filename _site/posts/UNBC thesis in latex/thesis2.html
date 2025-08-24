@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-08-15">
+<meta name="dcterms.date" content="2025-08-24">
 
 <title>Himagineer - Reproducible Research Reporting</title>
 <style>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Reproducible Research Reporting</h1>
-            <p class="subtitle lead">Part 1: Concept and File Management</p>
+            <p class="subtitle lead">Part 3: The Warrant - Weaving the Analysis with Quarto</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Latex</div>
               </div>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 15, 2025</p>
+        <p class="date">August 24, 2025</p>
       </div>
     </div>
     
@@ -148,99 +148,125 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="part-1-the-workflow-of-reproducible-research-reporting-concept-and-file-management" class="level1">
-<h1><strong>Part 1: The Workflow of Reproducible Research Reporting: Concept and File Management</strong></h1>
-<p>As a fresh master’s graduate, I have found that one of the most important skills isn’t just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.<br>
-This workflow, inspired by the principles of reproducible research, helped me efficiently manage my data, analysis, and writing. This series will guide you through setting up and using a similar workflow for your own research projects.</p>
-<p>In this first post, we’ll cover the foundational concepts of a reproducible research workflow and how to effectively manage your project files.</p>
-<section id="what-is-a-reproducible-research-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-reproducible-research-workflow"><strong>What is a Reproducible Research Workflow?</strong></h2>
-<p>A reproducible research workflow is a system for organizing your entire research project—from data gathering to final presentation—in a way that allows you, or others, to easily and exactly reproduce your results. The key idea is to automate and link every step of the process, ensuring that your final paper is a direct, verifiable product of your data and analysis.</p>
-</section>
-<section id="core-principles-text-files-and-human-readability" class="level2">
-<h2 class="anchored" data-anchor-id="core-principles-text-files-and-human-readability"><strong>Core Principles: Text Files and Human Readability</strong></h2>
-<p>Before we dive into organizing our folders, let’s establish two guiding principles that are the bedrock of this entire workflow, as emphasized in Christopher Gandrud’s “Reproducible Research with R and RStudio”.</p>
-<section id="everything-is-a-text-file" class="level3">
-<h3 class="anchored" data-anchor-id="everything-is-a-text-file"><strong>1. Everything is a (Text) File</strong></h3>
-<p>The ideal is to store every component of your research in plain text formats.</p>
-<ul>
-<li><p><strong>Data:</strong> Use text-based formats like comma-separated values (<code>.csv</code>).</p></li>
-<li><p><strong>Analysis &amp; Documents:</strong> This is where R scripts (<code>.R</code>), Quarto/R Markdown (<code>.qmd</code>/<code>.Rmd</code>), LaTeX (<code>.tex</code>), and BibTeX (<code>.bib</code>) files shine. They are all plain text.</p></li>
-</ul>
-<p>Why is this so important? Text files are <strong>universal and future-proof</strong>. They can be opened by virtually any software on any computer. Proprietary file formats can become obsolete, locking you out of your own work. Text files are also easily tracked by version control systems like Git.</p>
-</section>
-<section id="all-files-should-be-human-readable" class="level3">
-<h3 class="anchored" data-anchor-id="all-files-should-be-human-readable"><strong>2. All Files Should Be Human-Readable</strong></h3>
-<p>Just because a computer can read your file doesn’t mean a person can understand it. The goal is to make your files clear to two very important people: <strong>your future self and your collaborators.</strong></p>
-<ul>
-<li><p><strong>Commenting Your Code:</strong> Liberally add comments to your R scripts. Explain the <em>why</em> behind your code, not just the <em>what</em>.</p></li>
-<li><p><strong>Clear Naming Conventions:</strong> Give your files and variables descriptive names. A consistent style, like the <strong>camelCase</strong> we use here (e.g., <code>mainAnalysis.qmd</code>), makes files easy to read and reference.</p></li>
-<li><p><strong>Literate Programming:</strong> This is the key. Tools like Quarto allow you to weave your code, its output, and your explanatory text together in a single document.</p></li>
-</ul>
-</section>
-</section>
-<section id="structuring-research-the-toulmin-model" class="level2">
-<h2 class="anchored" data-anchor-id="structuring-research-the-toulmin-model"><strong>Structuring Research: The Toulmin Model</strong></h2>
-<p>A research paper is, at its core, a formal argument. To structure our project files for maximum clarity and reproducibility, we can borrow from philosopher Stephen Toulmin’s model of argumentation. The model provides a powerful framework for understanding the components of a persuasive argument. The three core components are:</p>
+<section id="part-3-the-warrant---weaving-the-analysis-with-quarto" class="level1">
+<h1><strong>Part 3: The Warrant - Weaving the Analysis with Quarto</strong></h1>
+<p>Welcome back. In <a href="">Part 1</a>, we established our project’s structure, and in <a href="">Part 2</a>, we scripted the gathering of our raw evidence.</p>
+<p>Now, we will construct the <strong>Warrant</strong>—the intellectual and computational engine of our research. This is where we transform our raw evidence into analytical results. Our entire process will be orchestrated from a single, central document: <code>mainAnalysis.qmd</code>, located in the <code>2_warrantAndAnalysis</code> folder. This document will tell the complete story of our analysis, from initial exploration to final model output, making it the perfect summary to share with supervisors and collaborators.</p>
+<section id="the-analysis-flow-a-narrative-driven-by-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis-flow-a-narrative-driven-by-scripts"><strong>The Analysis Flow: A Narrative Driven by Scripts</strong></h2>
+<p>Our workflow is designed for clarity and modularity. The <code>mainAnalysis.qmd</code> file acts as the conductor, calling on specialized R scripts to perform specific tasks.</p>
 <ol type="1">
-<li><p><strong>The Claim:</strong> This is the assertion you are making, the conclusion you want your audience to accept. In academic terms, this is your core finding.</p></li>
-<li><p><strong>The Evidence (or Data/Grounds):</strong> These are the facts, data, and established knowledge that provide the foundation for your claim. In our context, the evidence is twofold: the <strong>raw data</strong> we analyze and the <strong>scholarly literature</strong> upon which our work is built.</p></li>
-<li><p><strong>The Warrant:</strong> This is the crucial, logical connection that links the evidence to the claim. The warrant explains <em>how</em> the evidence supports the claim. It’s the reasoning, the methodology, the analysis.</p></li>
+<li><p><strong>Load Evidence:</strong> Read the raw data from the <code>1_evidence</code> directory.</p></li>
+<li><p><strong>Source Explanatory Analysis:</strong> Call the <code>00_explanatory.R</code> script to generate and load initial data objects.</p></li>
+<li><p><strong>Source Research Models:</strong> Call the <code>.R</code> scripts from the <code>models/</code> directory to run the core analyses and create model objects.</p></li>
+<li><p><strong>Save Results:</strong> Use the objects created by the scripts to generate and save the final tables and figures into the <code>results/</code> directory.</p></li>
 </ol>
-<p>A reproducible workflow, therefore, should be structured to make the relationships between your Claim, Evidence, and Warrant transparent and verifiable. We can organize our project files to directly mirror this logical structure.</p>
-<pre><code>yourProjectName/
-|
-|-- 1_evidence/
-|   |-- rawData/
-|   |   |-- rawDataSource1.csv
-|   |   `-- rawDataSource2.csv
-|   `-- literature.bib
-|
-|-- 2_warrantAndAnalysis/
-|   |-- explns/
-|   |   `-- 00_explanatory.R
-|   |-- models/
-|   |   |-- 01_linearRegression.R
-|   |   `-- 02_bayesianModel.R
-|   |-- results/
-|   |   |-- tables/
-|   |   |   `-- regressionTable.tex
-|   |   `-- figures/
-|   |       `-- scatterPlot.png
-|   |-- referenceNotes.md
-|   `-- mainAnalysis.qmd
-|
-|-- 3_claimAndPresentation/
-|   |-- paper.tex
-|   |-- slides.tex
-|   `-- website.qmd
-|
-`-- README.md</code></pre>
-<p>Here’s how the file structure maps to the Toulmin model:</p>
+<p>Let’s walk through how this is implemented in our <code>mainAnalysis.qmd</code> file.</p>
+<section id="step-1-setup-and-loading-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-setup-and-loading-evidence"><strong>Step 1: Setup and Loading Evidence</strong></h3>
+<p>We begin with a setup chunk to load packages and a data chunk to load our raw data.</p>
+<p>```{{r setup, include=false}}<br>
+# Load all necessary packages<br>
+library(tidyverse)<br>
+library(broom)<br>
+library(knitr)<br>
+library(rio)<br>
+# Set global options<br>
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)<br>
+```<br>
+### Data Loading<br>
+```{{r loadData}}<br>
+# The path goes up one directory (‘..’) then into the evidence folder.<br>
+inventoryData &lt;- import(“../1_evidence/rawData/manualInventory.csv”)<br>
+```</p>
+</section>
+<section id="step-2-sourcing-the-explanatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-sourcing-the-explanatory-analysis"><strong>Step 2: Sourcing the Explanatory Analysis</strong></h3>
+<p>We execute our exploratory script. Its job is to perform initial calculations and create exploratory objects, which are then available for us to use in the main document.</p>
+<p>### Explanatory Analysis To begin, we explore the basic characteristics of our data by running the script in `explns/00_explanatory.R`.<br>
+```{{r runExplanatoryAnalysis}}<br>
+# This script creates objects like ‘summary_stats’<br>
+source(“explns/00_explanatory.R”)<br>
+```</p>
+<p>Now we can display the `summary_stats` object that was just created.</p>
+<p>```{{r showExplanatoryStats, echo=true}}<br>
+# Use kable for a clean summary table right here in our analysis<br>
+document kable(summary_stats, caption = “Initial Data Summary”)<br>
+```</p>
+</section>
+<section id="step-3-sourcing-the-research-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-sourcing-the-research-models"><strong>Step 3: Sourcing the Research Models</strong></h3>
+<p>Next, we execute our core statistical models. The key is that the R scripts in the <code>models/</code> folder should only create the model objects; they should <em>not</em> save any output themselves.</p>
+<p><strong>Example: <code>models/01_linearRegression.R</code></strong></p>
+<p># models/01_linearRegression.R<br>
+# This script’s ONLY job is to run the model and produce the ‘modelFit’ object.<br>
+# It assumes ‘inventoryData’ is already loaded in the environment.<br>
+modelFit &lt;- lm(stockLevel ~ storageTemp + category, data = inventoryData)</p>
+<p>We call this from <code>mainAnalysis.qmd</code> to create the <code>modelFit</code> object in our environment.</p>
+<p>### Running the Main Regression Model</p>
+<p>Now, we run the linear model specified in our external script. This will create a model object called `modelFit` in our R environment, which we can then use to generate results.<br>
+```{{r runLinearModel}}<br>
+source(“models/01_linearRegression.R”)<br>
+```</p>
+</section>
+<section id="step-4-saving-tables-and-figures" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-saving-tables-and-figures"><strong>Step 4: Saving Tables and Figures</strong></h3>
+<p>With the <code>modelFit</code> object created, we can now generate our final outputs from within <code>mainAnalysis.qmd</code>. The key here is that we don’t just display them—we <strong>save them as files</strong> to the <code>results/</code> directory. This decouples our analysis from our final presentation, allowing us to simply <code>\input</code> or <code>\includegraphics</code> in our LaTeX documents later.</p>
+<section id="saving-a-table-as-a-.tex-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-table-as-a-.tex-file"><strong>Saving a Table as a <code>.tex</code> file</strong></h4>
+<p>We’ll use the <code>broom</code> package to clean our model output and <code>knitr::kable()</code> with the <code>latex</code> format to create a publication-ready table.</p>
+<p>```{{r saveTable}}<br>
+# Tidy the model output into a clean data frame<br>
+modelSummary &lt;- tidy(modelFit)<br>
+<br>
+# Use kable to format as a LaTeX table and save_kable to write it to a file<br>
+# The booktabs = TRUE option creates a more professional-looking table<br>
+kable(modelSummary, format = “latex”, booktabs = TRUE,<br>
+caption = “Regression of Stock Levels on Storage Temperature and Category.”,<br>
+col.names = c(“Term”, “Estimate”, “Std. Error”, “Statistic”, “P-value”), digits = 3) %&gt;%<br>
+save_kable(file = “results/tables/regressionTable.tex”)<br>
+```</p>
+<p>This code creates a file named <code>regressionTable.tex</code> in the <code>results/tables/</code> folder. It’s a self-contained piece of LaTeX code, ready to be included in our paper.</p>
+</section>
+<section id="saving-a-figure-as-a-.pdf-or-.png-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-figure-as-a-.pdf-or-.png-file"><strong>Saving a Figure as a <code>.pdf</code> or <code>.png</code> file</strong></h4>
+<p>Similarly, we use <code>ggplot2</code> to create our plot and the <code>ggsave()</code> function to save it as a high-quality image file.</p>
+<p>```{{r saveFigure}}<br>
+# Create the plot object<br>
+stockPlot &lt;- ggplot(inventoryData, aes(x = category, y = stockLevel, fill = category)) +<br>
+geom_boxplot() +<br>
+labs(title = “Stock Levels by Product Category”, x = “Category”, y = “Stock Level”) +<br>
+theme_minimal()<br>
+# Save the plot to the figures directory<br>
+# Saving as .pdf is great for LaTeX; .png is better for websites.<br>
+ggsave( “results/figures/stockByCategory.pdf”, plot = stockPlot, width = 7, height = 5 )<br>
+```</p>
+<p>This creates a file named <code>stockByCategory.pdf</code> in our <code>results/figures/</code> folder.</p>
+<p>By the end of this process, running the single <code>mainAnalysis.qmd</code> file has verifiably transformed your raw evidence into a complete set of polished, presentation-ready results, all neatly organized in their respective folders.</p>
+</section>
+</section>
+<section id="a-note-on-tooling-you-have-choices" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-tooling-you-have-choices"><strong>A Note on Tooling: You Have Choices!</strong></h3>
+<p>It is important to highlight that the tools shown above (<code>knitr::kable</code> and <code>ggplot2::ggsave</code>) are just one way to accomplish our goal. The R ecosystem is rich with packages designed for creating high-quality tables and figures. The key is not the specific package, but the workflow: <strong>use code to generate and save your results as files.</strong></p>
+<p>Here are some excellent alternatives you might explore:</p>
 <ul>
-<li><p><strong><code>1_evidence/</code></strong>: This directory holds the unassailable grounds for your argument.</p>
+<li><p><strong>For Tables:</strong></p>
 <ul>
-<li><p><code>rawData/</code>: Your empirical evidence.</p></li>
-<li><p><code>literature.bib</code>: Your scholarly evidence.</p></li>
+<li><p><strong><code>xtable</code></strong>: One of the oldest and most powerful packages for creating LaTeX and HTML tables. It offers a huge amount of control over the final output.</p></li>
+<li><p><strong><code>texreg</code></strong>: Fantastic for creating regression tables from multiple models, side-by-side, in a format common in academic journals.</p></li>
+<li><p><strong><code>modelsummary</code></strong>: A modern and extremely flexible package that can output results to a huge variety of formats (LaTeX, HTML, Word, Markdown) and is very easy to use.</p></li>
 </ul></li>
-<li><p><strong><code>2_warrantAndAnalysis/</code></strong>: This directory is your warrant. It contains the entire logical and computational process that connects your evidence to your claim.</p>
+<li><p><strong>For Figures:</strong></p>
 <ul>
-<li><p><code>mainAnalysis.qmd</code>: The master narrative of your analysis. It sources the models, generates all outputs, and is the engine of the project.</p></li>
-<li><p><code>models/</code>: The specific, modular R scripts that execute the statistical tests.</p></li>
-<li><p><strong><code>results/</code></strong>: The direct outputs of your analysis—tables and figures—logically live here, alongside the scripts that created them.</p></li>
-<li><p><code>referenceNotes.txt</code>: Your explicit reasoning about the literature.</p></li>
-</ul></li>
-<li><p><strong><code>3_claimAndPresentation/</code></strong>: This directory contains the various final formats for your <strong>Claim</strong>. These are communication documents, not analysis documents. They are lightweight and focused on presentation.</p>
-<ul>
-<li><p><strong><code>paper.tex</code></strong>: Your formal academic paper in LaTeX.</p></li>
-<li><p><strong><code>slides.tex</code></strong>: Your conference presentation, likely using LaTeX Beamer.</p></li>
-<li><p><strong><code>website.qmd</code></strong>: A Quarto file for a blog post or project website.</p></li>
-<li><p>All three of these files will pull their content (citations from <code>literature.bib</code>, tables and figures from <code>results/</code>) from the other directories.</p></li>
+<li><p><strong>Base R Graphics:</strong> R’s built-in <code>plot()</code> function is powerful and fast. To save a base R plot, you would wrap the code like this: <code>pdf("myplot.pdf"); plot(x,y); dev.off()</code>.</p></li>
+<li><p><strong><code>googleVis</code></strong>: Creates interactive HTML-based charts and maps using the Google Charts API. These are excellent for web-based presentations (<code>website.qmd</code>) but cannot be embedded in static PDF documents.</p></li>
 </ul></li>
 </ul>
-<p>By organizing your project this way, anyone can clearly trace the path from your foundational evidence, through your analytical warrant, to your final claim. This is the essence of a truly reproducible and defensible research project.</p>
+<p>Feel free to experiment and find the packages that you prefer. As long as you can save their output to a file in your <code>results</code> directory, they will fit perfectly into this reproducible workflow.</p>
+<p>In <strong>Part 4: The Claim - Presenting Your Research</strong>, we’ll see how to write the <code>paper.tex</code> and <code>slides.tex</code> files that effortlessly pull in these saved tables and figures to construct a polished, professional, and fully reproducible final document.</p>
 
 
+</section>
 </section>
 </section>
 
