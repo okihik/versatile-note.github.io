@@ -14,8 +14,7 @@ I recently stumbled upon something that completely blew me away: a new theory su
 
 The research behind this theory is detailed in a paper titled "Positive Neutrino Masses with DESI DR2 via Matter Conversion to Dark Energy," which was published in *Physical Review Letters*.
 
-The full citation is:
-S. P. Ahlen et al., "Positive Neutrino Masses with DESI DR2 via Matter Conversion to Dark Energy," PHYSICAL REVIEW LETTERS 135, 081003 (2025).
+The full citation is: S. P. Ahlen et al., "Positive Neutrino Masses with DESI DR2 via Matter Conversion to Dark Energy," PHYSICAL REVIEW LETTERS 135, 081003 (2025).
 
 ------------------------------------------------------------------------
 
