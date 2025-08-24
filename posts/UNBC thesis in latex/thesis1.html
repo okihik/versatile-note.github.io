@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-11">
+<meta name="dcterms.date" content="2025-08-19">
 
-<title>Crafting Academic Reports: A LaTeX and Overleaf Guide – Himagineer</title>
+<title>Reproducible Research Reporting – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,8 +150,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
-            <p class="subtitle lead">part 1</p>
+      <h1 class="title">Reproducible Research Reporting</h1>
+            <p class="subtitle lead">Part 2: Data Gathering and Storage</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Latex</div>
               </div>
@@ -130,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 11, 2025</p>
+        <p class="date">August 19, 2025</p>
       </div>
     </div>
     
@@ -149,8 +184,224 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="part-2-data-gathering-and-storage-the-evidence-base" class="level1">
+<h1><strong>Part 2: Data Gathering and Storage: The Evidence Base</strong></h1>
+<p>Welcome back to our series on building a reproducible research workflow.<br>
+In <a href="https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis0.html">Part 1</a>, we established a philosophical and structural foundation for our project using the Toulmin model.<br>
+We set up a directory structure to house our <strong>Evidence</strong>, <strong>Warrant</strong>, and <strong>Claim</strong>.</p>
+<p>Now, we’ll focus on the first and most critical step of the research process: the <strong>Evidence</strong>.<br>
+Specifically, how do we gather and store our data and references in a way that is robust, transparent, and reproducible?<br>
+This post will cover the “how-to” for populating our <code>1_evidence/</code> directory.</p>
+<section id="the-sanctity-of-raw-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-sanctity-of-raw-data"><strong>The Sanctity of Raw Data</strong></h2>
+<p>The <code>1_evidence/rawData/</code> directory is the most important folder in your entire project.<br>
+It should be treated as a write-once, read-many-times archive.</p>
+<p><strong>The Golden Rule:</strong> Never, ever, <em>ever</em> manually edit your raw data files. Do not open <code>rawDataSource1.csv</code> in Excel to “quickly fix” a typo or delete a column.</p>
+<p>Why is this so critical?</p>
+<ul>
+<li><p><strong>Traceability:</strong> Any change to the data must be documented and scripted. If you manually edit the raw file, you lose the record of that change forever.</p></li>
+<li><p><strong>Integrity:</strong> It guarantees that you can always return to the original state of your data if you make a mistake in your data processing scripts.</p></li>
+<li><p><strong>Reproducibility:</strong> Anyone seeking to reproduce your work needs access to the exact same starting point you had.</p></li>
+</ul>
+<p>All data cleaning, filtering, and transformation should happen programmatically in the scripts we will build later in the <code>2_warrantAndAnalysis/</code> directory.</p>
+</section>
+<section id="gathering-data-scripting-the-collection" class="level2">
+<h2 class="anchored" data-anchor-id="gathering-data-scripting-the-collection"><strong>Gathering Data: Scripting the Collection</strong></h2>
+<p>The most reproducible way to get data is to script its collection. This creates a perfect, runnable record of where your evidence came from.</p>
+<section id="method-1-creating-data-by-hand-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="method-1-creating-data-by-hand-in-rstudio"><strong>Method 1: Creating Data “By Hand” in RStudio</strong></h3>
+<p>Sometimes, your data might come from a non-digital source, like a historical text or your own experimental observations. Instead of putting it in Excel first, you can enter it directly into R using a <code>data.frame()</code>. This is the most transparent way to digitize data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r createDataManually}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a small dataset of hypothetical inventory data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>inventoryData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">productId =</span> <span class="fu">c</span>(<span class="st">"A1"</span>, <span class="st">"A2"</span>, <span class="st">"B1"</span>, <span class="st">"B2"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Fruit"</span>, <span class="st">"Fruit"</span>, <span class="st">"Dairy"</span>, <span class="st">"Dairy"</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stockLevel =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">80</span>, <span class="dv">120</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">storageTemp =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Save this manually created raw data for the record</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: This is one of the few times we write to the evidence folder,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and only to create a reproducible starting point.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(inventoryData, <span class="st">"../1_evidence/rawData/manualInventory.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="method-2-sourcing-from-the-web-http" class="level3">
+<h3 class="anchored" data-anchor-id="method-2-sourcing-from-the-web-http"><strong>Method 2: Sourcing from the Web (HTTP)</strong></h3>
+<p>If data is hosted on a website in a plain-text format (like <code>.csv</code>), you can download it directly. This avoids manual “download and drop” and ensures you’re getting the data from the original source every time.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r downloadFromWeb}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of a raw CSV file on the web</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://www.some-data-repository.com/food-data.csv"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use rio::import( ) to read the data directly into R</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># The rio package is great at handling various file types from a URL</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>webData <span class="ot">&lt;-</span> <span class="fu">import</span>(url, <span class="at">format =</span> <span class="st">"csv"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="method-3-sourcing-from-github" class="level3">
+<h3 class="anchored" data-anchor-id="method-3-sourcing-from-github"><strong>Method 3: Sourcing from GitHub</strong></h3>
+<p>GitHub is a common place to find data.<br>
+To download a file, it is similar to Method 2, make sure you use the “Raw” file URL.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r downloadFromGitHub}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># URL for the "Raw" version of a CSV file on GitHub</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>githubUrl <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/someuser/somerepo/main/data.csv"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>githubData <span class="ot">&lt;-</span> <span class="fu">import</span>(githubUrl, <span class="at">format =</span> <span class="st">"csv"</span> )</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="method-4-sourcing-from-a-sql-server" class="level3">
+<h3 class="anchored" data-anchor-id="method-4-sourcing-from-a-sql-server"><strong>Method 4: Sourcing from a SQL Server</strong></h3>
+<p>For larger, more structured projects, data is often stored in a relational database (like PostgreSQL, MySQL, or SQL Server). R can connect directly to these databases and run SQL queries. This is an extremely powerful and reproducible method.</p>
+<p>To do this, you’ll need two key packages:</p>
+<ol type="1">
+<li><p><code>DBI</code>: The standard database interface for R.</p></li>
+<li><p>A specific package for your database type (e.g., <code>RPostgres</code> for PostgreSQL, <code>RMariaDB</code> for MySQL/MariaDB).</p></li>
+</ol>
+<p>The process involves three steps: connect, query, and disconnect.</p>
+<p>``<code>{r downloadFromSQL, eval=false} # NOTE: This chunk is not evaluated (</code>eval=false`) because it requires a live database. # 1. Load the necessary libraries library(DBI) library(RPostgres) # Or the package for your specific database</p>
+</section>
+</section>
+</section>
+<section id="establish-the-connection" class="level1">
+<h1>2. Establish the connection</h1>
+</section>
+<section id="never-hard-code-credentials-in-a-script.-use-environment-variables-or-a-secure-config-file." class="level1">
+<h1>NEVER hard-code credentials in a script. Use environment variables or a secure config file.</h1>
+<p>con &lt;- dbConnect(RPostgres::Postgres(), dbname = “productionDB”, host = “db.your-university.edu”, port = 5432, user = Sys.getenv(“DB_USER”), password = Sys.getenv(“DB_PASSWORD”))</p>
+</section>
+<section id="write-and-execute-your-sql-query" class="level1">
+<h1>3. Write and execute your SQL query</h1>
+<p>sqlQuery &lt;- “SELECT productId, saleDate, unitsSold FROM sales WHERE saleDate &gt;= ‘2022-01-01’;” salesDataFromDB &lt;- dbGetQuery(con, sqlQuery)</p>
+</section>
+<section id="always-close-the-connection" class="level1">
+<h1>4. Always close the connection</h1>
+<p>dbDisconnect(con)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>This method is highly reproducible because the SQL query is a precise, text-based record of the exact data you requested.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Data Manipulation: Forging the Analytical Dataset**</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Raw data is rarely ready for analysis.\</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>The following steps are fundamental for preparing your data.\</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>We'll use the <span class="in">`dplyr`</span> package, a core part of the <span class="in">`tidyverse`</span>, for its powerful and readable syntax.</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r dataManipulation}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse suite of packages</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's assume we've loaded our 'inventoryData' and 'webData'</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># For this example, let's create a second data frame to merge</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>salesData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">productId =</span> <span class="fu">c</span>(<span class="st">"A1"</span>, <span class="st">"B1"</span>, <span class="st">"A2"</span>, <span class="st">"B2"</span>),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">unitsSold =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">75</span>, <span class="dv">40</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="binding-and-merging-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="binding-and-merging-dataframes"><strong>Binding and Merging DataFrames</strong></h3>
+<ul>
+<li><p><strong>Binding:</strong> If you have two data frames with the exact same columns and you just want to stack them, use <code>bind_rows()</code>.</p></li>
+<li><p><strong>Merging:</strong> More commonly, you’ll want to join two datasets based on a common key (like <code>productId</code>). This is a <strong>merge</strong> or <strong>join</strong>.</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mergingData}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge inventoryData with salesData by the 'productId' column</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fullData <span class="ot">&lt;-</span> <span class="fu">left_join</span>(inventoryData, salesData, <span class="at">by =</span> <span class="st">"productId"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ordering-and-subsetting" class="level3">
+<h3 class="anchored" data-anchor-id="ordering-and-subsetting"><strong>Ordering and Subsetting</strong></h3>
+<ul>
+<li><p><strong>Ordering:</strong> Ensure your data is in a logical order, for example, by category and then product ID.</p></li>
+<li><p><strong>Subsetting:</strong> Select only the rows and columns you need for a specific analysis.</p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r orderingSubsetting}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Order the data</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fullData <span class="ot">&lt;-</span> fullData <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(category, productId)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset to keep only the 'Fruit' category and specific columns</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>fruitData <span class="ot">&lt;-</span> fullData <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"Fruit"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(productId, stockLevel, unitsSold)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="recoding-variables-and-creating-new-ones" class="level3">
+<h3 class="anchored" data-anchor-id="recoding-variables-and-creating-new-ones"><strong>Recoding Variables and Creating New Ones</strong></h3>
+<p>You often need to modify existing variables or create new ones.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r recodingCreating}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Recoding a string variable: Let's make category names uppercase</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fullData <span class="ot">&lt;-</span> fullData <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">category =</span> <span class="fu">toupper</span>(category))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new variable: Calculate the sell-through rate</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>fullData <span class="ot">&lt;-</span> fullData <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sellThroughRate =</span> unitsSold <span class="sc">/</span> (stockLevel <span class="sc">+</span> unitsSold))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dealing-with-duplicate-columns" class="level3">
+<h3 class="anchored" data-anchor-id="dealing-with-duplicate-columns"><strong>Dealing with Duplicate Columns</strong></h3>
+<p>When you merge datasets, you might end up with duplicate columns (e.g., <code>country.x</code>, <code>country.y</code>).<br>
+It’s crucial to resolve this.<br>
+Decide which column to keep and rename it, dropping the others.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r handleDuplicates}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's pretend we had a 'country.x' and 'country.y'</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We decide 'country.x' is the correct one and rename it</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># hypotheticalData &lt;- hypotheticalData %&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   rename(country = country.x) %&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   select(-country.y) # The minus sign drops the column</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="storing-your-literature-the-power-of-bibtex" class="level2">
+<h2 class="anchored" data-anchor-id="storing-your-literature-the-power-of-bibtex"><strong>Storing Your Literature: The Power of BibTeX</strong></h2>
+<p>Just as your raw data is empirical evidence, your references are scholarly evidence. The best way to manage them is with a BibTeX file (<code>.bib</code>).</p>
+<p>A BibTeX file is a plain-text database of all your citations. Each entry has a unique key and contains all the necessary metadata for a reference.</p>
+<p><strong>Why use BibTeX?</strong></p>
+<ul>
+<li><p><strong>Single Source of Truth:</strong> All your references are in one place. No more copying and pasting citations between documents.</p></li>
+<li><p><strong>Consistency:</strong> It ensures every citation in your paper and every entry in your bibliography is formatted perfectly and consistently according to your chosen style.</p></li>
+<li><p><strong>Portability:</strong> It’s a plain text file, making it easy to share, version control, and use across different projects and documents.</p></li>
+</ul>
+<section id="bibtex-examples" class="level3">
+<h3 class="anchored" data-anchor-id="bibtex-examples"><strong>BibTeX Examples</strong></h3>
+<p>Let’s look at a few common entry types you might have in your <code>1_evidence/literature.bib</code> file.</p>
+<p><strong>1. A Book:</strong> The <code>@book</code> type is for a complete book. Note that the <code>pages</code> field is generally not used for a whole book, but for a specific chapter (see next example).</p>
+<pre><code>@book{Gandrud2020,
+  author    = {Christopher Gandrud},
+  title     = {Reproducible Research with R and RStudio},
+  edition   = {Third},
+  year      = {2020},
+  publisher = {CRC Press}
+}</code></pre>
+<p><strong>2. A Journal Article:</strong> The <code>@article</code> type is for a peer-reviewed journal article. It requires <code>journal</code> and <code>volume</code> fields.</p>
+<pre><code>@article{Donoho2010,
+  author  = {David L. Donoho},
+  title   = {An invitation to reproducible computational research},
+  journal = {Biostatistics},
+  year    = {2010},
+  volume  = {11},
+  number  = {3},
+  pages   = {385--388}
+}</code></pre>
+<p><strong>3. A Chapter in an Edited Book:</strong> The <code>@incollection</code> type is perfect for citing a single chapter from a book with multiple authors and an editor. This is where the <code>pages</code> field is essential.</p>
+<pre><code>@incollection{Buckheit1995,
+  author    = {Jonathan B. Buckheit and David L. Donoho},
+  title     = {Wavelab and Reproducible Research},
+  booktitle = {Wavelets and Statistics},
+  editor    = {Anestis Antoniadis},
+  year      = {1995},
+  publisher = {Springer},
+  address   = {New York},
+  pages     = {55--81}
+}</code></pre>
+<p>The unique key (e.g., <code>Gandrud2020</code>, <code>Donoho2010</code>) is what you’ll use to cite the work in your documents.</p>
+<p>By the end of this stage, your <code>1_evidence/</code> directory should be populated with your raw, untouched data files and a comprehensive <code>literature.bib</code> file. You now have a solid, verifiable foundation of evidence.</p>
+<p>After these steps, you have a clean, well-documented, and fully-reproducible analytical dataset, ready for the statistical modeling we will cover in the next part.</p>
+<p>In our next post, we will move on to <strong>Part 3: The Warrant - Processing Data and Weaving the Analysis</strong>, where we’ll start working in the <code>2_warrantAndAnalysis/</code> directory. We’ll write our first R scripts to read in the raw data, clean it, and prepare it for the main analysis.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
