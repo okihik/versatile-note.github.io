@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-08-15">
 
-<title>Himagineer</title>
+<title>Reproducible Research Reporting – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Himagineer</span>
     </a>
   </div>
@@ -150,7 +91,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
@@ -171,207 +112,140 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Reproducible Research Reporting</h1>
+            <p class="subtitle lead">Part 1: Concept and File Management</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Latex</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 15, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="TGF0ZXg=">Latex <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhcnRvJTIwQmxvZw==">Quarto Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVwb3J0aW5n">Reporting <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="part-1-the-workflow-of-reproducible-research-reporting-concept-and-file-management" class="level1">
+<h1><strong>Part 1: The Workflow of Reproducible Research Reporting: Concept and File Management</strong></h1>
+<p>As a fresh master’s graduate, I’ve found that one of the most important skills isn’t just knowing how to run a regression, but how to ensure my entire research process is transparent and reproducible. This means others can easily access and replicate my work, from the raw data to the final presentation.<br>
+This workflow, inspired by the principles of reproducible research, helped me efficiently manage my data, analysis, and writing. This series will guide you through setting up and using a similar workflow for your own research projects.</p>
+<p>In this first post, we’ll cover the foundational concepts of a reproducible research workflow and how to effectively manage your project files.</p>
+<section id="what-is-a-reproducible-research-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-reproducible-research-workflow"><strong>What is a Reproducible Research Workflow?</strong></h2>
+<p>A reproducible research workflow is a system for organizing your entire research project—from data gathering to final presentation—in a way that allows you, or others, to easily and exactly reproduce your results. The key idea is to automate and link every step of the process, ensuring that your final paper is a direct, verifiable product of your data and analysis.</p>
+</section>
+<section id="core-principles-text-files-and-human-readability" class="level2">
+<h2 class="anchored" data-anchor-id="core-principles-text-files-and-human-readability"><strong>Core Principles: Text Files and Human Readability</strong></h2>
+<p>Before we dive into organizing our folders, let’s establish two guiding principles that are the bedrock of this entire workflow, as emphasized in Christopher Gandrud’s “Reproducible Research with R and RStudio”.</p>
+<section id="everything-is-a-text-file" class="level3">
+<h3 class="anchored" data-anchor-id="everything-is-a-text-file"><strong>1. Everything is a (Text) File</strong></h3>
+<p>The ideal is to store every component of your research in plain text formats.</p>
+<ul>
+<li><p><strong>Data:</strong> Use text-based formats like comma-separated values (<code>.csv</code>).</p></li>
+<li><p><strong>Analysis &amp; Documents:</strong> This is where R scripts (<code>.R</code>), Quarto/R Markdown (<code>.qmd</code>/<code>.Rmd</code>), LaTeX (<code>.tex</code>), and BibTeX (<code>.bib</code>) files shine. They are all plain text.</p></li>
+</ul>
+<p>Why is this so important? Text files are <strong>universal and future-proof</strong>. They can be opened by virtually any software on any computer. Proprietary file formats can become obsolete, locking you out of your own work. Text files are also easily tracked by version control systems like Git.</p>
+</section>
+<section id="all-files-should-be-human-readable" class="level3">
+<h3 class="anchored" data-anchor-id="all-files-should-be-human-readable"><strong>2. All Files Should Be Human-Readable</strong></h3>
+<p>Just because a computer can read your file doesn’t mean a person can understand it. The goal is to make your files clear to two very important people: <strong>your future self and your collaborators.</strong></p>
+<ul>
+<li><p><strong>Commenting Your Code:</strong> Liberally add comments to your R scripts. Explain the <em>why</em> behind your code, not just the <em>what</em>.</p></li>
+<li><p><strong>Clear Naming Conventions:</strong> Give your files and variables descriptive names. A consistent style, like the <strong>camelCase</strong> we use here (e.g., <code>mainAnalysis.qmd</code>), makes files easy to read and reference.</p></li>
+<li><p><strong>Literate Programming:</strong> This is the key. Tools like Quarto allow you to weave your code, its output, and your explanatory text together in a single document.</p></li>
+</ul>
+</section>
+</section>
+<section id="structuring-research-the-toulmin-model" class="level2">
+<h2 class="anchored" data-anchor-id="structuring-research-the-toulmin-model"><strong>Structuring Research: The Toulmin Model</strong></h2>
+<p>A research paper is, at its core, a formal argument. To structure our project files for maximum clarity and reproducibility, we can borrow from philosopher Stephen Toulmin’s model of argumentation. The model provides a powerful framework for understanding the components of a persuasive argument. The three core components are:</p>
+<ol type="1">
+<li><p><strong>The Claim:</strong> This is the assertion you are making, the conclusion you want your audience to accept. In academic terms, this is your core finding.</p></li>
+<li><p><strong>The Evidence (or Data/Grounds):</strong> These are the facts, data, and established knowledge that provide the foundation for your claim. In our context, the evidence is twofold: the <strong>raw data</strong> we analyze and the <strong>scholarly literature</strong> upon which our work is built.</p></li>
+<li><p><strong>The Warrant:</strong> This is the crucial, logical connection that links the evidence to the claim. The warrant explains <em>how</em> the evidence supports the claim. It’s the reasoning, the methodology, the analysis.</p></li>
+</ol>
+<p>A reproducible workflow, therefore, should be structured to make the relationships between your Claim, Evidence, and Warrant transparent and verifiable. We can organize our project files to directly mirror this logical structure.</p>
+<pre><code>yourProjectName/
+|
+|-- 1_evidence/
+|   |-- rawData/
+|   |   |-- rawDataSource1.csv
+|   |   `-- rawDataSource2.csv
+|   `-- literature.bib
+|
+|-- 2_warrantAndAnalysis/
+|   |-- explns/
+|   |   `-- 00_explanatory.R
+|   |-- models/
+|   |   |-- 01_linearRegression.R
+|   |   `-- 02_bayesianModel.R
+|   |-- results/
+|   |   |-- tables/
+|   |   |   `-- regressionTable.tex
+|   |   `-- figures/
+|   |       `-- scatterPlot.png
+|   |-- referenceNotes.md
+|   `-- mainAnalysis.qmd
+|
+|-- 3_claimAndPresentation/
+|   |-- paper.tex
+|   |-- slides.tex
+|   `-- website.qmd
+|
+`-- README.md</code></pre>
+<p>Here’s how the file structure maps to the Toulmin model:</p>
+<ul>
+<li><p><strong><code>1_evidence/</code></strong>: This directory holds the unassailable grounds for your argument.</p>
+<ul>
+<li><p><code>rawData/</code>: Your empirical evidence.</p></li>
+<li><p><code>literature.bib</code>: Your scholarly evidence.</p></li>
+</ul></li>
+<li><p><strong><code>2_warrantAndAnalysis/</code></strong>: This directory is your warrant. It contains the entire logical and computational process that connects your evidence to your claim.</p>
+<ul>
+<li><p><code>mainAnalysis.qmd</code>: The master narrative of your analysis. It sources the models, generates all outputs, and is the engine of the project.</p></li>
+<li><p><code>models/</code>: The specific, modular R scripts that execute the statistical tests.</p></li>
+<li><p><strong><code>results/</code></strong>: The direct outputs of your analysis—tables and figures—logically live here, alongside the scripts that created them.</p></li>
+<li><p><code>referenceNotes.txt</code>: Your explicit reasoning about the literature.</p></li>
+</ul></li>
+<li><p><strong><code>3_claimAndPresentation/</code></strong>: This directory contains the various final formats for your <strong>Claim</strong>. These are communication documents, not analysis documents. They are lightweight and focused on presentation.</p>
+<ul>
+<li><p><strong><code>paper.tex</code></strong>: Your formal academic paper in LaTeX.</p></li>
+<li><p><strong><code>slides.tex</code></strong>: Your conference presentation, likely using LaTeX Beamer.</p></li>
+<li><p><strong><code>website.qmd</code></strong>: A Quarto file for a blog post or project website.</p></li>
+<li><p>All three of these files will pull their content (citations from <code>literature.bib</code>, tables and figures from <code>results/</code>) from the other directories.</p></li>
+</ul></li>
+</ul>
+<p>By organizing your project this way, anyone can clearly trace the path from your foundational evidence, through your analytical warrant, to your final claim. This is the essence of a truly reproducible and defensible research project.</p>
 
 
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TGF0ZXg=" data-listing-date-sort="1755216000000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1014">
-<div class="thumbnail"><a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">Reproducible Research Reporting</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">Part 1: Concept and File Management</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGF0ZXg='); return false;">Latex</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
-As a fresh master’s graduate, I’ve found that one of the most important skills isn’t just knowing how to run a regression, but how to ensure my entire research process is…<br>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
-<div class="listing-date">
-Aug 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TGF0ZXg=" data-listing-date-sort="1752192000000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">part 1</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGF0ZXg='); return false;">Latex</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-<div class="listing-date">
-Jul 11, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UmVwb3J0aW5n" data-listing-date-sort="1752105600000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="56" data-listing-word-count-sort="11195">
-<div class="thumbnail"><a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">part 2</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVwb3J0aW5n'); return false;">Reporting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-Here’s a detailed, step-by-step procedure to recreate your academic report using Overleaf:
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-<div class="listing-date">
-Jul 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="UmVwb3J0aW5n" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="321">
-<div class="thumbnail"><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">part 1</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVwb3J0aW5n'); return false;">Reporting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-<div class="listing-date">
-Jul 9, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="UXVhcnRvJTIwQmxvZw==" data-listing-date-sort="1751673600000" data-listing-file-modified-sort="1756053176357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="309">
-<div class="thumbnail"><a href="./posts/create a Quarto blog/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/create a Quarto blog/index.html" class="no-external">Create a Quarto Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/create a Quarto blog/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRvJTIwQmxvZw=='); return false;">Quarto Blog</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/create a Quarto blog/index.html" class="no-external">
-This is a tutorial on how to create a new Quarto blog using the RStudio interface.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/create a Quarto blog/index.html" class="no-external">
-<div class="listing-date">
-Jul 5, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bmV3cw==" data-listing-date-sort="1751673600000" data-listing-file-modified-sort="1756053176357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-This is the first post in a Quarto blog. Welcome!
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Jul 5, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

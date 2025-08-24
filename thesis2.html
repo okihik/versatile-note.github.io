@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-08-24">
 
-<title>Himagineer</title>
+<title>Reproducible Research Reporting – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,73 +68,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -171,207 +112,165 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="TGF0ZXg=">Latex <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhcnRvJTIwQmxvZw==">Quarto Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVwb3J0aW5n">Reporting <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reproducible Research Reporting</h1>
+<p class="subtitle lead">Part 3: The Warrant - Weaving the Analysis with Quarto</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Latex</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 24, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="part-3-the-warrant---weaving-the-analysis-with-quarto" class="level1">
+<h1><strong>Part 3: The Warrant - Weaving the Analysis with Quarto</strong></h1>
+<p>Welcome back. In <a href="">Part 1</a>, we established our project’s structure, and in <a href="">Part 2</a>, we scripted the gathering of our raw evidence.</p>
+<p>Now, we will construct the <strong>Warrant</strong>—the intellectual and computational engine of our research. This is where we transform our raw evidence into analytical results. Our entire process will be orchestrated from a single, central document: <code>mainAnalysis.qmd</code>, located in the <code>2_warrantAndAnalysis</code> folder. This document will tell the complete story of our analysis, from initial exploration to final model output, making it the perfect summary to share with supervisors and collaborators.</p>
+<section id="the-analysis-flow-a-narrative-driven-by-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis-flow-a-narrative-driven-by-scripts"><strong>The Analysis Flow: A Narrative Driven by Scripts</strong></h2>
+<p>Our workflow is designed for clarity and modularity. The <code>mainAnalysis.qmd</code> file acts as the conductor, calling on specialized R scripts to perform specific tasks.</p>
+<ol type="1">
+<li><p><strong>Load Evidence:</strong> Read the raw data from the <code>1_evidence</code> directory.</p></li>
+<li><p><strong>Source Explanatory Analysis:</strong> Call the <code>00_explanatory.R</code> script to generate and load initial data objects.</p></li>
+<li><p><strong>Source Research Models:</strong> Call the <code>.R</code> scripts from the <code>models/</code> directory to run the core analyses and create model objects.</p></li>
+<li><p><strong>Save Results:</strong> Use the objects created by the scripts to generate and save the final tables and figures into the <code>results/</code> directory.</p></li>
+</ol>
+<p>Let’s walk through how this is implemented in our <code>mainAnalysis.qmd</code> file.</p>
+<section id="step-1-setup-and-loading-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-setup-and-loading-evidence"><strong>Step 1: Setup and Loading Evidence</strong></h3>
+<p>We begin with a setup chunk to load packages and a data chunk to load our raw data.</p>
+<p>```{{r setup, include=false}}<br>
+# Load all necessary packages<br>
+library(tidyverse)<br>
+library(broom)<br>
+library(knitr)<br>
+library(rio)<br>
+# Set global options<br>
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)<br>
+```<br>
+### Data Loading<br>
+```{{r loadData}}<br>
+# The path goes up one directory (‘..’) then into the evidence folder.<br>
+inventoryData &lt;- import(“../1_evidence/rawData/manualInventory.csv”)<br>
+```</p>
+</section>
+<section id="step-2-sourcing-the-explanatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-sourcing-the-explanatory-analysis"><strong>Step 2: Sourcing the Explanatory Analysis</strong></h3>
+<p>We execute our exploratory script. Its job is to perform initial calculations and create exploratory objects, which are then available for us to use in the main document.</p>
+<p>### Explanatory Analysis To begin, we explore the basic characteristics of our data by running the script in `explns/00_explanatory.R`.<br>
+```{{r runExplanatoryAnalysis}}<br>
+# This script creates objects like ‘summary_stats’<br>
+source(“explns/00_explanatory.R”)<br>
+```</p>
+<p>Now we can display the `summary_stats` object that was just created.</p>
+<p>```{{r showExplanatoryStats, echo=true}}<br>
+# Use kable for a clean summary table right here in our analysis<br>
+document kable(summary_stats, caption = “Initial Data Summary”)<br>
+```</p>
+</section>
+<section id="step-3-sourcing-the-research-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-sourcing-the-research-models"><strong>Step 3: Sourcing the Research Models</strong></h3>
+<p>Next, we execute our core statistical models. The key is that the R scripts in the <code>models/</code> folder should only create the model objects; they should <em>not</em> save any output themselves.</p>
+<p><strong>Example: <code>models/01_linearRegression.R</code></strong></p>
+<p># models/01_linearRegression.R<br>
+# This script’s ONLY job is to run the model and produce the ‘modelFit’ object.<br>
+# It assumes ‘inventoryData’ is already loaded in the environment.<br>
+modelFit &lt;- lm(stockLevel ~ storageTemp + category, data = inventoryData)</p>
+<p>We call this from <code>mainAnalysis.qmd</code> to create the <code>modelFit</code> object in our environment.</p>
+<p>### Running the Main Regression Model</p>
+<p>Now, we run the linear model specified in our external script. This will create a model object called `modelFit` in our R environment, which we can then use to generate results.<br>
+```{{r runLinearModel}}<br>
+source(“models/01_linearRegression.R”)<br>
+```</p>
+</section>
+<section id="step-4-saving-tables-and-figures" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-saving-tables-and-figures"><strong>Step 4: Saving Tables and Figures</strong></h3>
+<p>With the <code>modelFit</code> object created, we can now generate our final outputs from within <code>mainAnalysis.qmd</code>. The key here is that we don’t just display them—we <strong>save them as files</strong> to the <code>results/</code> directory. This decouples our analysis from our final presentation, allowing us to simply <code>\input</code> or <code>\includegraphics</code> in our LaTeX documents later.</p>
+<section id="saving-a-table-as-a-.tex-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-table-as-a-.tex-file"><strong>Saving a Table as a <code>.tex</code> file</strong></h4>
+<p>We’ll use the <code>broom</code> package to clean our model output and <code>knitr::kable()</code> with the <code>latex</code> format to create a publication-ready table.</p>
+<p>```{{r saveTable}}<br>
+# Tidy the model output into a clean data frame<br>
+modelSummary &lt;- tidy(modelFit)<br>
+<br>
+# Use kable to format as a LaTeX table and save_kable to write it to a file<br>
+# The booktabs = TRUE option creates a more professional-looking table<br>
+kable(modelSummary, format = “latex”, booktabs = TRUE,<br>
+caption = “Regression of Stock Levels on Storage Temperature and Category.”,<br>
+col.names = c(“Term”, “Estimate”, “Std. Error”, “Statistic”, “P-value”), digits = 3) %&gt;%<br>
+save_kable(file = “results/tables/regressionTable.tex”)<br>
+```</p>
+<p>This code creates a file named <code>regressionTable.tex</code> in the <code>results/tables/</code> folder. It’s a self-contained piece of LaTeX code, ready to be included in our paper.</p>
+</section>
+<section id="saving-a-figure-as-a-.pdf-or-.png-file" class="level4">
+<h4 class="anchored" data-anchor-id="saving-a-figure-as-a-.pdf-or-.png-file"><strong>Saving a Figure as a <code>.pdf</code> or <code>.png</code> file</strong></h4>
+<p>Similarly, we use <code>ggplot2</code> to create our plot and the <code>ggsave()</code> function to save it as a high-quality image file.</p>
+<p>```{{r saveFigure}}<br>
+# Create the plot object<br>
+stockPlot &lt;- ggplot(inventoryData, aes(x = category, y = stockLevel, fill = category)) +<br>
+geom_boxplot() +<br>
+labs(title = “Stock Levels by Product Category”, x = “Category”, y = “Stock Level”) +<br>
+theme_minimal()<br>
+# Save the plot to the figures directory<br>
+# Saving as .pdf is great for LaTeX; .png is better for websites.<br>
+ggsave( “results/figures/stockByCategory.pdf”, plot = stockPlot, width = 7, height = 5 )<br>
+```</p>
+<p>This creates a file named <code>stockByCategory.pdf</code> in our <code>results/figures/</code> folder.</p>
+<p>By the end of this process, running the single <code>mainAnalysis.qmd</code> file has verifiably transformed your raw evidence into a complete set of polished, presentation-ready results, all neatly organized in their respective folders.</p>
+</section>
+</section>
+<section id="a-note-on-tooling-you-have-choices" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-tooling-you-have-choices"><strong>A Note on Tooling: You Have Choices!</strong></h3>
+<p>It is important to highlight that the tools shown above (<code>knitr::kable</code> and <code>ggplot2::ggsave</code>) are just one way to accomplish our goal. The R ecosystem is rich with packages designed for creating high-quality tables and figures. The key is not the specific package, but the workflow: <strong>use code to generate and save your results as files.</strong></p>
+<p>Here are some excellent alternatives you might explore:</p>
+<ul>
+<li><p><strong>For Tables:</strong></p>
+<ul>
+<li><p><strong><code>xtable</code></strong>: One of the oldest and most powerful packages for creating LaTeX and HTML tables. It offers a huge amount of control over the final output.</p></li>
+<li><p><strong><code>texreg</code></strong>: Fantastic for creating regression tables from multiple models, side-by-side, in a format common in academic journals.</p></li>
+<li><p><strong><code>modelsummary</code></strong>: A modern and extremely flexible package that can output results to a huge variety of formats (LaTeX, HTML, Word, Markdown) and is very easy to use.</p></li>
+</ul></li>
+<li><p><strong>For Figures:</strong></p>
+<ul>
+<li><p><strong>Base R Graphics:</strong> R’s built-in <code>plot()</code> function is powerful and fast. To save a base R plot, you would wrap the code like this: <code>pdf("myplot.pdf"); plot(x,y); dev.off()</code>.</p></li>
+<li><p><strong><code>googleVis</code></strong>: Creates interactive HTML-based charts and maps using the Google Charts API. These are excellent for web-based presentations (<code>website.qmd</code>) but cannot be embedded in static PDF documents.</p></li>
+</ul></li>
+</ul>
+<p>Feel free to experiment and find the packages that you prefer. As long as you can save their output to a file in your <code>results</code> directory, they will fit perfectly into this reproducible workflow.</p>
+<p>In <strong>Part 4: The Claim - Presenting Your Research</strong>, we’ll see how to write the <code>paper.tex</code> and <code>slides.tex</code> files that effortlessly pull in these saved tables and figures to construct a polished, professional, and fully reproducible final document.</p>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TGF0ZXg=" data-listing-date-sort="1755216000000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1014">
-<div class="thumbnail"><a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</section>
+</section>
+</section>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">Reproducible Research Reporting</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">Part 1: Concept and File Management</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGF0ZXg='); return false;">Latex</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
-As a fresh master’s graduate, I’ve found that one of the most important skills isn’t just knowing how to run a regression, but how to ensure my entire research process is…<br>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/UNBC thesis in latex/thesis0.html" class="no-external">
-<div class="listing-date">
-Aug 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TGF0ZXg=" data-listing-date-sort="1752192000000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">part 1</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGF0ZXg='); return false;">Latex</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/UNBC thesis in latex/thesis1.html" class="no-external">
-<div class="listing-date">
-Jul 11, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UmVwb3J0aW5n" data-listing-date-sort="1752105600000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="56" data-listing-word-count-sort="11195">
-<div class="thumbnail"><a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">part 2</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVwb3J0aW5n'); return false;">Reporting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-Here’s a detailed, step-by-step procedure to recreate your academic report using Overleaf:
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/academic reporting in tex 2/index.html" class="no-external">
-<div class="listing-date">
-Jul 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="UmVwb3J0aW5n" data-listing-date-sort="1752019200000" data-listing-file-modified-sort="1756053176354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="321">
-<div class="thumbnail"><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">Crafting Academic Reports: A LaTeX and Overleaf Guide</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">part 1</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVwb3J0aW5n'); return false;">Reporting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/academic reporting in tex/Academic Report1.html" class="no-external">
-<div class="listing-date">
-Jul 9, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="UXVhcnRvJTIwQmxvZw==" data-listing-date-sort="1751673600000" data-listing-file-modified-sort="1756053176357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="309">
-<div class="thumbnail"><a href="./posts/create a Quarto blog/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/create a Quarto blog/index.html" class="no-external">Create a Quarto Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/create a Quarto blog/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRvJTIwQmxvZw=='); return false;">Quarto Blog</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/create a Quarto blog/index.html" class="no-external">
-This is a tutorial on how to create a new Quarto blog using the RStudio interface.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/create a Quarto blog/index.html" class="no-external">
-<div class="listing-date">
-Jul 5, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bmV3cw==" data-listing-date-sort="1751673600000" data-listing-file-modified-sort="1756053176357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-This is the first post in a Quarto blog. Welcome!
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Jul 5, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
