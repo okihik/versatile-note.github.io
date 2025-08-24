@@ -8,7 +8,7 @@ categories: [Latex]
 # **Part 2: Data Gathering and Storage: The Evidence Base**
 
 Welcome back to our series on building a reproducible research workflow.\
-In [Part 1](), we established a philosophical and structural foundation for our project using the Toulmin model.\
+In [Part 1](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis0.html), we established a philosophical and structural foundation for our project using the Toulmin model.\
 We set up a directory structure to house our **Evidence**, **Warrant**, and **Claim**.
 
 Now, we'll focus on the first and most critical step of the research process: the **Evidence**.\
