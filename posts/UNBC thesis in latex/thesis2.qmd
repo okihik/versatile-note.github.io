@@ -7,7 +7,7 @@ categories: [Latex]
 
 # **Part 3: The Warrant - Weaving the Analysis with Quarto**
 
-Welcome back. In [Part 1](), we established our project's structure, and in [Part 2](), we scripted the gathering of our raw evidence.
+Welcome back. In [Part 1](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis0.html), we established our project's structure, and in [Part 2](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis1.html), we scripted the gathering of our raw evidence.
 
 Now, we will construct the **Warrant**—the intellectual and computational engine of our research. This is where we transform our raw evidence into analytical results. Our entire process will be orchestrated from a single, central document: `mainAnalysis.qmd`, located in the `2_warrantAndAnalysis` folder. This document will tell the complete story of our analysis, from initial exploration to final model output, making it the perfect summary to share with supervisors and collaborators.
 

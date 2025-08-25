@@ -9,11 +9,11 @@ categories: [Latex]
 
 Welcome to the final post in our series on building a reproducible research workflow. So far, we have:
 
-1.  Established a project structure based on the **Toulmin model** ([Part 1](https://manus.im/app/link-to-first-post)).
+1.  Established a project structure based on the **Toulmin model** ([Part 1](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis0.html)).
 
-2.  Gathered our **Evidence** (raw data and references) into the `1_evidence` directory ([Part 2](https://manus.im/app/link-to-second-post)).
+2.  Gathered our **Evidence** (raw data and references) into the `1_evidence` directory ([Part 2](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis1.html)).
 
-3.  Built our **Warrant** by scripting the analysis and saving the outputs to the `2_warrantAndAnalysis/results` directory ([Part 3](https://manus.im/app/link-to-third-post)).
+3.  Built our **Warrant** by scripting the analysis and saving the outputs to the `2_warrantAndAnalysis/results` directory ([Part 3](https://okihik.github.io/versatile-note.github.io/posts/UNBC%20thesis%20in%20latex/thesis2.html)).
 
 Now, we will construct the **Claim**—the polished, final documents where we present our findings. This happens in the `3_claimAndPresentation` directory. The beauty of our workflow is that this final step is now incredibly simple and robust. Our presentation files don't contain any analysis; they are lightweight documents that simply *include* the results we've already generated.
 
@@ -113,8 +113,7 @@ To actually cite a source in your text, you use a `cite` command. When using an 
 
 For those who prefer to stay within the RStudio environment, compiling a `.tex` file into a PDF requires a LaTeX distribution. Traditionally, this meant installing large, separate programs like MiKTeX (Windows) or MacTeX (macOS). However, there is a much simpler, R-native solution: the **`tinytex`** package.
 
-**What is `tinytex`?**
-Created by Yihui Xie (the same author of `knitr`), `tinytex` is an R package that installs a lightweight, self-contained, and portable LaTeX distribution.
+**What is `tinytex`?** Created by Yihui Xie (the same author of `knitr`), `tinytex` is an R package that installs a lightweight, self-contained, and portable LaTeX distribution.
 
 **Why use it?**
 
