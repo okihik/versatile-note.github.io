@@ -6,7 +6,7 @@ categories: ["Inventory Management"]
 
 ## Bridging the Gap: From Static Inventory to Dynamic Flow
 
-In our previous post, we introduced Dynamic Production Management (DPM) as a paradigm shift from traditional production planning to a demand-centric approach. Building upon that foundation, this post delves deeper into the intricacies of inventory management, specifically addressing why conventional methods often fall short in today's dynamic business environment. We will explore the challenges posed by classical inventory theory and introduce the concept of "inventory flow management" as a more adaptive solution, drawing insights from tocken.com's detailed analysis [1]. Furthermore, we will formulate a basic **Inventory Fluid Model** with relevant equations, derived from the principles discussed on the website.
+In our previous post, we introduced Dynamic Production Management (DPM) as a paradigm shift from traditional production planning to a demand-centric approach. Building upon that foundation, this post delves deeper into the intricacies of inventory management, specifically addressing why conventional methods often fall short in today's dynamic business environment. We will explore the challenges posed by classical inventory theory and introduce the concept of "inventory flow management" as a more adaptive solution. Furthermore, we will formulate a basic **Inventory Fluid Model** with relevant equations, derived from the principles discussed on the website.
 
 ### The Historical Context and Limitations of Classical Inventory Theory
 
