@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-08-25">
 
-<title>Himagineer - Dynamic Inventory Theories: Unpacking Inventory Management Challenges</title>
+<title>Himagineer - Dynamic Inventory Theories: An Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -143,7 +114,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Dynamic Inventory Theories: Unpacking Inventory Management Challenges</h1>
+      <h1 class="title">Dynamic Inventory Theories: An Introduction</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Inventory Management</div>
               </div>
@@ -176,63 +147,47 @@ window.Quarto = {
 
 
 
-<section id="bridging-the-gap-from-static-inventory-to-dynamic-flow" class="level2">
-<h2 class="anchored" data-anchor-id="bridging-the-gap-from-static-inventory-to-dynamic-flow">Bridging the Gap: From Static Inventory to Dynamic Flow</h2>
-<p>In our previous post, we introduced Dynamic Production Management (DPM) as a paradigm shift from traditional production planning to a demand-centric approach. Building upon that foundation, this post delves deeper into the intricacies of inventory management, specifically addressing why conventional methods often fall short in today’s dynamic business environment. We will explore the challenges posed by classical inventory theory and introduce the concept of “inventory flow management” as a more adaptive solution, drawing insights from tocken.com’s detailed analysis [1]. Furthermore, we will formulate a basic <strong>Inventory Fluid Model</strong> with relevant equations, derived from the principles discussed on the website.</p>
-<section id="the-historical-context-and-limitations-of-classical-inventory-theory" class="level3">
-<h3 class="anchored" data-anchor-id="the-historical-context-and-limitations-of-classical-inventory-theory">The Historical Context and Limitations of Classical Inventory Theory</h3>
-<p>Since the mid-19th to mid-20th century, characterized by mass production and a seller’s market, the primary focus was on efficiently increasing production volume and ensuring a smooth supply of materials. It was within this context that classical inventory management mechanisms were shaped. The fundamental principle was simple: reorder when stock levels drop to a certain point, much like how we manage everyday household items. This is the essence of the reorder point system.</p>
-<p>However, this approach quickly encounters problems with materials that have long lead times (e.g., 3-6 months or more). Applying a reorder point system to such items can lead to excessive inventory or, conversely, frequent stockouts. To address this, methods like periodic replenishment were devised, where materials are ordered periodically based on future needs. While ideally linked to production plans, the unreliability of long-term production forecasts often meant that material procurement had to rely on independent forecasts.</p>
-<p>Classical inventory theory, born from the management of factory material warehouses, is still prevalent today. However, the question arises: can this classical theory be applied to the diverse forms of inventory that exist now, including finished goods warehouses, regional distribution centers, wholesalers, retailers, in-process inventory within factories, and even materials at external suppliers? The conclusion, as presented by tocken.com, is a resounding “No.” The core issues lie in two critical aspects: <strong>asymmetry</strong> and the <strong>ambiguity of optimal inventory</strong>.</p>
+<section id="the-evolution-of-inventory-management-from-static-plans-to-dynamic-demand" class="level2">
+<h2 class="anchored" data-anchor-id="the-evolution-of-inventory-management-from-static-plans-to-dynamic-demand">The Evolution of Inventory Management: From Static Plans to Dynamic Demand</h2>
+<p>In the ever-evolving landscape of modern business, effective inventory management stands as a critical pillar for operational efficiency and profitability. Traditional approaches, often rooted in static production plans, are increasingly challenged by the volatile and unpredictable nature of today’s markets. This series will explore the concept of Dynamic Production Management (DPM), a paradigm shift from conventional production planning to a demand-centric approach, drawing insights from the pioneering work presented on tocken.com.</p>
+<section id="the-limitations-of-traditional-production-planning" class="level3">
+<h3 class="anchored" data-anchor-id="the-limitations-of-traditional-production-planning">The Limitations of Traditional Production Planning</h3>
+<p>Many businesses, particularly those in industries with fluctuating demand, find themselves in a perpetual struggle with their production plans. Despite meticulous efforts and the adoption of advanced software, the reality often involves constant revisions, leading to confusion and inefficiency. The core issue lies in the inherent rigidity of a system that attempts to predict and control demand rather than adapt to it.</p>
+<p>As highlighted by tocken.com, while some industries with stable markets (e.g., automotive manufacturing) may thrive under a production plan-centric model, the vast majority of businesses face dynamic market conditions where such a model proves inadequate. The fundamental challenge is to bridge the gap between production capabilities and the unpredictable ebb and flow of customer demand.</p>
 </section>
-<section id="asymmetry-in-inventory-management-a-mismatch-of-perspectives" class="level3">
-<h3 class="anchored" data-anchor-id="asymmetry-in-inventory-management-a-mismatch-of-perspectives">Asymmetry in Inventory Management: A Mismatch of Perspectives</h3>
-<p>Consider a typical inventory management scenario where entity A manages its inventory, fulfilling customer orders and replenishing stock by ordering from entity B. Both the ordering process from A to B and the customer order process to A involve recording order times and quantities. This commercial transaction data is meticulously managed. However, when this data is brought into the inventory management framework, a critical asymmetry emerges.</p>
-<p>Inventory management fundamentally involves adjusting “input” (replenishment) to match “output” (demand). Therefore, both input and output must be measured with the same yardstick. Demand, being largely uncontrollable, must be accepted as it is, making it crucial to understand its magnitude, including its variability. Yet, classical inventory theory often overlooks this crucial aspect.</p>
-<p>For instance, when forecasting demand for inventory management, say for a two-month lead time, do we separately forecast the number of orders and the quantity per order? Classical inventory theory typically does not. It often provides a single demand forecast (e.g., XXX units for two months) without breaking down the number of orders or the quantity per order. While we meticulously consider order intervals and quantities when placing orders, our view of demand tends to be broad and undifferentiated. This disparity in how “output” and “input” are perceived—using different lenses for logistics—is what constitutes <strong>asymmetry</strong>.</p>
-<p>This asymmetry has significant implications. Consider two scenarios where the average demand over a period is 200 units: one with an average of 40 orders of 5 units each, and another with 10 orders of 20 units each. While the average total demand is the same, the variability will differ significantly. Intuitively, receiving many small orders is preferable to a few large ones for minimizing inventory. Therefore, to accurately capture demand variability, it is essential to consider the number of orders and the quantity per order separately.</p>
-<p>Supply chains are interconnected networks of inventory management units. If the “output” and “input” are viewed from different perspectives, or if there is a lack of symmetry between them, the connections between these inventory management units become disjointed. From a physics perspective, symmetry is crucial for universality. Just as physical laws exhibit symmetry, suggesting their universal applicability, a lack of symmetry in inventory replenishment mechanisms implies a narrow scope for classical inventory theory.</p>
+<section id="introducing-dynamic-production-management-dpm" class="level3">
+<h3 class="anchored" data-anchor-id="introducing-dynamic-production-management-dpm">Introducing Dynamic Production Management (DPM)</h3>
+<p>Dynamic Production Management (DPM) proposes a revolutionary shift: moving from a production plan-driven system to one that is demand-driven. This approach recognizes that in most scenarios, controlling demand from the production side is nearly impossible; instead, the production function must be agile enough to follow and respond to demand fluctuations. To achieve this, a deep understanding of the characteristics of the production function is essential.</p>
 </section>
-<section id="the-ambiguity-of-optimal-inventory" class="level3">
-<h3 class="anchored" data-anchor-id="the-ambiguity-of-optimal-inventory">The Ambiguity of Optimal Inventory</h3>
-<p>Let’s trace the flow of inventory through time: order received → shipment → inventory reduction → waiting for order → order placed → outstanding order → delivery → warehousing. Each event triggers a change in inventory status, and the quantity in each status fluctuates. It’s important to note that beyond physical stock in the warehouse, “inventory in transit” (waiting for order, outstanding order) often exists and can sometimes exceed physical stock. The quantity in each state increases or decreases with every event.</p>
-<p>However, classical inventory theory struggles to define precisely what constitutes “optimal inventory.” While some explanations might include outstanding orders in the definition of optimal inventory, most often link it solely to physical stock. Regardless, the quantity in each state fluctuates, and even when combined, these quantities exhibit variability. In inventory management, “optimal inventory” is a crucial management criterion. Yet, in practice, it remains ambiguous which inventory state should be used for comparison.</p>
+<section id="key-elements-of-production-function-in-a-dynamic-context" class="level3">
+<h3 class="anchored" data-anchor-id="key-elements-of-production-function-in-a-dynamic-context">Key Elements of Production Function in a Dynamic Context</h3>
+<p>DPM emphasizes three primary elements that define the dynamic characteristics of production:</p>
+<ol type="1">
+<li><strong>Production Rate:</strong> This refers to the quantity of goods produced per unit of time. In a dynamic environment, the ability to adjust this rate quickly in response to demand signals is crucial.</li>
+<li><strong>Flow Time:</strong> This is the total time elapsed from the initiation of production (input) to the completion of the final product. Minimizing and controlling flow time is vital for responsiveness.</li>
+<li><strong>WIP (Work In Process):</strong> This represents the number of items currently undergoing production. While not directly related to customer demand, an increase in WIP often leads to a proportional increase in flow time, making its management critical for efficiency.</li>
+</ol>
+<p>The interplay between these three elements is central to understanding and controlling the dynamic behavior of a production system. External factors such as demand variability, equipment breakdowns, labor availability, and material shortages constantly impact these elements, necessitating a dynamic rather than static perspective.</p>
 </section>
-<section id="the-wave-of-dx-in-inventory-management" class="level3">
-<h3 class="anchored" data-anchor-id="the-wave-of-dx-in-inventory-management">The Wave of DX in Inventory Management</h3>
-<p>The recent surge in Digital Transformation (DX) initiatives highlights a growing concern: the increasing divergence between classical inventory theory and modern business realities. The need for DX in inventory management is urgent. The problems of “asymmetry” and “ambiguity of optimal inventory” inherent in classical theory are becoming more pronounced. The traditional approach, which assumes a stable environment and focuses on optimizing static inventory levels, is ill-equipped to handle the dynamic, interconnected, and data-rich landscape of today’s supply chains.</p>
-<p>DX in inventory management is not merely about digitizing existing processes; it’s about fundamentally transforming how inventory is perceived and managed. It necessitates a shift towards real-time data utilization, predictive analytics, and agile decision-making. The goal is to move beyond simply counting stock to understanding the flow and behavior of inventory across the entire supply chain, enabling proactive adjustments rather than reactive responses.</p>
-</section>
-<section id="basic-mechanism-of-inventory-replenishment-the-inventory-fluid-model" class="level3">
-<h3 class="anchored" data-anchor-id="basic-mechanism-of-inventory-replenishment-the-inventory-fluid-model">Basic Mechanism of Inventory Replenishment: The Inventory Fluid Model</h3>
-<p>To overcome the limitations of classical inventory theory, tocken.com introduces the concept of an <strong>Inventory Fluid Model</strong>. This model emphasizes understanding inventory not as static quantities but as dynamic flows within a system. It recognizes that inventory is constantly in motion, transitioning through various states from raw materials to finished goods, and that these flows are influenced by both internal processes and external demand.</p>
-<p>We can conceptualize the inventory fluid model using a set of differential equations that describe the change in inventory levels over time. Let <span class="math inline">\(I(t)\)</span> be the inventory level at time <span class="math inline">\(t\)</span>. The rate of change of inventory can be expressed as the difference between the inflow (replenishment rate) and the outflow (demand rate).</p>
-<p>Let: * <span class="math inline">\(R(t)\)</span> = Replenishment rate (inflow) at time <span class="math inline">\(t\)</span> * <span class="math inline">\(D(t)\)</span> = Demand rate (outflow) at time <span class="math inline">\(t\)</span></p>
-<p>The fundamental equation for the inventory fluid model is:</p>
-<p><span class="math display">\[ \frac{dI(t)}{dt} = R(t) - D(t) \]</span></p>
-<p>This equation states that the rate of change of inventory over time is equal to the replenishment rate minus the demand rate. This is a continuous model, representing inventory as a fluid that flows in and out of a system.</p>
-<p>To further elaborate, we can consider the components of replenishment and demand. Replenishment can be influenced by factors such as lead time (<span class="math inline">\(L\)</span>), which is the time delay between placing an order and receiving it. Demand can be influenced by various market factors and can be stochastic.</p>
-<p>Consider a simplified scenario where replenishment orders are placed based on a reorder point (<span class="math inline">\(S\)</span>) and a fixed order quantity (<span class="math inline">\(Q\)</span>). The replenishment rate <span class="math inline">\(R(t)\)</span> would then be a function of the orders placed at an earlier time <span class="math inline">\(t-L\)</span>. The demand rate <span class="math inline">\(D(t)\)</span> would be a function of customer orders.</p>
-<p>For a more detailed model, we can consider different stages of inventory, such as raw materials, work-in-process (WIP), and finished goods. Let <span class="math inline">\(I_{raw}(t)\)</span>, <span class="math inline">\(I_{wip}(t)\)</span>, and <span class="math inline">\(I_{fg}(t)\)</span> be the inventory levels for raw materials, WIP, and finished goods, respectively.</p>
-<p>Let: * <span class="math inline">\(P_{raw}(t)\)</span> = Procurement rate of raw materials at time <span class="math inline">\(t\)</span> * <span class="math inline">\(C_{raw}(t)\)</span> = Consumption rate of raw materials for production at time <span class="math inline">\(t\)</span> * <span class="math inline">\(P_{wip}(t)\)</span> = Production rate into WIP at time <span class="math inline">\(t\)</span> * <span class="math inline">\(C_{wip}(t)\)</span> = Consumption rate from WIP for finished goods production at time <span class="math inline">\(t\)</span> * <span class="math inline">\(P_{fg}(t)\)</span> = Production rate of finished goods at time <span class="math inline">\(t\)</span> * <span class="math inline">\(D_{fg}(t)\)</span> = Demand rate for finished goods at time <span class="math inline">\(t\)</span></p>
-<p>Then, the system can be described by a set of coupled differential equations:</p>
-<p><span class="math display">\[ \frac{dI_{raw}(t)}{dt} = P_{raw}(t) - C_{raw}(t) \]</span></p>
-<p><span class="math display">\[ \frac{dI_{wip}(t)}{dt} = P_{wip}(t) - C_{wip}(t) \]</span></p>
-<p><span class="math display">\[ \frac{dI_{fg}(t)}{dt} = P_{fg}(t) - D_{fg}(t) \]</span></p>
-<p>These equations highlight the interconnectedness of different inventory stages and the continuous flow of materials through the supply chain. The “asymmetry” discussed earlier can be addressed by ensuring that the measurement and forecasting of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(D(t)\)</span> are consistent and account for the variability in both order frequency and quantity.</p>
-<p>The “ambiguity of optimal inventory” can be resolved by considering the optimal levels for each stage of inventory (<span class="math inline">\(I_{raw}\)</span>, <span class="math inline">\(I_{wip}\)</span>, <span class="math inline">\(I_{fg}\)</span>) and their combined effect on the overall system performance, rather than focusing solely on physical stock. The goal is to optimize the flow and minimize bottlenecks, ensuring that inventory is available where and when needed, without excessive holding costs.</p>
-<p>By adopting an inventory fluid perspective, businesses can gain a more accurate and holistic understanding of their inventory dynamics. This enables them to:</p>
+<section id="make-to-order-vs.-make-to-stock-in-dpm" class="level3">
+<h3 class="anchored" data-anchor-id="make-to-order-vs.-make-to-stock-in-dpm">Make-to-Order vs.&nbsp;Make-to-Stock in DPM</h3>
+<p>The principles of DPM offer distinct control methodologies for different production strategies:</p>
 <ul>
-<li><strong>Improve Responsiveness:</strong> By understanding real-time flow, businesses can react more quickly to demand changes and disruptions.</li>
-<li><strong>Reduce Variability:</strong> A symmetrical view of input and output helps in managing and reducing the inherent variability in inventory levels.</li>
-<li><strong>Optimize Resource Utilization:</strong> By accurately tracking inventory in all states, businesses can avoid overstocking or understocking, leading to better utilization of capital and space.</li>
-<li><strong>Enhance Decision-Making:</strong> With a clearer picture of inventory flow, decision-makers can make more informed choices regarding procurement, production, and distribution.</li>
+<li><p><strong>Make-to-Order (受注生産):</strong> In this model, production commences only after a sale is confirmed (who, when, how many, at what price). The primary focus is on time management. Progress is autonomously controlled based on the ratio of elapsed time to a predetermined standard flow time for each order or input.</p></li>
+<li><p><strong>Make-to-Stock (見込生産):</strong> This strategy involves producing goods before a sale is confirmed, often for inventory replenishment. While it primarily manages physical</p></li>
 </ul>
+<p>“things” (WIP, warehouse inventory), it also requires underlying time management. Priority control is autonomously determined by the position within the fluid inventory, which includes input plans, WIP, and warehouse inventory.</p>
+<p>While DPM emphasizes autonomous control, it also acknowledges the need for human intervention when production capacity is exceeded or risks like shortages and missed deadlines arise due to factors like equipment failure. In such cases, alarms are triggered, prompting human oversight.</p>
+</section>
+<section id="dpm-and-the-fourth-industrial-revolution" class="level3">
+<h3 class="anchored" data-anchor-id="dpm-and-the-fourth-industrial-revolution">DPM and the Fourth Industrial Revolution</h3>
+<p>The concept of DPM aligns seamlessly with the ongoing Fourth Industrial Revolution, driven by the Internet of Everything (IoE) and the Internet of Things (IoT). This era promises revolutionary changes in manufacturing, with initiatives like Industry 4.0 gaining momentum. The traditional monthly production management cycles, reliant on static production plans, are becoming obsolete.</p>
+<p>In the future envisioned by DPM, shop floor activities will autonomously follow order information, and production plans will be generated in near real-time based on the latest available data. This eliminates the need for rigid, periodic planning cycles, fostering a more responsive and adaptive manufacturing environment. Embracing DPM is presented as a crucial step in preparing for this imminent industrial transformation.</p>
 </section>
 <section id="conclusion" class="level3">
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>The challenges posed by classical inventory theory—namely, asymmetry and the ambiguity of optimal inventory—underscore the urgent need for a more dynamic approach. The Inventory Fluid Model, as conceptualized from tocken.com’s principles, offers a promising solution by shifting the focus from static stock levels to the continuous flow of inventory throughout the supply chain. This aligns perfectly with the principles of Dynamic Production Management and the broader trend of Digital Transformation.</p>
-<p>In future posts, we will delve deeper into the practical applications and advanced concepts of inventory flow management, exploring how businesses can implement these theories to achieve greater efficiency, responsiveness, and resilience in their operations.</p>
+<p>This introductory post has laid the groundwork for understanding Dynamic Production Management as a response to the complexities of modern inventory challenges. By shifting focus from static production plans to dynamic demand-driven control, businesses can enhance their adaptability and responsiveness. In subsequent posts, we will delve deeper into the specific theories and methodologies that underpin DPM, providing practical insights for optimizing inventory management in a dynamic world.</p>
+<hr>
 
 
 </section>
