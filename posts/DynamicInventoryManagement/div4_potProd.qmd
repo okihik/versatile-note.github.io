@@ -1,0 +1,121 @@
+---
+title: "Dynamic Make-to-Stock Production: Producing Only What Sells"
+date: "2025-08-27"
+categories: ["Inventory Management"]
+---
+
+## Understanding Make-to-Stock Production: A Dynamic Perspective
+
+In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to **Make-to-Stock (MTS) production**, often referred to as "mikomi seisan" in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness, drawing insights from tocken.com's detailed explanation on mikomi production [1].
+
+### Make-to-Stock vs. Make-to-Order: A Fundamental Distinction
+
+The core difference between MTO and MTS lies in the timing of production initiation relative to order confirmation. In **Make-to-Order**, production begins *after* a customer order is confirmed. Conversely, in **Make-to-Stock**, production commences *before* an order is received, based on anticipated demand. From a production management perspective, this distinction is paramount because it dictates fundamentally different management mechanisms.
+
+While some might argue that their factories handle both MTO and MTS with a unified management system, this often leads to ambiguity and inefficiencies. The key is to precisely define "production start" and "order confirmation."
+
+*   **Production Start:** This refers to the initiation of activities to complete a specific product. It typically excludes long-term activities like factory construction or equipment installation, focusing instead on repetitive production cycles. It can range from starting design, procuring parts, or beginning assembly.
+
+*   **Order Confirmation:** This is when all critical aspects of a customer order are finalized. Ideally, this includes:
+    1.  The buyer (payer) is determined.
+    2.  Product specifications are set.
+    3.  Delivery timing (when needed) is established.
+    4.  Quantity to be purchased is fixed.
+    5.  Price is agreed upon.
+
+While some flexibility in these criteria might be acceptable in commercial transactions, a strict definition is essential for production management. The ambiguity often arises when companies, despite claiming to be MTO, initiate production activities based on sales forecasts rather than confirmed orders. This leads to a blend of confirmed and forecasted orders within the production plan.
+
+For instance, in a factory operating on a monthly production cycle, a confirmed MTO order might only be incorporated into the production plan in the following month, leading to significant delays if lead times are short. To circumvent this, many "MTO" factories resort to informal workarounds, such as procuring materials or even starting initial production steps for unconfirmed orders, blurring the lines between MTO and MTS. This informal "make-to-forecast" within an MTO framework is a primary culprit for the ambiguity.
+
+In **Dynamic Production Management (DPM)**, this ambiguity is eliminated. MTO strictly means production begins *after* order confirmation, and MTS means production begins *before* order confirmation. This principle is maintained without compromise. It's also important to note that distinctions like "MTO is multi-product, small-lot; MTS is small-product, large-lot" are tendencies, not fundamental defining characteristics.
+
+### The Purpose of Make-to-Stock Production
+
+The definition of MTS is now clear: producing before knowing who, when, or how much will be bought. This inherently carries risks of both stockouts and excess inventory, which are undesirable from a business management perspective. So, why engage in MTS production?
+
+The primary objective of MTS is not merely to achieve economies of scale through planned, leveled production, as is often assumed. While mass production can reduce costs, this benefit is often negated by the risks of obsolescence and overstocking if demand is misjudged. The true purpose of MTS, from a dynamic perspective, is to **produce what sells** – to have the necessary products available when and where the customer needs them, *before* they place an order.
+
+If production only begins after an order is confirmed, the customer might have already moved on, resulting in a lost sale. Therefore, the ultimate goal of MTS is to proactively meet customer demand. This leads us to a crucial insight: production must follow market demand. The market (customer) determines what, when, and how much is needed. Thus, the direction is clear: **produce according to market demand.**
+
+### The Mechanism of Demand-Following Make-to-Stock Production
+
+To achieve demand-following MTS, a dynamic system is required that can adapt to real-time market signals. This involves a shift from rigid, forecast-driven planning to a more agile, responsive approach. The website highlights the importance of a system that can quickly react to changes in demand, rather than being constrained by long planning cycles.
+
+One of the key concepts introduced is the idea of a **"fluid inventory"** or **"inventory flow management"** system, which we discussed in a previous post. In the context of MTS, this means managing inventory not as static quantities, but as dynamic flows that respond to actual consumption. The system needs to be able to:
+
+1.  **Monitor Real-time Demand:** Continuously track sales and consumption data to understand actual market off-take.
+2.  **Adjust Production Rates Dynamically:** Based on real-time demand, adjust production output to match consumption, preventing both stockouts and overproduction.
+3.  **Maintain Optimal Inventory Levels:** Instead of fixed "safety stocks," the system aims to maintain a fluid inventory level that minimizes holding costs while ensuring product availability.
+
+This dynamic adjustment is crucial. If demand increases, the system should automatically trigger an increase in production. If demand drops, production should be scaled back. This responsiveness is what differentiates dynamic MTS from traditional, forecast-driven MTS.
+
+### Replenishing Inventory from the Production Line
+
+In a dynamic MTS system, the production line is directly linked to inventory replenishment. Instead of producing to a fixed schedule and then pushing products into a warehouse, the production line pulls demand from the inventory. This means that as products are sold and inventory levels drop, a signal is sent back to the production line to replenish those specific items. This is a pull-based system, in contrast to a push-based system.
+
+Consider a simplified model of this replenishment process:
+
+```{mermaid}
+graph TD
+    A[Customer Demand] --> B{Inventory Level}
+    B -- Below Threshold --> C[Production Trigger]
+    C --> D[Production Line]
+    D --> E[Finished Goods Inventory]
+    E --> B
+```
+
+This diagram illustrates a basic feedback loop. When customer demand reduces the inventory level below a certain threshold, it triggers the production line to replenish the stock. This continuous feedback ensures that production is always aligned with actual consumption.
+
+### Adjusting Production Capacity and Input Restrictions
+
+Dynamic MTS also requires flexible production capacity and intelligent input restrictions. Production capacity needs to be adaptable to fluctuations in demand. This might involve:
+
+*   **Flexible Workforce:** Cross-training employees or utilizing temporary staff to adjust labor capacity.
+*   **Modular Production Lines:** Designing production lines that can be easily reconfigured or scaled up/down.
+*   **Strategic Outsourcing:** Leveraging external partners for overflow production during peak demand.
+
+Furthermore, input restrictions are critical to prevent overproduction and excessive Work-In-Process (WIP). This is where the concept of a **"WIP cap"** or **"input limit"** becomes important. By setting a maximum limit on the amount of WIP in the system, it prevents the production line from producing more than what the downstream processes or customer demand can absorb. This helps to maintain a smooth flow and prevent bottlenecks.
+
+### Customer Lead Time Considerations
+
+When customer lead time (the time between order placement and delivery) is a factor, the dynamic MTS system needs to account for it. If the lead time is significant, the system must anticipate future demand further in advance. This can be incorporated into the replenishment trigger, where the threshold for triggering production is adjusted based on the lead time. For example, if the lead time is 'L' days, the system might trigger production when the inventory level is sufficient to cover 'L' days of anticipated demand.
+
+### Dynamic Make-to-Stock Production: Introducing the S-Unit
+
+The website introduces the concept of an **S-Unit** as a core component of dynamic make-to-stock production. While the details are not fully elaborated on the page, the S-Unit appears to be a standardized unit or module that facilitates flexible and responsive production. It likely represents a smallest common denominator in terms of production or inventory, allowing for granular control and rapid adjustments.
+
+Without explicit equations on the website, we can infer some fundamental relationships that govern dynamic MTS. Let's consider the basic inventory balance equation:
+
+$$I_{t} = I_{t-1} + P_{t} - D_{t}$$
+
+Where:
+*   $I_{t}$ = Inventory at the end of period $t$
+*   $I_{t-1}$ = Inventory at the end of period $t-1$
+*   $P_{t}$ = Production in period $t$
+*   $D_{t}$ = Demand in period $t$
+
+In a dynamic MTS system, the goal is to keep $I_t$ within a desired range. This means $P_t$ needs to be responsive to $D_t$. A simple control rule could be:
+
+$$P_{t} = D_{t} + k(I_{target} - I_{t-1})$$
+
+Where:
+*   $I_{target}$ = Desired target inventory level
+*   $k$ = A control parameter (e.g., a fraction of the inventory deviation to correct in the next period)
+
+This equation suggests that production in period $t$ is driven by current demand ($D_t$) and an adjustment based on the deviation of the previous period's inventory ($I_{t-1}$) from the target inventory ($I_{target}$). The parameter $k$ would determine how aggressively the system tries to correct inventory deviations. A higher $k$ would lead to faster adjustments but could also introduce instability.
+
+For the WIP cap, we can define:
+
+$$WIP_{t} \le WIP_{max}$$
+
+Where:
+*   $WIP_{t}$ = Work-in-process at the end of period $t$
+*   $WIP_{max}$ = Maximum allowable work-in-process
+
+This constraint would directly influence the production trigger, ensuring that new production is only initiated if the WIP level is below the maximum. This helps to prevent bottlenecks and maintain flow.
+
+### Conclusion
+
+Dynamic Make-to-Stock production represents a significant evolution from traditional MTS, moving away from rigid, forecast-driven planning towards a highly responsive, demand-following system. By embracing real-time data, flexible capacity, and intelligent input restrictions, businesses can achieve a more agile and efficient production process that minimizes both stockouts and excess inventory. The underlying principle is to produce only what sells, driven by actual market demand rather than speculative forecasts.
+
+This approach aligns with the broader principles of Dynamic Production Management and the ongoing digital transformation in manufacturing. In the next post, we will explore further practical applications and advanced concepts related to these dynamic systems.
