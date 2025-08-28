@@ -32,10 +32,9 @@ The interplay between these three elements is central to understanding and contr
 
 The principles of DPM offer distinct control methodologies for different production strategies:
 
-*   **Make-to-Order (受注生産):** In this model, production commences only after a sale is confirmed (who, when, how many, at what price). The primary focus is on time management. Progress is autonomously controlled based on the ratio of elapsed time to a predetermined standard flow time for each order or input.
+-   **Make-to-Order (受注生産):** In this model, production commences only after a sale is confirmed (who, when, how many, at what price). The primary focus is on time management. Progress is autonomously controlled based on the ratio of elapsed time to a predetermined standard flow time for each order or input.
 
-*   **Make-to-Stock (見込生産):** This strategy involves producing goods before a sale is confirmed, often for inventory replenishment. While it primarily manages physical 
-
+-   **Make-to-Stock (見込生産):** This strategy involves producing goods before a sale is confirmed, often for inventory replenishment. While it primarily manages physical
 
 “things” (WIP, warehouse inventory), it also requires underlying time management. Priority control is autonomously determined by the position within the fluid inventory, which includes input plans, WIP, and warehouse inventory.
 
@@ -51,4 +50,4 @@ In the future envisioned by DPM, shop floor activities will autonomously follow 
 
 This introductory post has laid the groundwork for understanding Dynamic Production Management as a response to the complexities of modern inventory challenges. By shifting focus from static production plans to dynamic demand-driven control, businesses can enhance their adaptability and responsiveness. In subsequent posts, we will delve deeper into the specific theories and methodologies that underpin DPM, providing practical insights for optimizing inventory management in a dynamic world.
 
----
+------------------------------------------------------------------------

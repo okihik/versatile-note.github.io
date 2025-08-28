@@ -46,9 +46,7 @@ To overcome the limitations of classical inventory theory, tocken.com introduces
 
 We can conceptualize the inventory fluid model using a set of differential equations that describe the change in inventory levels over time. Let $I(t)$ be the inventory level at time $t$. The rate of change of inventory can be expressed as the difference between the inflow (replenishment rate) and the outflow (demand rate).
 
-Let:
-*   $R(t)$ = Replenishment rate (inflow) at time $t$
-*   $D(t)$ = Demand rate (outflow) at time $t$
+Let: \* $R(t)$ = Replenishment rate (inflow) at time $t$ \* $D(t)$ = Demand rate (outflow) at time $t$
 
 The fundamental equation for the inventory fluid model is:
 
@@ -62,13 +60,7 @@ Consider a simplified scenario where replenishment orders are placed based on a 
 
 For a more detailed model, we can consider different stages of inventory, such as raw materials, work-in-process (WIP), and finished goods. Let $I_{raw}(t)$, $I_{wip}(t)$, and $I_{fg}(t)$ be the inventory levels for raw materials, WIP, and finished goods, respectively.
 
-Let:
-*   $P_{raw}(t)$ = Procurement rate of raw materials at time $t$
-*   $C_{raw}(t)$ = Consumption rate of raw materials for production at time $t$
-*   $P_{wip}(t)$ = Production rate into WIP at time $t$
-*   $C_{wip}(t)$ = Consumption rate from WIP for finished goods production at time $t$
-*   $P_{fg}(t)$ = Production rate of finished goods at time $t$
-*   $D_{fg}(t)$ = Demand rate for finished goods at time $t$
+Let: \* $P_{raw}(t)$ = Procurement rate of raw materials at time $t$ \* $C_{raw}(t)$ = Consumption rate of raw materials for production at time $t$ \* $P_{wip}(t)$ = Production rate into WIP at time $t$ \* $C_{wip}(t)$ = Consumption rate from WIP for finished goods production at time $t$ \* $P_{fg}(t)$ = Production rate of finished goods at time $t$ \* $D_{fg}(t)$ = Demand rate for finished goods at time $t$
 
 Then, the system can be described by a set of coupled differential equations:
 
@@ -84,10 +76,10 @@ The "ambiguity of optimal inventory" can be resolved by considering the optimal 
 
 By adopting an inventory fluid perspective, businesses can gain a more accurate and holistic understanding of their inventory dynamics. This enables them to:
 
-*   **Improve Responsiveness:** By understanding real-time flow, businesses can react more quickly to demand changes and disruptions.
-*   **Reduce Variability:** A symmetrical view of input and output helps in managing and reducing the inherent variability in inventory levels.
-*   **Optimize Resource Utilization:** By accurately tracking inventory in all states, businesses can avoid overstocking or understocking, leading to better utilization of capital and space.
-*   **Enhance Decision-Making:** With a clearer picture of inventory flow, decision-makers can make more informed choices regarding procurement, production, and distribution.
+-   **Improve Responsiveness:** By understanding real-time flow, businesses can react more quickly to demand changes and disruptions.
+-   **Reduce Variability:** A symmetrical view of input and output helps in managing and reducing the inherent variability in inventory levels.
+-   **Optimize Resource Utilization:** By accurately tracking inventory in all states, businesses can avoid overstocking or understocking, leading to better utilization of capital and space.
+-   **Enhance Decision-Making:** With a clearer picture of inventory flow, decision-makers can make more informed choices regarding procurement, production, and distribution.
 
 ### Conclusion
 

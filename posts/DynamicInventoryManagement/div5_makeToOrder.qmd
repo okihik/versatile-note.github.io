@@ -1,0 +1,104 @@
+---
+title: "Dynamic Make-to-Order Production: Mastering the Flow of Time"
+date: "2025-08-27"
+categories: ["Inventory Management"]
+---
+
+## Managing the Flow of Time in Make-to-Order Production
+
+In our series on dynamic production management, we have explored the distinctions between Make-to-Order (MTO) and Make-to-Stock (MTS) production, and the challenges associated with traditional production planning. This post delves deeper into **Make-to-Order (MTO) production**, focusing on the critical aspect of time management and how a dynamic approach can overcome the inherent problems. Our analysis is based on the insights provided by tocken.com regarding jucyu production \[1\].
+
+### The Challenges of Make-to-Order Production
+
+While MTO production, where products are made only after a customer order is confirmed, might seem ideal (no unsold inventory, no complaints about stockouts), it presents its own set of significant challenges. A common issue is the ambiguity surrounding the definition of a "confirmed order." This can lead to "premature starts" where production begins based on tentative orders, unconfirmed specifications, or unclear delivery dates. These premature starts are often driven by the pressure to meet tight deadlines, as delaying production until all details are finalized could mean missing the customer's requested delivery date.
+
+The low on-time delivery rate is a persistent problem in MTO production. Is this due to poor time management? To understand why time management is so difficult in MTO, we need to examine the underlying issues.
+
+#### Fluctuating Time Elements
+
+Several time elements are at play in MTO production:
+
+-   **Customer's Desired Delivery Date:** The date by which the customer expects the product to be completed and delivered.
+-   **Production Lead Time:** The estimated time required to produce the product. Subtracting this from the desired delivery date gives the planned production start (input) date.
+-   **Order Confirmation Time:** The actual time when the order is formally confirmed. Ideally, this should be before the planned production start date, but it often occurs later.
+
+The most critical of these for time management is the **production lead time**. A common problem is that the actual production lead time often exceeds the estimated lead time. Why does this happen? One major reason is the tendency to set extremely tight lead times to meet customer demands, especially in competitive environments.
+
+The production lead time consists primarily of **flow time** (the time from input to completion) and administrative processing time before input. Flow time, in turn, is composed of processing time and **waiting time**. Waiting time dramatically increases when the load factor (utilization rate) of the production line approaches around 80%. Flow time exhibits a similar curve, and this phenomenon is referred to as the **"flow time jump."** The more significant the variability, the steeper this jump becomes. Figure 1 illustrates this relationship:
+
+![Figure 1: Change in Waiting Time vs. Load Factor](/home/ubuntu/jucyu_figure1.png)
+
+Figure 1: Change in Waiting Time vs. Load Factor
+
+While a high utilization rate is generally considered desirable (e.g., 90% or even 95%), operating in this high-utilization zone leads to a sharp increase in flow time, making time management extremely difficult. This is a primary factor contributing to poor time and delivery management in MTO production.
+
+### Suppressing the Flow Time Jump
+
+Before discussing time management, it's essential to address the flow time jump. Without controlling this phenomenon, effective time management is impossible. Two main methods can suppress the flow time jump:
+
+1.  **Work-In-Process (WIP) Limit:** Implementing an input restriction based on WIP is highly effective. As shown in Figure 2, reducing the WIP limit (e.g., from 50 to 20) significantly flattens the flow time jump curve.
+
+2.  **Increasing Production Capacity:** Raising production capacity to keep the load factor below 80% also helps. In practice, a combination of these two methods is often employed.
+
+![Figure 2: Flow Time Jump and WIP Limit](/home/ubuntu/jucyu_figure2.png)
+
+Figure 2: Flow Time Jump and WIP Limit
+
+### Setting Standard Manufacturing Lead Time (SML)
+
+With methods to control the flow time jump in place, we can now return to time management. Traditional MTO production relies on production plans, schedules, and detailed timelines as benchmarks. However, as we've repeatedly seen, these are often unable to keep pace with demand fluctuations. So, what should be our benchmark?
+
+The **production lead time** itself can serve as a benchmark, which we will call **Standard Manufacturing Lead-time (SML)**. This concept is analogous to standard work time or standard man-hours.
+
+For SML to function effectively, its definition must be precise. The longest component of SML is typically the flow time. This is why controlling the flow time jump is so crucial. A key consideration is determining the maximum acceptable flow time. Flow time comprises processing time (for operations like machining and assembly) and waiting time (for machine availability, material arrival, or human-induced delays like batch processing or consolidation). Figure 3 shows an example of a **Time In Process (TIP) chart**, illustrating the flow time progression from production start to completion for a product group.
+
+
+Completion times in MTO production vary and are generally approximated by a normal distribution, characterized by its mean and variance (standard deviation). Since MTO orders often have unique specifications, estimating SML for each individual order is ideal. However, for products with minor specification differences but largely repetitive production, grouping them by specification and setting SMLs for each group can be effective. The upper limit of flow time depends on the desired completion probability and is closely related to the degree of input restriction.
+
+It's also important to account for potential delays in input (start). Various factors, such as input restrictions to control flow time jump, material arrival delays, machine setup, or partial specification changes, can delay the planned production start. SML should incorporate an allowance for these anticipated delays.
+
+Thus, SML can be expressed as:
+
+$$SML = \text{Flow Time Upper Limit} + \text{Allowable Input Delay}$$
+
+### Dynamic Control of MTO Production
+
+In a dynamic MTO system, the SML becomes the primary control parameter. Instead of rigid schedules, the system focuses on managing the flow of orders to ensure they adhere to their SML. This involves:
+
+-   **Real-time Progress Monitoring:** Continuously tracking the progress of each order against its SML. Deviations trigger alerts, allowing for timely intervention.
+-   **Priority Control:** When multiple orders compete for resources, a dynamic priority control mechanism is needed. The website suggests using the ratio of elapsed time from input to the standard flow time as a priority criterion. Orders that are falling behind their SML would automatically gain higher priority.
+
+Let $T_{elapsed}$ be the elapsed time since input and $SML_{order}$ be the SML for a specific order. The priority $P$ could be defined as:
+
+$$P = \frac{T_{elapsed}}{SML_{order}}$$
+
+Orders with a higher $P$ value would be prioritized. This allows for autonomous priority control on the shop floor.
+
+### Input Management and Progress Tracking
+
+Effective input management is crucial. Orders should only be input into the production system if they have a reasonable chance of meeting their SML. This requires a clear understanding of current capacity and WIP levels. Progress tracking should be granular, allowing for visibility into each order's status at every stage of production.
+
+### Rules and Maintenance
+
+Establishing clear rules for dynamic MTO is essential. These rules govern how orders are prioritized, how resources are allocated, and how deviations are handled. Regular maintenance of these rules and the underlying system is necessary to ensure continued effectiveness.
+
+### Information Processing Mechanism
+
+A robust information processing mechanism is the backbone of dynamic MTO. This system needs to:
+
+-   **Collect Real-time Data:** Gather data on order status, WIP levels, machine availability, and material status.
+-   **Calculate SML and Priorities:** Automatically compute SMLs for new orders and update priorities for ongoing orders.
+-   **Provide Alerts and Insights:** Generate alerts for potential delays or bottlenecks and provide insights into system performance.
+
+### Performance Evaluation
+
+Finally, the performance of the dynamic MTO system must be continuously evaluated. Key metrics would include:
+
+-   **On-time Delivery Rate:** The percentage of orders delivered by their promised date.
+-   **Actual vs. SML Deviation:** The difference between actual production lead time and SML.
+-   **Flow Time Variability:** The consistency of flow times.
+-   **Resource Utilization:** While not the sole focus, efficient resource utilization remains important.
+
+### Conclusion
+
+Dynamic Make-to-Order production shifts the focus from rigid, static planning to the dynamic management of time and flow. By understanding and controlling the factors that influence flow time, setting realistic Standard Manufacturing Lead Times, and implementing intelligent priority and input control mechanisms, businesses can significantly improve their on-time delivery performance and overall responsiveness. This approach, rooted in real-time data and autonomous decision-making, is vital for navigating the complexities of modern MTO environments.

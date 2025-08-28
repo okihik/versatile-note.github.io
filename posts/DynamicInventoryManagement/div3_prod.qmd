@@ -34,9 +34,9 @@ Despite the common refrain that "planning and production cycles must be shortene
 
 What happens when we separate and decentralize the centralized production management system? Let's imagine how the production floor would operate:
 
-*   **Autonomous Input:** At the start of the day, operators check their terminal screens for the input plan, which lists orders (workpieces) in their input sequence. After confirming that necessary materials are available, they proceed with inputting items in order. Once processed, items are moved to the next stage. The input plan is updated in real-time, so operators continuously check it. If the total WIP in the input process reaches a set limit, an instruction to stop input is issued.
+-   **Autonomous Input:** At the start of the day, operators check their terminal screens for the input plan, which lists orders (workpieces) in their input sequence. After confirming that necessary materials are available, they proceed with inputting items in order. Once processed, items are moved to the next stage. The input plan is updated in real-time, so operators continuously check it. If the total WIP in the input process reaches a set limit, an instruction to stop input is issued.
 
-*   **First-In, First-Out (FIFO) Processing:** Each process operates on a FIFO basis. Workpieces that arrive are processed in that order and sent to the next process. In certain processes (typically those where WIP tends to accumulate), processing is done according to a priority order displayed on the terminal. There are no production plans or detailed schedules dictating these actions.
+-   **First-In, First-Out (FIFO) Processing:** Each process operates on a FIFO basis. Workpieces that arrive are processed in that order and sent to the next process. In certain processes (typically those where WIP tends to accumulate), processing is done according to a priority order displayed on the terminal. There are no production plans or detailed schedules dictating these actions.
 
 This vision of the production floor highlights a shift from being controlled by a central plan to operating autonomously based on real-time conditions and local rules. The production plan, in this decentralized model, becomes a reference rather than a strict command. The focus shifts from adherence to a fixed plan to dynamic adaptation and responsiveness.
 
@@ -46,10 +46,10 @@ This decentralized approach is at the heart of **Dynamic Production Management (
 
 Key aspects of DPM include:
 
-*   **Real-time Information:** Utilizing up-to-the-minute data on demand, WIP, and resource availability to guide production activities.
-*   **Local Decision-Making:** Empowering individual processes and operators to make decisions based on local conditions and established rules, rather than rigid schedules.
-*   **Self-Correction:** The system is designed to self-correct and adapt to minor deviations, with human intervention reserved for significant anomalies or capacity issues.
-*   **Flow Optimization:** Focusing on optimizing the flow of materials and workpieces through the system, rather than simply maximizing individual process utilization.
+-   **Real-time Information:** Utilizing up-to-the-minute data on demand, WIP, and resource availability to guide production activities.
+-   **Local Decision-Making:** Empowering individual processes and operators to make decisions based on local conditions and established rules, rather than rigid schedules.
+-   **Self-Correction:** The system is designed to self-correct and adapt to minor deviations, with human intervention reserved for significant anomalies or capacity issues.
+-   **Flow Optimization:** Focusing on optimizing the flow of materials and workpieces through the system, rather than simply maximizing individual process utilization.
 
 This shift from a centralized, plan-driven system to a decentralized, demand-driven one is not merely a technological upgrade; it's a fundamental change in philosophy. It acknowledges the limitations of human planning in highly dynamic environments and leverages the power of real-time data and autonomous decision-making to create a more agile and resilient production system.
 

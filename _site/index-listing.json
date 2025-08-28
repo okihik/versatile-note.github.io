@@ -1,7 +1,8 @@
 {
   "listing": "/index.html",
   "items": [
-    "/posts/DynamicInventoryManagement/div4_potProd.html",
+    "/posts/DynamicInventoryManagement/div4_makeToStock.html",
+    "/posts/DynamicInventoryManagement/div5_makeToOrder.html",
     "/posts/DynamicInventoryManagement/div3_prod.html",
     "/posts/Black holes 250824.html",
     "/posts/DynamicInventoryManagement/div1_intr.html",

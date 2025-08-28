@@ -6,7 +6,7 @@ categories: ["Inventory Management"]
 
 ## Understanding Make-to-Stock Production: A Dynamic Perspective
 
-In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to **Make-to-Stock (MTS) production**, often referred to as "mikomi seisan" in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness, drawing insights from tocken.com's detailed explanation on mikomi production [1].
+In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to **Make-to-Stock (MTS) production**, often referred to as "mikomi seisan" in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness, drawing insights from tocken.com's detailed explanation on mikomi production \[1\].
 
 ### Make-to-Stock vs. Make-to-Order: A Fundamental Distinction
 
@@ -14,9 +14,10 @@ The core difference between MTO and MTS lies in the timing of production initiat
 
 While some might argue that their factories handle both MTO and MTS with a unified management system, this often leads to ambiguity and inefficiencies. The key is to precisely define "production start" and "order confirmation."
 
-*   **Production Start:** This refers to the initiation of activities to complete a specific product. It typically excludes long-term activities like factory construction or equipment installation, focusing instead on repetitive production cycles. It can range from starting design, procuring parts, or beginning assembly.
+-   **Production Start:** This refers to the initiation of activities to complete a specific product. It typically excludes long-term activities like factory construction or equipment installation, focusing instead on repetitive production cycles. It can range from starting design, procuring parts, or beginning assembly.
 
-*   **Order Confirmation:** This is when all critical aspects of a customer order are finalized. Ideally, this includes:
+-   **Order Confirmation:** This is when all critical aspects of a customer order are finalized. Ideally, this includes:
+
     1.  The buyer (payer) is determined.
     2.  Product specifications are set.
     3.  Delivery timing (when needed) is established.
@@ -70,9 +71,9 @@ This diagram illustrates a basic feedback loop. When customer demand reduces the
 
 Dynamic MTS also requires flexible production capacity and intelligent input restrictions. Production capacity needs to be adaptable to fluctuations in demand. This might involve:
 
-*   **Flexible Workforce:** Cross-training employees or utilizing temporary staff to adjust labor capacity.
-*   **Modular Production Lines:** Designing production lines that can be easily reconfigured or scaled up/down.
-*   **Strategic Outsourcing:** Leveraging external partners for overflow production during peak demand.
+-   **Flexible Workforce:** Cross-training employees or utilizing temporary staff to adjust labor capacity.
+-   **Modular Production Lines:** Designing production lines that can be easily reconfigured or scaled up/down.
+-   **Strategic Outsourcing:** Leveraging external partners for overflow production during peak demand.
 
 Furthermore, input restrictions are critical to prevent overproduction and excessive Work-In-Process (WIP). This is where the concept of a **"WIP cap"** or **"input limit"** becomes important. By setting a maximum limit on the amount of WIP in the system, it prevents the production line from producing more than what the downstream processes or customer demand can absorb. This helps to maintain a smooth flow and prevent bottlenecks.
 
@@ -88,19 +89,13 @@ Without explicit equations on the website, we can infer some fundamental relatio
 
 $$I_{t} = I_{t-1} + P_{t} - D_{t}$$
 
-Where:
-*   $I_{t}$ = Inventory at the end of period $t$
-*   $I_{t-1}$ = Inventory at the end of period $t-1$
-*   $P_{t}$ = Production in period $t$
-*   $D_{t}$ = Demand in period $t$
+Where: \* $I_{t}$ = Inventory at the end of period $t$ \* $I_{t-1}$ = Inventory at the end of period $t-1$ \* $P_{t}$ = Production in period $t$ \* $D_{t}$ = Demand in period $t$
 
 In a dynamic MTS system, the goal is to keep $I_t$ within a desired range. This means $P_t$ needs to be responsive to $D_t$. A simple control rule could be:
 
 $$P_{t} = D_{t} + k(I_{target} - I_{t-1})$$
 
-Where:
-*   $I_{target}$ = Desired target inventory level
-*   $k$ = A control parameter (e.g., a fraction of the inventory deviation to correct in the next period)
+Where: \* $I_{target}$ = Desired target inventory level \* $k$ = A control parameter (e.g., a fraction of the inventory deviation to correct in the next period)
 
 This equation suggests that production in period $t$ is driven by current demand ($D_t$) and an adjustment based on the deviation of the previous period's inventory ($I_{t-1}$) from the target inventory ($I_{target}$). The parameter $k$ would determine how aggressively the system tries to correct inventory deviations. A higher $k$ would lead to faster adjustments but could also introduce instability.
 
@@ -108,9 +103,7 @@ For the WIP cap, we can define:
 
 $$WIP_{t} \le WIP_{max}$$
 
-Where:
-*   $WIP_{t}$ = Work-in-process at the end of period $t$
-*   $WIP_{max}$ = Maximum allowable work-in-process
+Where: \* $WIP_{t}$ = Work-in-process at the end of period $t$ \* $WIP_{max}$ = Maximum allowable work-in-process
 
 This constraint would directly influence the production trigger, ensuring that new production is only initiated if the WIP level is below the maximum. This helps to prevent bottlenecks and maintain flow.
 
