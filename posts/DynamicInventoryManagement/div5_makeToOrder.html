@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2025-08-27">
 
-<title>Crafting Academic Reports: A LaTeX and Overleaf Guide – Himagineer</title>
+<title>Dynamic Make-to-Order Production: Mastering the Flow of Time – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -115,10 +144,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
-            <p class="subtitle lead">part 1</p>
+      <h1 class="title">Dynamic Make-to-Order Production: Mastering the Flow of Time</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Reporting</div>
+                <div class="quarto-category">Inventory Management</div>
               </div>
                   </div>
   </div>
@@ -130,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 9, 2025</p>
+        <p class="date">August 27, 2025</p>
       </div>
     </div>
     
@@ -149,23 +177,102 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="the-challenge-of-academic-reporting" class="level1">
-<h1>The Challenge of Academic Reporting</h1>
-<p>The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.</p>
+<section id="managing-the-flow-of-time-in-make-to-order-production" class="level2">
+<h2 class="anchored" data-anchor-id="managing-the-flow-of-time-in-make-to-order-production">Managing the Flow of Time in Make-to-Order Production</h2>
+<p>In our series on dynamic production management, we have explored the distinctions between Make-to-Order (MTO) and Make-to-Stock (MTS) production, and the challenges associated with traditional production planning. This post delves deeper into <strong>Make-to-Order (MTO) production</strong>, focusing on the critical aspect of time management and how a dynamic approach can overcome the inherent problems. Our analysis is based on the insights provided by tocken.com regarding jucyu production [1].</p>
+<section id="the-challenges-of-make-to-order-production" class="level3">
+<h3 class="anchored" data-anchor-id="the-challenges-of-make-to-order-production">The Challenges of Make-to-Order Production</h3>
+<p>While MTO production, where products are made only after a customer order is confirmed, might seem ideal (no unsold inventory, no complaints about stockouts), it presents its own set of significant challenges. A common issue is the ambiguity surrounding the definition of a “confirmed order.” This can lead to “premature starts” where production begins based on tentative orders, unconfirmed specifications, or unclear delivery dates. These premature starts are often driven by the pressure to meet tight deadlines, as delaying production until all details are finalized could mean missing the customer’s requested delivery date.</p>
+<p>The low on-time delivery rate is a persistent problem in MTO production. Is this due to poor time management? To understand why time management is so difficult in MTO, we need to examine the underlying issues.</p>
+<section id="fluctuating-time-elements" class="level4">
+<h4 class="anchored" data-anchor-id="fluctuating-time-elements">Fluctuating Time Elements</h4>
+<p>Several time elements are at play in MTO production:</p>
+<ul>
+<li><strong>Customer’s Desired Delivery Date:</strong> The date by which the customer expects the product to be completed and delivered.</li>
+<li><strong>Production Lead Time:</strong> The estimated time required to produce the product. Subtracting this from the desired delivery date gives the planned production start (input) date.</li>
+<li><strong>Order Confirmation Time:</strong> The actual time when the order is formally confirmed. Ideally, this should be before the planned production start date, but it often occurs later.</li>
+</ul>
+<p>The most critical of these for time management is the <strong>production lead time</strong>. A common problem is that the actual production lead time often exceeds the estimated lead time. Why does this happen? One major reason is the tendency to set extremely tight lead times to meet customer demands, especially in competitive environments.</p>
+<p>The production lead time consists primarily of <strong>flow time</strong> (the time from input to completion) and administrative processing time before input. Flow time, in turn, is composed of processing time and <strong>waiting time</strong>. Waiting time dramatically increases when the load factor (utilization rate) of the production line approaches around 80%. Flow time exhibits a similar curve, and this phenomenon is referred to as the <strong>“flow time jump.”</strong> The more significant the variability, the steeper this jump becomes. Figure 1 illustrates this relationship:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../home/ubuntu/jucyu_figure1.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: Change in Waiting Time vs.&nbsp;Load Factor</figcaption>
+</figure>
+</div>
+<p>Figure 1: Change in Waiting Time vs.&nbsp;Load Factor</p>
+<p>While a high utilization rate is generally considered desirable (e.g., 90% or even 95%), operating in this high-utilization zone leads to a sharp increase in flow time, making time management extremely difficult. This is a primary factor contributing to poor time and delivery management in MTO production.</p>
 </section>
-<section id="introducing-latex-the-gold-standard-for-professional-documents" class="level1">
-<h1>Introducing LaTeX: The Gold Standard for Professional Documents</h1>
-<p>What if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.</p>
 </section>
-<section id="overleaf-making-latex-accessible" class="level1">
-<h1>Overleaf: Making LaTeX Accessible</h1>
-<p>But we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.</p>
+<section id="suppressing-the-flow-time-jump" class="level3">
+<h3 class="anchored" data-anchor-id="suppressing-the-flow-time-jump">Suppressing the Flow Time Jump</h3>
+<p>Before discussing time management, it’s essential to address the flow time jump. Without controlling this phenomenon, effective time management is impossible. Two main methods can suppress the flow time jump:</p>
+<ol type="1">
+<li><p><strong>Work-In-Process (WIP) Limit:</strong> Implementing an input restriction based on WIP is highly effective. As shown in Figure 2, reducing the WIP limit (e.g., from 50 to 20) significantly flattens the flow time jump curve.</p></li>
+<li><p><strong>Increasing Production Capacity:</strong> Raising production capacity to keep the load factor below 80% also helps. In practice, a combination of these two methods is often employed.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../home/ubuntu/jucyu_figure2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: Flow Time Jump and WIP Limit</figcaption>
+</figure>
+</div>
+<p>Figure 2: Flow Time Jump and WIP Limit</p>
 </section>
-<section id="what-youll-learn-in-this-guide" class="level1">
-<h1>What You’ll Learn in This Guide</h1>
-<p>In this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create.</p>
+<section id="setting-standard-manufacturing-lead-time-sml" class="level3">
+<h3 class="anchored" data-anchor-id="setting-standard-manufacturing-lead-time-sml">Setting Standard Manufacturing Lead Time (SML)</h3>
+<p>With methods to control the flow time jump in place, we can now return to time management. Traditional MTO production relies on production plans, schedules, and detailed timelines as benchmarks. However, as we’ve repeatedly seen, these are often unable to keep pace with demand fluctuations. So, what should be our benchmark?</p>
+<p>The <strong>production lead time</strong> itself can serve as a benchmark, which we will call <strong>Standard Manufacturing Lead-time (SML)</strong>. This concept is analogous to standard work time or standard man-hours.</p>
+<p>For SML to function effectively, its definition must be precise. The longest component of SML is typically the flow time. This is why controlling the flow time jump is so crucial. A key consideration is determining the maximum acceptable flow time. Flow time comprises processing time (for operations like machining and assembly) and waiting time (for machine availability, material arrival, or human-induced delays like batch processing or consolidation). Figure 3 shows an example of a <strong>Time In Process (TIP) chart</strong>, illustrating the flow time progression from production start to completion for a product group.</p>
+<p>Completion times in MTO production vary and are generally approximated by a normal distribution, characterized by its mean and variance (standard deviation). Since MTO orders often have unique specifications, estimating SML for each individual order is ideal. However, for products with minor specification differences but largely repetitive production, grouping them by specification and setting SMLs for each group can be effective. The upper limit of flow time depends on the desired completion probability and is closely related to the degree of input restriction.</p>
+<p>It’s also important to account for potential delays in input (start). Various factors, such as input restrictions to control flow time jump, material arrival delays, machine setup, or partial specification changes, can delay the planned production start. SML should incorporate an allowance for these anticipated delays.</p>
+<p>Thus, SML can be expressed as:</p>
+<p><span class="math display">\[SML = \text{Flow Time Upper Limit} + \text{Allowable Input Delay}\]</span></p>
+</section>
+<section id="dynamic-control-of-mto-production" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-control-of-mto-production">Dynamic Control of MTO Production</h3>
+<p>In a dynamic MTO system, the SML becomes the primary control parameter. Instead of rigid schedules, the system focuses on managing the flow of orders to ensure they adhere to their SML. This involves:</p>
+<ul>
+<li><strong>Real-time Progress Monitoring:</strong> Continuously tracking the progress of each order against its SML. Deviations trigger alerts, allowing for timely intervention.</li>
+<li><strong>Priority Control:</strong> When multiple orders compete for resources, a dynamic priority control mechanism is needed. The website suggests using the ratio of elapsed time from input to the standard flow time as a priority criterion. Orders that are falling behind their SML would automatically gain higher priority.</li>
+</ul>
+<p>Let <span class="math inline">\(T_{elapsed}\)</span> be the elapsed time since input and <span class="math inline">\(SML_{order}\)</span> be the SML for a specific order. The priority <span class="math inline">\(P\)</span> could be defined as:</p>
+<p><span class="math display">\[P = \frac{T_{elapsed}}{SML_{order}}\]</span></p>
+<p>Orders with a higher <span class="math inline">\(P\)</span> value would be prioritized. This allows for autonomous priority control on the shop floor.</p>
+</section>
+<section id="input-management-and-progress-tracking" class="level3">
+<h3 class="anchored" data-anchor-id="input-management-and-progress-tracking">Input Management and Progress Tracking</h3>
+<p>Effective input management is crucial. Orders should only be input into the production system if they have a reasonable chance of meeting their SML. This requires a clear understanding of current capacity and WIP levels. Progress tracking should be granular, allowing for visibility into each order’s status at every stage of production.</p>
+</section>
+<section id="rules-and-maintenance" class="level3">
+<h3 class="anchored" data-anchor-id="rules-and-maintenance">Rules and Maintenance</h3>
+<p>Establishing clear rules for dynamic MTO is essential. These rules govern how orders are prioritized, how resources are allocated, and how deviations are handled. Regular maintenance of these rules and the underlying system is necessary to ensure continued effectiveness.</p>
+</section>
+<section id="information-processing-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="information-processing-mechanism">Information Processing Mechanism</h3>
+<p>A robust information processing mechanism is the backbone of dynamic MTO. This system needs to:</p>
+<ul>
+<li><strong>Collect Real-time Data:</strong> Gather data on order status, WIP levels, machine availability, and material status.</li>
+<li><strong>Calculate SML and Priorities:</strong> Automatically compute SMLs for new orders and update priorities for ongoing orders.</li>
+<li><strong>Provide Alerts and Insights:</strong> Generate alerts for potential delays or bottlenecks and provide insights into system performance.</li>
+</ul>
+</section>
+<section id="performance-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="performance-evaluation">Performance Evaluation</h3>
+<p>Finally, the performance of the dynamic MTO system must be continuously evaluated. Key metrics would include:</p>
+<ul>
+<li><strong>On-time Delivery Rate:</strong> The percentage of orders delivered by their promised date.</li>
+<li><strong>Actual vs.&nbsp;SML Deviation:</strong> The difference between actual production lead time and SML.</li>
+<li><strong>Flow Time Variability:</strong> The consistency of flow times.</li>
+<li><strong>Resource Utilization:</strong> While not the sole focus, efficient resource utilization remains important.</li>
+</ul>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Dynamic Make-to-Order production shifts the focus from rigid, static planning to the dynamic management of time and flow. By understanding and controlling the factors that influence flow time, setting realistic Standard Manufacturing Lead Times, and implementing intelligent priority and input control mechanisms, businesses can significantly improve their on-time delivery performance and overall responsiveness. This approach, rooted in real-time data and autonomous decision-making, is vital for navigating the complexities of modern MTO environments.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

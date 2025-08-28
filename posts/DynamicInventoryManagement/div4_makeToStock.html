@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2025-08-27">
 
-<title>Crafting Academic Reports: A LaTeX and Overleaf Guide – Himagineer</title>
+<title>Dynamic Make-to-Stock Production: Producing Only What Sells – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,7 +68,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -115,10 +147,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Crafting Academic Reports: A LaTeX and Overleaf Guide</h1>
-            <p class="subtitle lead">part 1</p>
+      <h1 class="title">Dynamic Make-to-Stock Production: Producing Only What Sells</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Reporting</div>
+                <div class="quarto-category">Inventory Management</div>
               </div>
                   </div>
   </div>
@@ -130,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 9, 2025</p>
+        <p class="date">August 27, 2025</p>
       </div>
     </div>
     
@@ -149,23 +180,104 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="the-challenge-of-academic-reporting" class="level1">
-<h1>The Challenge of Academic Reporting</h1>
-<p>The academic world demands precision, clarity, and professionalism, and nowhere is this more evident than in the reports and assignments we submit. You’ve poured hours into your research, meticulously crunching numbers, dissecting texts, and forming insightful conclusions. But what happens when it’s time to present that hard work? Many students find themselves wrestling with word processors, battling formatting issues, misaligned equations, and stubborn bibliographies. Often, these technical struggles can detract from the quality of your valuable content.</p>
+<section id="understanding-make-to-stock-production-a-dynamic-perspective" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-make-to-stock-production-a-dynamic-perspective">Understanding Make-to-Stock Production: A Dynamic Perspective</h2>
+<p>In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to <strong>Make-to-Stock (MTS) production</strong>, often referred to as “mikomi seisan” in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness, drawing insights from tocken.com’s detailed explanation on mikomi production [1].</p>
+<section id="make-to-stock-vs.-make-to-order-a-fundamental-distinction" class="level3">
+<h3 class="anchored" data-anchor-id="make-to-stock-vs.-make-to-order-a-fundamental-distinction">Make-to-Stock vs.&nbsp;Make-to-Order: A Fundamental Distinction</h3>
+<p>The core difference between MTO and MTS lies in the timing of production initiation relative to order confirmation. In <strong>Make-to-Order</strong>, production begins <em>after</em> a customer order is confirmed. Conversely, in <strong>Make-to-Stock</strong>, production commences <em>before</em> an order is received, based on anticipated demand. From a production management perspective, this distinction is paramount because it dictates fundamentally different management mechanisms.</p>
+<p>While some might argue that their factories handle both MTO and MTS with a unified management system, this often leads to ambiguity and inefficiencies. The key is to precisely define “production start” and “order confirmation.”</p>
+<ul>
+<li><p><strong>Production Start:</strong> This refers to the initiation of activities to complete a specific product. It typically excludes long-term activities like factory construction or equipment installation, focusing instead on repetitive production cycles. It can range from starting design, procuring parts, or beginning assembly.</p></li>
+<li><p><strong>Order Confirmation:</strong> This is when all critical aspects of a customer order are finalized. Ideally, this includes:</p>
+<ol type="1">
+<li>The buyer (payer) is determined.</li>
+<li>Product specifications are set.</li>
+<li>Delivery timing (when needed) is established.</li>
+<li>Quantity to be purchased is fixed.</li>
+<li>Price is agreed upon.</li>
+</ol></li>
+</ul>
+<p>While some flexibility in these criteria might be acceptable in commercial transactions, a strict definition is essential for production management. The ambiguity often arises when companies, despite claiming to be MTO, initiate production activities based on sales forecasts rather than confirmed orders. This leads to a blend of confirmed and forecasted orders within the production plan.</p>
+<p>For instance, in a factory operating on a monthly production cycle, a confirmed MTO order might only be incorporated into the production plan in the following month, leading to significant delays if lead times are short. To circumvent this, many “MTO” factories resort to informal workarounds, such as procuring materials or even starting initial production steps for unconfirmed orders, blurring the lines between MTO and MTS. This informal “make-to-forecast” within an MTO framework is a primary culprit for the ambiguity.</p>
+<p>In <strong>Dynamic Production Management (DPM)</strong>, this ambiguity is eliminated. MTO strictly means production begins <em>after</em> order confirmation, and MTS means production begins <em>before</em> order confirmation. This principle is maintained without compromise. It’s also important to note that distinctions like “MTO is multi-product, small-lot; MTS is small-product, large-lot” are tendencies, not fundamental defining characteristics.</p>
 </section>
-<section id="introducing-latex-the-gold-standard-for-professional-documents" class="level1">
-<h1>Introducing LaTeX: The Gold Standard for Professional Documents</h1>
-<p>What if there was a better way? A tool that handles complex typesetting with grace, ensures consistent formatting across your entire document, and lets you focus on what truly matters: your ideas. That tool is LaTeX. LaTeX isn’t just another word processor; it’s a document preparation system renowned in academia and science for its ability to produce stunning, professional-quality documents with unparalleled precision, especially when it comes to mathematical equations, complex figures, and intricate citations. It’s the gold standard for anyone serious about academic writing.</p>
+<section id="the-purpose-of-make-to-stock-production" class="level3">
+<h3 class="anchored" data-anchor-id="the-purpose-of-make-to-stock-production">The Purpose of Make-to-Stock Production</h3>
+<p>The definition of MTS is now clear: producing before knowing who, when, or how much will be bought. This inherently carries risks of both stockouts and excess inventory, which are undesirable from a business management perspective. So, why engage in MTS production?</p>
+<p>The primary objective of MTS is not merely to achieve economies of scale through planned, leveled production, as is often assumed. While mass production can reduce costs, this benefit is often negated by the risks of obsolescence and overstocking if demand is misjudged. The true purpose of MTS, from a dynamic perspective, is to <strong>produce what sells</strong> – to have the necessary products available when and where the customer needs them, <em>before</em> they place an order.</p>
+<p>If production only begins after an order is confirmed, the customer might have already moved on, resulting in a lost sale. Therefore, the ultimate goal of MTS is to proactively meet customer demand. This leads us to a crucial insight: production must follow market demand. The market (customer) determines what, when, and how much is needed. Thus, the direction is clear: <strong>produce according to market demand.</strong></p>
 </section>
-<section id="overleaf-making-latex-accessible" class="level1">
-<h1>Overleaf: Making LaTeX Accessible</h1>
-<p>But we get it—the idea of learning a new system, especially one that involves coding, can seem daunting. That’s where Overleaf comes in. Think of Overleaf as your collaborative, cloud-based hub for LaTeX. It strips away the installation hassles and steep learning curves, providing an intuitive online environment where you can write, compile, and share your LaTeX documents in real-time. It’s like Google Docs, but purpose-built for the power of LaTeX.</p>
+<section id="the-mechanism-of-demand-following-make-to-stock-production" class="level3">
+<h3 class="anchored" data-anchor-id="the-mechanism-of-demand-following-make-to-stock-production">The Mechanism of Demand-Following Make-to-Stock Production</h3>
+<p>To achieve demand-following MTS, a dynamic system is required that can adapt to real-time market signals. This involves a shift from rigid, forecast-driven planning to a more agile, responsive approach. The website highlights the importance of a system that can quickly react to changes in demand, rather than being constrained by long planning cycles.</p>
+<p>One of the key concepts introduced is the idea of a <strong>“fluid inventory”</strong> or <strong>“inventory flow management”</strong> system, which we discussed in a previous post. In the context of MTS, this means managing inventory not as static quantities, but as dynamic flows that respond to actual consumption. The system needs to be able to:</p>
+<ol type="1">
+<li><strong>Monitor Real-time Demand:</strong> Continuously track sales and consumption data to understand actual market off-take.</li>
+<li><strong>Adjust Production Rates Dynamically:</strong> Based on real-time demand, adjust production output to match consumption, preventing both stockouts and overproduction.</li>
+<li><strong>Maintain Optimal Inventory Levels:</strong> Instead of fixed “safety stocks,” the system aims to maintain a fluid inventory level that minimizes holding costs while ensuring product availability.</li>
+</ol>
+<p>This dynamic adjustment is crucial. If demand increases, the system should automatically trigger an increase in production. If demand drops, production should be scaled back. This responsiveness is what differentiates dynamic MTS from traditional, forecast-driven MTS.</p>
 </section>
-<section id="what-youll-learn-in-this-guide" class="level1">
-<h1>What You’ll Learn in This Guide</h1>
-<p>In this guide, we’ll demystify the process of creating academic reports using LaTeX on Overleaf. We’ll explore why these tools are a game-changer for students and researchers alike. I’ll also walk you through a practical example based on an actual university assignment, providing concrete steps you can follow. By the end, you’ll be equipped to elevate your academic writing, producing reports that not only look professional but are also a joy to create.</p>
+<section id="replenishing-inventory-from-the-production-line" class="level3">
+<h3 class="anchored" data-anchor-id="replenishing-inventory-from-the-production-line">Replenishing Inventory from the Production Line</h3>
+<p>In a dynamic MTS system, the production line is directly linked to inventory replenishment. Instead of producing to a fixed schedule and then pushing products into a warehouse, the production line pulls demand from the inventory. This means that as products are sold and inventory levels drop, a signal is sent back to the production line to replenish those specific items. This is a pull-based system, in contrast to a push-based system.</p>
+<p>Consider a simplified model of this replenishment process:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Customer Demand] --&gt; B{Inventory Level}
+    B -- Below Threshold --&gt; C[Production Trigger]
+    C --&gt; D[Production Line]
+    D --&gt; E[Finished Goods Inventory]
+    E --&gt; B
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This diagram illustrates a basic feedback loop. When customer demand reduces the inventory level below a certain threshold, it triggers the production line to replenish the stock. This continuous feedback ensures that production is always aligned with actual consumption.</p>
+</section>
+<section id="adjusting-production-capacity-and-input-restrictions" class="level3">
+<h3 class="anchored" data-anchor-id="adjusting-production-capacity-and-input-restrictions">Adjusting Production Capacity and Input Restrictions</h3>
+<p>Dynamic MTS also requires flexible production capacity and intelligent input restrictions. Production capacity needs to be adaptable to fluctuations in demand. This might involve:</p>
+<ul>
+<li><strong>Flexible Workforce:</strong> Cross-training employees or utilizing temporary staff to adjust labor capacity.</li>
+<li><strong>Modular Production Lines:</strong> Designing production lines that can be easily reconfigured or scaled up/down.</li>
+<li><strong>Strategic Outsourcing:</strong> Leveraging external partners for overflow production during peak demand.</li>
+</ul>
+<p>Furthermore, input restrictions are critical to prevent overproduction and excessive Work-In-Process (WIP). This is where the concept of a <strong>“WIP cap”</strong> or <strong>“input limit”</strong> becomes important. By setting a maximum limit on the amount of WIP in the system, it prevents the production line from producing more than what the downstream processes or customer demand can absorb. This helps to maintain a smooth flow and prevent bottlenecks.</p>
+</section>
+<section id="customer-lead-time-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="customer-lead-time-considerations">Customer Lead Time Considerations</h3>
+<p>When customer lead time (the time between order placement and delivery) is a factor, the dynamic MTS system needs to account for it. If the lead time is significant, the system must anticipate future demand further in advance. This can be incorporated into the replenishment trigger, where the threshold for triggering production is adjusted based on the lead time. For example, if the lead time is ‘L’ days, the system might trigger production when the inventory level is sufficient to cover ‘L’ days of anticipated demand.</p>
+</section>
+<section id="dynamic-make-to-stock-production-introducing-the-s-unit" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-make-to-stock-production-introducing-the-s-unit">Dynamic Make-to-Stock Production: Introducing the S-Unit</h3>
+<p>The website introduces the concept of an <strong>S-Unit</strong> as a core component of dynamic make-to-stock production. While the details are not fully elaborated on the page, the S-Unit appears to be a standardized unit or module that facilitates flexible and responsive production. It likely represents a smallest common denominator in terms of production or inventory, allowing for granular control and rapid adjustments.</p>
+<p>Without explicit equations on the website, we can infer some fundamental relationships that govern dynamic MTS. Let’s consider the basic inventory balance equation:</p>
+<p><span class="math display">\[I_{t} = I_{t-1} + P_{t} - D_{t}\]</span></p>
+<p>Where: * <span class="math inline">\(I_{t}\)</span> = Inventory at the end of period <span class="math inline">\(t\)</span> * <span class="math inline">\(I_{t-1}\)</span> = Inventory at the end of period <span class="math inline">\(t-1\)</span> * <span class="math inline">\(P_{t}\)</span> = Production in period <span class="math inline">\(t\)</span> * <span class="math inline">\(D_{t}\)</span> = Demand in period <span class="math inline">\(t\)</span></p>
+<p>In a dynamic MTS system, the goal is to keep <span class="math inline">\(I_t\)</span> within a desired range. This means <span class="math inline">\(P_t\)</span> needs to be responsive to <span class="math inline">\(D_t\)</span>. A simple control rule could be:</p>
+<p><span class="math display">\[P_{t} = D_{t} + k(I_{target} - I_{t-1})\]</span></p>
+<p>Where: * <span class="math inline">\(I_{target}\)</span> = Desired target inventory level * <span class="math inline">\(k\)</span> = A control parameter (e.g., a fraction of the inventory deviation to correct in the next period)</p>
+<p>This equation suggests that production in period <span class="math inline">\(t\)</span> is driven by current demand (<span class="math inline">\(D_t\)</span>) and an adjustment based on the deviation of the previous period’s inventory (<span class="math inline">\(I_{t-1}\)</span>) from the target inventory (<span class="math inline">\(I_{target}\)</span>). The parameter <span class="math inline">\(k\)</span> would determine how aggressively the system tries to correct inventory deviations. A higher <span class="math inline">\(k\)</span> would lead to faster adjustments but could also introduce instability.</p>
+<p>For the WIP cap, we can define:</p>
+<p><span class="math display">\[WIP_{t} \le WIP_{max}\]</span></p>
+<p>Where: * <span class="math inline">\(WIP_{t}\)</span> = Work-in-process at the end of period <span class="math inline">\(t\)</span> * <span class="math inline">\(WIP_{max}\)</span> = Maximum allowable work-in-process</p>
+<p>This constraint would directly influence the production trigger, ensuring that new production is only initiated if the WIP level is below the maximum. This helps to prevent bottlenecks and maintain flow.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Dynamic Make-to-Stock production represents a significant evolution from traditional MTS, moving away from rigid, forecast-driven planning towards a highly responsive, demand-following system. By embracing real-time data, flexible capacity, and intelligent input restrictions, businesses can achieve a more agile and efficient production process that minimizes both stockouts and excess inventory. The underlying principle is to produce only what sells, driven by actual market demand rather than speculative forecasts.</p>
+<p>This approach aligns with the broader principles of Dynamic Production Management and the ongoing digital transformation in manufacturing. In the next post, we will explore further practical applications and advanced concepts related to these dynamic systems.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

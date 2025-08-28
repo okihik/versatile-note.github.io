@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/DynamicInventoryManagement/div4_potProd.html",
+      "/posts/DynamicInventoryManagement/div4_makeToStock.html",
+      "/posts/DynamicInventoryManagement/div5_makeToOrder.html",
       "/posts/DynamicInventoryManagement/div3_prod.html",
       "/posts/DynamicInventoryManagement/div1_intr.html",
       "/posts/DynamicInventoryManagement/div2_inventory.html",
@@ -13,8 +14,8 @@
       "/posts/UNBC thesis in latex/thesis0.html",
       "/posts/academic reporting in tex 2/index.html",
       "/posts/academic reporting in tex/Academic Report1.html",
-      "/posts/create a Quarto blog/index.html",
-      "/posts/welcome/index.html"
+      "/posts/welcome/index.html",
+      "/posts/create a Quarto blog/index.html"
     ]
   }
 ]
