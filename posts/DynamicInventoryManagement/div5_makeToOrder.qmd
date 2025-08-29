@@ -6,7 +6,7 @@ categories: ["Inventory Management"]
 
 ## Managing the Flow of Time in Make-to-Order Production
 
-In our series on dynamic production management, we have explored the distinctions between Make-to-Order (MTO) and Make-to-Stock (MTS) production, and the challenges associated with traditional production planning. This post delves deeper into **Make-to-Order (MTO) production**, focusing on the critical aspect of time management and how a dynamic approach can overcome the inherent problems. Our analysis is based on the insights provided by tocken.com regarding jucyu production \[1\].
+In our series on dynamic production management, we have explored the distinctions between Make-to-Order (MTO) and Make-to-Stock (MTS) production, and the challenges associated with traditional production planning. This post delves deeper into **Make-to-Order (MTO) production**, focusing on the critical aspect of time management and how a dynamic approach can overcome the inherent problems.
 
 ### The Challenges of Make-to-Order Production
 
@@ -51,7 +51,6 @@ With methods to control the flow time jump in place, we can now return to time m
 The **production lead time** itself can serve as a benchmark, which we will call **Standard Manufacturing Lead-time (SML)**. This concept is analogous to standard work time or standard man-hours.
 
 For SML to function effectively, its definition must be precise. The longest component of SML is typically the flow time. This is why controlling the flow time jump is so crucial. A key consideration is determining the maximum acceptable flow time. Flow time comprises processing time (for operations like machining and assembly) and waiting time (for machine availability, material arrival, or human-induced delays like batch processing or consolidation). Figure 3 shows an example of a **Time In Process (TIP) chart**, illustrating the flow time progression from production start to completion for a product group.
-
 
 Completion times in MTO production vary and are generally approximated by a normal distribution, characterized by its mean and variance (standard deviation). Since MTO orders often have unique specifications, estimating SML for each individual order is ideal. However, for products with minor specification differences but largely repetitive production, grouping them by specification and setting SMLs for each group can be effective. The upper limit of flow time depends on the desired completion probability and is closely related to the degree of input restriction.
 

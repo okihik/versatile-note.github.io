@@ -1,0 +1,269 @@
+---
+title: "Optimal Inventory Calculation: A Dynamic Approach"
+date: "2025-08-29"
+categories: ["Inventory Management"]
+---
+
+## Calculating Optimal Inventory: A Dynamic Perspective
+
+In our ongoing series on dynamic production and inventory management, we now delve into the practical aspect of **optimal inventory calculation**. This post will explore the methodology for determining appropriate inventory levels. The goal is to understand how various factors influence optimal inventory and how a dynamic approach can lead to more efficient supply chain management.
+
+### Understanding the Optimal Inventory Calculation Tool
+
+The tocken.com website provides a tool for calculating optimal inventory based on various input parameters related to demand, lead time, and ordering policies. This tool is rooted in the "Inventory Dynamic Model," which emphasizes the dynamic nature of inventory rather than static stock levels. For those unfamiliar with the foundational concepts, it is recommended to review the "Inventory Dynamic Management Basics" and related literature on the website.
+
+### Input Parameters for Optimal Inventory Calculation
+
+The calculation of optimal inventory requires several key input parameters, which are categorized as follows:
+
+#### 1. Order Quantity (受注量)
+
+This section captures information about customer orders and their variability.
+
+-   **Data Aggregation Unit Time (データ集計単位時間):** This defines the time unit for collecting order data (e.g., daily, weekly, monthly). If order data is collected daily, the unit time is 1 day.
+-   **Average Number of Orders (平均受注件数):** The average number of orders received per unit time.
+-   **Standard Deviation of Number of Orders (件数・標準偏差):** The standard deviation of the number of orders received per unit time, indicating the variability in order frequency.
+-   **Average Order Quantity per Order (平均受注数量/件):** The average quantity of items per order. This should ideally be calculated from the same data used for the number of orders.
+-   **Standard Deviation of Order Quantity per Order (量/件・標準偏差):** The standard deviation of the quantity per order, reflecting variability in order size.
+
+#### 2. Delivery Lead Time (納入リードタイム)
+
+This refers to the time from placing an order until the goods are received in inventory.
+
+-   **Average Delivery Lead Time (平均納入リードタイム):** The average time it takes for an order to be delivered. This should be in the same time unit as the data aggregation unit time.
+-   **Standard Deviation of Delivery Lead Time (標準偏差):** The standard deviation of the delivery lead time. If there is no variability, this value should be 0.
+
+*Note: While the website primarily uses standard deviation for variability, it mentions that if variance or coefficient of variation data is available, it can be converted to standard deviation using the formula: Standard Deviation =* $\sqrt{\text{Variance}}$ or Standard Deviation = Average Value $\times$ Coefficient of Variation.
+
+#### 3. Calculation Execution (計算実行)
+
+This section involves setting the service level and defining the ordering policy.
+
+-   **Service Rate (サービス率):** This is the desired percentage of customer demand to be met from stock, ranging from 50% to 99%. It is inversely related to the stockout rate (Service Rate = 100% - Stockout Rate).
+
+-   **Order Interval Guideline (発注間隔目安):** An approximate frequency of ordering, based on current practice or experience. This helps in setting initial values for the ordering methods.
+
+-   **Apply Conditions (条件反映):** Clicking this button populates the fields for Quantity-Based Ordering, Time-Based Ordering, and Order-Count Based Ordering with equivalent values derived from the "Order Interval Guideline."
+
+    -   **Quantity-Based Order Quantity (定量発注量):** The fixed quantity to order when inventory reaches a reorder point.
+    -   **Time-Based Order Interval (定期発注間隔):** The fixed time interval between orders.
+    -   **Order-Count Based Order Count (定件発注件数):** The fixed number of orders to trigger a replenishment.
+
+    *Note: While all three ordering methods can be compared simultaneously, unnecessary methods can be set to 0.*
+
+Clicking the **"Calculate Execution" (計算実行)** button displays the calculation results for "Replenishment Inventory" (平均 and 分散) and "Optimal Inventory" (適正在庫).
+
+### Example Calculation
+
+The website provides an example calculation with the following conditions:
+
+-   Data aggregation unit time: 1 day (24 hours)
+-   Average number of orders: 2 orders/day, Standard deviation: 1.41
+-   Average quantity per order: 5 units, Standard deviation: 1.25
+-   Delivery lead time: 10 days (constant, so standard deviation: 0)
+-   Order cycle guideline: 4 days
+
+Inputting these values and clicking "Apply Conditions" yields:
+
+-   Quantity-Based Order Quantity: 40.0 (calculated as 4 days \* 2 orders/day \* 5 units/order)
+-   Time-Based Order Interval: 4.0
+-   Order-Count Based Order Count: 8.0 (calculated as 4 days \* 2 orders/day)
+
+Setting the service rate to 99% and clicking "Calculate Execution" produces the following results:
+
+| Ordering Method   | Average | Variance | Optimal Inventory |
+|:------------------|:--------|:---------|:------------------|
+| Quantity-Based    | 122.5   | 674.1    | 183               |
+| Time-Based        | 120.0   | 773.5    | 185               |
+| Order-Count Based | 117.5   | 672.5    | 178               |
+
+### Underlying Calculation Formulas
+
+The website provides the following formulas for calculating the average and variance of replenishment inventory for each ordering method:
+
+**定件発注 (Order-Count Based Ordering)**
+
+$$\text{Average} = \bar{Q} \cdot \left(\bar{N} + \frac{N_c - 1}{2}\right)$$
+
+$$\text{Variance} = \bar{Q}^2 \cdot (V_n + \bar{N}^2 \cdot C_t^2) + (\bar{N} + N_c - 1) \cdot V_q + \frac{(\bar{Q} \cdot N_c)^2}{12}$$
+
+**定期発注 (Time-Based Ordering)**
+
+$$\text{Average} = \bar{Q} \cdot \left(\bar{N} + \frac{\bar{N_y}}{2}\right)$$
+
+$$\text{Variance} = \bar{Q}^2 \cdot (V_n + \bar{N}^2 \cdot C_t^2) + (\bar{N} + \bar{N_y}) \cdot V_q + \frac{(\bar{Q} \cdot \bar{N_y})^2}{12}$$
+
+**定量発注 (Quantity-Based Ordering)**
+
+$$\text{Average} = \bar{Q} \cdot \left(\bar{N} + \frac{1}{2}\right) + \frac{O_c}{2}$$
+
+$$\text{Variance} = \bar{Q}^2 \cdot (V_n + \bar{N}^2 \cdot C_t^2) + (\bar{N} + \frac{1}{2}) \cdot V_q + \frac{O_c^2}{12}$$
+
+Where: \* $N$: Number of orders per delivery lead time \* $V_n$: Variance of $N$ \* $Q$: Quantity per order \* $V_q$: Variance of $Q$ \* $N_c$: Fixed number of orders for order-count based ordering \* $N_y$: Number of orders per order cycle (interval) \* $V_{ny}$: Variance of $N_y$ \* $C_t$: Coefficient of variation of delivery lead time \* $O_c$: Fixed order quantity for quantity-based ordering \* $\bar{X}$: Average value of $X$
+
+These formulas are crucial for understanding the mathematical basis of the optimal inventory calculation. They highlight how the variability in demand and lead time, along with the chosen ordering policy, directly impacts the required replenishment inventory and, consequently, the optimal inventory level.
+
+### Interactive Optimal Inventory Calculator
+
+This interactive tool allows you to calculate optimal inventory levels based on various demand and lead time parameters.
+
+::: {#app-ui}
+```{r}
+library(shiny)
+
+fluidPage(
+  titlePanel("Optimal Inventory Calculator"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      h4("1. Order Quantity"),
+      numericInput("data_unit_time", "Data Aggregation Unit Time (days)", value = 1, min = 1),
+      numericInput("avg_orders", "Average Number of Orders (per day)", value = 2, min = 0),
+      numericInput("sd_orders", "Standard Deviation of Number of Orders", value = 1.41, min = 0),
+      numericInput("avg_qty_per_order", "Average Quantity per Order", value = 5, min = 0),
+      numericInput("sd_qty_per_order", "Standard Deviation of Quantity per Order", value = 1.25, min = 0),
+      
+      h4("2. Delivery Lead Time"),
+      numericInput("avg_lead_time", "Average Delivery Lead Time (days)", value = 10, min = 0),
+      numericInput("sd_lead_time", "Standard Deviation of Delivery Lead Time", value = 0, min = 0),
+      
+      h4("3. Calculation Execution"),
+      sliderInput("service_rate", "Service Rate (%)", min = 50, max = 99, value = 99),
+      numericInput("order_interval_guideline", "Order Interval Guideline (days)", value = 4, min = 0),
+      actionButton("apply_conditions", "Apply Conditions"),
+      
+      h5("Derived Ordering Parameters:"),
+      numericInput("qty_based_order_qty", "Quantity-Based Order Quantity", value = 40, min = 0),
+      numericInput("time_based_order_interval", "Time-Based Order Interval", value = 4, min = 0),
+      numericInput("order_count_based_order_count", "Order-Count Based Order Count", value = 8, min = 0),
+      
+      actionButton("calculate", "Calculate Optimal Inventory"),
+      actionButton("reset", "Reset")
+    ),
+    
+    mainPanel(
+      h4("Calculation Results"),
+      tableOutput("results_table")
+    )
+  )
+)
+```
+:::
+
+::: {#app-server}
+```{r}
+library(shiny)
+
+function(input, output, session) {
+  
+  observeEvent(input$apply_conditions, {
+    req(input$data_unit_time, input$avg_orders, input$avg_qty_per_order, input$order_interval_guideline)
+    
+    qty_based <- input$order_interval_guideline * input$avg_orders * input$avg_qty_per_order
+    order_count_based <- input$order_interval_guideline * input$avg_orders
+    
+    updateNumericInput(session, "qty_based_order_qty", value = qty_based)
+    updateNumericInput(session, "time_based_order_interval", value = input$order_interval_guideline)
+    updateNumericInput(session, "order_count_based_order_count", value = order_count_based)
+  })
+  
+  observeEvent(input$reset, {
+    updateNumericInput(session, "data_unit_time", value = 1)
+    updateNumericInput(session, "avg_orders", value = 2)
+    updateNumericInput(session, "sd_orders", value = 1.41)
+    updateNumericInput(session, "avg_qty_per_order", value = 5)
+    updateNumericInput(session, "sd_qty_per_order", value = 1.25)
+    updateNumericInput(session, "avg_lead_time", value = 10)
+    updateNumericInput(session, "sd_lead_time", value = 0)
+    updateSliderInput(session, "service_rate", value = 99)
+    updateNumericInput(session, "order_interval_guideline", value = 4)
+    updateNumericInput(session, "qty_based_order_qty", value = 40)
+    updateNumericInput(session, "time_based_order_interval", value = 4)
+    updateNumericInput(session, "order_count_based_order_count", value = 8)
+    output$results_table <- renderTable(NULL)
+  })
+  
+  output$results_table <- renderTable({
+    req(input$calculate)
+    
+    # Input parameters
+    data_unit_time <- input$data_unit_time
+    avg_orders <- input$avg_orders
+    sd_orders <- input$sd_orders
+    avg_qty_per_order <- input$avg_qty_per_order
+    sd_qty_per_order <- input$sd_qty_per_order
+    avg_lead_time <- input$avg_lead_time
+    sd_lead_time <- input$sd_lead_time
+    service_rate <- input$service_rate / 100
+    
+    # Calculate N and Vn (Number of orders per delivery LT)
+    N_bar <- avg_orders * avg_lead_time
+    Vn <- (sd_orders^2 * avg_lead_time) + (avg_orders^2 * sd_lead_time^2)
+    
+    # Calculate Q_bar and Vq (Quantity per order)
+    Q_bar <- avg_qty_per_order
+    Vq <- sd_qty_per_order^2
+    
+    # Calculate Ct (Coefficient of variation of delivery lead time)
+    Ct <- ifelse(avg_lead_time > 0, sd_lead_time / avg_lead_time, 0)
+    
+    results <- data.frame(
+      "Ordering Method" = character(),
+      "Average" = numeric(),
+      "Variance" = numeric(),
+      "Optimal Inventory" = numeric(),
+      stringsAsFactors = FALSE
+    )
+    
+    # Quantity-Based Ordering
+    Oc <- input$qty_based_order_qty
+    if (Oc > 0) {
+      mean_qty_based <- Q_bar * (N_bar + 0.5) + Oc / 2
+      var_qty_based <- Q_bar^2 * (Vn + N_bar^2 * Ct^2) + (N_bar + 0.5) * Vq + Oc^2 / 12
+      optimal_qty_based <- mean_qty_based + qnorm(service_rate) * sqrt(var_qty_based)
+      results <- rbind(results, data.frame(
+        "Ordering Method" = "Quantity-Based",
+        "Average" = round(mean_qty_based, 1),
+        "Variance" = round(var_qty_based, 1),
+        "Optimal Inventory" = round(optimal_qty_based)
+      ))
+    }
+    
+    # Time-Based Ordering
+    Ny_bar <- input$time_based_order_interval * avg_orders
+    Vny <- input$time_based_order_interval * sd_orders^2
+    if (input$time_based_order_interval > 0) {
+      mean_time_based <- Q_bar * (N_bar + Ny_bar / 2)
+      var_time_based <- Q_bar^2 * (Vn + N_bar^2 * Ct^2) + (N_bar + Ny_bar) * Vq + (Q_bar * Ny_bar)^2 / 12
+      optimal_time_based <- mean_time_based + qnorm(service_rate) * sqrt(var_time_based)
+      results <- rbind(results, data.frame(
+        "Ordering Method" = "Time-Based",
+        "Average" = round(mean_time_based, 1),
+        "Variance" = round(var_time_based, 1),
+        "Optimal Inventory" = round(optimal_time_based)
+      ))
+    }
+    
+    # Order-Count Based Ordering
+    Nc <- input$order_count_based_order_count
+    if (Nc > 0) {
+      mean_order_count_based <- Q_bar * (N_bar + (Nc - 1) / 2)
+      var_order_count_based <- Q_bar^2 * (Vn + N_bar^2 * Ct^2) + (N_bar + Nc - 1) * Vq + (Q_bar * Nc)^2 / 12
+      optimal_order_count_based <- mean_order_count_based + qnorm(service_rate) * sqrt(var_order_count_based)
+      results <- rbind(results, data.frame(
+        "Ordering Method" = "Order-Count Based",
+        "Average" = round(mean_order_count_based, 1),
+        "Variance" = round(var_order_count_based, 1),
+        "Optimal Inventory" = round(optimal_order_count_based)
+      ))
+    }
+    
+    results
+  })
+}
+```
+:::
+
+### Conclusion
+
+Calculating optimal inventory is a critical aspect of effective supply chain management. By understanding the various input parameters, the underlying mathematical formulas, and embracing a dynamic approach, businesses can minimize costs associated with holding excess inventory while ensuring high service levels. The integration of interactive tools, such as a Shiny application, can further enhance the understanding and practical application of these concepts.

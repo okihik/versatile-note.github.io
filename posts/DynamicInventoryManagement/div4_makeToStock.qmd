@@ -6,7 +6,7 @@ categories: ["Inventory Management"]
 
 ## Understanding Make-to-Stock Production: A Dynamic Perspective
 
-In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to **Make-to-Stock (MTS) production**, often referred to as "mikomi seisan" in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness, drawing insights from tocken.com's detailed explanation on mikomi production \[1\].
+In our ongoing exploration of dynamic inventory and production theories, we now turn our attention to **Make-to-Stock (MTS) production**, often referred to as "mikomi seisan" in Japanese. This approach stands in contrast to Make-to-Order (MTO) production, and a clear understanding of their distinctions is crucial for effective production management. This post will delve into the nuances of MTS, its objectives, and how a dynamic approach can optimize its effectiveness.
 
 ### Make-to-Stock vs. Make-to-Order: A Fundamental Distinction
 
@@ -42,11 +42,11 @@ If production only begins after an order is confirmed, the customer might have a
 
 To achieve demand-following MTS, a dynamic system is required that can adapt to real-time market signals. This involves a shift from rigid, forecast-driven planning to a more agile, responsive approach. The website highlights the importance of a system that can quickly react to changes in demand, rather than being constrained by long planning cycles.
 
-One of the key concepts introduced is the idea of a **"fluid inventory"** or **"inventory flow management"** system, which we discussed in a previous post. In the context of MTS, this means managing inventory not as static quantities, but as dynamic flows that respond to actual consumption. The system needs to be able to:
+One of the key concepts introduced is the idea of a **"Dynamic inventory"** or **"inventory flow management"** system, which we discussed in a previous post. In the context of MTS, this means managing inventory not as static quantities, but as dynamic flows that respond to actual consumption. The system needs to be able to:
 
 1.  **Monitor Real-time Demand:** Continuously track sales and consumption data to understand actual market off-take.
 2.  **Adjust Production Rates Dynamically:** Based on real-time demand, adjust production output to match consumption, preventing both stockouts and overproduction.
-3.  **Maintain Optimal Inventory Levels:** Instead of fixed "safety stocks," the system aims to maintain a fluid inventory level that minimizes holding costs while ensuring product availability.
+3.  **Maintain Optimal Inventory Levels:** Instead of fixed "safety stocks," the system aims to maintain a dynamic inventory level that minimizes holding costs while ensuring product availability.
 
 This dynamic adjustment is crucial. If demand increases, the system should automatically trigger an increase in production. If demand drops, production should be scaled back. This responsiveness is what differentiates dynamic MTS from traditional, forecast-driven MTS.
 
