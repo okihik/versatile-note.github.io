@@ -1,0 +1,64 @@
+---
+title: "Generational Accounting and OLG Models: An Introduction"
+subtitle: "Part 1 of a series on converting 'Matlabによるマクロ経済モデル入門' to R"
+date: "2025-09-03"
+categories: [R, Economics, OLG, Generational Accounting]
+format:
+  html:
+    toc: true
+    code-fold: false
+    self-contained: true
+---
+
+## The Challenge: Understanding Long-Term Economic Change
+
+In recent decades, many developed nations, including Japan, have faced unprecedented demographic shifts: declining birth rates and rapidly aging populations. These are not just abstract statistics; they have profound and concrete implications for the economy. How will a smaller workforce support a larger retired population? What will happen to savings rates, economic growth, and the sustainability of public finances and social security systems?
+
+To analyze these long-term, complex issues, economists need specialized tools. A simple snapshot of the economy today is insufficient. We need models that can project the consequences of our current policies and demographic trends far into the future. This is where **Overlapping Generations (OLG) models** and the concept of **Generational Accounting** become essential.
+
+This post is the first in a series where we will explore these topics by translating the classic textbook, **"Matlabによるマクロ経済モデル入門" (Introduction to Macroeconomic Models with Matlab)** by Kazumasa Oguro and Manabu Shimasawa, from its original MATLAB into R. Today, we'll focus on the core concepts: what are these models and why are they so powerful?
+
+## What is an Overlapping Generations (OLG) Model?
+
+At its heart, an OLG model is a simulation of an economy populated by realistic, mortal individuals. Unlike simpler models that assume an infinitely-lived "representative agent," the OLG framework acknowledges a fundamental truth: at any given time, society is a mix of different generations living side-by-side.
+
+As the book explains, this "overlapping" of generations is the model's key feature. It allows us to simulate the economic lifecycle:
+
+1.  **Youth (Working Life):** Individuals enter the economy, supply labor, earn wages, and make decisions about how much to consume and how much to save for the future.
+2.  **Old Age (Retirement):** Individuals retire from the workforce and live off the savings they accumulated during their working years, supplemented by pensions and other transfers.
+
+By modeling the economy as a collection of these lifecycle agents, we can analyze how macroeconomic variables emerge from individual decisions. For example, a country's national savings rate is simply the sum of the positive savings of the young working generations minus the negative savings (or "dissaving") of the retired generations.
+
+This structure makes OLG models uniquely suited to study issues where timing and age are critical, such as:
+
+*   **Pension System Reform:** How does changing from a pay-as-you-go to a funded pension system affect different cohorts?
+*   **Government Debt:** Who ultimately bears the burden of public debt—current taxpayers or future ones?
+*   **Demographic Change:** What happens to national savings and capital accumulation when the proportion of retirees to workers increases?
+
+## Generational Accounting: Who Pays the Bill?
+
+The OLG framework provides the engine for a powerful analytical concept known as **Generational Accounting**. The goal is to calculate, under a given set of policies, the total net amount that different generations are expected to pay to the government over their entire lifetimes.
+
+A **Generational Account** is an estimate of the present value of all future taxes a person from a specific generation will pay, minus the present value of all the government benefits (like social security and healthcare) they will receive.
+
+*   If the net amount is **positive**, that generation is a net contributor to the government.
+*   If the net amount is **negative**, that generation is a net beneficiary.
+
+By comparing these accounts across generations, we can quantify the fairness of fiscal policy. For instance, if policies are enacted that benefit today's older generations (e.g., maintaining high pension benefits without raising taxes), Generational Accounting will show that the burden is shifted onto younger and future generations, who will face higher taxes or lower benefits over their lifetimes.
+
+The book highlights that this is the crucial advantage of the OLG approach over simpler methods. It captures the **forward-looking** nature of economic behavior. If the government announces a future tax increase, rational individuals will adjust their saving and consumption behavior *today*, and the model can capture this dynamic effect.
+
+## Our Goal: From MATLAB to an Interactive R Model
+
+The textbook by Oguro and Shimasawa provides a comprehensive guide to building and simulating these models in MATLAB. Our goal in this series is to replicate this work in R, making these powerful tools accessible to a wider audience in the data science and R communities.
+
+In the upcoming posts, we will dive into the code, translating the MATLAB scripts chapter by chapter. We will cover:
+
+*   Setting up the model parameters in R.
+*   Calculating the economy's long-run "steady state."
+*   Simulating the transition path from one equilibrium to another.
+*   Visualizing the results for key economic variables.
+
+Ultimately, we will build an interactive **Shiny application** to explore policy scenarios in real-time.
+
+Stay tuned for the next post, where we will begin our coding journey by setting up the basic one-country model in R.
