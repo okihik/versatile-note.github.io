@@ -76,7 +76,7 @@ DELTA   <- 0.99999999 # Convergence precision
 print("Parameters for the OLG model have been set up.")
 ```
 
-## Step 2: Defining Population and Labor Profiles
+## Step 2: Defining Population and Labour Profiles
 
 Next, we define how our population evolves and how productive people are at different ages. The book specifies a linear transition for the population growth rate and a quadratic function for age-based labor efficiency, derived from Japanese wage data.
 
