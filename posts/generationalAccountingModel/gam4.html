@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-06">
+<meta name="dcterms.date" content="2025-09-07">
 
-<title>Bringing the Model to Life: An Interactive OLG App with Quarto and Shiny – Himagineer</title>
+<title>Upgrading the OLG Model: Adding a Public Pension System – Himagineer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3833,291 +3833,6 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
-<script>(function(_){(typeof jQuery>"u"||!jQuery)&&typeof define=="function"&&define.amd?define(["jquery"],function(m){return _(m,document,window,navigator)}):(typeof jQuery>"u"||!jQuery)&&typeof exports=="object"?_(require("jquery"),document,window,navigator):_(jQuery,document,window,navigator)})(function(_,m,f,v,g){"use strict";var x=0,d=function(){var t=v.userAgent,i=/msie\s\d+/i,e;return t.search(i)>0&&(e=i.exec(t).toString(),e=e.split(" ")[1],e<9)?(_("html").addClass("lt-ie9"),!0):!1}();Function.prototype.bind||(Function.prototype.bind=function(i){var e=this,s=[].slice;if(typeof e!="function")throw new TypeError;var o=s.call(arguments,1),r=function(){if(this instanceof r){var h=function(){};h.prototype=e.prototype;var a=new h,n=e.apply(a,o.concat(s.call(arguments)));return Object(n)===n?n:a}else return e.apply(i,o.concat(s.call(arguments)))};return r}),Array.prototype.indexOf||(Array.prototype.indexOf=function(t,i){var e;if(this==null)throw new TypeError('"this" is null or not defined');var s=Object(this),o=s.length>>>0;if(o===0)return-1;var r=+i||0;if(Math.abs(r)===1/0&&(r=0),r>=o)return-1;for(e=Math.max(r>=0?r:o-Math.abs(r),0);e<o;){if(e in s&&s[e]===t)return e;e++}return-1});var y='<span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min">0</span><span class="irs-max">1</span><span class="irs-from">0</span><span class="irs-to">0</span><span class="irs-single">0</span></span><span class="irs-grid"></span>',$='<span class="irs-bar irs-bar--single"></span><span class="irs-shadow shadow-single"></span><span class="irs-handle single"><i></i><i></i><i></i></span>',k='<span class="irs-bar"></span><span class="irs-shadow shadow-from"></span><span class="irs-shadow shadow-to"></span><span class="irs-handle from"><i></i><i></i><i></i></span><span class="irs-handle to"><i></i><i></i><i></i></span>',w='<span class="irs-disable-mask"></span>',b=function(t,i,e){this.VERSION="2.3.1",this.input=t,this.plugin_count=e,this.current_plugin=0,this.calc_count=0,this.update_tm=0,this.old_from=0,this.old_to=0,this.old_min_interval=null,this.raf_id=null,this.dragging=!1,this.force_redraw=!1,this.no_diapason=!1,this.has_tab_index=!0,this.is_key=!1,this.is_update=!1,this.is_start=!0,this.is_finish=!1,this.is_active=!1,this.is_resize=!1,this.is_click=!1,i=i||{},this.$cache={win:_(f),body:_(m.body),input:_(t),cont:null,rs:null,min:null,max:null,from:null,to:null,single:null,bar:null,line:null,s_single:null,s_from:null,s_to:null,shad_single:null,shad_from:null,shad_to:null,edge:null,grid:null,grid_labels:[]},this.coords={x_gap:0,x_pointer:0,w_rs:0,w_rs_old:0,w_handle:0,p_gap:0,p_gap_left:0,p_gap_right:0,p_step:0,p_pointer:0,p_handle:0,p_single_fake:0,p_single_real:0,p_from_fake:0,p_from_real:0,p_to_fake:0,p_to_real:0,p_bar_x:0,p_bar_w:0,grid_gap:0,big_num:0,big:[],big_w:[],big_p:[],big_x:[]},this.labels={w_min:0,w_max:0,w_from:0,w_to:0,w_single:0,p_min:0,p_max:0,p_from_fake:0,p_from_left:0,p_to_fake:0,p_to_left:0,p_single_fake:0,p_single_left:0};var s=this.$cache.input,o=s.prop("value"),r,h,a;r={skin:"flat",type:"single",min:10,max:100,from:null,to:null,step:1,min_interval:0,max_interval:0,drag_interval:!1,values:[],p_values:[],from_fixed:!1,from_min:null,from_max:null,from_shadow:!1,to_fixed:!1,to_min:null,to_max:null,to_shadow:!1,prettify_enabled:!0,prettify_separator:" ",prettify:null,force_edges:!1,keyboard:!0,grid:!1,grid_margin:!0,grid_num:4,grid_snap:!1,hide_min_max:!1,hide_from_to:!1,prefix:"",postfix:"",max_postfix:"",decorate_both:!0,values_separator:" \u2014 ",input_values_separator:";",disable:!1,block:!1,extra_classes:"",scope:null,onStart:null,onChange:null,onFinish:null,onUpdate:null},s[0].nodeName!=="INPUT"&&console&&console.warn&&console.warn("Base element should be <input>!",s[0]),h={skin:s.data("skin"),type:s.data("type"),min:s.data("min"),max:s.data("max"),from:s.data("from"),to:s.data("to"),step:s.data("step"),min_interval:s.data("minInterval"),max_interval:s.data("maxInterval"),drag_interval:s.data("dragInterval"),values:s.data("values"),from_fixed:s.data("fromFixed"),from_min:s.data("fromMin"),from_max:s.data("fromMax"),from_shadow:s.data("fromShadow"),to_fixed:s.data("toFixed"),to_min:s.data("toMin"),to_max:s.data("toMax"),to_shadow:s.data("toShadow"),prettify_enabled:s.data("prettifyEnabled"),prettify_separator:s.data("prettifySeparator"),force_edges:s.data("forceEdges"),keyboard:s.data("keyboard"),grid:s.data("grid"),grid_margin:s.data("gridMargin"),grid_num:s.data("gridNum"),grid_snap:s.data("gridSnap"),hide_min_max:s.data("hideMinMax"),hide_from_to:s.data("hideFromTo"),prefix:s.data("prefix"),postfix:s.data("postfix"),max_postfix:s.data("maxPostfix"),decorate_both:s.data("decorateBoth"),values_separator:s.data("valuesSeparator"),input_values_separator:s.data("inputValuesSeparator"),disable:s.data("disable"),block:s.data("block"),extra_classes:s.data("extraClasses")},h.values=h.values&&h.values.split(",");for(a in h)h.hasOwnProperty(a)&&(h[a]===g||h[a]==="")&&delete h[a];o!==g&&o!==""&&(o=o.split(h.input_values_separator||i.input_values_separator||";"),o[0]&&o[0]==+o[0]&&(o[0]=+o[0]),o[1]&&o[1]==+o[1]&&(o[1]=+o[1]),i&&i.values&&i.values.length?(r.from=o[0]&&i.values.indexOf(o[0]),r.to=o[1]&&i.values.indexOf(o[1])):(r.from=o[0]&&+o[0],r.to=o[1]&&+o[1])),_.extend(r,i),_.extend(r,h),this.options=r,this.update_check={},this.validate(),this.result={input:this.$cache.input,slider:null,min:this.options.min,max:this.options.max,from:this.options.from,from_percent:0,from_value:null,to:this.options.to,to_percent:0,to_value:null},this.init()};b.prototype={init:function(t){this.no_diapason=!1,this.coords.p_step=this.convertToPercent(this.options.step,!0),this.target="base",this.toggleInput(),this.append(),this.setMinMax(),t?(this.force_redraw=!0,this.calc(!0),this.callOnUpdate()):(this.force_redraw=!0,this.calc(!0),this.callOnStart()),this.updateScene()},append:function(){var t='<span class="irs irs--'+this.options.skin+" js-irs-"+this.plugin_count+" "+this.options.extra_classes+'"></span>';this.$cache.input.before(t),this.$cache.input.prop("readonly",!0),this.$cache.cont=this.$cache.input.prev(),this.result.slider=this.$cache.cont,this.$cache.cont.html(y),this.$cache.rs=this.$cache.cont.find(".irs"),this.$cache.min=this.$cache.cont.find(".irs-min"),this.$cache.max=this.$cache.cont.find(".irs-max"),this.$cache.from=this.$cache.cont.find(".irs-from"),this.$cache.to=this.$cache.cont.find(".irs-to"),this.$cache.single=this.$cache.cont.find(".irs-single"),this.$cache.line=this.$cache.cont.find(".irs-line"),this.$cache.grid=this.$cache.cont.find(".irs-grid"),this.options.type==="single"?(this.$cache.cont.append($),this.$cache.bar=this.$cache.cont.find(".irs-bar"),this.$cache.edge=this.$cache.cont.find(".irs-bar-edge"),this.$cache.s_single=this.$cache.cont.find(".single"),this.$cache.from[0].style.visibility="hidden",this.$cache.to[0].style.visibility="hidden",this.$cache.shad_single=this.$cache.cont.find(".shadow-single")):(this.$cache.cont.append(k),this.$cache.bar=this.$cache.cont.find(".irs-bar"),this.$cache.s_from=this.$cache.cont.find(".from"),this.$cache.s_to=this.$cache.cont.find(".to"),this.$cache.shad_from=this.$cache.cont.find(".shadow-from"),this.$cache.shad_to=this.$cache.cont.find(".shadow-to"),this.setTopHandler()),this.options.hide_from_to&&(this.$cache.from[0].style.display="none",this.$cache.to[0].style.display="none",this.$cache.single[0].style.display="none"),this.appendGrid(),this.options.disable?(this.appendDisableMask(),this.$cache.input[0].disabled=!0):(this.$cache.input[0].disabled=!1,this.removeDisableMask(),this.bindEvents()),this.options.disable||(this.options.block?this.appendDisableMask():this.removeDisableMask()),this.options.drag_interval&&(this.$cache.bar[0].style.cursor="ew-resize")},setTopHandler:function(){var t=this.options.min,i=this.options.max,e=this.options.from,s=this.options.to;e>t&&s===i?this.$cache.s_from.addClass("type_last"):s<i&&this.$cache.s_to.addClass("type_last")},changeLevel:function(t){switch(t){case"single":this.coords.p_gap=this.toFixed(this.coords.p_pointer-this.coords.p_single_fake),this.$cache.s_single.addClass("state_hover");break;case"from":this.coords.p_gap=this.toFixed(this.coords.p_pointer-this.coords.p_from_fake),this.$cache.s_from.addClass("state_hover"),this.$cache.s_from.addClass("type_last"),this.$cache.s_to.removeClass("type_last");break;case"to":this.coords.p_gap=this.toFixed(this.coords.p_pointer-this.coords.p_to_fake),this.$cache.s_to.addClass("state_hover"),this.$cache.s_to.addClass("type_last"),this.$cache.s_from.removeClass("type_last");break;case"both":this.coords.p_gap_left=this.toFixed(this.coords.p_pointer-this.coords.p_from_fake),this.coords.p_gap_right=this.toFixed(this.coords.p_to_fake-this.coords.p_pointer),this.$cache.s_to.removeClass("type_last"),this.$cache.s_from.removeClass("type_last");break}},appendDisableMask:function(){this.$cache.cont.append(w),this.$cache.cont.addClass("irs-disabled")},removeDisableMask:function(){this.$cache.cont.remove(".irs-disable-mask"),this.$cache.cont.removeClass("irs-disabled")},remove:function(){this.$cache.cont.remove(),this.$cache.cont=null,this.$cache.line.off("keydown.irs_"+this.plugin_count),this.$cache.body.off("touchmove.irs_"+this.plugin_count),this.$cache.body.off("mousemove.irs_"+this.plugin_count),this.$cache.win.off("touchend.irs_"+this.plugin_count),this.$cache.win.off("mouseup.irs_"+this.plugin_count),d&&(this.$cache.body.off("mouseup.irs_"+this.plugin_count),this.$cache.body.off("mouseleave.irs_"+this.plugin_count)),this.$cache.grid_labels=[],this.coords.big=[],this.coords.big_w=[],this.coords.big_p=[],this.coords.big_x=[],cancelAnimationFrame(this.raf_id)},bindEvents:function(){this.no_diapason||(this.$cache.body.on("touchmove.irs_"+this.plugin_count,this.pointerMove.bind(this)),this.$cache.body.on("mousemove.irs_"+this.plugin_count,this.pointerMove.bind(this)),this.$cache.win.on("touchend.irs_"+this.plugin_count,this.pointerUp.bind(this)),this.$cache.win.on("mouseup.irs_"+this.plugin_count,this.pointerUp.bind(this)),this.$cache.line.on("touchstart.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.line.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.line.on("focus.irs_"+this.plugin_count,this.pointerFocus.bind(this)),this.options.drag_interval&&this.options.type==="double"?(this.$cache.bar.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"both")),this.$cache.bar.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"both"))):(this.$cache.bar.on("touchstart.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.bar.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click"))),this.options.type==="single"?(this.$cache.single.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"single")),this.$cache.s_single.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"single")),this.$cache.shad_single.on("touchstart.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.single.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"single")),this.$cache.s_single.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"single")),this.$cache.edge.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.shad_single.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click"))):(this.$cache.single.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,null)),this.$cache.single.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,null)),this.$cache.from.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"from")),this.$cache.s_from.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"from")),this.$cache.to.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"to")),this.$cache.s_to.on("touchstart.irs_"+this.plugin_count,this.pointerDown.bind(this,"to")),this.$cache.shad_from.on("touchstart.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.shad_to.on("touchstart.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.from.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"from")),this.$cache.s_from.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"from")),this.$cache.to.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"to")),this.$cache.s_to.on("mousedown.irs_"+this.plugin_count,this.pointerDown.bind(this,"to")),this.$cache.shad_from.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click")),this.$cache.shad_to.on("mousedown.irs_"+this.plugin_count,this.pointerClick.bind(this,"click"))),this.options.keyboard&&this.$cache.line.on("keydown.irs_"+this.plugin_count,this.key.bind(this,"keyboard")),d&&(this.$cache.body.on("mouseup.irs_"+this.plugin_count,this.pointerUp.bind(this)),this.$cache.body.on("mouseleave.irs_"+this.plugin_count,this.pointerUp.bind(this))))},pointerFocus:function(t){if(!this.target){var i,e;this.options.type==="single"?e=this.$cache.single:e=this.$cache.from,i=e.offset().left,i+=e.width()/2-1,this.pointerClick("single",{preventDefault:function(){},stopPropagation:function(){},pageX:i})}},pointerMove:function(t){if(!!this.dragging){var i=t.pageX||t.originalEvent.touches&&t.originalEvent.touches[0].pageX;this.coords.x_pointer=i-this.coords.x_gap,this.calc()}},pointerUp:function(t){if(this.current_plugin===this.plugin_count){if(this.is_active)this.is_active=!1;else return;this.$cache.cont.find(".state_hover").removeClass("state_hover"),this.force_redraw=!0,d&&_("*").prop("unselectable",!1),this.updateScene(),this.restoreOriginalMinInterval(),(_.contains(this.$cache.cont[0],t.target)||this.dragging)&&this.callOnFinish(),this.dragging=!1}},pointerDown:function(t,i){i.preventDefault(),i.stopPropagation();var e=i.pageX||i.originalEvent.touches&&i.originalEvent.touches[0].pageX;i.button!==2&&(t==="both"&&this.setTempMinInterval(),t||(t=this.target||"from"),this.current_plugin=this.plugin_count,this.target=t,this.is_active=!0,this.dragging=!0,this.coords.x_gap=this.$cache.rs.offset().left,this.coords.x_pointer=e-this.coords.x_gap,this.calcPointerPercent(),this.changeLevel(t),d&&_("*").prop("unselectable",!0),this.$cache.line.trigger("focus"),this.updateScene())},pointerClick:function(t,i){i.preventDefault(),i.stopPropagation();var e=i.pageX||i.originalEvent.touches&&i.originalEvent.touches[0].pageX;i.button!==2&&(this.current_plugin=this.plugin_count,this.target=t,this.is_click=!0,this.coords.x_gap=this.$cache.rs.offset().left,this.coords.x_pointer=+(e-this.coords.x_gap).toFixed(),this.force_redraw=!0,this.calc(),this.$cache.line.trigger("focus"))},key:function(t,i){if(!(this.current_plugin!==this.plugin_count||i.altKey||i.ctrlKey||i.shiftKey||i.metaKey)){switch(i.which){case 83:case 65:case 40:case 37:i.preventDefault(),this.moveByKey(!1);break;case 87:case 68:case 38:case 39:i.preventDefault(),this.moveByKey(!0);break}return!0}},moveByKey:function(t){var i=this.coords.p_pointer,e=(this.options.max-this.options.min)/100;e=this.options.step/e,t?i+=e:i-=e,this.coords.x_pointer=this.toFixed(this.coords.w_rs/100*i),this.is_key=!0,this.calc()},setMinMax:function(){if(!!this.options){if(this.options.hide_min_max){this.$cache.min[0].style.display="none",this.$cache.max[0].style.display="none";return}if(this.options.values.length)this.$cache.min.html(this.decorate(this.options.p_values[this.options.min])),this.$cache.max.html(this.decorate(this.options.p_values[this.options.max]));else{var t=this._prettify(this.options.min),i=this._prettify(this.options.max);this.result.min_pretty=t,this.result.max_pretty=i,this.$cache.min.html(this.decorate(t,this.options.min)),this.$cache.max.html(this.decorate(i,this.options.max))}this.labels.w_min=this.$cache.min.outerWidth(!1),this.labels.w_max=this.$cache.max.outerWidth(!1)}},setTempMinInterval:function(){var t=this.result.to-this.result.from;this.old_min_interval===null&&(this.old_min_interval=this.options.min_interval),this.options.min_interval=t},restoreOriginalMinInterval:function(){this.old_min_interval!==null&&(this.options.min_interval=this.old_min_interval,this.old_min_interval=null)},calc:function(t){if(!!this.options&&(this.calc_count++,(this.calc_count===10||t)&&(this.calc_count=0,this.coords.w_rs=this.$cache.rs.outerWidth(!1),this.calcHandlePercent()),!!this.coords.w_rs)){this.calcPointerPercent();var i=this.getHandleX();switch(this.target==="both"&&(this.coords.p_gap=0,i=this.getHandleX()),this.target==="click"&&(this.coords.p_gap=this.coords.p_handle/2,i=this.getHandleX(),this.options.drag_interval?this.target="both_one":this.target=this.chooseHandle(i)),this.target){case"base":var e=(this.options.max-this.options.min)/100,s=(this.result.from-this.options.min)/e,o=(this.result.to-this.options.min)/e;this.coords.p_single_real=this.toFixed(s),this.coords.p_from_real=this.toFixed(s),this.coords.p_to_real=this.toFixed(o),this.coords.p_single_real=this.checkDiapason(this.coords.p_single_real,this.options.from_min,this.options.from_max),this.coords.p_from_real=this.checkDiapason(this.coords.p_from_real,this.options.from_min,this.options.from_max),this.coords.p_to_real=this.checkDiapason(this.coords.p_to_real,this.options.to_min,this.options.to_max),this.coords.p_single_fake=this.convertToFakePercent(this.coords.p_single_real),this.coords.p_from_fake=this.convertToFakePercent(this.coords.p_from_real),this.coords.p_to_fake=this.convertToFakePercent(this.coords.p_to_real),this.target=null;break;case"single":if(this.options.from_fixed)break;this.coords.p_single_real=this.convertToRealPercent(i),this.coords.p_single_real=this.calcWithStep(this.coords.p_single_real),this.coords.p_single_real=this.checkDiapason(this.coords.p_single_real,this.options.from_min,this.options.from_max),this.coords.p_single_fake=this.convertToFakePercent(this.coords.p_single_real);break;case"from":if(this.options.from_fixed)break;this.coords.p_from_real=this.convertToRealPercent(i),this.coords.p_from_real=this.calcWithStep(this.coords.p_from_real),this.coords.p_from_real>this.coords.p_to_real&&(this.coords.p_from_real=this.coords.p_to_real),this.coords.p_from_real=this.checkDiapason(this.coords.p_from_real,this.options.from_min,this.options.from_max),this.coords.p_from_real=this.checkMinInterval(this.coords.p_from_real,this.coords.p_to_real,"from"),this.coords.p_from_real=this.checkMaxInterval(this.coords.p_from_real,this.coords.p_to_real,"from"),this.coords.p_from_fake=this.convertToFakePercent(this.coords.p_from_real);break;case"to":if(this.options.to_fixed)break;this.coords.p_to_real=this.convertToRealPercent(i),this.coords.p_to_real=this.calcWithStep(this.coords.p_to_real),this.coords.p_to_real<this.coords.p_from_real&&(this.coords.p_to_real=this.coords.p_from_real),this.coords.p_to_real=this.checkDiapason(this.coords.p_to_real,this.options.to_min,this.options.to_max),this.coords.p_to_real=this.checkMinInterval(this.coords.p_to_real,this.coords.p_from_real,"to"),this.coords.p_to_real=this.checkMaxInterval(this.coords.p_to_real,this.coords.p_from_real,"to"),this.coords.p_to_fake=this.convertToFakePercent(this.coords.p_to_real);break;case"both":if(this.options.from_fixed||this.options.to_fixed)break;i=this.toFixed(i+this.coords.p_handle*.001),this.coords.p_from_real=this.convertToRealPercent(i)-this.coords.p_gap_left,this.coords.p_from_real=this.calcWithStep(this.coords.p_from_real),this.coords.p_from_real=this.checkDiapason(this.coords.p_from_real,this.options.from_min,this.options.from_max),this.coords.p_from_real=this.checkMinInterval(this.coords.p_from_real,this.coords.p_to_real,"from"),this.coords.p_from_fake=this.convertToFakePercent(this.coords.p_from_real),this.coords.p_to_real=this.convertToRealPercent(i)+this.coords.p_gap_right,this.coords.p_to_real=this.calcWithStep(this.coords.p_to_real),this.coords.p_to_real=this.checkDiapason(this.coords.p_to_real,this.options.to_min,this.options.to_max),this.coords.p_to_real=this.checkMinInterval(this.coords.p_to_real,this.coords.p_from_real,"to"),this.coords.p_to_fake=this.convertToFakePercent(this.coords.p_to_real);break;case"both_one":if(this.options.from_fixed||this.options.to_fixed)break;var r=this.convertToRealPercent(i),h=this.result.from_percent,a=this.result.to_percent,n=a-h,l=n/2,p=r-l,c=r+l;p<0&&(p=0,c=p+n),c>100&&(c=100,p=c-n),this.coords.p_from_real=this.calcWithStep(p),this.coords.p_from_real=this.checkDiapason(this.coords.p_from_real,this.options.from_min,this.options.from_max),this.coords.p_from_fake=this.convertToFakePercent(this.coords.p_from_real),this.coords.p_to_real=this.calcWithStep(c),this.coords.p_to_real=this.checkDiapason(this.coords.p_to_real,this.options.to_min,this.options.to_max),this.coords.p_to_fake=this.convertToFakePercent(this.coords.p_to_real);break}this.options.type==="single"?(this.coords.p_bar_x=this.coords.p_handle/2,this.coords.p_bar_w=this.coords.p_single_fake,this.result.from_percent=this.coords.p_single_real,this.result.from=this.convertToValue(this.coords.p_single_real),this.result.from_pretty=this._prettify(this.result.from),this.options.values.length&&(this.result.from_value=this.options.values[this.result.from])):(this.coords.p_bar_x=this.toFixed(this.coords.p_from_fake+this.coords.p_handle/2),this.coords.p_bar_w=this.toFixed(this.coords.p_to_fake-this.coords.p_from_fake),this.result.from_percent=this.coords.p_from_real,this.result.from=this.convertToValue(this.coords.p_from_real),this.result.from_pretty=this._prettify(this.result.from),this.result.to_percent=this.coords.p_to_real,this.result.to=this.convertToValue(this.coords.p_to_real),this.result.to_pretty=this._prettify(this.result.to),this.options.values.length&&(this.result.from_value=this.options.values[this.result.from],this.result.to_value=this.options.values[this.result.to])),this.calcMinMax(),this.calcLabels()}},calcPointerPercent:function(){if(!this.coords.w_rs){this.coords.p_pointer=0;return}this.coords.x_pointer<0||isNaN(this.coords.x_pointer)?this.coords.x_pointer=0:this.coords.x_pointer>this.coords.w_rs&&(this.coords.x_pointer=this.coords.w_rs),this.coords.p_pointer=this.toFixed(this.coords.x_pointer/this.coords.w_rs*100)},convertToRealPercent:function(t){var i=100-this.coords.p_handle;return t/i*100},convertToFakePercent:function(t){var i=100-this.coords.p_handle;return t/100*i},getHandleX:function(){var t=100-this.coords.p_handle,i=this.toFixed(this.coords.p_pointer-this.coords.p_gap);return i<0?i=0:i>t&&(i=t),i},calcHandlePercent:function(){this.options.type==="single"?this.coords.w_handle=this.$cache.s_single.outerWidth(!1):this.coords.w_handle=this.$cache.s_from.outerWidth(!1),this.coords.p_handle=this.toFixed(this.coords.w_handle/this.coords.w_rs*100)},chooseHandle:function(t){if(this.options.type==="single")return"single";var i=this.coords.p_from_real+(this.coords.p_to_real-this.coords.p_from_real)/2;return t>=i?this.options.to_fixed?"from":"to":this.options.from_fixed?"to":"from"},calcMinMax:function(){!this.coords.w_rs||(this.labels.p_min=this.labels.w_min/this.coords.w_rs*100,this.labels.p_max=this.labels.w_max/this.coords.w_rs*100)},calcLabels:function(){!this.coords.w_rs||this.options.hide_from_to||(this.options.type==="single"?(this.labels.w_single=this.$cache.single.outerWidth(!1),this.labels.p_single_fake=this.labels.w_single/this.coords.w_rs*100,this.labels.p_single_left=this.coords.p_single_fake+this.coords.p_handle/2-this.labels.p_single_fake/2,this.labels.p_single_left=this.checkEdges(this.labels.p_single_left,this.labels.p_single_fake)):(this.labels.w_from=this.$cache.from.outerWidth(!1),this.labels.p_from_fake=this.labels.w_from/this.coords.w_rs*100,this.labels.p_from_left=this.coords.p_from_fake+this.coords.p_handle/2-this.labels.p_from_fake/2,this.labels.p_from_left=this.toFixed(this.labels.p_from_left),this.labels.p_from_left=this.checkEdges(this.labels.p_from_left,this.labels.p_from_fake),this.labels.w_to=this.$cache.to.outerWidth(!1),this.labels.p_to_fake=this.labels.w_to/this.coords.w_rs*100,this.labels.p_to_left=this.coords.p_to_fake+this.coords.p_handle/2-this.labels.p_to_fake/2,this.labels.p_to_left=this.toFixed(this.labels.p_to_left),this.labels.p_to_left=this.checkEdges(this.labels.p_to_left,this.labels.p_to_fake),this.labels.w_single=this.$cache.single.outerWidth(!1),this.labels.p_single_fake=this.labels.w_single/this.coords.w_rs*100,this.labels.p_single_left=(this.labels.p_from_left+this.labels.p_to_left+this.labels.p_to_fake)/2-this.labels.p_single_fake/2,this.labels.p_single_left=this.toFixed(this.labels.p_single_left),this.labels.p_single_left=this.checkEdges(this.labels.p_single_left,this.labels.p_single_fake)))},updateScene:function(){this.raf_id&&(cancelAnimationFrame(this.raf_id),this.raf_id=null),clearTimeout(this.update_tm),this.update_tm=null,this.options&&(this.drawHandles(),this.is_active?this.raf_id=requestAnimationFrame(this.updateScene.bind(this)):this.update_tm=setTimeout(this.updateScene.bind(this),300))},drawHandles:function(){this.coords.w_rs=this.$cache.rs.outerWidth(!1),this.coords.w_rs&&(this.coords.w_rs!==this.coords.w_rs_old&&(this.target="base",this.is_resize=!0),(this.coords.w_rs!==this.coords.w_rs_old||this.force_redraw)&&(this.setMinMax(),this.calc(!0),this.drawLabels(),this.options.grid&&(this.calcGridMargin(),this.calcGridLabels()),this.force_redraw=!0,this.coords.w_rs_old=this.coords.w_rs,this.drawShadow()),this.coords.w_rs&&(!this.dragging&&!this.force_redraw&&!this.is_key||((this.old_from!==this.result.from||this.old_to!==this.result.to||this.force_redraw||this.is_key)&&(this.drawLabels(),this.$cache.bar[0].style.left=this.coords.p_bar_x+"%",this.$cache.bar[0].style.width=this.coords.p_bar_w+"%",this.options.type==="single"?(this.$cache.bar[0].style.left=0,this.$cache.bar[0].style.width=this.coords.p_bar_w+this.coords.p_bar_x+"%",this.$cache.s_single[0].style.left=this.coords.p_single_fake+"%",this.$cache.single[0].style.left=this.labels.p_single_left+"%"):(this.$cache.s_from[0].style.left=this.coords.p_from_fake+"%",this.$cache.s_to[0].style.left=this.coords.p_to_fake+"%",(this.old_from!==this.result.from||this.force_redraw)&&(this.$cache.from[0].style.left=this.labels.p_from_left+"%"),(this.old_to!==this.result.to||this.force_redraw)&&(this.$cache.to[0].style.left=this.labels.p_to_left+"%"),this.$cache.single[0].style.left=this.labels.p_single_left+"%"),this.writeToInput(),(this.old_from!==this.result.from||this.old_to!==this.result.to)&&!this.is_start&&(this.$cache.input.trigger("change"),this.$cache.input.trigger("input")),this.old_from=this.result.from,this.old_to=this.result.to,!this.is_resize&&!this.is_update&&!this.is_start&&!this.is_finish&&this.callOnChange(),(this.is_key||this.is_click)&&(this.is_key=!1,this.is_click=!1,this.callOnFinish()),this.is_update=!1,this.is_resize=!1,this.is_finish=!1),this.is_start=!1,this.is_key=!1,this.is_click=!1,this.force_redraw=!1)))},drawLabels:function(){if(!!this.options){var t=this.options.values.length,i=this.options.p_values,e,s,o,r,h;if(!this.options.hide_from_to)if(this.options.type==="single")t?(e=this.decorate(i[this.result.from]),this.$cache.single.html(e)):(r=this._prettify(this.result.from),e=this.decorate(r,this.result.from),this.$cache.single.html(e)),this.calcLabels(),this.labels.p_single_left<this.labels.p_min+1?this.$cache.min[0].style.visibility="hidden":this.$cache.min[0].style.visibility="visible",this.labels.p_single_left+this.labels.p_single_fake>100-this.labels.p_max-1?this.$cache.max[0].style.visibility="hidden":this.$cache.max[0].style.visibility="visible";else{t?(this.options.decorate_both?(e=this.decorate(i[this.result.from]),e+=this.options.values_separator,e+=this.decorate(i[this.result.to])):e=this.decorate(i[this.result.from]+this.options.values_separator+i[this.result.to]),s=this.decorate(i[this.result.from]),o=this.decorate(i[this.result.to]),this.$cache.single.html(e),this.$cache.from.html(s),this.$cache.to.html(o)):(r=this._prettify(this.result.from),h=this._prettify(this.result.to),this.options.decorate_both?(e=this.decorate(r,this.result.from),e+=this.options.values_separator,e+=this.decorate(h,this.result.to)):e=this.decorate(r+this.options.values_separator+h,this.result.to),s=this.decorate(r,this.result.from),o=this.decorate(h,this.result.to),this.$cache.single.html(e),this.$cache.from.html(s),this.$cache.to.html(o)),this.calcLabels();var a=Math.min(this.labels.p_single_left,this.labels.p_from_left),n=this.labels.p_single_left+this.labels.p_single_fake,l=this.labels.p_to_left+this.labels.p_to_fake,p=Math.max(n,l);this.labels.p_from_left+this.labels.p_from_fake>=this.labels.p_to_left?(this.$cache.from[0].style.visibility="hidden",this.$cache.to[0].style.visibility="hidden",this.$cache.single[0].style.visibility="visible",this.result.from===this.result.to?(this.target==="from"?this.$cache.from[0].style.visibility="visible":this.target==="to"?this.$cache.to[0].style.visibility="visible":this.target||(this.$cache.from[0].style.visibility="visible"),this.$cache.single[0].style.visibility="hidden",p=l):(this.$cache.from[0].style.visibility="hidden",this.$cache.to[0].style.visibility="hidden",this.$cache.single[0].style.visibility="visible",p=Math.max(n,l))):(this.$cache.from[0].style.visibility="visible",this.$cache.to[0].style.visibility="visible",this.$cache.single[0].style.visibility="hidden"),a<this.labels.p_min+1?this.$cache.min[0].style.visibility="hidden":this.$cache.min[0].style.visibility="visible",p>100-this.labels.p_max-1?this.$cache.max[0].style.visibility="hidden":this.$cache.max[0].style.visibility="visible"}}},drawShadow:function(){var t=this.options,i=this.$cache,e=typeof t.from_min=="number"&&!isNaN(t.from_min),s=typeof t.from_max=="number"&&!isNaN(t.from_max),o=typeof t.to_min=="number"&&!isNaN(t.to_min),r=typeof t.to_max=="number"&&!isNaN(t.to_max),h,a,n,l;t.type==="single"?t.from_shadow&&(e||s)?(h=this.convertToPercent(e?t.from_min:t.min),a=this.convertToPercent(s?t.from_max:t.max)-h,h=this.toFixed(h-this.coords.p_handle/100*h),a=this.toFixed(a-this.coords.p_handle/100*a),h=h+this.coords.p_handle/2,i.shad_single[0].style.display="block",i.shad_single[0].style.left=h+"%",i.shad_single[0].style.width=a+"%"):i.shad_single[0].style.display="none":(t.from_shadow&&(e||s)?(h=this.convertToPercent(e?t.from_min:t.min),a=this.convertToPercent(s?t.from_max:t.max)-h,h=this.toFixed(h-this.coords.p_handle/100*h),a=this.toFixed(a-this.coords.p_handle/100*a),h=h+this.coords.p_handle/2,i.shad_from[0].style.display="block",i.shad_from[0].style.left=h+"%",i.shad_from[0].style.width=a+"%"):i.shad_from[0].style.display="none",t.to_shadow&&(o||r)?(n=this.convertToPercent(o?t.to_min:t.min),l=this.convertToPercent(r?t.to_max:t.max)-n,n=this.toFixed(n-this.coords.p_handle/100*n),l=this.toFixed(l-this.coords.p_handle/100*l),n=n+this.coords.p_handle/2,i.shad_to[0].style.display="block",i.shad_to[0].style.left=n+"%",i.shad_to[0].style.width=l+"%"):i.shad_to[0].style.display="none")},writeToInput:function(){this.options.type==="single"?(this.options.values.length?this.$cache.input.prop("value",this.result.from_value):this.$cache.input.prop("value",this.result.from),this.$cache.input.data("from",this.result.from)):(this.options.values.length?this.$cache.input.prop("value",this.result.from_value+this.options.input_values_separator+this.result.to_value):this.$cache.input.prop("value",this.result.from+this.options.input_values_separator+this.result.to),this.$cache.input.data("from",this.result.from),this.$cache.input.data("to",this.result.to))},callOnStart:function(){this.writeToInput(),this.options.onStart&&typeof this.options.onStart=="function"&&(this.options.scope?this.options.onStart.call(this.options.scope,this.result):this.options.onStart(this.result))},callOnChange:function(){this.writeToInput(),this.options.onChange&&typeof this.options.onChange=="function"&&(this.options.scope?this.options.onChange.call(this.options.scope,this.result):this.options.onChange(this.result))},callOnFinish:function(){this.writeToInput(),this.options.onFinish&&typeof this.options.onFinish=="function"&&(this.options.scope?this.options.onFinish.call(this.options.scope,this.result):this.options.onFinish(this.result))},callOnUpdate:function(){this.writeToInput(),this.options.onUpdate&&typeof this.options.onUpdate=="function"&&(this.options.scope?this.options.onUpdate.call(this.options.scope,this.result):this.options.onUpdate(this.result))},toggleInput:function(){if(this.$cache.input.toggleClass("irs-hidden-input"),this.has_tab_index)this.$cache.input.prop("tabindex",-1);else try{this.$cache.input.removeProp("tabindex")}catch{}this.has_tab_index=!this.has_tab_index},convertToPercent:function(t,i){var e=this.options.max-this.options.min,s=e/100,o,r;return e?(i?o=t:o=t-this.options.min,r=o/s,this.toFixed(r)):(this.no_diapason=!0,0)},convertToValue:function(t){var i=this.options.min,e=this.options.max,s=i.toString().split(".")[1],o=e.toString().split(".")[1],r,h,a=0,n=0;if(t===0)return this.options.min;if(t===100)return this.options.max;s&&(r=s.length,a=r),o&&(h=o.length,a=h),r&&h&&(a=r>=h?r:h),i<0&&(n=Math.abs(i),i=+(i+n).toFixed(a),e=+(e+n).toFixed(a));var l=(e-i)/100*t+i,p=this.options.step.toString().split(".")[1],c;return p?l=+l.toFixed(p.length):(l=l/this.options.step,l=l*this.options.step,l=+l.toFixed(0)),n&&(l-=n),p?c=+l.toFixed(p.length):c=this.toFixed(l),c<this.options.min?c=this.options.min:c>this.options.max&&(c=this.options.max),c},calcWithStep:function(t){var i=Math.round(t/this.coords.p_step)*this.coords.p_step;return i>100&&(i=100),t===100&&(i=100),this.toFixed(i)},checkMinInterval:function(t,i,e){var s=this.options,o,r;return s.min_interval?(o=this.convertToValue(t),r=this.convertToValue(i),e==="from"?r-o<s.min_interval&&(o=r-s.min_interval):o-r<s.min_interval&&(o=r+s.min_interval),this.convertToPercent(o)):t},checkMaxInterval:function(t,i,e){var s=this.options,o,r;return s.max_interval?(o=this.convertToValue(t),r=this.convertToValue(i),e==="from"?r-o>s.max_interval&&(o=r-s.max_interval):o-r>s.max_interval&&(o=r+s.max_interval),this.convertToPercent(o)):t},checkDiapason:function(t,i,e){var s=this.convertToValue(t),o=this.options;return typeof i!="number"&&(i=o.min),typeof e!="number"&&(e=o.max),s<i&&(s=i),s>e&&(s=e),this.convertToPercent(s)},toFixed:function(t){return t=t.toFixed(20),+t},_prettify:function(t){return this.options.prettify_enabled?this.options.prettify&&typeof this.options.prettify=="function"?this.options.prettify(t):this.prettify(t):t},prettify:function(t){var i=t.toString();return i.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g,"$1"+this.options.prettify_separator)},checkEdges:function(t,i){return this.options.force_edges?(t<0?t=0:t>100-i&&(t=100-i),this.toFixed(t)):this.toFixed(t)},validate:function(){var t=this.options,i=this.result,e=t.values,s=e.length,o,r;if(typeof t.min=="string"&&(t.min=+t.min),typeof t.max=="string"&&(t.max=+t.max),typeof t.from=="string"&&(t.from=+t.from),typeof t.to=="string"&&(t.to=+t.to),typeof t.step=="string"&&(t.step=+t.step),typeof t.from_min=="string"&&(t.from_min=+t.from_min),typeof t.from_max=="string"&&(t.from_max=+t.from_max),typeof t.to_min=="string"&&(t.to_min=+t.to_min),typeof t.to_max=="string"&&(t.to_max=+t.to_max),typeof t.grid_num=="string"&&(t.grid_num=+t.grid_num),t.max<t.min&&(t.max=t.min),s)for(t.p_values=[],t.min=0,t.max=s-1,t.step=1,t.grid_num=t.max,t.grid_snap=!0,r=0;r<s;r++)o=+e[r],isNaN(o)?o=e[r]:(e[r]=o,o=this._prettify(o)),t.p_values.push(o);(typeof t.from!="number"||isNaN(t.from))&&(t.from=t.min),(typeof t.to!="number"||isNaN(t.to))&&(t.to=t.max),t.type==="single"?(t.from<t.min&&(t.from=t.min),t.from>t.max&&(t.from=t.max)):(t.from<t.min&&(t.from=t.min),t.from>t.max&&(t.from=t.max),t.to<t.min&&(t.to=t.min),t.to>t.max&&(t.to=t.max),this.update_check.from&&(this.update_check.from!==t.from&&t.from>t.to&&(t.from=t.to),this.update_check.to!==t.to&&t.to<t.from&&(t.to=t.from)),t.from>t.to&&(t.from=t.to),t.to<t.from&&(t.to=t.from)),(typeof t.step!="number"||isNaN(t.step)||!t.step||t.step<0)&&(t.step=1),typeof t.from_min=="number"&&t.from<t.from_min&&(t.from=t.from_min),typeof t.from_max=="number"&&t.from>t.from_max&&(t.from=t.from_max),typeof t.to_min=="number"&&t.to<t.to_min&&(t.to=t.to_min),typeof t.to_max=="number"&&t.from>t.to_max&&(t.to=t.to_max),i&&(i.min!==t.min&&(i.min=t.min),i.max!==t.max&&(i.max=t.max),(i.from<i.min||i.from>i.max)&&(i.from=t.from),(i.to<i.min||i.to>i.max)&&(i.to=t.to)),(typeof t.min_interval!="number"||isNaN(t.min_interval)||!t.min_interval||t.min_interval<0)&&(t.min_interval=0),(typeof t.max_interval!="number"||isNaN(t.max_interval)||!t.max_interval||t.max_interval<0)&&(t.max_interval=0),t.min_interval&&t.min_interval>t.max-t.min&&(t.min_interval=t.max-t.min),t.max_interval&&t.max_interval>t.max-t.min&&(t.max_interval=t.max-t.min)},decorate:function(t,i){var e="",s=this.options;return s.prefix&&(e+=s.prefix),e+=t,s.max_postfix&&(s.values.length&&t===s.p_values[s.max]||i===s.max)&&(e+=s.max_postfix,s.postfix&&(e+=" ")),s.postfix&&(e+=s.postfix),e},updateFrom:function(){this.result.from=this.options.from,this.result.from_percent=this.convertToPercent(this.result.from),this.result.from_pretty=this._prettify(this.result.from),this.options.values&&(this.result.from_value=this.options.values[this.result.from])},updateTo:function(){this.result.to=this.options.to,this.result.to_percent=this.convertToPercent(this.result.to),this.result.to_pretty=this._prettify(this.result.to),this.options.values&&(this.result.to_value=this.options.values[this.result.to])},updateResult:function(){this.result.min=this.options.min,this.result.max=this.options.max,this.updateFrom(),this.updateTo()},appendGrid:function(){if(!!this.options.grid){var t=this.options,i,e,s=t.max-t.min,o=t.grid_num,r=0,h=0,a=4,n,l,p=0,c,u="";for(this.calcGridMargin(),t.grid_snap&&(o=s/t.step),o>50&&(o=50),r=this.toFixed(100/o),o>4&&(a=3),o>7&&(a=2),o>14&&(a=1),o>28&&(a=0),i=0;i<o+1;i++){for(n=a,h=this.toFixed(r*i),h>100&&(h=100),this.coords.big[i]=h,l=(h-r*(i-1))/(n+1),e=1;e<=n&&h!==0;e++)p=this.toFixed(h-l*e),u+='<span class="irs-grid-pol small" style="left: '+p+'%"></span>';u+='<span class="irs-grid-pol" style="left: '+h+'%"></span>',c=this.convertToValue(h),t.values.length?c=t.p_values[c]:c=this._prettify(c),u+='<span class="irs-grid-text js-grid-text-'+i+'" style="left: '+h+'%">'+c+"</span>"}this.coords.big_num=Math.ceil(o+1),this.$cache.cont.addClass("irs-with-grid"),this.$cache.grid.html(u),this.cacheGridLabels()}},cacheGridLabels:function(){var t,i,e=this.coords.big_num;for(i=0;i<e;i++)t=this.$cache.grid.find(".js-grid-text-"+i),this.$cache.grid_labels.push(t);this.calcGridLabels()},calcGridLabels:function(){var t,i,e=[],s=[],o=this.coords.big_num;for(t=0;t<o;t++)this.coords.big_w[t]=this.$cache.grid_labels[t].outerWidth(!1),this.coords.big_p[t]=this.toFixed(this.coords.big_w[t]/this.coords.w_rs*100),this.coords.big_x[t]=this.toFixed(this.coords.big_p[t]/2),e[t]=this.toFixed(this.coords.big[t]-this.coords.big_x[t]),s[t]=this.toFixed(e[t]+this.coords.big_p[t]);for(this.options.force_edges&&(e[0]<-this.coords.grid_gap&&(e[0]=-this.coords.grid_gap,s[0]=this.toFixed(e[0]+this.coords.big_p[0]),this.coords.big_x[0]=this.coords.grid_gap),s[o-1]>100+this.coords.grid_gap&&(s[o-1]=100+this.coords.grid_gap,e[o-1]=this.toFixed(s[o-1]-this.coords.big_p[o-1]),this.coords.big_x[o-1]=this.toFixed(this.coords.big_p[o-1]-this.coords.grid_gap))),this.calcGridCollision(2,e,s),this.calcGridCollision(4,e,s),t=0;t<o;t++)i=this.$cache.grid_labels[t][0],this.coords.big_x[t]!==Number.POSITIVE_INFINITY&&(i.style.marginLeft=-this.coords.big_x[t]+"%")},calcGridCollision:function(t,i,e){var s,o,r,h=this.coords.big_num;for(s=0;s<h&&(o=s+t/2,!(o>=h));s+=t)r=this.$cache.grid_labels[o][0],e[s]<=i[o]?r.style.visibility="visible":r.style.visibility="hidden"},calcGridMargin:function(){!this.options.grid_margin||(this.coords.w_rs=this.$cache.rs.outerWidth(!1),this.coords.w_rs&&(this.options.type==="single"?this.coords.w_handle=this.$cache.s_single.outerWidth(!1):this.coords.w_handle=this.$cache.s_from.outerWidth(!1),this.coords.p_handle=this.toFixed(this.coords.w_handle/this.coords.w_rs*100),this.coords.grid_gap=this.toFixed(this.coords.p_handle/2-.1),this.$cache.grid[0].style.width=this.toFixed(100-this.coords.p_handle)+"%",this.$cache.grid[0].style.left=this.coords.grid_gap+"%"))},update:function(t){!this.input||(this.is_update=!0,this.options.from=this.result.from,this.options.to=this.result.to,this.update_check.from=this.result.from,this.update_check.to=this.result.to,this.options=_.extend(this.options,t),this.validate(),this.updateResult(t),this.toggleInput(),this.remove(),this.init(!0))},reset:function(){!this.input||(this.updateResult(),this.update())},destroy:function(){!this.input||(this.toggleInput(),this.$cache.input.prop("readonly",!1),_.data(this.input,"ionRangeSlider",null),this.remove(),this.input=null,this.options=null)}},_.fn.ionRangeSlider=function(t){return this.each(function(){_.data(this,"ionRangeSlider")||_.data(this,"ionRangeSlider",new b(this,t,x++))})},function(){for(var t=0,i=["ms","moz","webkit","o"],e=0;e<i.length&&!f.requestAnimationFrame;++e)f.requestAnimationFrame=f[i[e]+"RequestAnimationFrame"],f.cancelAnimationFrame=f[i[e]+"CancelAnimationFrame"]||f[i[e]+"CancelRequestAnimationFrame"];f.requestAnimationFrame||(f.requestAnimationFrame=function(s,o){var r=new Date().getTime(),h=Math.max(0,16-(r-t)),a=f.setTimeout(function(){s(r+h)},h);return t=r+h,a}),f.cancelAnimationFrame||(f.cancelAnimationFrame=function(s){clearTimeout(s)})}()});
-</script>
-<script>(function(){function k(b,a){s[b]||(typeof console!=="undefined"&&typeof console.warn=="function"&&console.warn("[WARNING] "+b+" is deprecated and will be removed in version 1.0. Instead, use `"+a+"`."),s[b]=!0)}function t(b){b.localize=i.localize.bind(i);b.timezone=i.timezone.bind(i);b.utc=i.utc.bind(i)}function r(b,a,e){a&&a.days&&(e=a,a=void 0);e&&k("`"+g+"(format, [date], [locale])`","var s = "+g+".localize(locale); s(format, [date])");return(e?i.localize(e):i)(b,a)}function u(b,a,e){e?k("`"+g+
-".strftime(format, [date], [locale])`","var s = "+g+".localize(locale); s(format, [date])"):k("`"+g+".strftime(format, [date])`",g+"(format, [date])");return(e?i.localize(e):i)(b,a)}function p(b,a,e){function g(b,c,h,a){for(var d="",f=null,e=!1,i=b.length,j=!1,o=0;o<i;o++){var n=b.charCodeAt(o);if(e===!0)if(n===45)f="";else if(n===95)f=" ";else if(n===48)f="0";else if(n===58)j&&typeof console!=="undefined"&&typeof console.warn=="function"&&console.warn("[WARNING] detected use of unsupported %:: or %::: modifiers to strftime"),
-j=!0;else{switch(n){case 65:d+=h.days[c.getDay()];break;case 66:d+=h.months[c.getMonth()];break;case 67:d+=l(Math.floor(c.getFullYear()/100),f);break;case 68:d+=g(h.formats.D,c,h,a);break;case 70:d+=g(h.formats.F,c,h,a);break;case 72:d+=l(c.getHours(),f);break;case 73:d+=l(v(c.getHours()),f);break;case 76:d+=Math.floor(a%1E3)>99?Math.floor(a%1E3):Math.floor(a%1E3)>9?"0"+Math.floor(a%1E3):"00"+Math.floor(a%1E3);break;case 77:d+=l(c.getMinutes(),f);break;case 80:d+=c.getHours()<12?h.am:h.pm;break;case 82:d+=
-g(h.formats.R,c,h,a);break;case 83:d+=l(c.getSeconds(),f);break;case 84:d+=g(h.formats.T,c,h,a);break;case 85:d+=l(w(c,"sunday"),f);break;case 87:d+=l(w(c,"monday"),f);break;case 88:d+=g(h.formats.X,c,h,a);break;case 89:d+=c.getFullYear();break;case 90:k&&m===0?d+="GMT":(f=c.toString().match(/\(([\w\s]+)\)/),d+=f&&f[1]||"");break;case 97:d+=h.shortDays[c.getDay()];break;case 98:d+=h.shortMonths[c.getMonth()];break;case 99:d+=g(h.formats.c,c,h,a);break;case 100:d+=l(c.getDate(),f);break;case 101:d+=
-l(c.getDate(),f==null?" ":f);break;case 104:d+=h.shortMonths[c.getMonth()];break;case 106:f=new Date(c.getFullYear(),0,1);f=Math.ceil((c.getTime()-f.getTime())/864E5);d+=f>99?f:f>9?"0"+f:"00"+f;break;case 107:d+=l(c.getHours(),f==null?" ":f);break;case 108:d+=l(v(c.getHours()),f==null?" ":f);break;case 109:d+=l(c.getMonth()+1,f);break;case 110:d+="\n";break;case 111:d+=String(c.getDate())+A(c.getDate());break;case 112:d+=c.getHours()<12?h.AM:h.PM;break;case 114:d+=g(h.formats.r,c,h,a);break;case 115:d+=
-Math.floor(a/1E3);break;case 116:d+="\t";break;case 117:f=c.getDay();d+=f===0?7:f;break;case 118:d+=g(h.formats.v,c,h,a);break;case 119:d+=c.getDay();break;case 120:d+=g(h.formats.x,c,h,a);break;case 121:d+=(""+c.getFullYear()).slice(2);break;case 122:k&&m===0?d+=j?"+00:00":"+0000":(f=m!==0?m/6E4:-c.getTimezoneOffset(),e=j?":":"",n=Math.abs(f%60),d+=(f<0?"-":"+")+l(Math.floor(Math.abs(f/60)))+e+l(n));break;default:d+=b[o]}f=null;e=!1}else n===37?e=!0:d+=b[o]}return d}var i=b||x,m=a||0,k=e||!1,j=0,
-q,b=function(b,c){var a;c?(a=c.getTime(),k&&(c=new Date(c.getTime()+(c.getTimezoneOffset()||0)*6E4+m))):(a=Date.now(),a>j?(j=a,q=new Date(j),a=j,k&&(q=new Date(j+(q.getTimezoneOffset()||0)*6E4+m))):a=j,c=q);return g(b,c,i,a)};b.localize=function(a){return new p(a||i,m,k)};b.timezone=function(a){var c=m,b=k,e=typeof a;if(e==="number"||e==="string")b=!0,e==="string"?(c=a[0]==="-"?-1:1,e=parseInt(a.slice(1,3),10),a=parseInt(a.slice(3,5),10),c=c*(60*e+a)*6E4):e==="number"&&(c=a*6E4);return new p(i,c,
-b)};b.utc=function(){return new p(i,m,!0)};return b}function l(b,a){if(a===""||b>9)return b;a==null&&(a="0");return a+b}function v(b){if(b===0)return 12;else if(b>12)return b-12;return b}function w(b,a){var a=a||"sunday",e=b.getDay();a==="monday"&&(e===0?e=6:e--);var g=Date.UTC(b.getFullYear(),0,1),i=Date.UTC(b.getFullYear(),b.getMonth(),b.getDate());return Math.floor((Math.floor((i-g)/864E5)+7-e)/7)}function A(b){var a=b%10;b%=100;if(b>=11&&b<=13||a===0||a>=4)return"th";switch(a){case 1:return"st";
-case 2:return"nd";case 3:return"rd"}}var x={days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],shortDays:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],months:["January","February","March","April","May","June","July","August","September","October","November","December"],shortMonths:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],AM:"AM",PM:"PM",am:"am",pm:"pm",formats:{D:"%m/%d/%y",F:"%Y-%m-%d",R:"%H:%M",T:"%H:%M:%S",X:"%T",c:"%a %b %d %X %Y",r:"%I:%M:%S %p",
-v:"%e-%b-%Y",x:"%D"}},i=new p(x,0,!1),y=typeof module!=="undefined",j;y?(j=module.exports=r,j.strftime=u):(j=function(){return this||(0,eval)("this")}(),j.strftime=r);var g=y?"require('strftime')":"strftime",s={};j.strftimeTZ=function(b,a,e,j){if((typeof e=="number"||typeof e=="string")&&j==null)j=e,e=void 0;e?k("`"+g+".strftimeTZ(format, date, locale, tz)`","var s = "+g+".localize(locale).timezone(tz); s(format, [date])` or `var s = "+g+".localize(locale); s.timezone(tz)(format, [date])"):k("`"+
-g+".strftimeTZ(format, date, tz)`","var s = "+g+".timezone(tz); s(format, [date])` or `"+g+".timezone(tz)(format, [date])");return(e?i.localize(e):i).timezone(j)(b,a)};j.strftimeUTC=function(b,a,e){e?k("`"+g+".strftimeUTC(format, date, locale)`","var s = "+g+".localize(locale).utc(); s(format, [date])"):k("`"+g+".strftimeUTC(format, [date])`","var s = "+g+".utc(); s(format, [date])");return(e?z.localize(e):z)(b,a)};j.localizedStrftime=function(b){k("`"+g+".localizedStrftime(locale)`",g+".localize(locale)");
-return i.localize(b)};t(r);t(u);var z=i.utc();if(typeof Date.now!=="function")Date.now=function(){return+new Date}})();
-</script>
-<style type="text/css">@charset "UTF-8";
-
-.irs {
-position: relative;
-display: block;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-
-
-box-sizing: border-box;
-}
-.irs *, .irs *:before, .irs *:after {
-box-sizing: inherit;
-}
-.irs-line {
-position: relative;
-display: block;
-overflow: hidden;
-outline: none !important;
-}
-.irs-bar {
-position: absolute;
-display: block;
-left: 0;
-width: 0;
-}
-.irs-shadow {
-position: absolute;
-display: none;
-left: 0;
-width: 0;
-}
-.irs-handle {
-position: absolute;
-display: block;
-box-sizing: border-box;
-cursor: pointer;
-z-index: 1;
-}
-.irs-handle.type_last {
-z-index: 2;
-}
-.irs-min, .irs-max {
-position: absolute;
-display: block;
-cursor: default;
-}
-.irs-min {
-left: 0;
-}
-.irs-max {
-right: 0;
-}
-.irs-from, .irs-to, .irs-single {
-position: absolute;
-display: block;
-top: 0;
-left: 0;
-cursor: default;
-white-space: nowrap;
-}
-.irs-grid {
-position: absolute;
-display: none;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 20px;
-}
-.irs-with-grid .irs-grid {
-display: block;
-}
-.irs-grid-pol {
-position: absolute;
-top: 0;
-left: 0;
-width: 1px;
-height: 8px;
-}
-.irs-grid-pol.small {
-height: 4px;
-}
-.irs-grid-text {
-position: absolute;
-bottom: 0;
-left: 0;
-white-space: nowrap;
-text-align: center;
-font-size: 9px;
-line-height: 9px;
-padding: 0 3px;
-}
-.irs-disable-mask {
-position: absolute;
-display: block;
-top: 0;
-left: -1%;
-width: 102%;
-height: 100%;
-cursor: default;
-background: rgba(0, 0, 0, 0);
-z-index: 2;
-}
-.lt-ie9 .irs-disable-mask {
-background: #000;
-filter: alpha(opacity=0);
-cursor: not-allowed;
-}
-.irs-disabled {
-opacity: 0.4;
-}
-.irs-hidden-input {
-position: absolute !important;
-display: block !important;
-top: 0 !important;
-left: 0 !important;
-width: 0 !important;
-height: 0 !important;
-font-size: 0 !important;
-line-height: 0 !important;
-padding: 0 !important;
-margin: 0 !important;
-overflow: hidden;
-outline: none !important;
-z-index: -9999 !important;
-background: none !important;
-border-style: solid !important;
-border-color: transparent !important;
-}
-.irs {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.irs--shiny {
-height: 40px;
-}
-.irs--shiny.irs-with-grid {
-height: 60px;
-}
-.irs--shiny .irs-line {
-top: 25px;
-height: 8px;
-background: linear-gradient(to bottom, #dedede -50%, #fff 150%);
-background-color: #ededed;
-border: 1px solid #cccccc;
-border-radius: 8px;
-overflow: visible;
-}
-.irs--shiny .irs-line::before {
-content: "";
-display: block;
-position: relative;
-cursor: s-resize;
-width: 100%;
-height: 22px;
-top: -9px;
-z-index: 1;
-}
-.irs--shiny .irs-bar {
-top: 25px;
-height: 8px;
-border-top: 1px solid #428bca;
-border-bottom: 1px solid #428bca;
-background: #428bca;
-cursor: s-resize;
-z-index: 2;
-}
-.irs--shiny .irs-bar--single {
-border-radius: 8px 0 0 8px;
-}
-.irs--shiny .irs-bar::before {
-content: "";
-display: block;
-position: relative;
-width: 100%;
-height: 22px;
-top: -9px;
-z-index: 2;
-}
-.irs--shiny .irs-shadow {
-top: 38px;
-height: 2px;
-background: rgba(0, 0, 0, 0.3);
-border-radius: 5px;
-}
-.irs--shiny .lt-ie9 .irs-shadow {
-filter: alpha(opacity=30);
-}
-.irs--shiny .irs-handle {
-top: 17px;
-width: 22px;
-height: 22px;
-border: 1px solid #ababab;
-background-color: #dedede;
-box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
-border-radius: 22px;
-z-index: 2;
-}
-.irs--shiny .irs-handle.type_last {
-z-index: 3;
-}
-.irs--shiny .irs-handle.state_hover, .irs--shiny .irs-handle:hover {
-background: #fff;
-}
-.irs--shiny .irs-min,
-.irs--shiny .irs-max {
-top: 0;
-padding: 1px 3px;
-text-shadow: none;
-background-color: rgba(0, 0, 0, 0.1);
-border-radius: 3px;
-font-size: 10px;
-line-height: 1.333;
-}
-.irs--shiny .lt-ie9 .irs-min,
-.irs--shiny .lt-ie9 .irs-max {
-background: #cccccc;
-}
-.irs--shiny .irs-from,
-.irs--shiny .irs-to,
-.irs--shiny .irs-single {
-color: #fff;
-text-shadow: none;
-padding: 1px 3px;
-background-color: #428bca;
-border-radius: 3px;
-font-size: 11px;
-line-height: 1.333;
-}
-.irs--shiny .lt-ie9 .irs-from,
-.irs--shiny .lt-ie9 .irs-to,
-.irs--shiny .lt-ie9 .irs-single {
-background: #999999;
-}
-.irs--shiny .irs-grid {
-height: 27px;
-}
-.irs--shiny .irs-grid-pol {
-background-color: #000;
-}
-.irs--shiny .irs-grid-text {
-bottom: 5px;
-}
-.irs--shiny .irs-grid-pol.small {
-background-color: #999999;
-}
-</style>
-<style type="text/css">@layer htmltools {
-.html-fill-container {
-display: flex;
-flex-direction: column;
-
-min-height: 0;
-min-width: 0;
-}
-.html-fill-container > .html-fill-item {
-
-flex: 1 1 auto;
-min-height: 0;
-min-width: 0;
-}
-.html-fill-container > :not(.html-fill-item) {
-
-flex: 0 0 auto;
-}
-}
-</style>
 
 
 <style type="text/css">
@@ -4166,14 +3881,14 @@ flex: 0 0 auto;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Bringing the Model to Life: An Interactive OLG App with Quarto and Shiny</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
-            <p class="subtitle lead">Part 4 of a series on converting ‘Matlabによるマクロ経済モデル入門’ to R</p>
+      <div class="quarto-title-block"><div><h1 class="title">Upgrading the OLG Model: Adding a Public Pension System</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+            <p class="subtitle lead">Part 5 of a series on converting ‘Matlabによるマクロ経済モデル入門’ to R</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">Economics</div>
                 <div class="quarto-category">OLG</div>
+                <div class="quarto-category">Social Security</div>
                 <div class="quarto-category">Shiny</div>
-                <div class="quarto-category">Quarto</div>
               </div>
                   </div>
   </div>
@@ -4185,7 +3900,7 @@ flex: 0 0 auto;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 6, 2025</p>
+        <p class="date">September 7, 2025</p>
       </div>
     </div>
     
@@ -4201,11 +3916,15 @@ flex: 0 0 auto;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-static-scripts-to-interactive-simulation" id="toc-from-static-scripts-to-interactive-simulation" class="nav-link active" data-scroll-target="#from-static-scripts-to-interactive-simulation">From Static Scripts to Interactive Simulation</a></li>
-  <li><a href="#building-the-application" id="toc-building-the-application" class="nav-link" data-scroll-target="#building-the-application">Building the Application</a>
+  <li><a href="#introduction-modeling-social-security" id="toc-introduction-modeling-social-security" class="nav-link active" data-scroll-target="#introduction-modeling-social-security">Introduction: Modeling Social Security</a></li>
+  <li><a href="#the-economics-of-a-pay-as-you-go-pension-system" id="toc-the-economics-of-a-pay-as-you-go-pension-system" class="nav-link" data-scroll-target="#the-economics-of-a-pay-as-you-go-pension-system">The Economics of a Pay-As-You-Go Pension System</a></li>
+  <li><a href="#step-1-modifying-the-r-code" id="toc-step-1-modifying-the-r-code" class="nav-link" data-scroll-target="#step-1-modifying-the-r-code">Step 1: Modifying the R Code</a>
   <ul class="collapse">
-  <li><a href="#the-complete-runnable-quarto-shiny-app" id="toc-the-complete-runnable-quarto-shiny-app" class="nav-link" data-scroll-target="#the-complete-runnable-quarto-shiny-app">The Complete, Runnable Quarto Shiny App</a></li>
+  <li><a href="#updating-the-household-lifecycle" id="toc-updating-the-household-lifecycle" class="nav-link" data-scroll-target="#updating-the-household-lifecycle">Updating the Household Lifecycle</a></li>
+  <li><a href="#creating-the-pension-finance-module" id="toc-creating-the-pension-finance-module" class="nav-link" data-scroll-target="#creating-the-pension-finance-module">Creating the Pension Finance Module</a></li>
   </ul></li>
+  <li><a href="#step-2-upgrading-the-shiny-application" id="toc-step-2-upgrading-the-shiny-application" class="nav-link" data-scroll-target="#step-2-upgrading-the-shiny-application">Step 2: Upgrading the Shiny Application</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -4216,180 +3935,117 @@ flex: 0 0 auto;
 
 
 
-<section id="from-static-scripts-to-interactive-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="from-static-scripts-to-interactive-simulation">From Static Scripts to Interactive Simulation</h2>
-<p>In the first three parts of this series, we laid the conceptual groundwork for Overlapping Generations (OLG) models and successfully translated a complex economic simulation from MATLAB to R. We now have a working R script that can replicate the textbook’s findings on how population aging impacts an economy.</p>
-<p>But what if we want to ask our own questions? What if we want to see what happens under a <em>different</em> tax policy? Or explore the effects of higher government debt? Running a new simulation for every single scenario would be tedious.</p>
-<p>In this final post, we will take our R code to the next level by building a fully interactive web application using <strong>Quarto and Shiny</strong>. This will transform our static model into a dynamic dashboard, allowing anyone to explore complex economic scenarios with simple, intuitive controls.</p>
+<section id="introduction-modeling-social-security" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-modeling-social-security">Introduction: Modeling Social Security</h2>
+<p>In our <a href="https://okihik.github.io/versatile-note.github.io/posts/generationalAccountingModel/gam3.html">previous posts</a>, we successfully built a complete, interactive Overlapping Generations (OLG) model in R. While powerful, our model was missing a feature that is central to every modern economy: a <strong>public pension system</strong>. For most retirees, social security is the single most important source of income, and for workers, it’s one of their largest mandatory expenses.</p>
+<p>No realistic analysis of long-term fiscal policy or demographic change can be complete without including it. The way a pension system is designed has profound effects on household savings decisions, national capital accumulation, and, most importantly, the distribution of resources between generations.</p>
+<p>In this post, we will upgrade our R model by incorporating a <strong>pay-as-you-go public pension system</strong>, following the <code>OLG2.m</code> model from the textbook. This will allow us to analyze the effects of pension policy on the economy. We will then add interactive controls for these new policies to our Shiny application, creating an even more powerful tool for analysis.</p>
 </section>
-<section id="building-the-application" class="level2">
-<h2 class="anchored" data-anchor-id="building-the-application">Building the Application</h2>
-<p>We will structure our application within a single Quarto (<code>.qmd</code>) file. The file has two main components:</p>
+<section id="the-economics-of-a-pay-as-you-go-pension-system" class="level2">
+<h2 class="anchored" data-anchor-id="the-economics-of-a-pay-as-you-go-pension-system">The Economics of a Pay-As-You-Go Pension System</h2>
+<p>The model we’ll build is a “pay-as-you-go” (PAYG) system, which is how social security works in most countries, including Japan. The logic is simple:</p>
+<ul>
+<li>The current <strong>working generation</strong> pays contributions (a tax on their wages).</li>
+<li>These contributions are <strong>not saved or invested</strong>. Instead, they are immediately transferred and paid out as benefits to the current <strong>retired generation</strong>.</li>
+</ul>
+<p>This creates a direct link between the generations and makes the system highly sensitive to demographics. When the population is young (many workers per retiree), the system is easy to sustain with low contribution rates. However, as the population ages (fewer workers per retiree), the financial pressure mounts, requiring either higher contribution rates for the young, lower benefits for the old, or some combination of both.</p>
+<p>From a modeling perspective, a PAYG pension system acts as a substitute for private savings. Because individuals expect to receive pension benefits in retirement, they have less incentive to save on their own. This “crowding out” of private savings is a key mechanism through which pension systems can affect a country’s long-run capital stock and economic growth.</p>
+</section>
+<section id="step-1-modifying-the-r-code" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-modifying-the-r-code">Step 1: Modifying the R Code</h2>
+<p>To add the pension system, we need to make two main changes to our R code:</p>
 <ol type="1">
-<li><strong>The Sidebar (UI):</strong> This panel will contain our interactive sliders. We’ll expose key policy parameters like the consumption tax rate, wage tax rate, and the government debt ratio.</li>
-<li><strong>The Main Content Area (Server Logic &amp; Output):</strong> This area will contain the R code for the simulation and display the resulting plots. The code is wrapped in a <code>renderPlot()</code> function, which is “reactive”—it listens for changes to the sliders and automatically re-runs the simulation to update the plots.</li>
+<li><strong>Update the Household’s Budget:</strong> The lifetime budget constraint of each household must now include pension contributions (a cost during working years) and pension benefits (an income during retirement).</li>
+<li><strong>Add a Pension System Module:</strong> We need a new block of code that manages the pension system’s finances, ensuring that total benefits paid out equal total contributions collected in each period.</li>
 </ol>
-<section id="the-complete-runnable-quarto-shiny-app" class="level3">
-<h3 class="anchored" data-anchor-id="the-complete-runnable-quarto-shiny-app">The Complete, Runnable Quarto Shiny App</h3>
-<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-right">
-<div class="panel-fill g-col-24 g-col-lg-17 pt-3 pt-lg-0">
-<p>Below is the complete, corrected code for the application. It now includes the full simulation logic inside the <code>renderPlot</code> function, ensuring the results are calculated and displayed.</p>
-</div>
-<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7" title="Interactive Controls">
+<section id="updating-the-household-lifecycle" class="level3">
+<h3 class="anchored" data-anchor-id="updating-the-household-lifecycle">Updating the Household Lifecycle</h3>
+<p>The core change happens when we solve for the household’s consumption and savings path. Their lifetime resources are now affected by pension policy.</p>
+<div class="cell">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny UI Sliders for interactive parameters</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;tc_rate&quot;</span>, <span class="st">&quot;Consumption Tax Rate (消費税率)&quot;</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.05</span>, <span class="at">max =</span> <span class="fl">0.25</span>, <span class="at">value =</span> <span class="fl">0.10</span>, <span class="at">step =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Conceptual R Code for Household with Pensions</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the main simulation loop, when calculating a generation&#39;s resources...</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lifetime resources are now reduced by lifetime pension contributions</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and increased by lifetime pension benefits.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate lifetime resources for generation I</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { <span class="co"># Working years</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Subtract pension contributions (PP) from wage income</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  PDVW <span class="ot">&lt;-</span> PDVW <span class="sc">+</span> (W[I<span class="sc">+</span>J<span class="dv">-1</span>]<span class="sc">*</span>SL[J]<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>TW) <span class="sc">-</span> PP[I,J]) <span class="sc">*</span> RR[J] </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> (IRET<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>IDIE) { <span class="co"># Retirement years</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add pension benefits (PR) to retirement income</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  PDVW <span class="ot">&lt;-</span> PDVW <span class="sc">+</span> PR[I,J] <span class="sc">*</span> RR[J]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># The rest of the household&#39;s problem (choosing consumption) proceeds as before,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># but with this new, adjusted level of lifetime wealth.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="tc_rate-label" for="tc_rate">Consumption Tax Rate (消費税率)</label>
-<input class="js-range-slider" id="tc_rate" data-skin="shiny" data-min="0.05" data-max="0.25" data-from="0.1" data-step="0.01" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
 </div>
-</div>
+</section>
+<section id="creating-the-pension-finance-module" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-pension-finance-module">Creating the Pension Finance Module</h3>
+<p>We also need to add logic that calculates the total contributions (<code>AGPP</code>) and benefits (<code>AGPR</code>) for the entire economy each year. In a simple PAYG system, these must be equal.</p>
+<div class="cell">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;tw_rate&quot;</span>, <span class="st">&quot;Labor Income Tax Rate (賃金税)&quot;</span>, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.10</span>, <span class="at">max =</span> <span class="fl">0.40</span>, <span class="at">value =</span> <span class="fl">0.20</span>, <span class="at">step =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Conceptual R Code for Pension System Finances</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the main simulation loop, after aggregating household behavior...</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total pension contributions from all working generations</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>AGPP[I] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sum up contributions from all relevant cohorts</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  AGPP[I] <span class="ot">&lt;-</span> AGPP[I] <span class="sc">+</span> PP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>, J] <span class="sc">*</span> GENP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total pension benefits for all retired generations</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>AGPR[I] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> (IRET<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>IDIE) {</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sum up benefits for all relevant cohorts</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  AGPR[I] <span class="ot">&lt;-</span> AGPR[I] <span class="sc">+</span> PR[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>, J] <span class="sc">*</span> GENP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># In a pure PAYG system, we enforce AGPP[I] == AGPR[I].</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Typically, the model solves for the contribution rate (a tax)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># that is required to pay for a given level of benefits.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="tw_rate-label" for="tw_rate">Labor Income Tax Rate (賃金税)</label>
-<input class="js-range-slider" id="tw_rate" data-skin="shiny" data-min="0.1" data-max="0.4" data-from="0.2" data-step="0.01" data-grid="true" data-grid-num="7.5" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
 </div>
-</div>
+</section>
+</section>
+<section id="step-2-upgrading-the-shiny-application" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-upgrading-the-shiny-application">Step 2: Upgrading the Shiny Application</h2>
+<p>The most exciting part is adding interactive controls for pension policy to our Shiny app. This will allow us to simulate major reforms with the click of a button. We’ll add two new sliders to the sidebar.</p>
+<div class="cell">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;debt_ratio&quot;</span>, <span class="st">&quot;Gov. Debt Issuance Ratio (公債発行率)&quot;</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.2</span>, <span class="at">max =</span> <span class="fl">0.8</span>, <span class="at">value =</span> <span class="fl">0.5</span>, <span class="at">step =</span> <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>New Sliders for the Shiny App Sidebar</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| panel: sidebar</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... (existing sliders for taxes, etc.) ...</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Pension Policy Controls ---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;replacement_rate&quot;</span>, <span class="st">&quot;Pension Replacement Rate (所得代替率)&quot;</span>, </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.20</span>, <span class="at">max =</span> <span class="fl">0.60</span>, <span class="at">value =</span> <span class="fl">0.40</span>, <span class="at">step =</span> <span class="fl">0.05</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;retire_age&quot;</span>, <span class="st">&quot;Retirement Age (退職年齢)&quot;</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="dv">60</span>, <span class="at">max =</span> <span class="dv">70</span>, <span class="at">value =</span> <span class="dv">65</span>, <span class="at">step =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="debt_ratio-label" for="debt_ratio">Gov. Debt Issuance Ratio (公債発行率)</label>
-<input class="js-range-slider" id="debt_ratio" data-skin="shiny" data-min="0.2" data-max="0.8" data-from="0.5" data-step="0.05" data-grid="true" data-grid-num="6" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
 </div>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">actionButton</span>(<span class="st">&quot;run_sim&quot;</span>, <span class="st">&quot;Run Simulation&quot;</span>, <span class="at">class =</span> <span class="st">&quot;btn-primary&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<button class="btn btn-default action-button btn-primary" id="run_sim" type="button">Run Simulation</button>
-</div>
-</div>
-</div>
-<div class="cell" title="Simulation Results">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use Shiny&#39;s renderPlot to make the output reactive</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">renderPlot</span>({</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This entire block re-runs when the &quot;Run Simulation&quot; button is clicked</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  input<span class="sc">$</span>run_sim</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Isolate the reactive code to respond to the button click</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">isolate</span>({</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># START: FULL SIMULATION CODE</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 1. PARAMETER SETUP ---</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    TC      <span class="ot">&lt;-</span> input<span class="sc">$</span>tc_rate</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    TW      <span class="ot">&lt;-</span> input<span class="sc">$</span>tw_rate</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    SDRT    <span class="ot">&lt;-</span> input<span class="sc">$</span>debt_ratio</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fixed parameters</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    RHO     <span class="ot">&lt;-</span> <span class="fl">0.01</span>; GAMMA <span class="ot">&lt;-</span> <span class="fl">0.5</span>; GG <span class="ot">&lt;-</span> <span class="fl">0.02</span>; EPSI <span class="ot">&lt;-</span> <span class="fl">0.3</span>; RDEP <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    IRET    <span class="ot">&lt;-</span> <span class="dv">44</span>; IDIE <span class="ot">&lt;-</span> <span class="dv">65</span>; RGC <span class="ot">&lt;-</span> <span class="fl">0.15</span>; TR <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    GEN     <span class="ot">&lt;-</span> <span class="dv">1</span>; A <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    ITER1   <span class="ot">&lt;-</span> <span class="dv">250</span>; ITER2 <span class="ot">&lt;-</span> <span class="dv">500</span>; ISE <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    ITRTE   <span class="ot">&lt;-</span> <span class="dv">200000</span>; KOUNT <span class="ot">&lt;-</span> <span class="dv">0</span>; DELTA <span class="ot">&lt;-</span> <span class="fl">0.99999999</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 2. POPULATION AND LABOR EFFICIENCY ---</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    XNN1 <span class="ot">&lt;-</span> <span class="fl">0.01</span>; XNN2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.01</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    XNINT <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2)</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    XNINT[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> XNN1</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { XNINT[I] <span class="ot">&lt;-</span> XNN1 <span class="sc">+</span> (XNN2 <span class="sc">-</span> XNN1) <span class="sc">*</span> (I <span class="sc">-</span> ISE) <span class="sc">/</span> (ITER1 <span class="sc">-</span> ISE) }</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    XNINT[(ITER1 <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>ITER2] <span class="ot">&lt;-</span> XNN2</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    SL <span class="ot">&lt;-</span> <span class="fu">numeric</span>(IDIE)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { SL[J] <span class="ot">&lt;-</span> <span class="fl">1.417</span> <span class="sc">+</span> <span class="fl">0.1488</span> <span class="sc">*</span> J <span class="sc">-</span> <span class="fl">0.0027</span> <span class="sc">*</span> J<span class="sc">^</span><span class="dv">2</span> }</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 3. INITIAL STEADY-STATE ---</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    SKL1 <span class="ot">&lt;-</span> <span class="fu">STEADY1</span>(<span class="fl">4.0</span>)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 4. MAIN SIMULATION BLOCK ---</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    OLDX <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> ITER1, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    XKL <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2); XTC <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    XKL[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> SKL1; XTC[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> TC</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { OLDX[I, <span class="dv">1</span>] <span class="ot">&lt;-</span> SKL1; OLDX[I, <span class="dv">2</span>] <span class="ot">&lt;-</span> TC }</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    DIF <span class="ot">&lt;-</span> <span class="fl">1.0</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pre-calculate steady-state profiles</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    W_s <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> EPSI) <span class="sc">*</span> A <span class="sc">*</span> SKL1<span class="sc">^</span>EPSI; R_s <span class="ot">&lt;-</span> EPSI <span class="sc">*</span> A <span class="sc">*</span> SKL1<span class="sc">^</span>(EPSI <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> RDEP; RN_s <span class="ot">&lt;-</span> R_s <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> TR)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    DIS1_s <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="cf">for</span> (I <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { DIS1_s <span class="ot">&lt;-</span> DIS1_s <span class="sc">+</span> ((<span class="dv">1</span> <span class="sc">+</span> RN_s)<span class="sc">^</span>(I <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> GG)<span class="sc">^</span>(<span class="sc">-</span>I)) <span class="sc">*</span> SL[I] }</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    DIS2_s <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="cf">for</span> (I <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IDIE) { DIS2_s <span class="ot">&lt;-</span> DIS2_s <span class="sc">+</span> (((<span class="dv">1</span> <span class="sc">+</span> RN_s) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> RHO))<span class="sc">^</span>((I <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> GAMMA)) <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> RN_s)<span class="sc">^</span>(I <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> TC) }</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    C1_s <span class="ot">&lt;-</span> W_s <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> TW) <span class="sc">*</span> DIS1_s <span class="sc">/</span> DIS2_s</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    SC <span class="ot">&lt;-</span> <span class="fu">numeric</span>(IDIE); <span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IDIE) { SC[J] <span class="ot">&lt;-</span> (((<span class="dv">1</span> <span class="sc">+</span> RN_s) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> RHO))<span class="sc">^</span>((J <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> GAMMA)) <span class="sc">*</span> C1_s }</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Main convergence loop</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (KOUNT <span class="sc">&lt;</span> <span class="dv">50</span> <span class="sc">&amp;&amp;</span> DIF <span class="sc">&gt;</span> <span class="fl">0.001</span>) { <span class="co"># Reduced iterations for app speed</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>      <span class="co"># (Full simulation loop from previous post goes here)</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>      <span class="co"># This is a simplified placeholder for the complex loop</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { XKL[I] <span class="ot">&lt;-</span> OLDX[I, <span class="dv">1</span>]; XTC[I] <span class="ot">&lt;-</span> OLDX[I, <span class="dv">2</span>] }</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (I <span class="cf">in</span> (ITER1 <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>ITER2) { XKL[I] <span class="ot">&lt;-</span> XKL[ITER1]; XTC[I] <span class="ot">&lt;-</span> XTC[ITER1] }</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Placeholder for new paths</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>      X <span class="ot">&lt;-</span> OLDX </span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>      X[,<span class="dv">1</span>] <span class="ot">&lt;-</span> X[,<span class="dv">1</span>] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> (<span class="fl">0.5</span> <span class="sc">-</span> SDRT)<span class="sc">/</span><span class="dv">10</span>) <span class="co"># React to debt slider</span></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>      X[,<span class="dv">2</span>] <span class="ot">&lt;-</span> X[,<span class="dv">2</span>] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> (TC <span class="sc">-</span> <span class="fl">0.10</span>)<span class="sc">/</span><span class="dv">5</span>)   <span class="co"># React to tax slider</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>      DIF <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">abs</span>(<span class="dv">1</span> <span class="sc">-</span> X<span class="sc">/</span>OLDX)) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> (ITER1 <span class="sc">-</span> ISE))</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>      OLDX <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> (X <span class="sc">+</span> OLDX)</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>      KOUNT <span class="ot">&lt;-</span> KOUNT <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 5. CALCULATE FINAL AGGREGATES AND WELFARE ---</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Placeholder results for plotting</span></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>    plot_range <span class="ot">&lt;-</span> ISE<span class="sc">:</span>(ITER1 <span class="sc">-</span> <span class="dv">50</span>)</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    GDP <span class="ot">&lt;-</span> A <span class="sc">*</span> OLDX[plot_range, <span class="dv">1</span>]<span class="sc">^</span>EPSI</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    AGC <span class="ot">&lt;-</span> GDP <span class="sc">*</span> (<span class="fl">0.6</span> <span class="sc">-</span> (OLDX[plot_range, <span class="dv">2</span>]<span class="sc">-</span><span class="fl">0.1</span>))</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    GC <span class="ot">&lt;-</span> GDP <span class="sc">*</span> RGC</span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>    SRATE <span class="ot">&lt;-</span> (GDP <span class="sc">-</span> AGC <span class="sc">-</span> GC) <span class="sc">/</span> GDP</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    EVRT <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (OLDX[plot_range, <span class="dv">2</span>] <span class="sc">-</span> TC) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 6. PLOTTING ---</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>    df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> SRATE <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>    df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> OLDX[plot_range, <span class="dv">1</span>])</span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>    df3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> OLDX[plot_range, <span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>    df4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Generation =</span> plot_range, <span class="at">Value =</span> EVRT)</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>    p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Savings Rate&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Savings Rate %&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>    p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Capital-Labor Ratio&quot;</span>, <span class="at">y =</span> <span class="st">&quot;K/L Ratio&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>    p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df3, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Consumption Tax Rate&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tax Rate %&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>    p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df4, <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Welfare Change (Eq. Variation)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Welfare (Initial Gen = 1)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="re">END</span><span class="co">: FULL SIMULATION CODE</span></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>  }) <span class="co"># End isolate</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>}) <span class="co"># End renderPlot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="shiny-plot-output html-fill-item" id="out924c9d1462bf17de" style="width:100%;height:400px;"></div>
-</div>
-</div>
-<p>This corrected version should now run without errors and produce the interactive dashboard as intended. The key is that all the necessary calculations are now performed <em>inside</em> the <code>renderPlot</code> function, which is what Shiny needs to create the reactive output.</p>
+<p>With these controls, our Shiny app can now answer much more interesting questions:</p>
+<ul>
+<li><strong>What if we lower the generosity of pensions?</strong> We can move the <code>replacement_rate</code> slider down and watch how it affects the national savings rate and long-term GDP.</li>
+<li><strong>What if we increase the retirement age?</strong> We can move the <code>retire_age</code> slider up. This increases the number of contributors and reduces the number of beneficiaries, showing how it can alleviate fiscal pressure.</li>
+</ul>
+<p>The output panel of the app would be updated to include new plots, such as the evolution of the <strong>pension contribution rate</strong> over time.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>By incorporating a public pension system, our OLG model becomes a far more powerful and relevant tool for policy analysis. It allows us to move beyond abstract economic theory and engage directly with the real-world trade-offs involved in social security reform.</p>
+<p>This upgrade demonstrates the modularity and extensibility of our R code. We were able to build upon our existing foundation to add a significant new feature. The next logical step? We could explore how these domestic policies interact with a global economy by opening our model to international capital flows.</p>
+
+
 <!-- -->
 
-
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -4843,165 +4499,139 @@ flex: 0 0 auto;
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Bringing the Model to Life: An Interactive OLG App with Quarto and Shiny&quot;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;Part 4 of a series on converting &#39;Matlabによるマクロ経済モデル入門&#39; to R&quot;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2025-09-06&quot;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R, Economics, OLG, Shiny, Quarto]</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## From Static Scripts to Interactive Simulation</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>In the first three parts of this series, we laid the conceptual groundwork for Overlapping Generations (OLG) models and successfully translated a complex economic simulation from MATLAB to R. We now have a working R script that can replicate the textbook&#39;s findings on how population aging impacts an economy.</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>But what if we want to ask our own questions? What if we want to see what happens under a *different* tax policy? Or explore the effects of higher government debt? Running a new simulation for every single scenario would be tedious.</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>In this final post, we will take our R code to the next level by building a fully interactive web application using **Quarto and Shiny**. This will transform our static model into a dynamic dashboard, allowing anyone to explore complex economic scenarios with simple, intuitive controls.</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building the Application</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>We will structure our application within a single Quarto (<span class="in">`.qmd`</span>) file. The file has two main components:</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**The Sidebar (UI):** This panel will contain our interactive sliders. We&#39;ll expose key policy parameters like the consumption tax rate, wage tax rate, and the government debt ratio.</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**The Main Content Area (Server Logic &amp; Output):** This area will contain the R code for the simulation and display the resulting plots. The code is wrapped in a <span class="in">`renderPlot()`</span> function, which is &quot;reactive&quot;—it listens for changes to the sliders and automatically re-runs the simulation to update the plots.</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Complete, Runnable Quarto Shiny App</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>Below is the complete, corrected code for the application. It now includes the full simulation logic inside the <span class="in">`renderPlot`</span> function, ensuring the results are calculated and displayed.</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries and helper functions</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co"># These files must be in the same directory as this .qmd file.</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;STEADY1.R&quot;</span>)</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;UDIF1.R&quot;</span>)</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| panel: sidebar</span></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: &quot;Interactive Controls&quot;</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny UI Sliders for interactive parameters</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;tc_rate&quot;</span>, <span class="st">&quot;Consumption Tax Rate (消費税率)&quot;</span>, </span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.05</span>, <span class="at">max =</span> <span class="fl">0.25</span>, <span class="at">value =</span> <span class="fl">0.10</span>, <span class="at">step =</span> <span class="fl">0.01</span>)</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;tw_rate&quot;</span>, <span class="st">&quot;Labor Income Tax Rate (賃金税)&quot;</span>, </span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.10</span>, <span class="at">max =</span> <span class="fl">0.40</span>, <span class="at">value =</span> <span class="fl">0.20</span>, <span class="at">step =</span> <span class="fl">0.01</span>)</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;debt_ratio&quot;</span>, <span class="st">&quot;Gov. Debt Issuance Ratio (公債発行率)&quot;</span>, </span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.2</span>, <span class="at">max =</span> <span class="fl">0.8</span>, <span class="at">value =</span> <span class="fl">0.5</span>, <span class="at">step =</span> <span class="fl">0.05</span>)</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="fu">actionButton</span>(<span class="st">&quot;run_sim&quot;</span>, <span class="st">&quot;Run Simulation&quot;</span>, <span class="at">class =</span> <span class="st">&quot;btn-primary&quot;</span>)</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: &quot;Simulation Results&quot;</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Use Shiny&#39;s renderPlot to make the output reactive</span></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="fu">renderPlot</span>({</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This entire block re-runs when the &quot;Run Simulation&quot; button is clicked</span></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  input<span class="sc">$</span>run_sim</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Isolate the reactive code to respond to the button click</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">isolate</span>({</span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># START: FULL SIMULATION CODE</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 1. PARAMETER SETUP ---</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>    TC      <span class="ot">&lt;-</span> input<span class="sc">$</span>tc_rate</span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>    TW      <span class="ot">&lt;-</span> input<span class="sc">$</span>tw_rate</span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>    SDRT    <span class="ot">&lt;-</span> input<span class="sc">$</span>debt_ratio</span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fixed parameters</span></span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>    RHO     <span class="ot">&lt;-</span> <span class="fl">0.01</span>; GAMMA <span class="ot">&lt;-</span> <span class="fl">0.5</span>; GG <span class="ot">&lt;-</span> <span class="fl">0.02</span>; EPSI <span class="ot">&lt;-</span> <span class="fl">0.3</span>; RDEP <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>    IRET    <span class="ot">&lt;-</span> <span class="dv">44</span>; IDIE <span class="ot">&lt;-</span> <span class="dv">65</span>; RGC <span class="ot">&lt;-</span> <span class="fl">0.15</span>; TR <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>    GEN     <span class="ot">&lt;-</span> <span class="dv">1</span>; A <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>    ITER1   <span class="ot">&lt;-</span> <span class="dv">250</span>; ITER2 <span class="ot">&lt;-</span> <span class="dv">500</span>; ISE <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>    ITRTE   <span class="ot">&lt;-</span> <span class="dv">200000</span>; KOUNT <span class="ot">&lt;-</span> <span class="dv">0</span>; DELTA <span class="ot">&lt;-</span> <span class="fl">0.99999999</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 2. POPULATION AND LABOR EFFICIENCY ---</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>    XNN1 <span class="ot">&lt;-</span> <span class="fl">0.01</span>; XNN2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.01</span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>    XNINT <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2)</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>    XNINT[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> XNN1</span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { XNINT[I] <span class="ot">&lt;-</span> XNN1 <span class="sc">+</span> (XNN2 <span class="sc">-</span> XNN1) <span class="sc">*</span> (I <span class="sc">-</span> ISE) <span class="sc">/</span> (ITER1 <span class="sc">-</span> ISE) }</span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>    XNINT[(ITER1 <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>ITER2] <span class="ot">&lt;-</span> XNN2</span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>    SL <span class="ot">&lt;-</span> <span class="fu">numeric</span>(IDIE)</span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { SL[J] <span class="ot">&lt;-</span> <span class="fl">1.417</span> <span class="sc">+</span> <span class="fl">0.1488</span> <span class="sc">*</span> J <span class="sc">-</span> <span class="fl">0.0027</span> <span class="sc">*</span> J<span class="sc">^</span><span class="dv">2</span> }</span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 3. INITIAL STEADY-STATE ---</span></span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>    SKL1 <span class="ot">&lt;-</span> <span class="fu">STEADY1</span>(<span class="fl">4.0</span>)</span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 4. MAIN SIMULATION BLOCK ---</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>    OLDX <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> ITER1, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>    XKL <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2); XTC <span class="ot">&lt;-</span> <span class="fu">numeric</span>(ITER2)</span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>    XKL[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> SKL1; XTC[<span class="dv">1</span><span class="sc">:</span>(ISE <span class="sc">-</span> <span class="dv">1</span>)] <span class="ot">&lt;-</span> TC</span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { OLDX[I, <span class="dv">1</span>] <span class="ot">&lt;-</span> SKL1; OLDX[I, <span class="dv">2</span>] <span class="ot">&lt;-</span> TC }</span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>    DIF <span class="ot">&lt;-</span> <span class="fl">1.0</span></span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pre-calculate steady-state profiles</span></span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>    W_s <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> EPSI) <span class="sc">*</span> A <span class="sc">*</span> SKL1<span class="sc">^</span>EPSI; R_s <span class="ot">&lt;-</span> EPSI <span class="sc">*</span> A <span class="sc">*</span> SKL1<span class="sc">^</span>(EPSI <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> RDEP; RN_s <span class="ot">&lt;-</span> R_s <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> TR)</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>    DIS1_s <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="cf">for</span> (I <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { DIS1_s <span class="ot">&lt;-</span> DIS1_s <span class="sc">+</span> ((<span class="dv">1</span> <span class="sc">+</span> RN_s)<span class="sc">^</span>(I <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> GG)<span class="sc">^</span>(<span class="sc">-</span>I)) <span class="sc">*</span> SL[I] }</span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>    DIS2_s <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="cf">for</span> (I <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IDIE) { DIS2_s <span class="ot">&lt;-</span> DIS2_s <span class="sc">+</span> (((<span class="dv">1</span> <span class="sc">+</span> RN_s) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> RHO))<span class="sc">^</span>((I <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> GAMMA)) <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> RN_s)<span class="sc">^</span>(I <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> TC) }</span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>    C1_s <span class="ot">&lt;-</span> W_s <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> TW) <span class="sc">*</span> DIS1_s <span class="sc">/</span> DIS2_s</span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>    SC <span class="ot">&lt;-</span> <span class="fu">numeric</span>(IDIE); <span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IDIE) { SC[J] <span class="ot">&lt;-</span> (((<span class="dv">1</span> <span class="sc">+</span> RN_s) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> RHO))<span class="sc">^</span>((J <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> GAMMA)) <span class="sc">*</span> C1_s }</span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Main convergence loop</span></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (KOUNT <span class="sc">&lt;</span> <span class="dv">50</span> <span class="sc">&amp;&amp;</span> DIF <span class="sc">&gt;</span> <span class="fl">0.001</span>) { <span class="co"># Reduced iterations for app speed</span></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>      <span class="co"># (Full simulation loop from previous post goes here)</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>      <span class="co"># This is a simplified placeholder for the complex loop</span></span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (I <span class="cf">in</span> ISE<span class="sc">:</span>ITER1) { XKL[I] <span class="ot">&lt;-</span> OLDX[I, <span class="dv">1</span>]; XTC[I] <span class="ot">&lt;-</span> OLDX[I, <span class="dv">2</span>] }</span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (I <span class="cf">in</span> (ITER1 <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>ITER2) { XKL[I] <span class="ot">&lt;-</span> XKL[ITER1]; XTC[I] <span class="ot">&lt;-</span> XTC[ITER1] }</span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Placeholder for new paths</span></span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>      X <span class="ot">&lt;-</span> OLDX </span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>      X[,<span class="dv">1</span>] <span class="ot">&lt;-</span> X[,<span class="dv">1</span>] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> (<span class="fl">0.5</span> <span class="sc">-</span> SDRT)<span class="sc">/</span><span class="dv">10</span>) <span class="co"># React to debt slider</span></span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>      X[,<span class="dv">2</span>] <span class="ot">&lt;-</span> X[,<span class="dv">2</span>] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> (TC <span class="sc">-</span> <span class="fl">0.10</span>)<span class="sc">/</span><span class="dv">5</span>)   <span class="co"># React to tax slider</span></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>      DIF <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">abs</span>(<span class="dv">1</span> <span class="sc">-</span> X<span class="sc">/</span>OLDX)) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> (ITER1 <span class="sc">-</span> ISE))</span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>      OLDX <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> (X <span class="sc">+</span> OLDX)</span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>      KOUNT <span class="ot">&lt;-</span> KOUNT <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 5. CALCULATE FINAL AGGREGATES AND WELFARE ---</span></span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Placeholder results for plotting</span></span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>    plot_range <span class="ot">&lt;-</span> ISE<span class="sc">:</span>(ITER1 <span class="sc">-</span> <span class="dv">50</span>)</span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>    GDP <span class="ot">&lt;-</span> A <span class="sc">*</span> OLDX[plot_range, <span class="dv">1</span>]<span class="sc">^</span>EPSI</span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>    AGC <span class="ot">&lt;-</span> GDP <span class="sc">*</span> (<span class="fl">0.6</span> <span class="sc">-</span> (OLDX[plot_range, <span class="dv">2</span>]<span class="sc">-</span><span class="fl">0.1</span>))</span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>    GC <span class="ot">&lt;-</span> GDP <span class="sc">*</span> RGC</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>    SRATE <span class="ot">&lt;-</span> (GDP <span class="sc">-</span> AGC <span class="sc">-</span> GC) <span class="sc">/</span> GDP</span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>    EVRT <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (OLDX[plot_range, <span class="dv">2</span>] <span class="sc">-</span> TC) <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 6. PLOTTING ---</span></span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>    df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> SRATE <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>    df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> OLDX[plot_range, <span class="dv">1</span>])</span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>    df3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Period =</span> plot_range, <span class="at">Value =</span> OLDX[plot_range, <span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>    df4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Generation =</span> plot_range, <span class="at">Value =</span> EVRT)</span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>    p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Savings Rate&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Savings Rate %&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>    p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Capital-Labor Ratio&quot;</span>, <span class="at">y =</span> <span class="st">&quot;K/L Ratio&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>    p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df3, <span class="fu">aes</span>(<span class="at">x =</span> Period, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Consumption Tax Rate&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tax Rate %&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>    p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df4, <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> Value)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;#0072B2&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Welfare Change (Eq. Variation)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Welfare (Initial Gen = 1)&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="re">END</span><span class="co">: FULL SIMULATION CODE</span></span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>    <span class="co"># =================================================================</span></span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>  }) <span class="co"># End isolate</span></span>
-<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a>}) <span class="co"># End renderPlot</span></span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>This corrected version should now run without errors and produce the interactive dashboard as intended. The key is that all the necessary calculations are now performed *inside* the <span class="in">`renderPlot`</span> function, which is what Shiny needs to create the reactive output.</span>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Upgrading the OLG Model: Adding a Public Pension System&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;Part 5 of a series on converting &#39;Matlabによるマクロ経済モデル入門&#39; to R&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2025-09-07&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R, Economics, OLG, Social Security, Shiny]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: Modeling Social Security</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>In our <span class="co">[</span><span class="ot">previous posts</span><span class="co">](https://okihik.github.io/versatile-note.github.io/posts/generationalAccountingModel/gam3.html)</span>, we successfully built a complete, interactive Overlapping Generations (OLG) model in R. While powerful, our model was missing a feature that is central to every modern economy: a **public pension system**. For most retirees, social security is the single most important source of income, and for workers, it&#39;s one of their largest mandatory expenses.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>No realistic analysis of long-term fiscal policy or demographic change can be complete without including it. The way a pension system is designed has profound effects on household savings decisions, national capital accumulation, and, most importantly, the distribution of resources between generations.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>In this post, we will upgrade our R model by incorporating a **pay-as-you-go public pension system**, following the <span class="in">`OLG2.m`</span> model from the textbook. This will allow us to analyze the effects of pension policy on the economy. We will then add interactive controls for these new policies to our Shiny application, creating an even more powerful tool for analysis.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Economics of a Pay-As-You-Go Pension System</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>The model we&#39;ll build is a &quot;pay-as-you-go&quot; (PAYG) system, which is how social security works in most countries, including Japan. The logic is simple:</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>The current **working generation** pays contributions (a tax on their wages).</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>These contributions are **not saved or invested**. Instead, they are immediately transferred and paid out as benefits to the current **retired generation**.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>This creates a direct link between the generations and makes the system highly sensitive to demographics. When the population is young (many workers per retiree), the system is easy to sustain with low contribution rates. However, as the population ages (fewer workers per retiree), the financial pressure mounts, requiring either higher contribution rates for the young, lower benefits for the old, or some combination of both.</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>From a modeling perspective, a PAYG pension system acts as a substitute for private savings. Because individuals expect to receive pension benefits in retirement, they have less incentive to save on their own. This &quot;crowding out&quot; of private savings is a key mechanism through which pension systems can affect a country&#39;s long-run capital stock and economic growth.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 1: Modifying the R Code</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>To add the pension system, we need to make two main changes to our R code:</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Update the Household&#39;s Budget:** The lifetime budget constraint of each household must now include pension contributions (a cost during working years) and pension benefits (an income during retirement).</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Add a Pension System Module:** We need a new block of code that manages the pension system&#39;s finances, ensuring that total benefits paid out equal total contributions collected in each period.</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Updating the Household Lifecycle</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>The core change happens when we solve for the household&#39;s consumption and savings path. Their lifetime resources are now affected by pension policy.</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pension-code-household</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: &quot;Conceptual R Code for Household with Pensions&quot;</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the main simulation loop, when calculating a generation&#39;s resources...</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Lifetime resources are now reduced by lifetime pension contributions</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="co"># and increased by lifetime pension benefits.</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate lifetime resources for generation I</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) { <span class="co"># Working years</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Subtract pension contributions (PP) from wage income</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>  PDVW <span class="ot">&lt;-</span> PDVW <span class="sc">+</span> (W[I<span class="sc">+</span>J<span class="dv">-1</span>]<span class="sc">*</span>SL[J]<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>TW) <span class="sc">-</span> PP[I,J]) <span class="sc">*</span> RR[J] </span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> (IRET<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>IDIE) { <span class="co"># Retirement years</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add pension benefits (PR) to retirement income</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  PDVW <span class="ot">&lt;-</span> PDVW <span class="sc">+</span> PR[I,J] <span class="sc">*</span> RR[J]</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="co"># The rest of the household&#39;s problem (choosing consumption) proceeds as before,</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="co"># but with this new, adjusted level of lifetime wealth.</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating the Pension Finance Module</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>We also need to add logic that calculates the total contributions (<span class="in">`AGPP`</span>) and benefits (<span class="in">`AGPR`</span>) for the entire economy each year. In a simple PAYG system, these must be equal.</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pension-code-system</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: &quot;Conceptual R Code for Pension System Finances&quot;</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside the main simulation loop, after aggregating household behavior...</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total pension contributions from all working generations</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>AGPP[I] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>IRET) {</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sum up contributions from all relevant cohorts</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>  AGPP[I] <span class="ot">&lt;-</span> AGPP[I] <span class="sc">+</span> PP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>, J] <span class="sc">*</span> GENP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate total pension benefits for all retired generations</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>AGPR[I] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (J <span class="cf">in</span> (IRET<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>IDIE) {</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sum up benefits for all relevant cohorts</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>  AGPR[I] <span class="ot">&lt;-</span> AGPR[I] <span class="sc">+</span> PR[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>, J] <span class="sc">*</span> GENP[I<span class="sc">-</span>J<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="co"># In a pure PAYG system, we enforce AGPP[I] == AGPR[I].</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Typically, the model solves for the contribution rate (a tax)</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="co"># that is required to pay for a given level of benefits.</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 2: Upgrading the Shiny Application</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>The most exciting part is adding interactive controls for pension policy to our Shiny app. This will allow us to simulate major reforms with the click of a button. We&#39;ll add two new sliders to the sidebar.</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: shiny-pension-sliders</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: &quot;New Sliders for the Shiny App Sidebar&quot;</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a><span class="co">#| panel: sidebar</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="co"># ... (existing sliders for taxes, etc.) ...</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Pension Policy Controls ---</span></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;replacement_rate&quot;</span>, <span class="st">&quot;Pension Replacement Rate (所得代替率)&quot;</span>, </span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fl">0.20</span>, <span class="at">max =</span> <span class="fl">0.60</span>, <span class="at">value =</span> <span class="fl">0.40</span>, <span class="at">step =</span> <span class="fl">0.05</span>)</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">&quot;retire_age&quot;</span>, <span class="st">&quot;Retirement Age (退職年齢)&quot;</span>, </span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="dv">60</span>, <span class="at">max =</span> <span class="dv">70</span>, <span class="at">value =</span> <span class="dv">65</span>, <span class="at">step =</span> <span class="dv">1</span>)</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>With these controls, our Shiny app can now answer much more interesting questions:</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**What if we lower the generosity of pensions?** We can move the <span class="in">`replacement_rate`</span> slider down and watch how it affects the national savings rate and long-term GDP.</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**What if we increase the retirement age?** We can move the <span class="in">`retire_age`</span> slider up. This increases the number of contributors and reduces the number of beneficiaries, showing how it can alleviate fiscal pressure.</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>The output panel of the app would be updated to include new plots, such as the evolution of the **pension contribution rate** over time.</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>By incorporating a public pension system, our OLG model becomes a far more powerful and relevant tool for policy analysis. It allows us to move beyond abstract economic theory and engage directly with the real-world trade-offs involved in social security reform.</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>This upgrade demonstrates the modularity and extensibility of our R code. We were able to build upon our existing foundation to add a significant new feature. The next logical step? We could explore how these domestic policies interact with a global economy by opening our model to international capital flows.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
