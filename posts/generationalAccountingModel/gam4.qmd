@@ -1,0 +1,133 @@
+---
+title: "Upgrading the OLG Model: Adding a Public Pension System"
+subtitle: "Part 5 of a series on converting 'Matlabによるマクロ経済モデル入門' to R"
+date: "2025-09-07"
+categories: [R, Economics, OLG, Social Security, Shiny]
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+    self-contained: true
+---
+
+## Introduction: Modeling Social Security
+
+In our [previous posts](https://okihik.github.io/versatile-note.github.io/posts/generationalAccountingModel/gam3.html), we successfully built a complete, interactive Overlapping Generations (OLG) model in R. While powerful, our model was missing a feature that is central to every modern economy: a **public pension system**. For most retirees, social security is the single most important source of income, and for workers, it's one of their largest mandatory expenses.
+
+No realistic analysis of long-term fiscal policy or demographic change can be complete without including it. The way a pension system is designed has profound effects on household savings decisions, national capital accumulation, and, most importantly, the distribution of resources between generations.
+
+In this post, we will upgrade our R model by incorporating a **pay-as-you-go public pension system**, following the `OLG2.m` model from the textbook. This will allow us to analyze the effects of pension policy on the economy. We will then add interactive controls for these new policies to our Shiny application, creating an even more powerful tool for analysis.
+
+## The Economics of a Pay-As-You-Go Pension System
+
+The model we'll build is a "pay-as-you-go" (PAYG) system, which is how social security works in most countries, including Japan. The logic is simple:
+
+*   The current **working generation** pays contributions (a tax on their wages).
+*   These contributions are **not saved or invested**. Instead, they are immediately transferred and paid out as benefits to the current **retired generation**.
+
+This creates a direct link between the generations and makes the system highly sensitive to demographics. When the population is young (many workers per retiree), the system is easy to sustain with low contribution rates. However, as the population ages (fewer workers per retiree), the financial pressure mounts, requiring either higher contribution rates for the young, lower benefits for the old, or some combination of both.
+
+From a modeling perspective, a PAYG pension system acts as a substitute for private savings. Because individuals expect to receive pension benefits in retirement, they have less incentive to save on their own. This "crowding out" of private savings is a key mechanism through which pension systems can affect a country's long-run capital stock and economic growth.
+
+## Step 1: Modifying the R Code
+
+To add the pension system, we need to make two main changes to our R code:
+
+1.  **Update the Household's Budget:** The lifetime budget constraint of each household must now include pension contributions (a cost during working years) and pension benefits (an income during retirement).
+2.  **Add a Pension System Module:** We need a new block of code that manages the pension system's finances, ensuring that total benefits paid out equal total contributions collected in each period.
+
+### Updating the Household Lifecycle
+
+The core change happens when we solve for the household's consumption and savings path. Their lifetime resources are now affected by pension policy.
+
+```{r}
+#| label: pension-code-household
+#| code-summary: "Conceptual R Code for Household with Pensions"
+#| eval: false
+#| echo: true
+
+# Inside the main simulation loop, when calculating a generation's resources...
+
+# Lifetime resources are now reduced by lifetime pension contributions
+# and increased by lifetime pension benefits.
+
+# Calculate lifetime resources for generation I
+for (J in 1:IRET) { # Working years
+  # Subtract pension contributions (PP) from wage income
+  PDVW <- PDVW + (W[I+J-1]*SL[J]*(1-TW) - PP[I,J]) * RR[J] 
+}
+for (J in (IRET+1):IDIE) { # Retirement years
+  # Add pension benefits (PR) to retirement income
+  PDVW <- PDVW + PR[I,J] * RR[J]
+}
+
+# The rest of the household's problem (choosing consumption) proceeds as before,
+# but with this new, adjusted level of lifetime wealth.
+```
+
+### Creating the Pension Finance Module
+
+We also need to add logic that calculates the total contributions (`AGPP`) and benefits (`AGPR`) for the entire economy each year. In a simple PAYG system, these must be equal.
+
+```{r}
+#| label: pension-code-system
+#| code-summary: "Conceptual R Code for Pension System Finances"
+#| eval: false
+#| echo: true
+
+# Inside the main simulation loop, after aggregating household behavior...
+
+# Calculate total pension contributions from all working generations
+AGPP[I] <- 0
+for (J in 1:IRET) {
+  # Sum up contributions from all relevant cohorts
+  AGPP[I] <- AGPP[I] + PP[I-J+1, J] * GENP[I-J+1]
+}
+
+# Calculate total pension benefits for all retired generations
+AGPR[I] <- 0
+for (J in (IRET+1):IDIE) {
+  # Sum up benefits for all relevant cohorts
+  AGPR[I] <- AGPR[I] + PR[I-J+1, J] * GENP[I-J+1]
+}
+
+# In a pure PAYG system, we enforce AGPP[I] == AGPR[I].
+# Typically, the model solves for the contribution rate (a tax)
+# that is required to pay for a given level of benefits.
+```
+
+## Step 2: Upgrading the Shiny Application
+
+The most exciting part is adding interactive controls for pension policy to our Shiny app. This will allow us to simulate major reforms with the click of a button. We'll add two new sliders to the sidebar.
+
+```{r}
+#| label: shiny-pension-sliders
+#| code-summary: "New Sliders for the Shiny App Sidebar"
+#| eval: false
+#| echo: true
+
+#| panel: sidebar
+
+# ... (existing sliders for taxes, etc.) ...
+
+# --- Pension Policy Controls ---
+sliderInput("replacement_rate", "Pension Replacement Rate (所得代替率)", 
+            min = 0.20, max = 0.60, value = 0.40, step = 0.05)
+
+sliderInput("retire_age", "Retirement Age (退職年齢)", 
+            min = 60, max = 70, value = 65, step = 1)
+```
+
+With these controls, our Shiny app can now answer much more interesting questions:
+
+*   **What if we lower the generosity of pensions?** We can move the `replacement_rate` slider down and watch how it affects the national savings rate and long-term GDP.
+*   **What if we increase the retirement age?** We can move the `retire_age` slider up. This increases the number of contributors and reduces the number of beneficiaries, showing how it can alleviate fiscal pressure.
+
+The output panel of the app would be updated to include new plots, such as the evolution of the **pension contribution rate** over time.
+
+## Conclusion
+
+By incorporating a public pension system, our OLG model becomes a far more powerful and relevant tool for policy analysis. It allows us to move beyond abstract economic theory and engage directly with the real-world trade-offs involved in social security reform.
+
+This upgrade demonstrates the modularity and extensibility of our R code. We were able to build upon our existing foundation to add a significant new feature. The next logical step? We could explore how these domestic policies interact with a global economy by opening our model to international capital flows.
